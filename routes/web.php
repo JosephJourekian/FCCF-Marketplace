@@ -26,8 +26,9 @@ Route::middleware('auth')->group(function (){
     Route::post('/products', 'App\Http\Controllers\ProductsController@store')->name('products.store');
     Route::delete('/products', 'App\Http\Controllers\ProductsController@delete')->name('products.delete');
     Route::get('/products/stock', 'App\Http\Controllers\ProductsController@stock')->name('products.stock'); 
+    Route::get('/products/add', 'App\Http\Controllers\ProductsController@add')->name('products.add'); 
 
-    Route::get('/products.add', 'App\Http\Controllers\ProductsController@add')->name('products.add'); 
+
     Route::get('/products.remove', 'App\Http\Controllers\ProductsController@remove')->name('products.remove'); 
     Route::get('/products.edit/{id}', 'App\Http\Controllers\ProductsController@edit')->name('products.edit');
     Route::patch('/products.updateDB/{id}', 'App\Http\Controllers\ProductsController@updateDB')->name('products.updateDB');
