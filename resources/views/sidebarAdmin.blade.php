@@ -25,14 +25,15 @@
                     Add Products
                 </a>
             </li>
+            <li>
+                <a href="{{ route('products.inventory.view') }}">
+                    Edit Inventory
+                </a>
+            </li>
         </ul>
     </li>
     
-    <li>
-        <a href="{{ route('products.stock') }}" class="font-bold text-lg mb-4 block">
-            Edit Inventory
-        </a>
-    </li>
+    
     <li>
         <a href="{{ route('profiles.edit',auth()->user()->id) }}" class="font-bold text-lg mb-4 block">
             Edit Profile

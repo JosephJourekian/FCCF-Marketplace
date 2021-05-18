@@ -81,9 +81,28 @@ class ProductsController extends Controller
     
         return redirect('/products')->with('message', 'Product Updated!');
     }
-    public function stock()
+    public function inventoryView()
     {
-        return view('products.stock', [
+        return view('products/inventory.view', [
+            'products' => Products::paginate(50)
+        ]);
+    }
+    public function inventoryUpdate(Request $request)
+    {
+        $products = $request->products;
+        //return $products;
+        foreach($products as $product){
+            if($product['stock'] != null){
+                $prodObj = Products::find($product['id']);
+                $prodObj->update(['stock'=> $prodObj['stock'] + $product['stock']]);
+            }
+            if($product['price'] != null){
+                $prodObj = Products::find($product['id']);
+                $prodObj->update(['price'=> $product['price']]);
+            }
+        }
+
+        return view('products/inventory.view',[
             'products' => Products::paginate(50)
         ]);
     }

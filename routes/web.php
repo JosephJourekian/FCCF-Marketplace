@@ -25,7 +25,8 @@ Route::middleware('auth')->group(function (){
     Route::get('/products', 'App\Http\Controllers\ProductsController@index')->name('products.index'); //Laravel 8
     Route::post('/products', 'App\Http\Controllers\ProductsController@store')->name('products.store');
     Route::delete('/products', 'App\Http\Controllers\ProductsController@delete')->name('products.delete');
-    Route::get('/products/stock', 'App\Http\Controllers\ProductsController@stock')->name('products.stock'); 
+    Route::get('/products/inventory', 'App\Http\Controllers\ProductsController@inventoryView')->name('products.inventory.view'); 
+    Route::patch('/products/inventory', 'App\Http\Controllers\ProductsController@inventoryUpdate')->name('products.inventory.update'); 
     Route::get('/products/add', 'App\Http\Controllers\ProductsController@add')->name('products.add'); 
 
 
