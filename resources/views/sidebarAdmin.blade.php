@@ -25,11 +25,6 @@
                     Add Products
                 </a>
             </li>
-            <li>
-                <a href="{{ route('products.remove') }}">
-                    Remove Products
-                </a>
-            </li>
         </ul>
     </li>
     

@@ -36,12 +36,6 @@ class ProductsController extends Controller
         return redirect()->back()->with('message', 'Product Added!');
 
     }
-    public function remove(){
-
-        return view('products.remove', [
-            'products' => Products::paginate(50)
-        ]);
-    }
     public function delete(Request $request){
 
         $id = $request->input('id');
