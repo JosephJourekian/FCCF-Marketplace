@@ -20,14 +20,12 @@
         </a>
     </li>
     <li>
-        <a href="{{ route('profiles.edit',auth()->user()->id) }}" class="font-bold text-lg mb-4 block">
-            Edit Profile
-        </a>
-    </li>
-    <li>
-        <a href="{{route('purchaseHistory',auth()->user()->id) }}" class="font-bold text-lg mb-4 block">
-            Purchase History
-        </a>
+        <div class="dropdown">
+            <button class="dropbtn">My Profile</button>
+            <div class="dropdown-content">
+                <a href="{{ route('profiles.edit',auth()->user()->id) }}">Edit Profile</a>
+                <a href="{{route('purchaseHistory',auth()->user()->id) }}">Purchase History</a>         
+            </div>
     </li>
     <li>
         <form method="POST" action="/logout">

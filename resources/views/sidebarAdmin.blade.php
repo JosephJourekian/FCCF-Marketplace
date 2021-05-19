@@ -1,3 +1,4 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <ul>
     <!-- -->
     <li>
@@ -16,38 +17,24 @@
         </a>
     </li>
     <li>
-        <a href="{{ route('products.index') }}" class="font-bold text-lg mb-4 block">
-            Products
-        </a>
-        <ul style="margin: 5 0 15 20; list-style-type:circle;">
-            <li>
-                <a href="{{ route('products.add') }}" >
-                    Add Products
-                </a>
-            </li>
-            <li>
-                <a href="{{ route('products.inventory.view') }}">
-                    Edit Inventory
-                </a>
-            </li>
-        </ul>
+        <div class="dropdown">
+            <button class="dropbtn">Products</button>
+            <div class="dropdown-content">
+              <a href="{{ route('products.index') }}">View Products</a>
+              <a href="{{ route('products.add') }}" >Add Products</a>
+              <a href="{{ route('products.inventory.view') }}">Edit Inventory</a>
+            </div>
+        </div>
     </li>
     
-    
     <li>
-        <a href="{{ route('profiles.edit',auth()->user()->id) }}" class="font-bold text-lg mb-4 block">
-            Edit Profile
-        </a>
-    </li>
-    <li>
-        <a href="{{route('purchaseHistory',auth()->user()->id) }}" class="font-bold text-lg mb-4 block">
-            Purchase History
-        </a>
-    </li>
-    <li>
-        <a href="{{ route('viewUsers') }}" class="font-bold text-lg mb-4 block">
-            View Users
-        </a>
+        <div class="dropdown">
+            <button class="dropbtn">My Profile</button>
+            <div class="dropdown-content">
+                <a href="{{ route('profiles.edit',auth()->user()->id) }}">Edit Profile</a>
+                <a href="{{route('purchaseHistory',auth()->user()->id) }}">Purchase History</a>
+                <a href="{{ route('viewUsers') }}">View Users</a>            
+            </div>
     </li>
     <li>
         <form method="POST" action="/logout">

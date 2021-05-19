@@ -22,12 +22,12 @@ Route::middleware('auth')->group(function (){
     Route::get('/admin', 'App\Http\Controllers\AdminController@show')->middleware('is_admin')->name('admin');  
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-    Route::get('/products', 'App\Http\Controllers\ProductsController@index')->name('products.index'); //Laravel 8
+    Route::get('/products', 'App\Http\Controllers\ProductsController@index')->name('products.index'); 
     Route::post('/products', 'App\Http\Controllers\ProductsController@store')->name('products.store');
     Route::delete('/products', 'App\Http\Controllers\ProductsController@delete')->name('products.delete');
     Route::get('/products/inventory', 'App\Http\Controllers\ProductsController@inventoryView')->name('products.inventory.view'); 
     Route::patch('/products/inventory', 'App\Http\Controllers\ProductsController@inventoryUpdate')->name('products.inventory.update'); 
-    Route::get('/products/add', 'App\Http\Controllers\ProductsController@add')->name('products.add'); 
+    Route::get('/products/add', 'App\Http\Controllers\ProductsController@add')->name('products.add'); //fixed ones
 
 
     Route::get('/products.edit/{id}', 'App\Http\Controllers\ProductsController@edit')->name('products.edit');
