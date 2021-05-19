@@ -7,7 +7,6 @@ use App\Models\User;
 
 class ViewUsersController extends Controller
 {
-    //public function index()
     public function index()
     {
         return view('viewUsers', [
@@ -15,25 +14,22 @@ class ViewUsersController extends Controller
         ]);
     }
 
-    public function edit(User $user){
-
-        if(request('num') != NULL && request('add') != NULL){
-            User::where('name', request('name'))->increment('points', request('num')); 
-
-            return redirect()->back()->with('message', 'Points Added!');
-        }
-        elseif(request('num') != NULL && request('sub') != NULL){
-            User::where('name', request('name'))->where('points','>',request('num'))->decrement('points', request('num')); 
-
-            return redirect('/viewUsers')->with('message', 'Points removed!');
-        }
-        if(request('type') != NULL && request('name') != auth()->user()->name){
-            User::where('name', request('name'))->update(['type'=> request('type')]);
-
-            return redirect('/viewUsers')->with('message', 'Account type changed!');
-        }
-        else{
-            return redirect('/viewUsers')->with('message', 'Error! Current account type cannot be changed!');
-        }
+    public function edit(User $users, Request $request)
+    {
+            $users = $request->users;
+            foreach($users as $user){
+                if($user['type'] != null && $user['id'] != auth()->user()->id){
+                    $userObj = User::find($user['id']);
+                    $userObj->update(['type'=> $user['type']]);
+                }
+                if($user['points'] != null){
+                    $userObj = User::find($user['id']);
+                    $userObj->update(['points'=> $userObj['points'] + $user['points']]);
+                }
+            }
+    
+            return view('viewUsers', [
+                'users' => User::paginate(50)
+            ]);
     }
 }

@@ -1,51 +1,48 @@
+
 @component('components.app')
-<div class="border border-gray-300 rounded-lg">
+<h1 class="font-bold  mb-4">List of Users</h1>
+<div>
     @if(session()->has('message'))
     <div class="alert alert-success font-bold color:green" >
         {{ session()->get('message') }}
     </div>
     @endif
-    <div class="border border-gray-100 rounded-lg">
-        <form method="POST" action='/viewUsers' enctype="multipart/form-data" class="mb-8" >
+    
+    <div>
+        <form method="POST" action='{{ route('viewUsers') }}' enctype="multipart/form-data" class="mb-8" >
             @csrf
             @method('PATCH')
-            <h4 class="font-bold">Add/Remove points:</h4>
             
-            <select id="name" name="name" class="form-control">
+            <table id="t01">
+                <tr>
+                  <th>User Name</th>
+                  <th>Point Amount</th>
+                  <th>Current Type</th>
+                  <th>Change Type</th>
+                  <th>Point Adjustment</th>
+                  <th>View Purchase History</th>
+                </tr>
+                <?php $index = 0 ?>
                 @foreach ($users as $user)
-                <option value="{{ $user->name }}">{{ $user->name }}</option>
+                <tr>
+                  <td>{{ $user->name }}</td>
+                  <td>{{ $user->points }}</td>
+                  <input hidden type="number" name="users[{{ $index }}][id]" value="{{ $user->id }}" required>
+                  <td>{{ $user->type }}</td>
+                  <td><select name="users[{{ $index }}][type]" value="{{ $user->type }}">
+                    <option></option>
+                    <option value="admin">Admin</option>
+                    <option value="default">Default</option>
+                  </select></td>
+                  <!--<td><input type="text" name="users[{{ $index }}][type]" value="{{ $user->type }}" ></td>-->
+                  <td><input type="number" name="users[{{ $index }}][points]" value="" ></td>
+                  <td><button class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-300"><a href="{{ route('purchaseHistory',$user->id) }}" class="card-link">Purchase History</a></button></td>
+                </tr>
+                <?php $index++ ?>
                 @endforeach
-            </select>
-            <input type="number" id="num" name="num" placeholder="0" required>
-            <input type="submit" value="Add" name="add" id="add">
-            <input type="submit" value="Subtract" name="sub">
+            </table>
+            <input class="bg-blue-400 text-white rounded py-2 px-4 mt-3 hover:bg-blue-300" type="submit" value="Submit">
         </form>
-        <form method="POST" action='/viewUsers' enctype="multipart/form-data" class="mb-8" >
-            @csrf
-            @method('PATCH')
-            <h4 class="font-bold">Make a User an admin or default:</h4>
-            <select id="name" name="name" class="form-control">
-                @foreach ($users as $user)
-                <option value="{{ $user->name }}">{{ $user->name }}</option>
-                @endforeach
-            </select>
-            <select id="type" name="type">
-                <option value="admin">admin</option>
-                <option value="default">default</option>
-            </select>
-            <input type="submit" value="Submit">
-        </form>
-        @foreach ($users as $user)
-            <div class="flex items-center mb-5">
-                <h4 class="font-bold">
-                    <pre>{{ $user->name }}</pre>
-                    <pre>ID: {{ $user->id }}</pre>
-                    <pre>Points:{{ $user->points }}</pre>
-                    <pre>Type: {{ $user->type }}</pre>
-                    <a href="{{ route('purchaseHistory',$user->id) }}">Purchase history</a>
-                </h4>
-            </div>
-        @endforeach
     </div>
 </div>
 @endcomponent
