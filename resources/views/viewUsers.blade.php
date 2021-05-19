@@ -34,7 +34,6 @@
                     <option value="admin">Admin</option>
                     <option value="default">Default</option>
                   </select></td>
-                  <!--<td><input type="text" name="users[{{ $index }}][type]" value="{{ $user->type }}" ></td>-->
                   <td><input type="number" name="users[{{ $index }}][points]" value="" ></td>
                   <td><button class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-300"><a href="{{ route('purchaseHistory',$user->id) }}" class="card-link">Purchase History</a></button></td>
                 </tr>
