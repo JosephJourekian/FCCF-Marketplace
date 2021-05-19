@@ -38,9 +38,6 @@ class CartsController extends Controller
     }
 
     public function update(Request $request, $id){
-        /*if(request('num') >= Products::where('id', $product_id)->update(['type'=> request('type')]);){
-            Cart::update($id, request('num'));
-        }*/
         Cart::update($id, request('num'));
         return view('carts.index',[
             'cart' => Cart::content()

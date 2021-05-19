@@ -60,7 +60,7 @@ class ProductsController extends Controller
         ]);
 
     }
-    public function updateDB(Products $product, $id){
+    public function update(Products $product, $id){
 
         $product = Products::find($id);
 
@@ -90,7 +90,6 @@ class ProductsController extends Controller
     public function inventoryUpdate(Request $request)
     {
         $products = $request->products;
-        //return $products;
         foreach($products as $product){
             if($product['stock'] != null){
                 $prodObj = Products::find($product['id']);

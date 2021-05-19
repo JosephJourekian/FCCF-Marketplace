@@ -32,17 +32,15 @@ class CheckoutsController extends Controller
     }
 
     public function confirm(){
-        $cart = Cart::content();
-
         User::where('name', auth()->user()->name)->where('points','>','0')->decrement('points', (float)Cart::subtotal('0','','')); 
+        $cart = Cart::content();
         $data = [
             'cart' => Cart::content()
         ];
+        User::where('name', auth()->user()->name)->where('points','>','0')->decrement('points', (float)Cart::subtotal('0','','')); 
         foreach ($cart as $product){
             Products::where('name', $product->name)->where('stock','>','0')->decrement('stock', $product->qty); 
         }
-
-
         foreach($cart as $product){
             $attributes = ([
                 'user_id' => auth()->user()->id,
@@ -55,16 +53,12 @@ class CheckoutsController extends Controller
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 
             ]);
-        
             DB::table('orders')->insert($attributes);
-    
         }
-        
         Mail::to(auth()->user()->email)->send(new OrderConfirmation(), $data);
         Mail::to('jjourekian@gmail.com')->send(new ShippingDetails(), $data);
+        
         Cart::destroy();
         return redirect('/products')->with('message', 'Order Confirmed!');
-
     }
-
 }
