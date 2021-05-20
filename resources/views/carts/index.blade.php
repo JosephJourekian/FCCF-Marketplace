@@ -33,13 +33,18 @@
         @if(((float)auth()->user()->points) >= ((float)Cart::subtotal('0','','')))
             <a href="{{ route('checkout.index') }}"
             class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 mr-4">
-            Checkout</a>
+            Checkout With Points</a>
 
             @else
             <a href="#"
             class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 mr-4">
             Insufficient amount of points!</a>
         @endif
+
+        <a href="#"
+            class="bg-red-400 text-white rounded py-2 px-4 hover:bg-red-500 mr-4">
+                Checkout with $
+        </a>
 
         <a href="{{ route('products.index') }}"
             class="bg-red-400 text-white rounded py-2 px-4 hover:bg-red-500 mr-4">

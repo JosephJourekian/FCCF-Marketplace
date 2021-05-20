@@ -41,7 +41,7 @@ class CheckoutsController extends Controller
         foreach ($cart as $product){
             Products::where('name', $product->name)->where('stock','>','0')->decrement('stock', $product->qty); 
         }
-        foreach($cart as $product){
+     
             $attributes = ([
                 'user_id' => auth()->user()->id,
                 'product_id' => $product->id,
@@ -55,7 +55,7 @@ class CheckoutsController extends Controller
                 
             ]);
             DB::table('orders')->insert($attributes);
-        }
+        
         Mail::to(auth()->user()->email)->send(new OrderConfirmation(), $data);
         Mail::to('jjourekian@gmail.com')->send(new ShippingDetails(), $data);
         
