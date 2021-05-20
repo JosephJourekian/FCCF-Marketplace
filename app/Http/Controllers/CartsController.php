@@ -9,7 +9,9 @@ use Cart;
 class CartsController extends Controller
 {
     public function index(){
+        //$cart = serialize(Cart::content());
         $cart = Cart::content();
+        //return $cart;
         return view("carts.index", [
             'cart' => $cart
         ]);

@@ -49,6 +49,7 @@ class CheckoutsController extends Controller
                 'product_price' => $product->price,
                 'product_qty' => $product->qty,
                 'product_image' => $product->options->img,
+                'cart' => serialize(Cart::content()),
                 'order_subtotal' => Cart::subtotal('0','',''),
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 

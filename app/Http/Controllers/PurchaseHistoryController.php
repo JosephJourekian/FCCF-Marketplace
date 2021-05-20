@@ -17,7 +17,7 @@ class PurchaseHistoryController extends Controller
         }*/
         if(auth()->user()->isAdmin()){
             return view('purchaseHistory.index', [
-                'order' => $user->purchaseHistory($user->id)
+                'orders' => $user->purchaseHistory($user->id)
             ]);
         }
         elseif(auth()->user()->id != $user->id){
@@ -25,7 +25,7 @@ class PurchaseHistoryController extends Controller
         }
         else{
             return view('purchaseHistory.index', [
-                'order' => $user->purchaseHistory(auth()->user()->id)
+                'orders' => $user->purchaseHistory(auth()->user()->id)
             ]);
         }
     }
