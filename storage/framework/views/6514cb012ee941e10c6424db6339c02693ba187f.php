@@ -14,7 +14,7 @@
             <img class="rounded-lg" src="<?php echo e($product->options->img); ?>" style="width:150px;height:125px;float:left">
             <a class="font-bold text-md" style="color:blue"href="<?php echo e(route('products.show',$product->id)); ?>"><?php echo e($product->name); ?></a>
             <h1 class="font-bold text-md mt-4 block">Quantity: <?php echo e($product->qty); ?></h1>
-            <form method="POST" action='<?php echo e(route('carts.update',$product->rowId)); ?>' enctype="multipart/form-data" >
+            <form method="POST" action='<?php echo e(route('carts.update',[$product->rowId,$product->id])); ?>' enctype="multipart/form-data" >
              <?php echo csrf_field(); ?>
                 <p>Update Quantity: <input type="number" id="num" name="num" value="1">
                     <input class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 mr-4" 
@@ -34,13 +34,18 @@
         <?php if(((float)auth()->user()->points) >= ((float)Cart::subtotal('0','',''))): ?>
             <a href="<?php echo e(route('checkout.index')); ?>"
             class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 mr-4">
-            Checkout</a>
+            Checkout With Points</a>
 
             <?php else: ?>
             <a href="#"
             class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 mr-4">
             Insufficient amount of points!</a>
         <?php endif; ?>
+
+        <a href="#"
+            class="bg-green-400 text-white rounded py-2 px-4 hover:bg-green-500 mr-4">
+                Checkout with $
+        </a>
 
         <a href="<?php echo e(route('products.index')); ?>"
             class="bg-red-400 text-white rounded py-2 px-4 hover:bg-red-500 mr-4">

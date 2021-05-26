@@ -7,10 +7,12 @@ use Illuminate\Validation\Rule;
 use App\Models\Products;
 use DB;
 
+
 class ProductsController extends Controller
 {
     public function index()
     {
+
         return view('products.index', [
             'products' => Products::paginate(50)
         ]);
@@ -43,7 +45,6 @@ class ProductsController extends Controller
         return redirect()->back()->with('message', 'Product Removed!');
     }
     public function show($id){
-
         $product = Products::find($id);
 
         return view('products.show', [
