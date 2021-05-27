@@ -7,22 +7,24 @@ use App\Models\User;
 
 class ProfilesController extends Controller
 {
-    public function edit($id){
+    public function edit(User $user){
 
-        $user = User::find($id);
-        if($user->isNot(auth()->user()))
+        $userA = User::find($user)->first();
+
+        if(auth()->user()->username != $userA->username)
         {
             abort(404);
         }
-
+        
         return view('profiles.edit', [
-            'user' => $user
+            'user' => $userA
         ]);
+
     }
 
-    public function update(User $user, $id){
+    public function update(User $user){
 
-        $user = User::find($id);
+        $userA = User::find($user)->first();
 
         $attributes = request()->validate([
             'address' => ['string', 'required', 'max:255'],
@@ -32,10 +34,8 @@ class ProfilesController extends Controller
             'phone' => ['string', 'required', 'max:255'],
         ]);   
 
-        $user->update($attributes);
+        $userA->update($attributes);
         
-        return view('home', [
-            'user' => auth()->user()->id])
-            ->with('message', 'Profile Updated!');
+        return view('home')->with('message', 'Profile Updated!');
     }
 }

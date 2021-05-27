@@ -23,8 +23,8 @@
         <div class="dropdown">
             <button class="dropbtn">My Profile</button>
             <div class="dropdown-content">
-                <a href="{{ route('profiles.edit',auth()->user()->id) }}">Edit Profile</a>
-                <a href="{{route('purchaseHistory',auth()->user()->id) }}">Purchase History</a>         
+                <a href="{{ route('profiles.edit',auth()->user()->username) }}">Edit Profile</a>
+                <a href="{{route('purchaseHistory',auth()->user()->username) }}">Purchase History</a>         
             </div>
     </li>
     <li>

@@ -8,7 +8,7 @@
         <h1 class="font-bold text-md block">City: <?php echo e(auth()->user()->city); ?></h1>
         <h1 class="font-bold text-md block">Province: <?php echo e(auth()->user()->province); ?></h1>
         <h1 class="font-bold text-md block">Postal Code/Zip: <?php echo e(auth()->user()->postalCode); ?></h1>
-        <a class="font-bold text-md" style="color:blue"href="<?php echo e(route('profiles.edit',auth()->user()->id)); ?>">Change Shipping Info</a>
+        <a class="font-bold text-md" style="color:blue"href="<?php echo e(route('profiles.edit',auth()->user()->username)); ?>">Change Shipping Info</a>
     </div>
 
     <div class="border border-gray-800 rounded-lg">

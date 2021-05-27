@@ -5,7 +5,7 @@
 
     </div>
 <?php endif; ?>
-<form method="POST" action="<?php echo e(route('profiles.update',auth()->user()->id)); ?>" enctype="multipart/form-data">
+<form method="POST" action="<?php echo e(route('profiles.update',auth()->user()->username)); ?>" enctype="multipart/form-data">
     <?php echo csrf_field(); ?>
     <?php echo method_field('PATCH'); ?>
 

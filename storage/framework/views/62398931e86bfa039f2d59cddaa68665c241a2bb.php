@@ -36,7 +36,7 @@
                     <option value="default">Default</option>
                   </select></td>
                   <td><input type="number" name="users[<?php echo e($index); ?>][points]" value="" ></td>
-                  <td><button class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-300"><a href="<?php echo e(route('purchaseHistory',$user->id)); ?>" class="card-link">Purchase History</a></button></td>
+                  <td><button class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-300"><a href="<?php echo e(route('purchaseHistory',$user->username)); ?>" class="card-link">Purchase History</a></button></td>
                 </tr>
                 <?php $index++ ?>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

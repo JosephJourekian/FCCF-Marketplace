@@ -4,7 +4,7 @@
         {{ session()->get('message') }}
     </div>
 @endif
-<form method="POST" action="{{ route('profiles.update',auth()->user()->id)}}" enctype="multipart/form-data">
+<form method="POST" action="{{ route('profiles.update',auth()->user()->username)}}" enctype="multipart/form-data">
     @csrf
     @method('PATCH')
 

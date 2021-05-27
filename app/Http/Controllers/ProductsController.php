@@ -94,11 +94,21 @@ class ProductsController extends Controller
         foreach($products as $product){
             if($product['stock'] != null){
                 $prodObj = Products::find($product['id']);
-                $prodObj->update(['stock'=> $prodObj['stock'] + $product['stock']]);
+                if(($prodObj->stock + $product['stock']) < 0){
+                    $prodObj->update(['stock'=> 0]);
+                }
+                else{
+                    $prodObj->update(['stock'=> $prodObj['stock'] + $product['stock']]);
+                }
             }
             if($product['price'] != null){
                 $prodObj = Products::find($product['id']);
-                $prodObj->update(['price'=> $product['price']]);
+                if($product['price'] < 0){
+                    $prodObj->update(['price'=> 0]);
+                }
+                else{
+                    $prodObj->update(['price'=> $product['price']]);
+                }
             }
         }
 

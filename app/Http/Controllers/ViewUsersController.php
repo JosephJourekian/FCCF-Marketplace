@@ -24,7 +24,12 @@ class ViewUsersController extends Controller
                 }
                 if($user['points'] != null){
                     $userObj = User::find($user['id']);
-                    $userObj->update(['points'=> $userObj['points'] + $user['points']]);
+                    if(($userObj->points + $user['points']) < 0){
+                        $userObj->update(['points'=> 0]);
+                    }
+                    else{
+                        $userObj->update(['points'=> $userObj['points'] + $user['points']]);
+                    }
                 }
             }
     

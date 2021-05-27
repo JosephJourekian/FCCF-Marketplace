@@ -66,10 +66,12 @@ class User extends Authenticatable
     public function purchaseHistory($id){
 
         $user = User::find($id);
+        
 
         return Orders::where('user_id', $user->id)
             ->orderByDesc('created_at')
             ->paginate(50);
             
     }
+    
 }

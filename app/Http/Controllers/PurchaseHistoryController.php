@@ -7,25 +7,22 @@ use App\Models\User;
 
 class PurchaseHistoryController extends Controller
 {
-    public function index($id){
+    public function index(User $user){
 
-        $user = User::find($id);
+        $userA = User::find($user)->first();
 
-        /*if($user->isNot(auth()->user()) && $user->isNot(auth()->user()->isAdmin()))
-        {
-            abort(404);
-        }*/
+        
         if(auth()->user()->isAdmin()){
             return view('purchaseHistory.index', [
-                'orders' => $user->purchaseHistory($user->id)
+                'orders' => $userA->purchaseHistory($userA->id)
             ]);
         }
-        elseif(auth()->user()->id != $user->id){
+        elseif(auth()->user()->id != $userA->id){
             abort(404);
         }
         else{
             return view('purchaseHistory.index', [
-                'orders' => $user->purchaseHistory(auth()->user()->id)
+                'orders' => $userA->purchaseHistory(auth()->user()->id)
             ]);
         }
     }

@@ -40,9 +40,9 @@ Route::middleware('auth')->group(function (){
     Route::get('/checkout', 'App\Http\Controllers\CheckoutsController@index')->name('checkout.index'); 
     Route::get('/checkout/confirm', 'App\Http\Controllers\CheckoutsController@confirm')->name('checkout.confirm'); 
     
-    Route::get('/profiles/edit/{id}', 'App\Http\Controllers\ProfilesController@edit')->name('profiles.edit');
-    Route::patch('/profiles/update/{id}', 'App\Http\Controllers\ProfilesController@update')->name('profiles.update');
-    Route::get('/purchaseHistory/{id}', 'App\Http\Controllers\PurchaseHistoryController@index')->name('purchaseHistory');
+    Route::get('/profiles/edit/{user:username}', 'App\Http\Controllers\ProfilesController@edit')->name('profiles.edit');
+    Route::patch('/profiles/update/{user:username}', 'App\Http\Controllers\ProfilesController@update')->name('profiles.update');
+    Route::get('/purchaseHistory/{user:username}', 'App\Http\Controllers\PurchaseHistoryController@index')->name('purchaseHistory');
 
     Route::get('/viewUsers', 'App\Http\Controllers\ViewUsersController@index')->middleware('is_admin')->name('viewUsers');  
     Route::patch('/viewUsers', 'App\Http\Controllers\ViewUsersController@edit')->middleware('is_admin')->name('viewUsers');  

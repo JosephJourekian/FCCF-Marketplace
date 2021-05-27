@@ -11,7 +11,7 @@
                     <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
                         for="name"
                     >
-                        Name
+                        Full Name
                     </label>
 
                     <input class="border border-gray-400 p-2 w-full"
@@ -23,6 +23,35 @@
                     >
 
                     <?php $__errorArgs = ['name'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                        <p class="text-red-500 text-xs mt-2"><?php echo e($message); ?></p>
+                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+                        for="username"
+                    >
+                        Username
+                    </label>
+
+                    <input class="border border-gray-400 p-2 w-full"
+                        type="text"
+                        name="username"
+                        id="username"
+                        autocomplete="username"
+                        autofocus
+                        value="<?php echo e(old('username')); ?>"
+                        required
+                    >
+
+                    <?php $__errorArgs = ['username'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
