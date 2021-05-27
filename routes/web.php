@@ -34,9 +34,9 @@ Route::middleware('auth')->group(function (){
     Route::get('/products/show/{product:productname}', 'App\Http\Controllers\ProductsController@show')->name('products.show'); 
 
     Route::get('/myCart', 'App\Http\Controllers\CartsController@index')->name('carts.index'); 
-    Route::get('/myCart/add/{id}', 'App\Http\Controllers\CartsController@add')->name('carts.add'); 
+    Route::get('/myCart/add/{product:productname}', 'App\Http\Controllers\CartsController@add')->name('carts.add'); 
     Route::get('/myCart/remove/{id}', 'App\Http\Controllers\CartsController@remove')->name('carts.remove'); 
-    Route::post('/myCart/update/{id}/{rowId}', 'App\Http\Controllers\CartsController@update')->name('carts.update'); 
+    Route::post('/myCart/update/{rowId}/{product:productname}', 'App\Http\Controllers\CartsController@update')->name('carts.update'); 
 
     Route::get('/checkout', 'App\Http\Controllers\CheckoutsController@index')->name('checkout.index'); 
     Route::get('/checkout/confirm', 'App\Http\Controllers\CheckoutsController@confirm')->name('checkout.confirm'); 

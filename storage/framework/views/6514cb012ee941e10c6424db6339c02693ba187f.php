@@ -12,9 +12,9 @@
         <?php $__currentLoopData = $cart; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <div class="border border-gray-800 rounded-lg">
             <img class="rounded-lg" src="<?php echo e($product->options->img); ?>" style="width:150px;height:125px;float:left">
-            <a class="font-bold text-md" style="color:blue"href="<?php echo e(route('products.show',$product->id)); ?>"><?php echo e($product->name); ?></a>
+            <a class="font-bold text-md" style="color:blue"href="<?php echo e(route('products.show',$product->options->productname)); ?>"><?php echo e($product->name); ?></a>
             <h1 class="font-bold text-md mt-4 block">Quantity: <?php echo e($product->qty); ?></h1>
-            <form method="POST" action='<?php echo e(route('carts.update',[$product->rowId,$product->id])); ?>' enctype="multipart/form-data" >
+            <form method="POST" action='<?php echo e(route('carts.update',[$product->rowId,$product->options->productname])); ?>' enctype="multipart/form-data" >
              <?php echo csrf_field(); ?>
                 <p>Update Quantity: <input type="number" id="num" name="num" value="1">
                     <input class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 mr-4" 

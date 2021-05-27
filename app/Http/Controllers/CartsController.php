@@ -16,22 +16,23 @@ class CartsController extends Controller
         ]);
     }
 
-    public function add($id){
-
-        $product = Products::find($id);
-        $cart = Cart::content()->where('id',$id);
+    public function add(Products $product){
         
-        if($product->stock == 0){
+        $productI = Products::find($product)->first();
+        
+        $cart = Cart::content()->where('productname',$product);
+        
+        if($productI->stock == 0){
             return view('carts.index',[
                 'cart' => Cart::content()
             ]);
         }
         if($cart->count() == 0){
-            //dd($cart);
-            Cart::add(['id' => $product->id, 'name' => $product->name, 'qty' => 1, 'price' => $product->price,
-            'image' =>  $product->image,
+            Cart::add(['id' => $productI->id, 'name' => $productI->name, 'qty' => 1, 'price' => $productI->price,
+            'image' =>  $productI->image,
             'options'=>[
-            'img' => $product->image
+            'img' => $productI->image,
+            'productname' => $productI->productname
             ]]);
                 
             return view('carts.index',[
@@ -40,10 +41,11 @@ class CartsController extends Controller
         }
 
         if(Cart::count() == 0){
-            Cart::add(['id' => $product->id, 'name' => $product->name, 'qty' => 1, 'price' => $product->price,
-            'image' =>  $product->image,
+            Cart::add(['id' => $productI->id, 'name' => $productI->name, 'qty' => 1, 'price' => $productI->price,
+            'image' =>  $productI->image,
             'options'=>[
-            'img' => $product->image
+            'img' => $productI->image,
+            'productname' => $productI->productname
             ]]);
 
             return view('carts.index',[
@@ -54,30 +56,32 @@ class CartsController extends Controller
         foreach($cart as $items){
             $quantity = $items->qty;
             if(Cart::content()->contains('id',$id) == 1){
-                if($product->stock-1 >= $quantity){
-                    Cart::add(['id' => $product->id, 'name' => $product->name, 'qty' => 1, 'price' => $product->price,
-                        'image' =>  $product->image,
+                if($productI->stock-1 >= $quantity){
+                    Cart::add(['id' => $productI->id, 'name' => $productI->name, 'qty' => 1, 'price' => $productI->price,
+                        'image' =>  $productI->image,
                         'options'=>[
-                        'img' => $product->image
+                        'img' => $productI->image,
+                        'productname' => $productI->productname
                     ]]);
+                    
 
                     return view('carts.index',[
                         'cart' => Cart::content()
                     ])->with('message', 'Product Added to cart');
                 }
-                if($product->stock-1 <= (int)$items->qty){
+                if($productI->stock-1 <= (int)$items->qty){
                     return view('carts.index',[
                         'cart' => Cart::content()
                     ])->with('message', 'Cannot Add Anymore!');
                 }
             }
             elseif(Cart::content()->contains('id',$id) == null){
-                Cart::add(['id' => $product->id, 'name' => $product->name, 'qty' => 1, 'price' => $product->price,
-                    'image' =>  $product->image,
+                Cart::add(['id' => $productI->id, 'name' => $productI->name, 'qty' => 1, 'price' => $productI->price,
+                    'image' =>  $productI->image,
                     'options'=>[
-                    'img' => $product->image
+                    'img' => $productI->image,
+                    'productname' => $productI->productname
                     ]]);
-                    dd([$product->stock, $quantity]);
 
                     return view('carts.index',[
                         'cart' => Cart::content()
@@ -93,12 +97,12 @@ class CartsController extends Controller
         ])->with('message', 'Product Removed!');
     }
 
-    public function update(Request $request, $rowId, $id){
+    public function update(Request $request, $rowId, Products $product){
 
         $cart = Cart::get($rowId);
-        $product = Products::find($id);
+        $productI = Products::find($product)->first();
 
-        if($product->stock < request('num')){
+        if($productI->stock < request('num')){
             
             return view('carts.index',[
                 'cart' => Cart::content()

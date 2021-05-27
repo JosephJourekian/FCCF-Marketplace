@@ -65,7 +65,7 @@
                 @if($product->stock == 0)
                   <p><button class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 mr-4 mb-1"><a href="#" class="card-link">Out of Stock</a></button></p>
                 @else
-                  <p><button class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 mr-4 mb-1"><a href="{{ route('carts.add',$product->id) }}" class="card-link">Add to Cart</a></button></p>
+                  <p><button class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 mr-4 mb-1"><a href="{{ route('carts.add',$product->productname) }}" class="card-link">Add to Cart</a></button></p>
                 @endif
                 <p><button class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 mr-4 mb-1"><a href="{{ route('products.show',$product->productname) }}" class="card-link">View Product</a></button></p>
                 @if(auth()->user()->isAdmin())

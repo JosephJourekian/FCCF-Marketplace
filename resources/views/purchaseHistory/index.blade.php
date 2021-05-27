@@ -7,7 +7,7 @@
         <h1 class="font-bold text-md mt-4 block">Purchased on: {{ $order->created_at->format('Y-m-d')}}</h1>
         @foreach(unserialize($order['cart']) as $item)
             <img class="rounded-lg mb-4" src="{{ $item->options->img }}" style="width:150px;height:104px;float:left">
-            <a class="font-bold text-md mb-3" style="color:blue"href="{{ route('products.show',$item->productname) }}">{{ $item->name}}</a>
+            <a class="font-bold text-md mb-3" style="color:blue"href="{{ route('products.show',$item->options->productname) }}">{{ $item->name}}</a>
             <h1 class="font-bold text-md mt-6 block">Quantity: {{ $item->qty }}</h1>
             <h1 class="font-bold text-md mb-6 block">Price: {{ $item->price }} Points</h1>
         @endforeach
