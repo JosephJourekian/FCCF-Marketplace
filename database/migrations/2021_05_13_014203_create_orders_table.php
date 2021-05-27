@@ -17,10 +17,6 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->foreignId('product_id');
-            $table->string('product_name');
-            $table->integer('product_price');
-            $table->integer('product_qty');
-            $table->string('product_image');
             $table->longText('cart');
             $table->string('order_subtotal');
             $table->date('created_at');

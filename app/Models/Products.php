@@ -9,8 +9,8 @@ class Products extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'description', 'price', 'image', 'stock'];
-    //protected $guarded = [];
+    //protected $fillable = ['name', 'description', 'price', 'image', 'stock'];
+    protected $guarded = [];
     public $timestamps = false;
 
     public function getImageAttribute($value)
@@ -22,5 +22,10 @@ class Products extends Model
     public function orders()
     {
         return $this->hasMany(Orders::class);
+    }
+    public function getRouteKeyName()
+    {
+        //This is used to search for the name instead of the id\
+        return 'name';
     }
 }

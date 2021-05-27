@@ -29,7 +29,7 @@
                   <input hidden type="number" name="products[<?php echo e($index); ?>][id]" value="<?php echo e($product->id); ?>" required>
                   <td><input type="number" name="products[<?php echo e($index); ?>][stock]" value="" ></td>
                   <td><input type="number" name="products[<?php echo e($index); ?>][price]" value="<?php echo e($product->price); ?>" ></td>
-                  <td><button class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-300"><a href="<?php echo e(route('products.show',$product->id)); ?>" class="card-link">View</a></button></td>
+                  <td><button class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-300"><a href="<?php echo e(route('products.show',$product->productname)); ?>" class="card-link">View</a></button></td>
                 </tr>
                 <?php $index++ ?>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

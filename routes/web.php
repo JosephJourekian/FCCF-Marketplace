@@ -28,9 +28,10 @@ Route::middleware('auth')->group(function (){
     Route::get('/products/inventory', 'App\Http\Controllers\ProductsController@inventoryView')->name('products.inventory.view'); 
     Route::patch('/products/inventory', 'App\Http\Controllers\ProductsController@inventoryUpdate')->name('products.inventory.update'); 
     Route::get('/products/add', 'App\Http\Controllers\ProductsController@add')->name('products.add'); 
-    Route::get('/products/edit/{id}', 'App\Http\Controllers\ProductsController@edit')->name('products.edit');
-    Route::patch('/products/update/{id}', 'App\Http\Controllers\ProductsController@update')->name('products.update');
-    Route::get('/products/show/{id}', 'App\Http\Controllers\ProductsController@show')->name('products.show'); 
+
+    Route::get('/products/edit/{product:productname}', 'App\Http\Controllers\ProductsController@edit')->name('products.edit');
+    Route::patch('/products/update/{product:productname}', 'App\Http\Controllers\ProductsController@update')->name('products.update');
+    Route::get('/products/show/{product:productname}', 'App\Http\Controllers\ProductsController@show')->name('products.show'); 
 
     Route::get('/myCart', 'App\Http\Controllers\CartsController@index')->name('carts.index'); 
     Route::get('/myCart/add/{id}', 'App\Http\Controllers\CartsController@add')->name('carts.add'); 

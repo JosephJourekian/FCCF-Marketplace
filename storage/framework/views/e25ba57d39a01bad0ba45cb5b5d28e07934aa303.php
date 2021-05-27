@@ -5,54 +5,26 @@
 
     </div>
 <?php endif; ?>
-<form method="POST" action="<?php echo e(route('products.store')); ?>" enctype="multipart/form-data">
+<form method="POST" action="<?php echo e(route('products.update',$product->productname)); ?>" enctype="multipart/form-data">
     <?php echo csrf_field(); ?>
-    
+    <?php echo method_field('PATCH'); ?>
+
     <div class="mb-6">
         <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
             for="name"
         >
-            Full Product Name
+            Product Name
         </label>
 
         <input class="border border-gray-400 p-2 w-full"
             type="text"
             name="name"
             id="name"
-            value=""
+            value="<?php echo e($product->name); ?>"
             required
         >
 
         <?php $__errorArgs = ['name'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-            <p class="text-red-500 text-xs mt-2"><?php echo e($message); ?></p>
-        <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-    </div>
-
-    <div class="mb-6">
-        <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
-            for="productname"
-        >
-            Productname
-        </label>
-
-        <input class="border border-gray-400 p-2 w-full"
-            type="text"
-            name="productname"
-            id="productname"
-            autocomplete="productname"
-            autofocus
-            value="<?php echo e(old('productname')); ?>"
-            required
-        >
-
-        <?php $__errorArgs = ['productname'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -75,7 +47,7 @@ unset($__errorArgs, $__bag); ?>
             type="text"
             name="price"
             id="price"
-            value=""
+            value="<?php echo e($product->price); ?>"
             required
         >
 
@@ -104,6 +76,10 @@ unset($__errorArgs, $__bag); ?>
                 name="image"
                 id="image"
             >
+            <img src="<?php echo e($product->image); ?>"
+                    alt="product pic"
+                    width="40"
+                >
         </div>
 
         <?php $__errorArgs = ['image'];
@@ -129,7 +105,7 @@ unset($__errorArgs, $__bag); ?>
             type="description"
             name="description"
             id="description"
-            value=""
+            value="<?php echo e($product->description); ?>"
             required
         >
 
@@ -156,6 +132,7 @@ unset($__errorArgs, $__bag); ?>
             type="number"
             name="stock"
             id="stock"
+            value="<?php echo e($product->stock); ?>"
             required
         >
 
@@ -177,6 +154,11 @@ unset($__errorArgs, $__bag); ?>
         >
             Submit
         </button>
+        <a href="<?php echo e(route('products.index')); ?>"
+                    class="bg-red-400 text-white rounded py-2 px-4 hover:bg-red-500 mr-4"
+            >
+                Back To Products
+        </a>
 
     </div>
 </form>
@@ -184,4 +166,4 @@ unset($__errorArgs, $__bag); ?>
 <?php $component = $__componentOriginal2744513b5a2bacace2a9ba73cff03b386175a717; ?>
 <?php unset($__componentOriginal2744513b5a2bacace2a9ba73cff03b386175a717); ?>
 <?php endif; ?>
-<?php echo $__env->renderComponent(); ?><?php /**PATH C:\Users\jjour\FCCF-Market\resources\views/products/add.blade.php ENDPATH**/ ?>
+<?php echo $__env->renderComponent(); ?><?php /**PATH C:\Users\jjour\FCCF-Market\resources\views/products/edit.blade.php ENDPATH**/ ?>

@@ -25,6 +25,7 @@ class ProductsController extends Controller
     public function store(Request $request){
         
         $attributes = request()->validate([
+            'productname' => ['required', 'string', 'max:255', 'unique:products','alpha_dash'],
             'name' => ['string', 'required', 'max:255'],
             'description' => ['string', 'required', 'max:255'],
             'price' => ['integer', 'required'],
@@ -44,26 +45,28 @@ class ProductsController extends Controller
         Products::where('id', $id)->delete();
         return redirect()->back()->with('message', 'Product Removed!');
     }
-    public function show($id){
-        $product = Products::find($id);
+    public function show(Products $product){
+
+        $productI = Products::find($product)->first();
 
         return view('products.show', [
-            'product' => $product
+            'product' => $productI
         ]);
 
     }
-    public function edit($id){
+    public function edit(Products $product){
 
-        $product = Products::find($id);
+        $productI = Products::find($product)->first();
 
         return view('products.edit', [
-            'product' => $product
+            'product' => $productI
         ]);
 
     }
-    public function update(Products $product, $id){
+    public function update(Products $product){
 
-        $product = Products::find($id);
+        $productI = Products::find($product)->first();
+        
 
         $attributes = request()->validate([
             'name' => ['string', 'required', 'max:255'],
@@ -78,7 +81,7 @@ class ProductsController extends Controller
         }
            
 
-        $product->update($attributes);
+        $productI->update($attributes);
     
         return redirect('/products')->with('message', 'Product Updated!');
     }

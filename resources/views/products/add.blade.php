@@ -11,7 +11,7 @@
         <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
             for="name"
         >
-            Product Name
+            Full Product Name
         </label>
 
         <input class="border border-gray-400 p-2 w-full"
@@ -23,6 +23,28 @@
         >
 
         @error('name')
+            <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+        @enderror
+    </div>
+
+    <div class="mb-6">
+        <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+            for="productname"
+        >
+            Productname
+        </label>
+
+        <input class="border border-gray-400 p-2 w-full"
+            type="text"
+            name="productname"
+            id="productname"
+            autocomplete="productname"
+            autofocus
+            value="{{ old('productname') }}"
+            required
+        >
+
+        @error('productname')
             <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
         @enderror
     </div>

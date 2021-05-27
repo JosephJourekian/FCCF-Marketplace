@@ -28,7 +28,7 @@
                   <input hidden type="number" name="products[{{ $index }}][id]" value="{{ $product->id }}" required>
                   <td><input type="number" name="products[{{ $index }}][stock]" value="" ></td>
                   <td><input type="number" name="products[{{ $index }}][price]" value="{{ $product->price }}" ></td>
-                  <td><button class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-300"><a href="{{ route('products.show',$product->id) }}" class="card-link">View</a></button></td>
+                  <td><button class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-300"><a href="{{ route('products.show',$product->productname) }}" class="card-link">View</a></button></td>
                 </tr>
                 <?php $index++ ?>
                 @endforeach

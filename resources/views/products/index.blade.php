@@ -67,9 +67,9 @@
                 @else
                   <p><button class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 mr-4 mb-1"><a href="{{ route('carts.add',$product->id) }}" class="card-link">Add to Cart</a></button></p>
                 @endif
-                <p><button class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 mr-4 mb-1"><a href="{{ route('products.show',$product->id) }}" class="card-link">View Product</a></button></p>
+                <p><button class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 mr-4 mb-1"><a href="{{ route('products.show',$product->productname) }}" class="card-link">View Product</a></button></p>
                 @if(auth()->user()->isAdmin())
-                 <p><button class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 mr-4 mb-1"><a href="{{ route('products.edit',$product->id) }}" class="card-link">Edit Product</a></button></p>
+                 <p><button class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 mr-4 mb-1"><a href="{{ route('products.edit',$product->productname) }}" class="card-link">Edit Product</a></button></p>
                  <form method="POST" action="{{ route('products.delete') }}"> 
                   @csrf
                   @method('DELETE')

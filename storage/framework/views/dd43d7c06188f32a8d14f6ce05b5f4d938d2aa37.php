@@ -68,9 +68,9 @@
                 <?php else: ?>
                   <p><button class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 mr-4 mb-1"><a href="<?php echo e(route('carts.add',$product->id)); ?>" class="card-link">Add to Cart</a></button></p>
                 <?php endif; ?>
-                <p><button class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 mr-4 mb-1"><a href="<?php echo e(route('products.show',$product->id)); ?>" class="card-link">View Product</a></button></p>
+                <p><button class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 mr-4 mb-1"><a href="<?php echo e(route('products.show',$product->productname)); ?>" class="card-link">View Product</a></button></p>
                 <?php if(auth()->user()->isAdmin()): ?>
-                 <p><button class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 mr-4 mb-1"><a href="<?php echo e(route('products.edit',$product->id)); ?>" class="card-link">Edit Product</a></button></p>
+                 <p><button class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 mr-4 mb-1"><a href="<?php echo e(route('products.edit',$product->productname)); ?>" class="card-link">Edit Product</a></button></p>
                  <form method="POST" action="<?php echo e(route('products.delete')); ?>"> 
                   <?php echo csrf_field(); ?>
                   <?php echo method_field('DELETE'); ?>

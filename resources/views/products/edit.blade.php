@@ -4,7 +4,7 @@
         {{ session()->get('message') }}
     </div>
 @endif
-<form method="POST" action="{{ route('products.update',$product->id)}}" enctype="multipart/form-data">
+<form method="POST" action="{{ route('products.update',$product->productname)}}" enctype="multipart/form-data">
     @csrf
     @method('PATCH')
 
