@@ -27,7 +27,10 @@ Route::middleware('auth')->group(function (){
     Route::delete('/products', 'App\Http\Controllers\ProductsController@delete')->name('products.delete');
     Route::get('/products/inventory', 'App\Http\Controllers\ProductsController@inventoryView')->name('products.inventory.view'); 
     Route::patch('/products/inventory', 'App\Http\Controllers\ProductsController@inventoryUpdate')->name('products.inventory.update'); 
+    Route::post('/products/inventory', 'App\Http\Controllers\ProductsController@addCategory')->name('products.addCategory');
+    Route::delete('/products/inventory', 'App\Http\Controllers\ProductsController@deleteCategory')->name('products.deleteCategory');
     Route::get('/products/add', 'App\Http\Controllers\ProductsController@add')->name('products.add'); 
+
 
     Route::get('/products/edit/{product:productname}', 'App\Http\Controllers\ProductsController@edit')->name('products.edit');
     Route::patch('/products/update/{product:productname}', 'App\Http\Controllers\ProductsController@update')->name('products.update');

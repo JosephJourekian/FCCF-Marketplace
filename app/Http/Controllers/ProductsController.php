@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Models\Products;
+use App\Models\Category;
 use DB;
 
 
@@ -12,11 +13,18 @@ class ProductsController extends Controller
 {
     public function index()
     {
+        if (request('category')){
+            $products = Category::where('name', request('category'))->firstOrFail()->products;
+        }
+        else{
+            $products = Products::paginate(50);
+        }
 
         return view('products.index', [
-            'products' => Products::paginate(50)
+            'products' => $products
         ]);
     }
+
 
     public function add(){
 
@@ -85,10 +93,34 @@ class ProductsController extends Controller
     
         return redirect('/products')->with('message', 'Product Updated!');
     }
+    public function addCategory(){
+        //dd(request('category'));
+
+        $attributes = request()->validate([
+            'name' => ['string', 'required', 'max:255'],
+        ]);       
+        //dd($attributes);
+        DB::table('categories')->insert($attributes);
+        
+        return view('products/inventory.view', [
+            'products' => Products::paginate(50),
+            'categories' => Category::all()
+        ])->with('message', 'Category Added!');
+    }
+    public function deleteCategory(){
+        $id = request('name');
+        Category::where('id', $id)->delete();
+
+        return view('products/inventory.view', [
+            'products' => Products::paginate(50),
+            'categories' => Category::all()
+        ])->with('message', 'Category Deleted!');
+    }
     public function inventoryView()
     {
         return view('products/inventory.view', [
-            'products' => Products::paginate(50)
+            'products' => Products::paginate(50),
+            'categories' => Category::all()
         ]);
     }
     public function inventoryUpdate(Request $request)
@@ -113,10 +145,16 @@ class ProductsController extends Controller
                     $prodObj->update(['price'=> $product['price']]);
                 }
             }
+            if(isset($product['categories']) == true){
+                //dd($product['categories']);
+                $prodObj = Products::find($product['id']);
+                $prodObj->category()->attach($product['categories']); 
+            }
         }
 
         return view('products/inventory.view',[
-            'products' => Products::paginate(50)
+            'products' => Products::paginate(50),
+            'categories' => Category::all()
         ]);
     }
 }

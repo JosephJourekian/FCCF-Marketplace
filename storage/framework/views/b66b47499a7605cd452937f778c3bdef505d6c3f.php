@@ -23,6 +23,11 @@
             >
                 Back To Products
             </a>
+            <p style="margin-top: 1em">
+				<?php $__currentLoopData = $product->category; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $categories): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+					<a href="<?php echo e(route('products.index', ['category' => $categories->name])); ?>"><?php echo e($categories->name); ?></a>
+				<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+			</p>
         </div>
     </div>
 </div>

@@ -1,13 +1,32 @@
 <?php $__env->startComponent('components.app'); ?>
-<h1 class="font-bold  mb-4">Increase/decrease Inventory:</h1>
-<div>
-    <?php if(session()->has('message')): ?>
+<?php if(session()->has('message')): ?>
     <div class="alert alert-success font-bold color:green" >
         <?php echo e(session()->get('message')); ?>
 
     </div>
     <?php endif; ?>
-    
+<div>
+    <div style="float: left; width: 30%;" >
+        <h1 class="font-bold  ">Add a new Category:</h1>
+        <form method="POST" action='<?php echo e(route('products.addCategory')); ?>' enctype="multipart/form-data" class="mr-8">
+        <?php echo csrf_field(); ?>
+            <input type="string" name="name" placeholder="Enter category name" required>
+            <input class="bg-green-400 text-white rounded py-2 px-4 mt-3 hover:bg-green-300" type="submit" value="Submit">
+        </form>
+    </div>
+    <h1 class="font-bold ">Remove a Category:</h1>
+    <form method="POST" action='<?php echo e(route('products.deleteCategory')); ?>' enctype="multipart/form-data" class="mb-8">
+        <?php echo csrf_field(); ?>
+        <?php echo method_field('DELETE'); ?>
+        <select name="name" required>
+            <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $categorie): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <option value="<?php echo e($categorie->id); ?>"><?php echo e($categorie->name); ?></option>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>        
+        <input class="bg-green-400 text-white rounded py-2 px-4 mt-3 hover:bg-green-300" type="submit" value="Submit">
+    </form>
+</div>
+<h1 class="font-bold  mb-4">Increase/decrease Inventory:</h1>
+<div>
     <div>
         <form method="POST" action='<?php echo e(route('products.inventory.update')); ?>' enctype="multipart/form-data" class="mb-8" >
             <?php echo csrf_field(); ?>
@@ -19,6 +38,7 @@
                   <th>Current Stock</th>
                   <th>Stock Adjusment</th>
                   <th>Price (Points)</th>
+                  <th>Add Categories</th>
                   <th>View</th>
                 </tr>
                 <?php $index = 0 ?>
@@ -29,6 +49,24 @@
                   <input hidden type="number" name="products[<?php echo e($index); ?>][id]" value="<?php echo e($product->id); ?>" required>
                   <td><input type="number" name="products[<?php echo e($index); ?>][stock]" value="" ></td>
                   <td><input type="number" name="products[<?php echo e($index); ?>][price]" value="<?php echo e($product->price); ?>" ></td>
+                  <td>
+                    <select name="products[<?php echo e($index); ?>][categories]" multiple>
+                            <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $categorie): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <option value="<?php echo e($categorie->id); ?>"><?php echo e($categorie->name); ?></option>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    </select>
+    
+                    <?php $__errorArgs = ['categories'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                        <p class="help is-danger"><?php echo e($message); ?></p>
+                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                  </td>
                   <td><button class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-300"><a href="<?php echo e(route('products.show',$product->productname)); ?>" class="card-link">View</a></button></td>
                 </tr>
                 <?php $index++ ?>

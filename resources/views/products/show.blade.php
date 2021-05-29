@@ -23,6 +23,11 @@
             >
                 Back To Products
             </a>
+            <p style="margin-top: 1em">
+				@foreach ($product->category as $categories)
+					<a href="{{ route('products.index', ['category' => $categories->name]) }}">{{ $categories->name }}</a>
+				@endforeach
+			</p>
         </div>
     </div>
 </div>
