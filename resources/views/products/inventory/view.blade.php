@@ -24,7 +24,7 @@
         <input class="bg-green-400 text-white rounded py-2 px-4 mt-3 hover:bg-green-300" type="submit" value="Submit">
     </form>
 </div>
-<h1 class="font-bold  mb-4">Increase/decrease Inventory:</h1>
+<h1 class="font-bold  mb-4">Edit Products:</h1>
 <div>
     <div>
         <form method="POST" action='{{ route('products.inventory.update') }}' enctype="multipart/form-data" class="mb-8" >

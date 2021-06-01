@@ -34,14 +34,10 @@ class CheckoutsController extends Controller
     public function confirm(){
         User::where('name', auth()->user()->name)->where('points','>','0')->decrement('points', (float)Cart::subtotal('0','','')); 
         $cart = Cart::content();
-        $data = [
-            'cart' => Cart::content()
-        ];
-        User::where('name', auth()->user()->name)->where('points','>','0')->decrement('points', (float)Cart::subtotal('0','','')); 
+        
         foreach ($cart as $product){
             Products::where('name', $product->name)->where('stock','>','0')->decrement('stock', $product->qty); 
         }
-     
             $attributes = ([
                 'user_id' => auth()->user()->id,
                 'product_id' => $product->id,
@@ -52,8 +48,8 @@ class CheckoutsController extends Controller
             ]);
             DB::table('orders')->insert($attributes);
         
-        Mail::to(auth()->user()->email)->send(new OrderConfirmation(), $data);
-        Mail::to('jjourekian@gmail.com')->send(new ShippingDetails(), $data);
+        Mail::to(auth()->user()->email)->send(new OrderConfirmation(), ['cart' => $cart]);
+        Mail::to('jjourekian@gmail.com')->send(new ShippingDetails(), ['cart'=> $cart]);
         
         Cart::destroy();
         return redirect('/products')->with('message', 'Order Confirmed!');

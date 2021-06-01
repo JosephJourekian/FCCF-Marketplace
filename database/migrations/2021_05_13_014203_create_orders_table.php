@@ -20,6 +20,17 @@ class CreateOrdersTable extends Migration
             $table->longText('cart');
             $table->string('order_subtotal');
             $table->date('created_at');
+
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
+
+            $table->foreign('product_id')
+                ->references('id')
+                ->on('products')
+                ->onDelete('cascade');
+
         });
     }
 
