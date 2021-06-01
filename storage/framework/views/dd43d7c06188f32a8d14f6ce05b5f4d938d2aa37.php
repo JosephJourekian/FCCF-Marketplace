@@ -54,7 +54,13 @@
 
   </div>
   <?php endif; ?>
-    <div class="row mb-2">
+  <div class="mb-6">
+    <h1 class="font-bold ">Filter Products by Category:</h1>
+      <?php $__currentLoopData = $category; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $categorie): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <li><a class="font-bold text-md" style="color:blue" href="<?php echo e(route('products.index', ['category' => $categorie->name])); ?>"><u><?php echo e($categorie->name); ?></u></a></li>
+      <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>  
+  </div>      
+  <div class="row mb-3">
         <?php $__currentLoopData = $products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
             <div class="col-3">   
                 <div class="card mb-5">

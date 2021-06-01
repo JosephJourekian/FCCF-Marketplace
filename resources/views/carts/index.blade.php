@@ -41,10 +41,10 @@
             Insufficient amount of points!</a>
         @endif
 
-        <a href="#"
+        <!--<a href="#"
             class="bg-green-400 text-white rounded py-2 px-4 hover:bg-green-500 mr-4">
                 Checkout with $
-        </a>
+        </a>-->
 
         <a href="{{ route('products.index') }}"
             class="bg-red-400 text-white rounded py-2 px-4 hover:bg-red-500 mr-4">

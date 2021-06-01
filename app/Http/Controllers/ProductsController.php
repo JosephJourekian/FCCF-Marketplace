@@ -13,6 +13,7 @@ class ProductsController extends Controller
 {
     public function index()
     {
+
         if (request('category')){
             $products = Category::where('name', request('category'))->firstOrFail()->products;
         }
@@ -21,7 +22,8 @@ class ProductsController extends Controller
         }
 
         return view('products.index', [
-            'products' => $products
+            'products' => $products,
+            'category' => Category::all()
         ]);
     }
 
@@ -146,9 +148,14 @@ class ProductsController extends Controller
                 }
             }
             if(isset($product['categories']) == true){
-                //dd($product['categories']);
                 $prodObj = Products::find($product['id']);
-                $prodObj->category()->attach($product['categories']); 
+                if($prodObj->category()->where('category_id', $product['categories'])->exists() == false){
+                    $prodObj->category()->attach($product['categories']); 
+                }
+            }
+            if(isset($product['categoriesR']) == true){
+                $prodObj = Products::find($product['id']);
+                $prodObj->category()->detach($product['categoriesR']); 
             }
         }
 
