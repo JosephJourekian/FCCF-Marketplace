@@ -19,21 +19,24 @@ Route::get('/', function () {
 
 Auth::routes();
 Route::middleware('auth')->group(function (){
-    Route::get('/admin', 'App\Http\Controllers\AdminController@show')->middleware('is_admin')->name('admin');  
+    Route::middleware('is_admin')->group(function () {
+        Route::post('/products', 'App\Http\Controllers\ProductsController@store')->name('products.store');
+        Route::delete('/products', 'App\Http\Controllers\ProductsController@delete')->name('products.delete');
+        Route::get('/products/inventory', 'App\Http\Controllers\ProductsController@inventoryView')->name('products.inventory.view'); 
+        Route::patch('/products/inventory', 'App\Http\Controllers\ProductsController@inventoryUpdate')->name('products.inventory.update'); 
+        Route::post('/products/inventory', 'App\Http\Controllers\ProductsController@addCategory')->name('products.addCategory');
+        Route::delete('/products/inventory', 'App\Http\Controllers\ProductsController@deleteCategory')->name('products.deleteCategory');
+        Route::get('/products/add', 'App\Http\Controllers\ProductsController@add')->name('products.add'); 
+        Route::get('/products/edit/{product:productname}', 'App\Http\Controllers\ProductsController@edit')->name('products.edit');
+        Route::patch('/products/update/{product:productname}', 'App\Http\Controllers\ProductsController@update')->name('products.update');
+
+        Route::get('/viewUsers', 'App\Http\Controllers\ViewUsersController@index')->name('viewUsers');  
+        Route::patch('/viewUsers', 'App\Http\Controllers\ViewUsersController@edit')->name('viewUsers');  
+    });
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
     Route::get('/products', 'App\Http\Controllers\ProductsController@index')->name('products.index'); 
-    Route::post('/products', 'App\Http\Controllers\ProductsController@store')->name('products.store');
-    Route::delete('/products', 'App\Http\Controllers\ProductsController@delete')->name('products.delete');
-    Route::get('/products/inventory', 'App\Http\Controllers\ProductsController@inventoryView')->name('products.inventory.view'); 
-    Route::patch('/products/inventory', 'App\Http\Controllers\ProductsController@inventoryUpdate')->name('products.inventory.update'); 
-    Route::post('/products/inventory', 'App\Http\Controllers\ProductsController@addCategory')->name('products.addCategory');
-    Route::delete('/products/inventory', 'App\Http\Controllers\ProductsController@deleteCategory')->name('products.deleteCategory');
-    Route::get('/products/add', 'App\Http\Controllers\ProductsController@add')->name('products.add'); 
-
-
-    Route::get('/products/edit/{product:productname}', 'App\Http\Controllers\ProductsController@edit')->name('products.edit');
-    Route::patch('/products/update/{product:productname}', 'App\Http\Controllers\ProductsController@update')->name('products.update');
+    
     Route::get('/products/show/{product:productname}', 'App\Http\Controllers\ProductsController@show')->name('products.show'); 
 
     Route::get('/myCart', 'App\Http\Controllers\CartsController@index')->name('carts.index'); 
@@ -48,6 +51,4 @@ Route::middleware('auth')->group(function (){
     Route::patch('/profiles/update/{user:username}', 'App\Http\Controllers\ProfilesController@update')->name('profiles.update');
     Route::get('/purchaseHistory/{user:username}', 'App\Http\Controllers\PurchaseHistoryController@index')->name('purchaseHistory');
 
-    Route::get('/viewUsers', 'App\Http\Controllers\ViewUsersController@index')->middleware('is_admin')->name('viewUsers');  
-    Route::patch('/viewUsers', 'App\Http\Controllers\ViewUsersController@edit')->middleware('is_admin')->name('viewUsers');  
 });
