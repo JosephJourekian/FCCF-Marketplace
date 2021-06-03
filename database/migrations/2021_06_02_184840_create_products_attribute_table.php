@@ -18,6 +18,7 @@ class CreateProductsAttributeTable extends Migration
             $table->unsignedBigInteger('products_id');
             $table->string('attribute_name');
             $table->string('attribute_value');
+            $table->integer('stock');
 
             $table->foreign('products_id')
                 ->references('id')

@@ -23,6 +23,7 @@
               <a href="{{ route('products.index') }}">View Products</a>
               <a href="{{ route('products.add') }}" >Add Products</a>
               <a href="{{ route('products.inventory.view') }}">Edit Inventory</a>
+              <a href="{{ route('products.attributes') }}">Edit Attributes</a>
             </div>
         </div>
     </li>

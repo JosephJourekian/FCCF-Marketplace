@@ -55,10 +55,14 @@
   @endif
   <div class="mb-6">
     <h1 class="font-bold ">Filter Products by Category:</h1>
-      @foreach($category as $categorie)
-        <li><a class="font-bold text-md" style="color:blue" href="{{ route('products.index', ['category' => $categorie->name]) }}"><u>{{ $categorie->name }}</u></a></li>
-      @endforeach  
-  </div>      
+    <div class="dropdown">
+      <button class="dropbtn">Categories</button>
+      <div class="dropdown-content">
+        @foreach($category as $categorie)
+          <a class="font-bold text-md" href="{{ route('products.index', ['category' => $categorie->name]) }}">{{ $categorie->name }}</a>
+        @endforeach 
+      </div>
+    </div>
   <div class="row mb-3">
         @foreach($products as $product) 
             <div class="col-3">   

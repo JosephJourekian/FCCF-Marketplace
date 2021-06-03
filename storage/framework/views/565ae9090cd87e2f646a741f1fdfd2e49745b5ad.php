@@ -19,6 +19,7 @@
             type="text"
             name="name"
             id="name"
+            autofocus
             value=""
             required
         >
@@ -47,7 +48,6 @@ unset($__errorArgs, $__bag); ?>
             name="productname"
             id="productname"
             autocomplete="productname"
-            autofocus
             value="<?php echo e(old('productname')); ?>"
             required
         >
@@ -149,7 +149,7 @@ unset($__errorArgs, $__bag); ?>
         <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
             for="stock"
         >
-            Stock
+            Total Product Stock
         </label>
 
         <input class="border border-gray-400 p-2 w-full"
@@ -169,6 +169,50 @@ $message = $__bag->first($__errorArgs[0]); ?>
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
+    </div>
+
+    <div class="mb-6">
+        <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+            for="attribute"
+        >
+            Attribute (Color, Size, Brand etc)
+        </label>
+
+        <input class="border border-gray-400 p-2 w-full"
+            type="text"
+            name="attribute"
+            id="attribute"
+            
+        >
+    </div>
+
+    <div class="mb-6">
+        <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+            for="attributeValue"
+        >
+            Attribute Value (Yellow, Large, Nike etc)
+        </label>
+
+        <input class="border border-gray-400 p-2 w-full"
+            type="text"
+            name="attributeValue"
+            id="attributeValue"
+        >
+    </div>
+
+    <div class="mb-6">
+        <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+            for="individualStock"
+        >
+            Individual Product Stock
+        </label>
+
+        <input class="border border-gray-400 p-2 w-full"
+            type="number"
+            name="individualStock"
+            id="individualStock"
+            
+        >
     </div>
 
     <div class="mb-6">

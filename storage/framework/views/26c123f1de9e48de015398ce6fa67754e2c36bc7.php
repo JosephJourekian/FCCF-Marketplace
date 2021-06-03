@@ -24,6 +24,7 @@
               <a href="<?php echo e(route('products.index')); ?>">View Products</a>
               <a href="<?php echo e(route('products.add')); ?>" >Add Products</a>
               <a href="<?php echo e(route('products.inventory.view')); ?>">Edit Inventory</a>
+              <a href="<?php echo e(route('products.attributes')); ?>">Edit Attributes</a>
             </div>
         </div>
     </li>

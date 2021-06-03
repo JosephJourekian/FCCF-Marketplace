@@ -18,6 +18,7 @@
             type="text"
             name="name"
             id="name"
+            autofocus
             value=""
             required
         >
@@ -39,7 +40,6 @@
             name="productname"
             id="productname"
             autocomplete="productname"
-            autofocus
             value="{{ old('productname') }}"
             required
         >
@@ -113,7 +113,7 @@
         <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
             for="stock"
         >
-            Stock
+            Total Product Stock
         </label>
 
         <input class="border border-gray-400 p-2 w-full"
@@ -126,6 +126,50 @@
         @error('stock')
             <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
         @enderror
+    </div>
+
+    <div class="mb-6">
+        <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+            for="attribute"
+        >
+            Attribute (Color, Size, Brand etc)
+        </label>
+
+        <input class="border border-gray-400 p-2 w-full"
+            type="text"
+            name="attribute"
+            id="attribute"
+            
+        >
+    </div>
+
+    <div class="mb-6">
+        <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+            for="attributeValue"
+        >
+            Attribute Value (Yellow, Large, Nike etc)
+        </label>
+
+        <input class="border border-gray-400 p-2 w-full"
+            type="text"
+            name="attributeValue"
+            id="attributeValue"
+        >
+    </div>
+
+    <div class="mb-6">
+        <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+            for="individualStock"
+        >
+            Individual Product Stock
+        </label>
+
+        <input class="border border-gray-400 p-2 w-full"
+            type="number"
+            name="individualStock"
+            id="individualStock"
+            
+        >
     </div>
 
     <div class="mb-6">

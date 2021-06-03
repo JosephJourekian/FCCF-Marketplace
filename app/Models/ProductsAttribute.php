@@ -6,9 +6,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 
-class ProductsAttributes extends Model
+class ProductsAttribute extends Model
 {
     use HasFactory;
+    protected $table = "products_attribute";
     protected $guarded = [];
 
 

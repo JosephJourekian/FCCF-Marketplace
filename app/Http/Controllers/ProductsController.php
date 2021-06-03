@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Models\Products;
 use App\Models\Category;
+use App\Models\ProductsAttribute;
 use DB;
 
 
@@ -33,7 +34,7 @@ class ProductsController extends Controller
         return view('products.add');
     }
     public function store(Request $request){
-        
+
         $attributes = request()->validate([
             'productname' => ['required', 'string', 'max:255', 'unique:products','alpha_dash'],
             'name' => ['string', 'required', 'max:255'],
@@ -45,6 +46,20 @@ class ProductsController extends Controller
         $attributes['image'] = request('image')->store('pics', 'public');    
 
         DB::table('products')->insert($attributes);
+
+        if(request('attribute') != null && request('attributeValue') != null && request('individualStock') != null ){
+            $product = Products::where('productname', request('productname'))->first();
+            $attributes = [
+                'products_id' => $product->id,
+                'attribute_name' => request('attribute'),
+                'attribute_value' => request('attributeValue'),
+                'stock' => request('individualStock'),
+            ];
+            DB::table('products_attribute')->insert($attributes);
+
+        }
+        
+        
 
         return redirect()->back()->with('message', 'Product Added!');
 
@@ -96,12 +111,10 @@ class ProductsController extends Controller
         return redirect('/products')->with('message', 'Product Updated!');
     }
     public function addCategory(){
-        //dd(request('category'));
 
         $attributes = request()->validate([
             'name' => ['string', 'required', 'max:255'],
         ]);       
-        //dd($attributes);
         DB::table('categories')->insert($attributes);
         
         return view('products/inventory.view', [
@@ -122,7 +135,8 @@ class ProductsController extends Controller
     {
         return view('products/inventory.view', [
             'products' => Products::paginate(50),
-            'categories' => Category::all()
+            'categories' => Category::all(),
+            'attributes' => ProductsAttribute::all()
         ]);
     }
     public function inventoryUpdate(Request $request)
@@ -162,6 +176,47 @@ class ProductsController extends Controller
         return view('products/inventory.view',[
             'products' => Products::paginate(50),
             'categories' => Category::all()
+        ]);
+    }
+    public function showAttributes(){
+        return view('products/attributes', [
+            'products' => Products::paginate(50),
+            'categories' => Category::all(),
+            'attributes' => ProductsAttribute::all()
+        ]);
+    }
+    public function attributes(Request $request){
+        $products = $request->products;
+
+        foreach($products as $product){
+            //dd(isset($product['attribute']));
+            if(isset($product['attribute']) == true){
+                foreach($product['attribute'] as $prod){
+                    ProductsAttribute::where('id', $prod)->delete();
+                }
+            }
+            if($product['attributeName'] != null && $product['attributeValue'] != null && $product['individualStock'] > 0 && $product['individualStock'] != null){
+                $attributes = [
+                    'products_id' => $product['id'],
+                    'attribute_name' => $product['attributeName'],
+                    'attribute_value' =>$product['attributeValue'],
+                    'stock' => $product['individualStock'],
+                ];
+                //dd($attributes);
+                DB::table('products_attribute')->insert($attributes);
+            }
+
+            /*if($prodObj->category()->where('category_id', $product['categories'])->exists() == false){
+                $prodObj->category()->attach($product['categories']); 
+            }
+            if($product['attributeName'] != null && $product['attributeValue'] !== null){
+                dd(isset($product['attribute']));
+            }*/
+        }
+
+        return view('products/attributes',[
+            'products' => Products::paginate(50),
+            'attributes' => ProductsAttribute::all()
         ]);
     }
 }

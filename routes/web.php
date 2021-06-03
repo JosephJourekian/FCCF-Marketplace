@@ -29,6 +29,10 @@ Route::middleware('auth')->group(function (){
         Route::get('/products/add', 'App\Http\Controllers\ProductsController@add')->name('products.add'); 
         Route::get('/products/edit/{product:productname}', 'App\Http\Controllers\ProductsController@edit')->name('products.edit');
         Route::patch('/products/update/{product:productname}', 'App\Http\Controllers\ProductsController@update')->name('products.update');
+        Route::get('/products/attributes', 'App\Http\Controllers\ProductsController@showAttributes')->name('products.attributes');
+        Route::post('/products/attributes', 'App\Http\Controllers\ProductsController@attributes')->name('products.attributes'); 
+ 
+
 
         Route::get('/viewUsers', 'App\Http\Controllers\ViewUsersController@index')->name('viewUsers');  
         Route::patch('/viewUsers', 'App\Http\Controllers\ViewUsersController@edit')->name('viewUsers');  
