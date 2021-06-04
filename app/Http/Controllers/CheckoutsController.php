@@ -24,6 +24,7 @@ class CheckoutsController extends Controller
             return redirect('products');
         }
         else{
+            dd(Cart::content());
             return view("checkout.index", [
                 'cart' => Cart::content()
             ]);

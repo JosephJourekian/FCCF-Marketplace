@@ -14,12 +14,12 @@
             <table id="t01">
                 <tr>
                   <th>Product Name</th>
-                  <th>Current Full Stock</th>
-                  <th>Attributes/Individual Product Stock</th>
+                  <th>Stock</th>
+                  <th>Attributes</th>
                   <th>Add Attribute Name</th>
                   <th>Add Attribute Value</th>
                   <th>Remove Attribute</th>
-                  <th>Add Individual Stock</th>
+                  <!--<th>Add Individual Stock</th>-->
                 </tr>
                 <?php $index = 0 ?>
                 @foreach ($products as $product)
@@ -28,7 +28,7 @@
                   <td>{{ $product->stock }}</td>
                   <td>
                       @foreach ($product->attributes as $attribute)
-                        {{ $attribute->attribute_name }}: {{ $attribute->attribute_value }}, Stock: {{ $attribute->stock }}
+                        <li>{{ $attribute->attribute_name }}: {{ $attribute->attribute_value }},</li> <!--, Stock: {{ $attribute->stock }}-->
                       @endforeach
                   </td>
                   <input hidden type="number" name="products[{{ $index }}][id]" value="{{ $product->id }}" required>
@@ -41,7 +41,7 @@
                         @endforeach
                     </select>
                   </td>
-                  <td><input type="number" name="products[{{ $index }}][individualStock]" value="" ></td>
+                  <!--<td><input type="number" name="products[{{ $index }}][individualStock]" value="" ></td>-->
                 </tr>
                 <?php $index++ ?>
                 @endforeach

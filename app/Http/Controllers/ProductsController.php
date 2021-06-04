@@ -24,7 +24,8 @@ class ProductsController extends Controller
 
         return view('products.index', [
             'products' => $products,
-            'category' => Category::all()
+            'category' => Category::all(),
+            'attributes' => ProductsAttribute::all()
         ]);
     }
 
@@ -47,13 +48,13 @@ class ProductsController extends Controller
 
         DB::table('products')->insert($attributes);
 
-        if(request('attribute') != null && request('attributeValue') != null && request('individualStock') != null ){
+        if(request('attribute') != null && request('attributeValue')){ //!= null && request('individualStock') != null ){
             $product = Products::where('productname', request('productname'))->first();
             $attributes = [
                 'products_id' => $product->id,
                 'attribute_name' => request('attribute'),
                 'attribute_value' => request('attributeValue'),
-                'stock' => request('individualStock'),
+                //'stock' => request('individualStock'),
             ];
             DB::table('products_attribute')->insert($attributes);
 
@@ -75,7 +76,8 @@ class ProductsController extends Controller
         $productI = Products::find($product)->first();
 
         return view('products.show', [
-            'product' => $productI
+            'product' => $productI,
+            'attributes' => ProductsAttribute::all()
         ]);
 
     }
@@ -195,16 +197,22 @@ class ProductsController extends Controller
                     ProductsAttribute::where('id', $prod)->delete();
                 }
             }
-            if($product['attributeName'] != null && $product['attributeValue'] != null && $product['individualStock'] > 0 && $product['individualStock'] != null){
+            if($product['attributeName'] != null && $product['attributeValue'] != null){ //&& $product['individualStock'] > 0 && $product['individualStock'] != null){
                 $attributes = [
                     'products_id' => $product['id'],
                     'attribute_name' => $product['attributeName'],
                     'attribute_value' =>$product['attributeValue'],
-                    'stock' => $product['individualStock'],
+                    //'stock' => $product['individualStock'],
                 ];
                 //dd($attributes);
                 DB::table('products_attribute')->insert($attributes);
             }
+            /*if($product['individualStock'] != null){
+
+                $prod = ProductsAttribute::where('id', $product['attribute']);
+                $prod->update(['stock'=> $prod['stock'] + $product['individualStock']]);
+
+            }*/
 
             /*if($prodObj->category()->where('category_id', $product['categories'])->exists() == false){
                 $prodObj->category()->attach($product['categories']); 

@@ -36,7 +36,6 @@
                   <th>Product Name</th>
                   <th>Current Stock</th>
                   <th>Categories</th>
-                  <th>Attributes</th>
                   <th>Stock Adjusment</th>
                   <th>Price (Points)</th>
                   <th>Add Categories (Ctrl + Click for multiple)</th>
@@ -51,12 +50,6 @@
                   <td>
                       <?php $__currentLoopData = $product->category; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $categorie): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                          <?php echo e($categorie->name); ?><br>
-                      <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                  </td>
-                  <td>
-                      <?php $__currentLoopData = $product->attributes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $attribute): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <?php echo e($attribute->attribute_name); ?> : <?php echo e($attribute->attribute_value); ?>
-
                       <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                   </td>
                   <input hidden type="number" name="products[<?php echo e($index); ?>][id]" value="<?php echo e($product->id); ?>" required>

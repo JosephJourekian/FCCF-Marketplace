@@ -35,7 +35,6 @@
                   <th>Product Name</th>
                   <th>Current Stock</th>
                   <th>Categories</th>
-                  <th>Attributes</th>
                   <th>Stock Adjusment</th>
                   <th>Price (Points)</th>
                   <th>Add Categories (Ctrl + Click for multiple)</th>
@@ -50,11 +49,6 @@
                   <td>
                       @foreach ($product->category as $categorie)
                          {{ $categorie->name }}<br>
-                      @endforeach
-                  </td>
-                  <td>
-                      @foreach ($product->attributes as $attribute)
-                        {{ $attribute->attribute_name }} : {{ $attribute->attribute_value }}
                       @endforeach
                   </td>
                   <input hidden type="number" name="products[{{ $index }}][id]" value="{{ $product->id }}" required>

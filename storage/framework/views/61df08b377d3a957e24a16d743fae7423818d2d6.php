@@ -15,12 +15,12 @@
             <table id="t01">
                 <tr>
                   <th>Product Name</th>
-                  <th>Current Full Stock</th>
-                  <th>Attributes/Individual Product Stock</th>
+                  <th>Stock</th>
+                  <th>Attributes</th>
                   <th>Add Attribute Name</th>
                   <th>Add Attribute Value</th>
                   <th>Remove Attribute</th>
-                  <th>Add Individual Stock</th>
+                  <!--<th>Add Individual Stock</th>-->
                 </tr>
                 <?php $index = 0 ?>
                 <?php $__currentLoopData = $products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -29,8 +29,7 @@
                   <td><?php echo e($product->stock); ?></td>
                   <td>
                       <?php $__currentLoopData = $product->attributes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $attribute): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <?php echo e($attribute->attribute_name); ?>: <?php echo e($attribute->attribute_value); ?>, Stock: <?php echo e($attribute->stock); ?>
-
+                        <li><?php echo e($attribute->attribute_name); ?>: <?php echo e($attribute->attribute_value); ?>,</li> <!--, Stock: <?php echo e($attribute->stock); ?>-->
                       <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                   </td>
                   <input hidden type="number" name="products[<?php echo e($index); ?>][id]" value="<?php echo e($product->id); ?>" required>
@@ -43,7 +42,7 @@
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </select>
                   </td>
-                  <td><input type="number" name="products[<?php echo e($index); ?>][individualStock]" value="" ></td>
+                  <!--<td><input type="number" name="products[<?php echo e($index); ?>][individualStock]" value="" ></td>-->
                 </tr>
                 <?php $index++ ?>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

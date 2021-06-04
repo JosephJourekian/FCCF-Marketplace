@@ -12,7 +12,10 @@
         <div class="border border-gray-800 rounded-lg">
             <img class="rounded-lg" src="{{ $product->options->img }}" style="width:150px;height:125px;float:left">
             <a class="font-bold text-md" style="color:blue"href="{{ route('products.show',$product->options->productname) }}">{{ $product->name }}</a>
-            <h1 class="font-bold text-md mt-4 block">Quantity: {{ $product->qty }}</h1>
+            <h1 class="font-bold text-md mt-1 block">Quantity: {{ $product->qty }}</h1>
+            <h1 class="font-bold text-md ">Size: {{ $product->options->size }}</h1>
+            <h1 class="font-bold text-md ">Color: {{ $product->options->color }}</h1>
+            
             <form method="POST" action='{{ route('carts.update',[$product->rowId,$product->options->productname]) }}' enctype="multipart/form-data" >
              @csrf
                 <p>Update Quantity: <input type="number" id="num" name="num" value="1">
@@ -24,8 +27,8 @@
                 </a>
                 </p>
             </form>
-            <h1 class="font-bold text-md mb-4 block">Price: {{ $product->price }} Points</h1>
-            <h1 class="font-bold text-md mb-4 block">Total: {{ $product->subtotal('0','','') }} Points</h1>
+            <h1 class="font-bold text-md mb-4 block">Product Price: {{ $product->price }} Points</h1>
+            <h1 class="font-bold text-md mb-4 block">Total Price: {{ $product->subtotal('0','','') }} Points</h1>
         </div>
         @endforeach
         <h1 class="font-bold text-md mb-4 block">Subtotal: {{ Cart::subtotal('0','','')}} Points</h1>

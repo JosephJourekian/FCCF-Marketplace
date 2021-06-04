@@ -13,7 +13,10 @@
         <div class="border border-gray-800 rounded-lg">
             <img class="rounded-lg" src="<?php echo e($product->options->img); ?>" style="width:150px;height:125px;float:left">
             <a class="font-bold text-md" style="color:blue"href="<?php echo e(route('products.show',$product->options->productname)); ?>"><?php echo e($product->name); ?></a>
-            <h1 class="font-bold text-md mt-4 block">Quantity: <?php echo e($product->qty); ?></h1>
+            <h1 class="font-bold text-md mt-1 block">Quantity: <?php echo e($product->qty); ?></h1>
+            <h1 class="font-bold text-md ">Size: <?php echo e($product->options->size); ?></h1>
+            <h1 class="font-bold text-md ">Color: <?php echo e($product->options->color); ?></h1>
+            
             <form method="POST" action='<?php echo e(route('carts.update',[$product->rowId,$product->options->productname])); ?>' enctype="multipart/form-data" >
              <?php echo csrf_field(); ?>
                 <p>Update Quantity: <input type="number" id="num" name="num" value="1">
@@ -25,8 +28,8 @@
                 </a>
                 </p>
             </form>
-            <h1 class="font-bold text-md mb-4 block">Price: <?php echo e($product->price); ?> Points</h1>
-            <h1 class="font-bold text-md mb-4 block">Total: <?php echo e($product->subtotal('0','','')); ?> Points</h1>
+            <h1 class="font-bold text-md mb-4 block">Product Price: <?php echo e($product->price); ?> Points</h1>
+            <h1 class="font-bold text-md mb-4 block">Total Price: <?php echo e($product->subtotal('0','','')); ?> Points</h1>
         </div>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         <h1 class="font-bold text-md mb-4 block">Subtotal: <?php echo e(Cart::subtotal('0','','')); ?> Points</h1>
