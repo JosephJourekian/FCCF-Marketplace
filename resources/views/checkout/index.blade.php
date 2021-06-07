@@ -17,6 +17,8 @@
                 <ol>
                     <li>
                         <h1 class="font-bold text-md block">Product Name: {{ $product->name }}</h1>
+                        <h1 class="font-bold text-md block">Size: {{ $product->options->size }}</h1>
+                        <h1 class="font-bold text-md block">Color: {{ $product->options->color }}</h1>
                         <h1 class="font-bold text-md block">Quantity: {{ $product->qty }}</h1>
                         <h1 class="font-bold text-md mb-4 block">Price: {{ $product->price }} Points</h1>
                     </li>

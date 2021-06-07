@@ -8,8 +8,10 @@
         @foreach(unserialize($order['cart']) as $item)
             <img class="rounded-lg mb-4" src="{{ $item->options->img }}" style="width:150px;height:104px;float:left">
             <a class="font-bold text-md mb-3" style="color:blue"href="{{ route('products.show',$item->options->productname) }}">{{ $item->name}}</a>
-            <h1 class="font-bold text-md mt-6 block">Quantity: {{ $item->qty }}</h1>
-            <h1 class="font-bold text-md mb-6 block">Price: {{ $item->price }} Points</h1>
+            <h1 class="font-bold text-md block">Size: {{ $item->options->size }}</h1>
+            <h1 class="font-bold text-md block">Color: {{ $item->options->color }}</h1>
+            <h1 class="font-bold text-md block">Quantity: {{ $item->qty }}</h1>
+            <h1 class="font-bold text-md mb-6 mt-6 block">Product Price: {{ $item->price }} Points</h1>
         @endforeach
         <h1 class="font-bold text-md mb-6 block">Subtotal of the order: {{ $order->order_subtotal }} Points</h1>
     </div>

@@ -74,30 +74,18 @@
                 <p>Stock: {{ $product->stock }}</p>
                 <p>{{ \Illuminate\Support\Str::limit($product->description, 20) }}</p>
                 </p>
-                <p>
-                  @foreach ($product->category as $categories)
-                      @if ($categories->name == "Apparel")
-                      <select name="products[{{ $index }}][size]">
-                          @foreach($product->attributes as $attribute)
-                              @if($attribute->attribute_name == "Size")
-                                  <option value="{{ $attribute->id }}">{{ $attribute->attribute_name }}: {{ $attribute->attribute_value }}</option>
-                              @endif
-                          @endforeach
-                      </select>
-                      <select name="products[{{ $index }}][color]">
-                          @foreach($product->attributes as $attribute)
-                              @if($attribute->attribute_name == "Color")
-                                  <option value="{{ $attribute->id }}">{{ $attribute->attribute_name }}: {{ $attribute->attribute_value }}</option>
-                              @endif
-                          @endforeach
-                      </select>
-                      @endif
-                  @endforeach
-              </p>
                 @if($product->stock == 0)
                   <p><button class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 mr-4 mb-1"><a href="#" class="card-link">Out of Stock</a></button></p>
                 @else
-                  <p><button class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 mr-4 mb-1"><a href="{{ route('carts.add',$product->productname) }}" class="card-link">Add to Cart</a></button></p>
+                  <?php $cond = true ?>
+                  @foreach ($product->category as $categories)
+                    @if ($categories->name == "Apparel")
+                      <?php $cond = false ?>
+                    @endif
+                  @endforeach
+                  @if ($cond == true)
+                    <p><button class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 mr-4 mb-1"><a href="{{ route('carts.add',$product->productname) }}" class="card-link">Add to Cart</a></button></p>
+                  @endif
                 @endif
                 <p><button class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 mr-4 mb-1"><a href="{{ route('products.show',$product->productname) }}" class="card-link">View Product</a></button></p>
                 @if(auth()->user()->isAdmin())

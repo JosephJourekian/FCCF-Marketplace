@@ -36,10 +36,7 @@
                         Out of Stock
                     </a>
                 @else
-                    <a href="{{ route('carts.add',$product->productname) }}"
-                        class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 mr-4">
-                        Add To Cart()
-                    </a>            
+                    <input class="bg-blue-400 text-white rounded py-2 px-4 mt-3 hover:bg-blue-300" type="submit" value="Add to Cart">       
                 @endif
                 <a href="{{ route('products.index') }}"
                         class="bg-red-400 text-white rounded py-2 px-4 hover:bg-red-500 mr-4"
@@ -52,7 +49,6 @@
                     @endforeach
                 </p>
             </div>
-            <input class="bg-blue-400 text-white rounded py-2 px-4 mt-3 hover:bg-blue-300" type="submit" value="Add to Cart">
         </form>
     </div>
 </div>

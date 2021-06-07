@@ -75,30 +75,18 @@
                 <p>Stock: <?php echo e($product->stock); ?></p>
                 <p><?php echo e(\Illuminate\Support\Str::limit($product->description, 20)); ?></p>
                 </p>
-                <p>
-                  <?php $__currentLoopData = $product->category; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $categories): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                      <?php if($categories->name == "Apparel"): ?>
-                      <select name="products[<?php echo e($index); ?>][size]">
-                          <?php $__currentLoopData = $product->attributes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $attribute): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                              <?php if($attribute->attribute_name == "Size"): ?>
-                                  <option value="<?php echo e($attribute->id); ?>"><?php echo e($attribute->attribute_name); ?>: <?php echo e($attribute->attribute_value); ?></option>
-                              <?php endif; ?>
-                          <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                      </select>
-                      <select name="products[<?php echo e($index); ?>][color]">
-                          <?php $__currentLoopData = $product->attributes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $attribute): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                              <?php if($attribute->attribute_name == "Color"): ?>
-                                  <option value="<?php echo e($attribute->id); ?>"><?php echo e($attribute->attribute_name); ?>: <?php echo e($attribute->attribute_value); ?></option>
-                              <?php endif; ?>
-                          <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                      </select>
-                      <?php endif; ?>
-                  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-              </p>
                 <?php if($product->stock == 0): ?>
                   <p><button class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 mr-4 mb-1"><a href="#" class="card-link">Out of Stock</a></button></p>
                 <?php else: ?>
-                  <p><button class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 mr-4 mb-1"><a href="<?php echo e(route('carts.add',$product->productname)); ?>" class="card-link">Add to Cart</a></button></p>
+                  <?php $cond = true ?>
+                  <?php $__currentLoopData = $product->category; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $categories): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <?php if($categories->name == "Apparel"): ?>
+                      <?php $cond = false ?>
+                    <?php endif; ?>
+                  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                  <?php if($cond == true): ?>
+                    <p><button class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 mr-4 mb-1"><a href="<?php echo e(route('carts.add',$product->productname)); ?>" class="card-link">Add to Cart</a></button></p>
+                  <?php endif; ?>
                 <?php endif; ?>
                 <p><button class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 mr-4 mb-1"><a href="<?php echo e(route('products.show',$product->productname)); ?>" class="card-link">View Product</a></button></p>
                 <?php if(auth()->user()->isAdmin()): ?>

@@ -17,6 +17,8 @@
                 <ol>
                     <li>
                         <h1 class="font-bold text-md block">Product Name: <?php echo e($product->name); ?></h1>
+                        <h1 class="font-bold text-md block">Size: <?php echo e($product->options->size); ?></h1>
+                        <h1 class="font-bold text-md block">Color: <?php echo e($product->options->color); ?></h1>
                         <h1 class="font-bold text-md block">Quantity: <?php echo e($product->qty); ?></h1>
                         <h1 class="font-bold text-md mb-4 block">Price: <?php echo e($product->price); ?> Points</h1>
                     </li>
