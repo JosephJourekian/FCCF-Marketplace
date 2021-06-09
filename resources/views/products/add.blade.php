@@ -71,7 +71,7 @@
 
     <div class="mb-6">
         <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
-            for="image"
+            for="image[]"
         >
             Product Picture
         </label>
@@ -79,8 +79,9 @@
         <div class="flex">
             <input class="border border-gray-400 p-2 w-full"
                 type="file"
-                name="image"
-                id="image"
+                name="image[]"
+                id="image[]"
+                multiple
             >
         </div>
 

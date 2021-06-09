@@ -7,6 +7,7 @@ use Illuminate\Validation\Rule;
 use App\Models\Products;
 use App\Models\Category;
 use App\Models\ProductsAttribute;
+use App\Models\ProductsImage;
 use DB;
 
 
@@ -35,18 +36,40 @@ class ProductsController extends Controller
         return view('products.add');
     }
     public function store(Request $request){
-
+        
         $attributes = request()->validate([
             'productname' => ['required', 'string', 'max:255', 'unique:products','alpha_dash'],
             'name' => ['string', 'required', 'max:255'],
             'description' => ['string', 'required', 'max:255'],
             'price' => ['integer', 'required'],
             'stock' => ['integer', 'required'],
-            'image' => ['file'],
+            'image[]' => ['file'],
         ]);
-        $attributes['image'] = request('image')->store('pics', 'public');    
-
+        //dd($attributes);
+        foreach($request->file('image') as $image){
+            $attributes['image'] = $image->store('pics', 'public');
+        }
         DB::table('products')->insert($attributes);
+    
+            //$attributes['image'] = $request->file('image');
+            foreach ($request->file('image') as $image){
+                $product = Products::where('productname', request('productname'))->first();
+                //dd($product);
+                $val = [
+                    'products_id' => $product->id,
+                    'image' => $image->store('pics','public'),
+                ];
+                //$val['image'] = $image->store('pics', 'public');
+                //dd($val);
+                DB::table('products_images')->insert($val);
+                
+            }
+            //dd($images);
+            //$attributes['image'] = request('image')->store('pics', 'public');    
+            //$attributes['image'] = $images;        
+            //dd($attributes);
+        
+        //DB::table('products')->insert($attributes);
 
         if(request('attribute') != null && request('attributeValue')){ //!= null && request('individualStock') != null ){
             $product = Products::where('productname', request('productname'))->first();
@@ -74,10 +97,13 @@ class ProductsController extends Controller
     public function show(Products $product){
 
         $productI = Products::find($product)->first();
+        //unserialize($productI['image']);
+        //dd($productI);
 
         return view('products.show', [
             'product' => $productI,
-            'attributes' => ProductsAttribute::all()
+            'attributes' => ProductsAttribute::all(),
+            'images' => ProductsImage::all(),
         ]);
 
     }

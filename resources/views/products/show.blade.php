@@ -3,7 +3,11 @@
     <div>
         <form method="GET" action='{{ route('carts.add',$product->productname) }}' enctype="multipart/form-data" class="mb-8" >
             @csrf
-            <img src="{{ $product->image }}" style="width:450px;height:500px;float:left">
+            
+            <img src="{{ $product->image }}" style="width:450px;height:500px;float:left ">   
+            
+            
+        <div style="float:none">
             <h1 class="font-bold mb-8" style="font-size:300%;">{{ $product->name }}</h1>
             <p style="font-size:150%; mb-5">{{ $product->description }}</p>
             <p >Stock: {{ $product->stock }}</p>
@@ -49,7 +53,14 @@
                     @endforeach
                 </p>
             </div>
+        </div>
+        
         </form>
     </div>
 </div>
+<div class="mb-4">
+    @foreach ($product->images as $pic)
+        <img src="{{ asset("storage/{$pic->image}") }}" style="width:170px;height:120px;float:left;">   
+    @endforeach
+    </div>
 @endcomponent

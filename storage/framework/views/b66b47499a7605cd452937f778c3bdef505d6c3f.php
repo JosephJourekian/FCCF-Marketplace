@@ -3,7 +3,11 @@
     <div>
         <form method="GET" action='<?php echo e(route('carts.add',$product->productname)); ?>' enctype="multipart/form-data" class="mb-8" >
             <?php echo csrf_field(); ?>
-            <img src="<?php echo e($product->image); ?>" style="width:450px;height:500px;float:left">
+            
+            <img src="<?php echo e($product->image); ?>" style="width:450px;height:500px;float:left ">   
+            
+            
+        <div style="float:none">
             <h1 class="font-bold mb-8" style="font-size:300%;"><?php echo e($product->name); ?></h1>
             <p style="font-size:150%; mb-5"><?php echo e($product->description); ?></p>
             <p >Stock: <?php echo e($product->stock); ?></p>
@@ -49,9 +53,16 @@
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </p>
             </div>
+        </div>
+        
         </form>
     </div>
 </div>
+<div class="mb-4">
+    <?php $__currentLoopData = $product->images; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pic): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <img src="<?php echo e(asset("storage/{$pic->image}")); ?>" style="width:170px;height:120px;float:left;">   
+    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+    </div>
 <?php if (isset($__componentOriginal2744513b5a2bacace2a9ba73cff03b386175a717)): ?>
 <?php $component = $__componentOriginal2744513b5a2bacace2a9ba73cff03b386175a717; ?>
 <?php unset($__componentOriginal2744513b5a2bacace2a9ba73cff03b386175a717); ?>

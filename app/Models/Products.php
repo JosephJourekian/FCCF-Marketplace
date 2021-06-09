@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Category;
 use App\Models\ProductsAttribute;
+use App\Models\ProductsImage;
 
 class Products extends Model
 {
@@ -37,4 +38,9 @@ class Products extends Model
     public function attributes(){
         return $this->hasMany(ProductsAttribute::class);
     }
+    public function images(){
+        return $this->hasMany(ProductsImage::class);
+    }
+    
+
 }
