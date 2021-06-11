@@ -43,16 +43,17 @@ class ProductsController extends Controller
             'description' => ['string', 'required', 'max:255'],
             'price' => ['integer', 'required'],
             'stock' => ['integer', 'required'],
-            'image[]' => ['file'],
+            'image' => ['file'],
         ]);
         //dd($attributes);
-        foreach($request->file('image') as $image){
+        $attributes['image'] = request('image')->store('pics', 'public');
+        /*foreach($request->file('image') as $image){
             $attributes['image'] = $image->store('pics', 'public');
-        }
+        }*/
         DB::table('products')->insert($attributes);
     
             //$attributes['image'] = $request->file('image');
-            foreach ($request->file('image') as $image){
+            foreach ($request->file('otherImages') as $image){
                 $product = Products::where('productname', request('productname'))->first();
                 //dd($product);
                 $val = [

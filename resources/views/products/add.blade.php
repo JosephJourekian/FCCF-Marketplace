@@ -71,21 +71,42 @@
 
     <div class="mb-6">
         <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
-            for="image[]"
+            for="image"
         >
-            Product Picture
+           Main Product Picture
         </label>
 
         <div class="flex">
             <input class="border border-gray-400 p-2 w-full"
                 type="file"
-                name="image[]"
-                id="image[]"
-                multiple
+                name="image"
+                id="image"
+                
             >
         </div>
 
         @error('image')
+            <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+        @enderror
+    </div>
+
+    <div class="mb-6">
+        <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+            for="otherImages[]"
+        >
+            Other Product Pictures (Ctrl + Click for multiple)
+        </label>
+
+        <div class="flex">
+            <input class="border border-gray-400 p-2 w-full"
+                type="file"
+                name="otherImages[]"
+                id="otherImages[]"
+                multiple
+            >
+        </div>
+
+        @error('otherImages')
             <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
         @enderror
     </div>

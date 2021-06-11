@@ -93,21 +93,49 @@ unset($__errorArgs, $__bag); ?>
 
     <div class="mb-6">
         <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
-            for="image[]"
+            for="image"
         >
-            Product Picture
+           Main Product Picture
         </label>
 
         <div class="flex">
             <input class="border border-gray-400 p-2 w-full"
                 type="file"
-                name="image[]"
-                id="image[]"
-                multiple
+                name="image"
+                id="image"
+                
             >
         </div>
 
         <?php $__errorArgs = ['image'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+            <p class="text-red-500 text-xs mt-2"><?php echo e($message); ?></p>
+        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+    </div>
+
+    <div class="mb-6">
+        <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+            for="otherImages[]"
+        >
+            Other Product Pictures (Ctrl + Click for multiple)
+        </label>
+
+        <div class="flex">
+            <input class="border border-gray-400 p-2 w-full"
+                type="file"
+                name="otherImages[]"
+                id="otherImages[]"
+                multiple
+            >
+        </div>
+
+        <?php $__errorArgs = ['otherImages'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
