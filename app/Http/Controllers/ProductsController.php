@@ -254,4 +254,7 @@ class ProductsController extends Controller
             'attributes' => ProductsAttribute::all()
         ]);
     }
+    public function menuTest(){
+        return view('menuTest');
+    }
 }

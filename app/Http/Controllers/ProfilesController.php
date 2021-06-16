@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use App\Models\User;
 
 class ProfilesController extends Controller
@@ -32,6 +33,10 @@ class ProfilesController extends Controller
             'province' => ['string', 'required', 'max:255'],
             'postalCode' => ['string', 'required', 'max:255'],
             'phone' => ['string', 'required', 'max:255'],
+            'email' => ['string','required','email','max:255',
+                Rule::unique('users')->ignore($userA),
+            ],
+            'password' => ['string','required','min:8','max:255','confirmed',],
         ]);   
 
         $userA->update($attributes);

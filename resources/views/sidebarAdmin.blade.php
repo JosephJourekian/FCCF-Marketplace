@@ -17,6 +17,11 @@
         </a>
     </li>
     <li>
+        <a href="{{ route('menuTest') }}" class="font-bold text-lg mb-4 block">
+            Menu Test
+        </a>
+    </li>
+    <li>
         <div class="dropdown">
             <button class="dropbtn">Products</button>
             <div class="dropdown-content">

@@ -31,13 +31,14 @@ Route::middleware('auth')->group(function (){
         Route::patch('/products/update/{product:productname}', 'App\Http\Controllers\ProductsController@update')->name('products.update');
         Route::get('/products/attributes', 'App\Http\Controllers\ProductsController@showAttributes')->name('products.attributes');
         Route::post('/products/attributes', 'App\Http\Controllers\ProductsController@attributes')->name('products.attributes'); 
-
-
+        
+        
         Route::get('/viewUsers', 'App\Http\Controllers\ViewUsersController@index')->name('viewUsers');  
         Route::patch('/viewUsers', 'App\Http\Controllers\ViewUsersController@edit')->name('viewUsers');  
     });
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+    Route::get('/menuTest', 'App\Http\Controllers\ProductsController@menuTest')->name('menuTest'); 
+    
     Route::get('/products', 'App\Http\Controllers\ProductsController@index')->name('products.index'); 
     
     Route::get('/products/show/{product:productname}', 'App\Http\Controllers\ProductsController@show')->name('products.show'); 
