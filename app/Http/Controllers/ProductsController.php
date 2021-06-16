@@ -30,7 +30,6 @@ class ProductsController extends Controller
         ]);
     }
 
-
     public function add(){
 
         return view('products.add');
@@ -45,47 +44,30 @@ class ProductsController extends Controller
             'stock' => ['integer', 'required'],
             'image' => ['file'],
         ]);
-        //dd($attributes);
         $attributes['image'] = request('image')->store('pics', 'public');
-        /*foreach($request->file('image') as $image){
-            $attributes['image'] = $image->store('pics', 'public');
-        }*/
+
         DB::table('products')->insert($attributes);
     
-            //$attributes['image'] = $request->file('image');
             foreach ($request->file('otherImages') as $image){
                 $product = Products::where('productname', request('productname'))->first();
-                //dd($product);
                 $val = [
                     'products_id' => $product->id,
                     'image' => $image->store('pics','public'),
                 ];
-                //$val['image'] = $image->store('pics', 'public');
-                //dd($val);
                 DB::table('products_images')->insert($val);
                 
             }
-            //dd($images);
-            //$attributes['image'] = request('image')->store('pics', 'public');    
-            //$attributes['image'] = $images;        
-            //dd($attributes);
-        
-        //DB::table('products')->insert($attributes);
 
-        if(request('attribute') != null && request('attributeValue')){ //!= null && request('individualStock') != null ){
+        if(request('attribute') != null && request('attributeValue')){
             $product = Products::where('productname', request('productname'))->first();
             $attributes = [
                 'products_id' => $product->id,
                 'attribute_name' => request('attribute'),
                 'attribute_value' => request('attributeValue'),
-                //'stock' => request('individualStock'),
             ];
             DB::table('products_attribute')->insert($attributes);
-
         }
         
-        
-
         return redirect()->back()->with('message', 'Product Added!');
 
     }
@@ -98,8 +80,6 @@ class ProductsController extends Controller
     public function show(Products $product){
 
         $productI = Products::find($product)->first();
-        //unserialize($productI['image']);
-        //dd($productI);
 
         return view('products.show', [
             'product' => $productI,
@@ -218,35 +198,20 @@ class ProductsController extends Controller
         $products = $request->products;
 
         foreach($products as $product){
-            //dd(isset($product['attribute']));
             if(isset($product['attribute']) == true){
                 foreach($product['attribute'] as $prod){
                     ProductsAttribute::where('id', $prod)->delete();
                 }
             }
-            if($product['attributeName'] != null && $product['attributeValue'] != null){ //&& $product['individualStock'] > 0 && $product['individualStock'] != null){
+            if($product['attributeName'] != null && $product['attributeValue'] != null){ 
                 $attributes = [
                     'products_id' => $product['id'],
                     'attribute_name' => $product['attributeName'],
                     'attribute_value' =>$product['attributeValue'],
-                    //'stock' => $product['individualStock'],
                 ];
-                //dd($attributes);
                 DB::table('products_attribute')->insert($attributes);
             }
-            /*if($product['individualStock'] != null){
-
-                $prod = ProductsAttribute::where('id', $product['attribute']);
-                $prod->update(['stock'=> $prod['stock'] + $product['individualStock']]);
-
-            }*/
-
-            /*if($prodObj->category()->where('category_id', $product['categories'])->exists() == false){
-                $prodObj->category()->attach($product['categories']); 
-            }
-            if($product['attributeName'] != null && $product['attributeValue'] !== null){
-                dd(isset($product['attribute']));
-            }*/
+            
         }
 
         return view('products/attributes',[

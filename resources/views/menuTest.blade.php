@@ -21,8 +21,6 @@ button {
   height: 100%;
   width: 100%;
   background: linear-gradient(-135deg, #c850c0, #4158d0);
-  /* background: linear-gradient(375deg, #1cc7d0, #2ede98); */
-  /* clip-path: circle(25px at calc(0% + 45px) 45px); */
   clip-path: circle(25px at calc(100% - 45px) 45px);
   transition: all 0.3s ease-in-out;
 }
@@ -33,7 +31,6 @@ button {
   position: absolute;
   z-index: 2;
   right: 20px;
-  /* left: 20px; */
   top: 20px;
   height: 50px;
   width: 50px;
@@ -44,7 +41,6 @@ button {
   color: black;
   cursor: pointer;
   background: linear-gradient(-135deg, #c850c0, #4158d0);
-  /* background: linear-gradient(375deg, #1cc7d0, #2ede98); */
   transition: all 0.3s ease-in-out;
   
 }
