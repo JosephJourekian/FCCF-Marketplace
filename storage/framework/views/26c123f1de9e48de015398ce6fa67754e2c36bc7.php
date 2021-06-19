@@ -24,6 +24,15 @@
     </li>
     <li>
         <div class="dropdown">
+            <button class="dropbtn">FCCF Updates</button>
+            <div class="dropdown-content">
+              <a href="<?php echo e(route('fccfUpdates.index')); ?>">View Updates</a>
+              <a href="<?php echo e(route('fccfUpdates.add')); ?>" >Add Update</a>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="dropdown">
             <button class="dropbtn">Products</button>
             <div class="dropdown-content">
               <a href="<?php echo e(route('products.index')); ?>">View Products</a>

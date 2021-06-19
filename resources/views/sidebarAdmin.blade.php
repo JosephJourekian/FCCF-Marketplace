@@ -23,6 +23,15 @@
     </li>
     <li>
         <div class="dropdown">
+            <button class="dropbtn">FCCF Updates</button>
+            <div class="dropdown-content">
+              <a href="{{ route('fccfUpdates.index') }}">View Updates</a>
+              <a href="{{ route('fccfUpdates.add') }}" >Add Update</a>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="dropdown">
             <button class="dropbtn">Products</button>
             <div class="dropdown-content">
               <a href="{{ route('products.index') }}">View Products</a>

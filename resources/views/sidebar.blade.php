@@ -26,6 +26,14 @@
     </li>
     <li>
         <div class="dropdown">
+            <button class="dropbtn">FCCF Updates</button>
+            <div class="dropdown-content">
+              <a href="{{ route('fccfUpdates.index') }}">View Updates</a>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="dropdown">
             <button class="dropbtn">My Profile</button>
             <div class="dropdown-content">
                 <a href="{{ route('profiles.edit',auth()->user()->username) }}">Edit Profile</a>

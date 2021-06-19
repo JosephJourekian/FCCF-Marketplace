@@ -13,7 +13,6 @@
             
             <div id="demo" class="carousel slide carousel-fade " data-ride="carousel" style="float: none; position:absolute">
     
-                <!-- The slideshow -->
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active">
                         <img src="<?php echo e($product->image); ?>" style="width:400px;height:300px;">
@@ -25,7 +24,6 @@
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
 
-                <!-- Left and right controls -->
                 <a class="carousel-control-prev" href="#demo" data-slide="prev">
                   <span class="carousel-control-prev-icon"></span>
                 </a>

@@ -19,7 +19,13 @@ Route::middleware('auth')->group(function (){
         Route::get('/products/edit/{product:productname}', 'App\Http\Controllers\ProductsController@edit')->name('products.edit');
         Route::patch('/products/update/{product:productname}', 'App\Http\Controllers\ProductsController@update')->name('products.update');
         Route::get('/products/attributes', 'App\Http\Controllers\ProductsController@showAttributes')->name('products.attributes');
-        Route::post('/products/attributes', 'App\Http\Controllers\ProductsController@attributes')->name('products.attributes'); 
+        Route::post('/products/attributes', 'App\Http\Controllers\ProductsController@attributes')->name('products.attributes');
+        Route::get('/fccfUpdates/edit/{fccfUpdate:updatename}', 'App\Http\Controllers\FccfUpdatesController@edit')->name('fccfUpdates.edit');
+        Route::patch('/fccfUpdates/update/{fccfUpdate:updatename}', 'App\Http\Controllers\FccfUpdatesController@update')->name('fccfUpdates.update'); 
+        Route::get('/fccfUpdates/add', 'App\Http\Controllers\FccfUpdatesController@add')->name('fccfUpdates.add'); 
+        Route::post('/fccfUpdates', 'App\Http\Controllers\FccfUpdatesController@store')->name('fccfUpdates.store');
+        Route::delete('/fccfUpdates', 'App\Http\Controllers\FccfUpdatesController@delete')->name('fccfUpdates.delete');
+
         
         
         Route::get('/viewUsers', 'App\Http\Controllers\ViewUsersController@index')->name('viewUsers');  
@@ -29,8 +35,11 @@ Route::middleware('auth')->group(function (){
     Route::get('/menuTest', 'App\Http\Controllers\ProductsController@menuTest')->name('menuTest'); 
     
     Route::get('/products', 'App\Http\Controllers\ProductsController@index')->name('products.index'); 
-    
     Route::get('/products/show/{product:productname}', 'App\Http\Controllers\ProductsController@show')->name('products.show'); 
+
+    Route::get('/fccfUpdates', 'App\Http\Controllers\FccfUpdatesController@index')->name('fccfUpdates.index'); 
+    Route::get('/fccfUpdates/show/{fccfUpdate:updatename}', 'App\Http\Controllers\FccfUpdatesController@show')->name('fccfUpdates.show'); 
+
 
     Route::get('/myCart', 'App\Http\Controllers\CartsController@index')->name('carts.index'); 
     Route::get('/myCart/add/{product:productname}', 'App\Http\Controllers\CartsController@add')->name('carts.add'); 
