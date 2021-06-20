@@ -12,9 +12,15 @@ class FccfUpdates extends Model
     protected $guarded = [];
 
 
+    public function getImageAttribute($value)
+    {
+        
+        return asset('storage/'.$value);  //path to the image
+    }
+
     public function getRouteKeyName()
     {
         //This is used to search for the name instead of the id\
-        return 'name';
+        return 'updatename';
     }
 }

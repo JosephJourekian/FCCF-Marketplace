@@ -2,26 +2,27 @@
 
 <h1 class="font-bold text-lg mb-4 block">FCCF Updates</h1>
 
-@forelse ($updates as $update)
+@foreach ($updates as $update)
     <div class="border border-gray-800 rounded-lg mb-2">
-        <img class="rounded-lg mb-4" src="storage/{{ $update->image}}" style="width:350px;height:200px;float:left">
-        <h1 class="font-bold text-md mt-1 block">Posted on: {{ $update->created_at->format('Y-m-d')}}</h1>
-        <h1 class="font-bold text-md block">{{ $update->title }}</h1>
+        <img class="rounded-lg mb-4" src="{{ $update->image}}" style="width:350px;height:200px;float:left; position: relative;">
+        <h1 class="font-bold text-md mt-1 ml-2 flex block">Posted on: {{ $update->created_at->format('Y-m-d')}}</h1>
+        <h1 class="font-bold text-3xl block">{{ $update->title }}</h1>
         <h1 class="font-bold text-md block">By: {{ $update->author }}</h1>              
-        <h1 class="font-bold text-md block mb-12">{{ $update->excerpt }}</h1>
-        <p><button class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 mr-4 mb-1"><a href="{{ route('fccfUpdates.show',$update->updatename) }}" class="card-link">View Update</a></button></p>
-        @if(auth()->user()->isAdmin())
-            <form method="POST" action="{{ route('fccfUpdates.delete') }}"> 
-                @csrf
-                @method('DELETE')
-                <input type="hidden" name="id" value="{{ $update->id }}"> 
-                <input type="hidden" name="_method" value="DELETE">
-                <button type="submit" class="bg-red-400 text-white rounded py-4 px-6 hover:bg-red-500 mr-4">Delete Update</button>
-            </form>
-        @endif
-        @empty
-            <p>No Updates yet!</p>
-        
+        <h1 class="font-bold text-md block mb-10">{{ \Illuminate\Support\Str::limit($update->excerpt, 75) }}</h1>
+        <div class="flex mb-3">
+            <p><button class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 mr-4 ml-3"><a href="{{ route('fccfUpdates.show',$update->updatename) }}" class="card-link">View Update</a></button>
+                @if(auth()->user()->isAdmin())
+                    <form method="POST" action="{{ route('fccfUpdates.delete') }}"> 
+                        @csrf
+                        @method('DELETE')
+                        <input type="hidden" name="id" value="{{ $update->id }}"> 
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="bg-red-400 text-white rounded py-2 px-4 hover:bg-red-500 ">Delete Update</button>
+                    </form>
+                    <p><button class="bg-green-400 text-white rounded py-2 px-4 hover:bg-green-500 mr-4 ml-3"><a href="{{ route('fccfUpdates.edit',$update->updatename) }}" class="card-link">Edit this Update</a></button>
+                @endif
+            </p>
+        </div>
     </div>
-    @endforelse
+@endforeach
 @endcomponent
