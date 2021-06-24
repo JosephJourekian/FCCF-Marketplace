@@ -32,6 +32,15 @@
     </li>
     <li>
         <div class="dropdown">
+            <button class="dropbtn">Tech Updates</button>
+            <div class="dropdown-content">
+              <a href="{{ route('techUpdates.index') }}">View Updates</a>
+              <a href="{{ route('techUpdates.add') }}" >Add Update</a>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="dropdown">
             <button class="dropbtn">Products</button>
             <div class="dropdown-content">
               <a href="{{ route('products.index') }}">View Products</a>

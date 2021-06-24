@@ -33,6 +33,15 @@
     </li>
     <li>
         <div class="dropdown">
+            <button class="dropbtn">Tech Updates</button>
+            <div class="dropdown-content">
+              <a href="<?php echo e(route('techUpdates.index')); ?>">View Updates</a>
+              <a href="<?php echo e(route('techUpdates.add')); ?>" >Add Update</a>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="dropdown">
             <button class="dropbtn">Products</button>
             <div class="dropdown-content">
               <a href="<?php echo e(route('products.index')); ?>">View Products</a>

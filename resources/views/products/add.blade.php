@@ -81,6 +81,7 @@
                 type="file"
                 name="image"
                 id="image"
+                required
                 
             >
         </div>

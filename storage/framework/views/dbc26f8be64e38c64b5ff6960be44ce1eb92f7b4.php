@@ -135,8 +135,6 @@ unset($__errorArgs, $__bag); ?>
             >
                 Back To Updates
         </a>
-
-
     </div>
 </form>
 <?php if (isset($__componentOriginal2744513b5a2bacace2a9ba73cff03b386175a717)): ?>

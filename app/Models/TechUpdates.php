@@ -4,14 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\FccfUrls;
+use App\Models\TechUrls;
 
-class FccfUpdates extends Model
+
+class TechUpdates extends Model
 {
     use HasFactory;
-    protected $table = "fccf_updates";
+    protected $table = "tech_updates";
     protected $guarded = [];
-
 
     public function getImageAttribute($value)
     {
@@ -22,9 +22,10 @@ class FccfUpdates extends Model
     public function getRouteKeyName()
     {
         //This is used to search for the name instead of the id\
-        return 'updatename';
+        return 'techname';
     }
+
     public function url(){
-        return $this->hasMany(FccfUrls::class);
+        return $this->hasMany(TechUrls::class);
     }   
 }

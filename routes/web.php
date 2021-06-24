@@ -26,6 +26,12 @@ Route::middleware('auth')->group(function (){
         Route::post('/fccfUpdates', 'App\Http\Controllers\FccfUpdatesController@store')->name('fccfUpdates.store');
         Route::delete('/fccfUpdates', 'App\Http\Controllers\FccfUpdatesController@delete')->name('fccfUpdates.delete');
 
+        Route::get('/techUpdates/edit/{techname}', 'App\Http\Controllers\TechUpdatesController@edit')->name('techUpdates.edit');
+        Route::patch('/techUpdates/update/{techname}', 'App\Http\Controllers\TechUpdatesController@update')->name('techUpdates.update'); 
+        Route::get('/techUpdates/add', 'App\Http\Controllers\TechUpdatesController@add')->name('techUpdates.add'); 
+        Route::post('/techUpdates', 'App\Http\Controllers\TechUpdatesController@store')->name('techUpdates.store');
+        Route::delete('/techUpdates', 'App\Http\Controllers\TechUpdatesController@delete')->name('techUpdates.delete');
+
         
         
         Route::get('/viewUsers', 'App\Http\Controllers\ViewUsersController@index')->name('viewUsers');  
@@ -38,7 +44,10 @@ Route::middleware('auth')->group(function (){
     Route::get('/products/show/{product:productname}', 'App\Http\Controllers\ProductsController@show')->name('products.show'); 
 
     Route::get('/fccfUpdates', 'App\Http\Controllers\FccfUpdatesController@index')->name('fccfUpdates.index'); 
-    Route::get('/fccfUpdates/show/{updatename}', 'App\Http\Controllers\FccfUpdatesController@show')->name('fccfUpdates.show'); 
+    Route::get('/fccfUpdates/show/{updatename}', 'App\Http\Controllers\FccfUpdatesController@show')->name('fccfUpdates.show');
+    
+    Route::get('/techUpdates', 'App\Http\Controllers\TechUpdatesController@index')->name('techUpdates.index'); 
+    Route::get('/techUpdates/show/{techname}', 'App\Http\Controllers\TechUpdatesController@show')->name('techUpdates.show');
 
 
     Route::get('/myCart', 'App\Http\Controllers\CartsController@index')->name('carts.index'); 

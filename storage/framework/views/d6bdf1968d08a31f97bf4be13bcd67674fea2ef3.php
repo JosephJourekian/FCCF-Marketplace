@@ -14,16 +14,16 @@
         <a  href="<?php echo e($link->url); ?>"><?php echo e($link->url); ?></a><br>
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     <div class="flex mt-20 mb-3">
-        <p><button class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 mr-4 ml-3"><a href="<?php echo e(route('fccfUpdates.index')); ?>" class="card-link">Back to Updates</a></button>
+        <p><button class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 mr-4 ml-3"><a href="<?php echo e(route('techUpdates.index')); ?>" class="card-link">Back to Updates</a></button>
             <?php if(auth()->user()->isAdmin()): ?>
-                <form method="POST" action="<?php echo e(route('fccfUpdates.delete')); ?>"> 
+                <form method="POST" action="<?php echo e(route('techUpdates.delete')); ?>"> 
                     <?php echo csrf_field(); ?>
                     <?php echo method_field('DELETE'); ?>
                     <input type="hidden" name="id" value="<?php echo e($update->id); ?>"> 
                     <input type="hidden" name="_method" value="DELETE">
                     <button type="submit" class="bg-red-400 text-white rounded py-2 px-4 hover:bg-red-500 ">Delete Update</button>
                 </form>
-                <p><button class="bg-green-400 text-white rounded py-2 px-4 hover:bg-green-500 mr-4 ml-3"><a href="<?php echo e(route('fccfUpdates.edit',$update->updatename)); ?>" class="card-link">Edit this Update</a></button>
+                <p><button class="bg-green-400 text-white rounded py-2 px-4 hover:bg-green-500 mr-4 ml-3"><a href="<?php echo e(route('techUpdates.edit',$update->techname)); ?>" class="card-link">Edit this Update</a></button>
             <?php endif; ?>
         </p>
     </div>
@@ -32,4 +32,4 @@
 <?php $component = $__componentOriginal2744513b5a2bacace2a9ba73cff03b386175a717; ?>
 <?php unset($__componentOriginal2744513b5a2bacace2a9ba73cff03b386175a717); ?>
 <?php endif; ?>
-<?php echo $__env->renderComponent(); ?><?php /**PATH C:\Users\jjour\FCCF-Market\resources\views/fccfUpdates/show.blade.php ENDPATH**/ ?>
+<?php echo $__env->renderComponent(); ?><?php /**PATH C:\Users\jjour\FCCF-Market\resources\views/techUpdates/show.blade.php ENDPATH**/ ?>

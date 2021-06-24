@@ -4,7 +4,7 @@
         {{ session()->get('message') }}
     </div>
 @endif
-<form method="POST" action="{{ route('fccfUpdates.store') }}" enctype="multipart/form-data">
+<form method="POST" action="{{ route('techUpdates.store') }}" enctype="multipart/form-data">
     @csrf
     
     <div class="mb-6">

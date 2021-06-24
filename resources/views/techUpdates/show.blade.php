@@ -14,16 +14,16 @@
         <a  href="{{ $link->url }}">{{ $link->url  }}</a><br>
     @endforeach
     <div class="flex mt-20 mb-3">
-        <p><button class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 mr-4 ml-3"><a href="{{ route('fccfUpdates.index') }}" class="card-link">Back to Updates</a></button>
+        <p><button class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 mr-4 ml-3"><a href="{{ route('techUpdates.index') }}" class="card-link">Back to Updates</a></button>
             @if(auth()->user()->isAdmin())
-                <form method="POST" action="{{ route('fccfUpdates.delete') }}"> 
+                <form method="POST" action="{{ route('techUpdates.delete') }}"> 
                     @csrf
                     @method('DELETE')
                     <input type="hidden" name="id" value="{{ $update->id }}"> 
                     <input type="hidden" name="_method" value="DELETE">
                     <button type="submit" class="bg-red-400 text-white rounded py-2 px-4 hover:bg-red-500 ">Delete Update</button>
                 </form>
-                <p><button class="bg-green-400 text-white rounded py-2 px-4 hover:bg-green-500 mr-4 ml-3"><a href="{{ route('fccfUpdates.edit',$update->updatename) }}" class="card-link">Edit this Update</a></button>
+                <p><button class="bg-green-400 text-white rounded py-2 px-4 hover:bg-green-500 mr-4 ml-3"><a href="{{ route('techUpdates.edit',$update->techname) }}" class="card-link">Edit this Update</a></button>
             @endif
         </p>
     </div>

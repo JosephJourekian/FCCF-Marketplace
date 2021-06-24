@@ -4,9 +4,9 @@
         {{ session()->get('message') }}
     </div>
 @endif
-<form method="POST" action="{{ route('fccfUpdates.store') }}" enctype="multipart/form-data">
+<form method="POST" action="{{ route('techUpdates.update',$update->techname) }}" enctype="multipart/form-data">
     @csrf
-    
+    @method('PATCH')
     <div class="mb-6">
         <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
             for="name"
@@ -19,7 +19,7 @@
             name="name"
             id="name"
             autofocus
-            value=""
+            value="{{ $update->title }}"
             required
         >
 
@@ -39,9 +39,9 @@
             type="text"
             name="excerpt"
             id="excerpt"
-            value=""
+            value="{{ $update->excerpt }}"
             required
-        ></textarea>
+        >{{ $update->excerpt }}</textarea>
 
         @error('excerpt')
             <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
@@ -60,9 +60,12 @@
                 type="file"
                 name="image"
                 id="image"
-                required
                 
             >
+            <img src="{{ $update->image }}"
+                    alt="product pic"
+                    width="100"
+                >
         </div>
 
         @error('image')
@@ -83,32 +86,10 @@
             id="body"
             value=""
             required
-        >
+        >{{ $update->body }}
         </textarea>
 
         @error('body')
-            <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
-        @enderror
-    </div>
-
-    <div class="mb-6">
-        <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
-            for="url"
-        >
-            Links
-        </label>
-
-        <input class="border border-gray-400 p-2 w-full"
-            type="text"
-            name="url"
-            id="url"
-            autofocus
-            value=""
-            required
-        
-        >
-
-        @error('url')
             <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
         @enderror
     </div>
@@ -119,7 +100,11 @@
         >
             Submit
         </button>
-
+        <a href="{{ route('techUpdates.index') }}"
+                    class="bg-red-400 text-white rounded py-2 px-4 hover:bg-red-500 mr-4"
+            >
+                Back To Updates
+        </a>
     </div>
 </form>
 @endcomponent

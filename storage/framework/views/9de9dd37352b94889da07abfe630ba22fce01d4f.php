@@ -5,7 +5,7 @@
 
     </div>
 <?php endif; ?>
-<form method="POST" action="<?php echo e(route('fccfUpdates.store')); ?>" enctype="multipart/form-data">
+<form method="POST" action="<?php echo e(route('techUpdates.store')); ?>" enctype="multipart/form-data">
     <?php echo csrf_field(); ?>
     
     <div class="mb-6">
@@ -162,4 +162,4 @@ unset($__errorArgs, $__bag); ?>
 <?php $component = $__componentOriginal2744513b5a2bacace2a9ba73cff03b386175a717; ?>
 <?php unset($__componentOriginal2744513b5a2bacace2a9ba73cff03b386175a717); ?>
 <?php endif; ?>
-<?php echo $__env->renderComponent(); ?><?php /**PATH C:\Users\jjour\FCCF-Market\resources\views/fccfUpdates/add.blade.php ENDPATH**/ ?>
+<?php echo $__env->renderComponent(); ?><?php /**PATH C:\Users\jjour\FCCF-Market\resources\views/techUpdates/add.blade.php ENDPATH**/ ?>

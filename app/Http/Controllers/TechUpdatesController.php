@@ -3,43 +3,42 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\FccfUpdates;
-use App\Models\FccfUrls;
+use App\Models\TechUpdates;
+use App\Models\TechUrls;
 use DB;
 use Carbon\Carbon;
 
-
-class FccfUpdatesController extends Controller
+class TechUpdatesController extends Controller
 {
     public function index(){
 
-        return view('fccfUpdates.index', [
-            'updates' => FccfUpdates::latest()->get()
+        return view('techUpdates.index', [
+            'updates' => TechUpdates::latest()->get()
         ]);
     }
 
-    public function show(FccfUpdates $updatename){
+    public function show(TechUpdates $techname){
 
-        return view('fccfUpdates.show', [ 
-            'update' => FccfUpdates::find($updatename)->first(),
-            'url' => FccfUrls::all(),
+        return view('techUpdates.show', [ 
+            'update' => TechUpdates::find($techname)->first(),
+            'url' => TechUrls::all(),
         ]);
 
     }
-    public function edit(FccfUpdates $updatename){
+    public function edit(TechUpdates $techname){
 
-        return view('fccfUpdates.edit', [
-            'update' => FccfUpdates::find($updatename)->first(),
+        return view('techUpdates.edit', [
+            'update' => TechUpdates::find($techname)->first(),
         ]);
 
     }
 
-    public function update(FccfUpdates $updatename, Request $request){
+    public function update(TechUpdates $techname, Request $request){
 
-        $update = FccfUpdates::find($updatename)->first();
+        $update = TechUpdates::find($techname)->first();
         
         $attributes = ([
-            'updatename' => str_replace(' ', '-', strtolower(request('name'))),
+            'techname' => str_replace(' ', '-', strtolower(request('name'))),
             'author' => auth()->user()->name,
             'title' => request('name'),
             'excerpt' => request('excerpt'),
@@ -53,27 +52,27 @@ class FccfUpdatesController extends Controller
         
         $update->update($attributes);
     
-        return redirect('/fccfUpdates')->with('message', 'Update Modified!');
+        return redirect('/techUpdates')->with('message', 'Update Modified!');
     }
 
     public function delete(Request $request){
 
         $id = $request->input('id');
-        FccfUpdates::where('id', $id)->delete();
-        return view('fccfUpdates.index', [
-            'updates' => FccfUpdates::latest()->get()
+        TechUpdates::where('id', $id)->delete();
+        return view('techUpdates.index', [
+            'updates' => TechUpdates::latest()->get()
         ])->with('message', 'Update Removed!');
     }
 
     public function add(){
-        return view('fccfUpdates.add');
+        return view('techUpdates.add');
     }
 
     public function store(Request $request){
 
         $array = explode(', ',request('url'));
         $attributes = ([
-            'updatename' => str_replace(' ', '-', strtolower(request('name'))),
+            'techname' => str_replace(' ', '-', strtolower(request('name'))),
             'author' => auth()->user()->name,
             'title' => request('name'),
             'excerpt' => request('excerpt'),
@@ -86,15 +85,16 @@ class FccfUpdatesController extends Controller
             $attributes['image'] = request('image')->store('pics', 'public');
         }
         
-        DB::table('fccf_updates')->insert($attributes);
+        DB::table('tech_updates')->insert($attributes);
+        
         foreach ($array as $item){
-            $updatename =  str_replace(' ', '-', strtolower(request('name')));
-            $fccfUpdates = FccfUpdates::where('updatename', $updatename)->first();
+            $techname =  str_replace(' ', '-', strtolower(request('name')));
+            $techUpdates = TechUpdates::where('techname', $techname)->first();
             $val = [
-                'fccf_updates_id' => $fccfUpdates->id,
+                'tech_updates_id' => $techUpdates->id,
                 'url' => $item,
             ];
-            DB::table('fccf_urls')->insert($val);
+            DB::table('tech_urls')->insert($val);
         }
 
         return redirect()->back()->with('message', 'Update Added!');
