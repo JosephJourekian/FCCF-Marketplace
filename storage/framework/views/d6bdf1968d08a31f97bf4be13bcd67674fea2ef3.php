@@ -11,7 +11,7 @@
 
     <h1 class="font-bold text-md mt-20 block ">Links:</h1>
     <?php $__currentLoopData = $update->url; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $link): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-        <a  href="<?php echo e($link->url); ?>"><?php echo e($link->url); ?></a><br>
+        <a style="color:blue;text-decoration:underline;" href="<?php echo e($link->url); ?>"><?php echo e($link->url); ?></a><br>
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     <div class="flex mt-20 mb-3">
         <p><button class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 mr-4 ml-3"><a href="<?php echo e(route('techUpdates.index')); ?>" class="card-link">Back to Updates</a></button>

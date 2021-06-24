@@ -95,7 +95,7 @@
         <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
             for="url"
         >
-            Links
+            Links (for multiple put a comma and space after each link)
         </label>
 
         <input class="border border-gray-400 p-2 w-full"

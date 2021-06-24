@@ -11,7 +11,7 @@
 
     <h1 class="font-bold text-md mt-20 block ">Links:</h1>
     @foreach ($update->url as $link)
-        <a  href="{{ $link->url }}">{{ $link->url  }}</a><br>
+        <a style="color:blue;text-decoration:underline;" href="{{ $link->url }}">{{ $link->url  }}</a><br>
     @endforeach
     <div class="flex mt-20 mb-3">
         <p><button class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 mr-4 ml-3"><a href="{{ route('techUpdates.index') }}" class="card-link">Back to Updates</a></button>
