@@ -20,6 +20,10 @@ Route::middleware('auth')->group(function (){
         Route::patch('/products/update/{product:productname}', 'App\Http\Controllers\ProductsController@update')->name('products.update');
         Route::get('/products/attributes', 'App\Http\Controllers\ProductsController@showAttributes')->name('products.attributes');
         Route::post('/products/attributes', 'App\Http\Controllers\ProductsController@attributes')->name('products.attributes');
+        Route::get('/products/attributesStock/{product:productname}', 'App\Http\Controllers\ProductsController@editAttributesStock')->name('products.attributesStock');
+        Route::patch('/products/attributesStock', 'App\Http\Controllers\ProductsController@updateAttributesStock')->name('products.attributesStockUpdate');
+
+
         Route::get('/fccfUpdates/edit/{updatename}', 'App\Http\Controllers\FccfUpdatesController@edit')->name('fccfUpdates.edit');
         Route::patch('/fccfUpdates/update/{updatename}', 'App\Http\Controllers\FccfUpdatesController@update')->name('fccfUpdates.update'); 
         Route::get('/fccfUpdates/add', 'App\Http\Controllers\FccfUpdatesController@add')->name('fccfUpdates.add'); 
@@ -39,6 +43,7 @@ Route::middleware('auth')->group(function (){
     });
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('/menuTest', 'App\Http\Controllers\ProductsController@menuTest')->name('menuTest'); 
+    Route::get('/test', 'App\Http\Controllers\ProductsController@test')->name('test'); 
     
     Route::get('/products', 'App\Http\Controllers\ProductsController@index')->name('products.index'); 
     Route::get('/products/show/{product:productname}', 'App\Http\Controllers\ProductsController@show')->name('products.show'); 
@@ -61,5 +66,7 @@ Route::middleware('auth')->group(function (){
     Route::get('/profiles/edit/{user:username}', 'App\Http\Controllers\ProfilesController@edit')->name('profiles.edit');
     Route::patch('/profiles/update/{user:username}', 'App\Http\Controllers\ProfilesController@update')->name('profiles.update');
     Route::get('/purchaseHistory/{user:username}', 'App\Http\Controllers\PurchaseHistoryController@index')->name('purchaseHistory');
+
+
 
 });

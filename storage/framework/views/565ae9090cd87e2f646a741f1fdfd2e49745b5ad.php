@@ -103,6 +103,7 @@ unset($__errorArgs, $__bag); ?>
                 type="file"
                 name="image"
                 id="image"
+                required
                 
             >
         </div>

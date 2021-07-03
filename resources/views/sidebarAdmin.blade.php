@@ -22,6 +22,11 @@
         </a>
     </li>
     <li>
+        <a href="{{ route('test') }}" class="font-bold text-lg mb-4 block">
+            Figma Test
+        </a>
+    </li>
+    <li>
         <div class="dropdown">
             <button class="dropbtn">FCCF Updates</button>
             <div class="dropdown-content">

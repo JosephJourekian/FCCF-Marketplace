@@ -15,34 +15,40 @@
             <table id="t01">
                 <tr>
                   <th>Product Name</th>
-                  <th>Stock</th>
+                  <!--<th>Stock</th>-->
                   <th>Attributes</th>
-                  <th>Add Attribute Name</th>
-                  <th>Add Attribute Value</th>
+                  <th>Add 1st Attribute Name</th>
+                  <th>Add 1st Attribute Value</th>
+                  <th>Add 2nd Attribute Name</th>
+                  <th>Add 2nd Attribute Value</th>
+                  <th>Stock</th>
                   <th>Remove Attribute</th>
-                  <!--<th>Add Individual Stock</th>-->
+                  <th>Add/Remove stock</th>
                 </tr>
                 <?php $index = 0 ?>
                 <?php $__currentLoopData = $products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr>
                   <td><?php echo e($product->name); ?></td>
-                  <td><?php echo e($product->stock); ?></td>
-                  <td>
+                  <!--<td><?php echo e($product->stock); ?></td>-->
+                  <td style="white-space: nowrap;overflow:hidden;">
                       <?php $__currentLoopData = $product->attributes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $attribute): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <li><?php echo e($attribute->attribute_name); ?>: <?php echo e($attribute->attribute_value); ?>,</li> <!--, Stock: <?php echo e($attribute->stock); ?>-->
+                        <li><?php echo e($attribute->attribute_name); ?>: <?php echo e($attribute->attribute_value); ?>, <?php echo e($attribute->attribute_second_name); ?>: <?php echo e($attribute->attribute_second_value); ?>, Stock: <?php echo e($attribute->stock); ?></li><br>
                       <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                   </td>
                   <input hidden type="number" name="products[<?php echo e($index); ?>][id]" value="<?php echo e($product->id); ?>" required>
-                  <td><input type="text" name="products[<?php echo e($index); ?>][attributeName]" value="" ></td>
-                  <td><input type="text" name="products[<?php echo e($index); ?>][attributeValue]" value="" ></td>
+                  <td><input type="text" name="products[<?php echo e($index); ?>][attributeName]" value=""  size="10"></td>
+                  <td><input type="text" name="products[<?php echo e($index); ?>][attributeValue]" value="" size="10"></td>
+                  <td><input type="text" name="products[<?php echo e($index); ?>][attributeName2]" value="" size="10"></td>
+                  <td><input type="text" name="products[<?php echo e($index); ?>][attributeValue2]" value="" size="10"></td>
+                  <td><input type="number" name="products[<?php echo e($index); ?>][stock]" value="" style="width: 3em"></td>
                   <td>
                     <select name="products[<?php echo e($index); ?>][attribute][]" multiple>
                         <?php $__currentLoopData = $product->attributes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $attribute): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                           <option value="<?php echo e($attribute->id); ?>"><?php echo e($attribute->attribute_name); ?>: <?php echo e($attribute->attribute_value); ?></option>
+                           <option value="<?php echo e($attribute->id); ?>"><?php echo e($attribute->attribute_name); ?>: <?php echo e($attribute->attribute_value); ?>, <?php echo e($attribute->attribute_second_name); ?>: <?php echo e($attribute->attribute_second_value); ?></option>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </select>
                   </td>
-                  <!--<td><input type="number" name="products[<?php echo e($index); ?>][individualStock]" value="" ></td>-->
+                  <td><button class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-300"><a href="<?php echo e(route('products.attributesStock',$product->productname)); ?>" class="card-link">Edit</a></button></td>
                 </tr>
                 <?php $index++ ?>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

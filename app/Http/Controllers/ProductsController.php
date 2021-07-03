@@ -203,11 +203,17 @@ class ProductsController extends Controller
                     ProductsAttribute::where('id', $prod)->delete();
                 }
             }
-            if($product['attributeName'] != null && $product['attributeValue'] != null){ 
+            if($product['attributeName'] != null && $product['attributeValue'] != null && $product['attributeName2'] != null && $product['attributeValue2'] != null && $product['stock'] !== null){ 
+                if($product['stock'] < 0){
+                    $product['stock'] = 0;
+                }
                 $attributes = [
                     'products_id' => $product['id'],
                     'attribute_name' => $product['attributeName'],
-                    'attribute_value' =>$product['attributeValue'],
+                    'attribute_value' => $product['attributeValue'],
+                    'attribute_second_name' => $product['attributeName2'],
+                    'attribute_second_value' => $product['attributeValue2'],
+                    'stock' => $product['stock']
                 ];
                 DB::table('products_attribute')->insert($attributes);
             }
@@ -219,7 +225,42 @@ class ProductsController extends Controller
             'attributes' => ProductsAttribute::all()
         ]);
     }
+    public function editAttributesStock(Products $product){
+
+        return view('products.attributesStock', [
+            'product' => Products::find($product)->first(),
+            'attributes' => ProductsAttribute::all()
+        ]);
+    }
+    public function updateAttributesStock(Request $request){
+        
+        $products = $request->products;
+        //dd($products);
+        foreach($products as $product){
+            if($product['stock'] != null){
+                $attributeId = $product['id'];
+                $attribute = ProductsAttribute::find($attributeId);
+                //dd($attribute);
+                if(($attribute->stock + $product['stock']) < 0){
+                    $attribute->update(['stock'=> 0]);
+                }
+                else{
+                    $attribute->update(['stock'=> $attribute->stock + $product['stock']]);
+                } 
+            }
+        }
+
+        return view('products/attributes', [
+            'products' => Products::paginate(50),
+            'categories' => Category::all(),
+            'attributes' => ProductsAttribute::all()
+        ]);
+        
+    }
     public function menuTest(){
         return view('menuTest');
+    }
+    public function test(){
+        return view('test');
     }
 }
