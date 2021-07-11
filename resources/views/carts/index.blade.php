@@ -13,8 +13,10 @@
             <img class="rounded-lg" src="{{ $product->options->img }}" style="width:150px;height:125px;float:left">
             <a class="font-bold text-md" style="color:blue"href="{{ route('products.show',$product->options->productname) }}">{{ $product->name }}</a>
             <h1 class="font-bold text-md mt-1 block">Quantity: {{ $product->qty }}</h1>
-            <h1 class="font-bold text-md ">Size: {{ $product->options->size }}</h1>
-            <h1 class="font-bold text-md ">Color: {{ $product->options->color }}</h1>
+            <h1 class="font-bold text-md ">Attributes: {{ $product->options->attributename }}: {{ $product->options->attributevalue }}, 
+                {{ $product->options->attributename2 }}: {{ $product->options->attributevalue2 }}, Stock: {{ $product->options->attributeStock }}
+            </h1>
+           
             
             <form method="POST" action='{{ route('carts.update',[$product->rowId,$product->options->productname]) }}' enctype="multipart/form-data" >
              @csrf

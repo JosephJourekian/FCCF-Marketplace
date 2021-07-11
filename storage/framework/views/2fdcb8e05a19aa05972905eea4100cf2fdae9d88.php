@@ -11,7 +11,7 @@
     <div>
         <form method="POST" action='<?php echo e(route('products.attributesStockUpdate')); ?>' enctype="multipart/form-data" class="mb-8" >
             <?php echo csrf_field(); ?>
-            <?php echo method_field('PATCH'); ?>
+            <?php echo method_field('PATCH'); ?>    
             <table id="t01">
                 <tr>
                   <th>Attributes</th>

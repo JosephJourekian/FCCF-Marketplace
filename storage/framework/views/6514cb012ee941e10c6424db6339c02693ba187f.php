@@ -14,8 +14,11 @@
             <img class="rounded-lg" src="<?php echo e($product->options->img); ?>" style="width:150px;height:125px;float:left">
             <a class="font-bold text-md" style="color:blue"href="<?php echo e(route('products.show',$product->options->productname)); ?>"><?php echo e($product->name); ?></a>
             <h1 class="font-bold text-md mt-1 block">Quantity: <?php echo e($product->qty); ?></h1>
-            <h1 class="font-bold text-md ">Size: <?php echo e($product->options->size); ?></h1>
-            <h1 class="font-bold text-md ">Color: <?php echo e($product->options->color); ?></h1>
+            <h1 class="font-bold text-md ">Attributes: <?php echo e($product->options->attributename); ?>: <?php echo e($product->options->attributevalue); ?>, 
+                <?php echo e($product->options->attributename2); ?>: <?php echo e($product->options->attributevalue2); ?>, Stock: <?php echo e($product->options->attributeStock); ?>
+
+            </h1>
+           
             
             <form method="POST" action='<?php echo e(route('carts.update',[$product->rowId,$product->options->productname])); ?>' enctype="multipart/form-data" >
              <?php echo csrf_field(); ?>

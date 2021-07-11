@@ -20,29 +20,42 @@ class CartsController extends Controller
     }
 
     public function add(Products $product, Request $request){
-
-        if(request("size") != null && request('color') != null){
+        //dd(Cart::content());
+        //dd(request('attribute'));
+        if(request("attribute") != null){
+            //dd('check');
             $productI = Products::find($product)->first();
             $cart = Cart::content()->where('id',$productI->id);
-            $size = ProductsAttribute::find(request('size'));
-            $color = ProductsAttribute::find(request('color'));
+            $attribute = ProductsAttribute::find(request('attribute'));
+            $attributeId = $attribute->id;
+            $attributeName = $attribute->attribute_name;
+            $attributeValue = $attribute->attribute_value;
+            $attributeName2 = $attribute->attribute_second_name;
+            $attributeValue2 = $attribute->attribute_second_value;
+            $attributeStock = $attribute->stock;
             
-            if($productI->stock == 0){
+
+            if($productI->stock == 0){ 
                 return view('carts.index',[
                     'cart' => Cart::content(),
                     'categories' => Category::all()
                 ]);
             }
+            
 
             if($cart->count() == 0){
-                
+                //dd('Yo4');
                 Cart::add(['id' => $productI->id, 'name' => $productI->name, 'qty' => 1, 'price' => $productI->price,
                 'image' =>  $productI->image,
                 'options'=>[
                 'img' => $productI->image,
                 'productname' => $productI->productname,
-                'size' => $size->attribute_value,
-                'color' => $color->attribute_value
+                'attributeId' => $attributeId,
+                'attributename' => $attributeName,
+                'attributevalue' => $attributeValue,
+                'attributename2' => $attributeName2,
+                'attributevalue2' => $attributeValue2,
+                'attributeStock' => $attributeStock
 
                 ]]);
                     
@@ -53,13 +66,18 @@ class CartsController extends Controller
             }
 
             if(Cart::count() == 0){
+                dd('Yo3');
                 Cart::add(['id' => $productI->id, 'name' => $productI->name, 'qty' => 1, 'price' => $productI->price,
                 'image' =>  $productI->image,
                 'options'=>[
                 'img' => $productI->image,
                 'productname' => $productI->productname,
-                'size' => $size->attribute_value,
-                'color' => $color->attribute_value
+                'attributeId' => $attributeId,
+                'attributename' => $attributeName,
+                'attributevalue' => $attributeValue,
+                'attributename2' => $attributeName2,
+                'attributevalue2' => $attributeValue2,
+                'attributeStock' => $attributeStock
                 ]]);
 
                 return view('carts.index',[
@@ -68,17 +86,29 @@ class CartsController extends Controller
                 ])->with('message', 'Product Added to cart');
             }
 
-            foreach($cart as $items){
-                $quantity = $items->qty;
-                if(Cart::content()->contains('id',$items->id) == 1){
-                    if($productI->stock-1 >= $quantity){
+            
+            $cartItem = Cart::content();
+            $nkey = (int)request('attribute');
+            $cItem = Cart::search(function ($cartItem, $rowId) use ($nkey) {
+                return $cartItem->options->attributeId === $nkey;
+            });
+
+            
+            if($cItem->isEmpty() == false) //if it's in the cart
+            {
+                foreach($cItem as $items){
+                    if((int)$items->qty < $items->options->attributeStock){ //if the added product doesn't excede the stock
                         Cart::add(['id' => $productI->id, 'name' => $productI->name, 'qty' => 1, 'price' => $productI->price,
                             'image' =>  $productI->image,
                             'options'=>[
                             'img' => $productI->image,
                             'productname' => $productI->productname,
-                            'size' => $size->attribute_value,
-                            'color' => $color->attribute_value
+                            'attributeId' => $attributeId,
+                            'attributename' => $attributeName,
+                            'attributevalue' => $attributeValue,
+                            'attributename2' => $attributeName2,
+                            'attributevalue2' => $attributeValue2,
+                            'attributeStock' => $attributeStock
                         ]]);
 
                         return view('carts.index',[
@@ -86,30 +116,35 @@ class CartsController extends Controller
                             'categories' => Category::all()
                         ])->with('message', 'Product Added to cart');
                     }
-                    if($productI->stock-1 <= (int)$items->qty){
+                    else{//product excedes the stock
                         return view('carts.index',[
                             'cart' => Cart::content(),
                             'categories' => Category::all()
                         ])->with('message', 'Cannot Add Anymore!');
                     }
                 }
-                elseif(Cart::content()->contains('id',$id) == null){
-                    Cart::add(['id' => $productI->id, 'name' => $productI->name, 'qty' => 1, 'price' => $productI->price,
+            }
+            else{   //if it's not in the cart
+                Cart::add(['id' => $productI->id, 'name' => $productI->name, 'qty' => 1, 'price' => $productI->price,
                         'image' =>  $productI->image,
                         'options'=>[
                         'img' => $productI->image,
                         'productname' => $productI->productname,
-                        'size' => $size->attribute_value,
-                        'color' => $color->attribute_value
-                        ]]);
+                        'attributeId' => $attributeId,
+                        'attributename' => $attributeName,
+                        'attributevalue' => $attributeValue,
+                        'attributename2' => $attributeName2,
+                        'attributevalue2' => $attributeValue2,
+                        'attributeStock' => $attributeStock
+                    ]]);
 
-                        return view('carts.index',[
-                            'cart' => Cart::content(),
-                            'categories' => Category::all()
-                        ])->with('message', 'Product Added to cart');
-                }
+                    return view('carts.index',[
+                        'cart' => Cart::content(),
+                        'categories' => Category::all()
+                    ])->with('message', 'Product Added to cart');
             }
         }
+
         $productI = Products::find($product)->first();
         $cart = Cart::content()->where('id',$productI->id);
         
@@ -119,16 +154,20 @@ class CartsController extends Controller
                 'categories' => Category::all()
             ]);
         }
+        
 
         if($cart->count() == 0){
-            
             Cart::add(['id' => $productI->id, 'name' => $productI->name, 'qty' => 1, 'price' => $productI->price,
             'image' =>  $productI->image,
             'options'=>[
             'img' => $productI->image,
             'productname' => $productI->productname,
-            'size' => 'N/A',
-            'color' => 'N/A'
+            'attributeId' => 'N/A',
+            'attributename' => 'N/A',
+            'attributevalue' => 'N/A',
+            'attributename2' => 'N/A',
+            'attributevalue2' => 'N/A',
+            'attributeStock' => 'N/A'
             ]]);
                 
             return view('carts.index',[
@@ -143,8 +182,12 @@ class CartsController extends Controller
             'options'=>[
             'img' => $productI->image,
             'productname' => $productI->productname,
-            'size' => 'N/A',
-            'color' => 'N/A'
+            'attributeId' => 'N/A',
+            'attributename' => 'N/A',
+            'attributevalue' => 'N/A',
+            'attributename2' => 'N/A',
+            'attributevalue2' => 'N/A',
+            'attributeStock' => 'N/A'
             ]]);
 
             return view('carts.index',[
@@ -162,9 +205,13 @@ class CartsController extends Controller
                         'options'=>[
                         'img' => $productI->image,
                         'productname' => $productI->productname,
-                        'size' => 'N/A',
-                        'color' => 'N/A'
-                    ]]);
+                        'attributeId' => 'N/A',
+                        'attributename' => 'N/A',
+                        'attributevalue' => 'N/A',
+                        'attributename2' => 'N/A',
+                        'attributevalue2' => 'N/A',
+                        'attributeStock' => 'N/A'
+                        ]]);
 
                     return view('carts.index',[
                         'cart' => Cart::content(),
@@ -184,8 +231,12 @@ class CartsController extends Controller
                     'options'=>[
                     'img' => $productI->image,
                     'productname' => $productI->productname,
-                    'size' => 'N/A',
-                    'color' => 'N/A'
+                    'attributeId' => 'N/A',
+                    'attributename' => 'N/A',
+                    'attributevalue' => 'N/A',
+                    'attributename2' => 'N/A',
+                    'attributevalue2' => 'N/A',
+                    'attributeStock' => 'N/A'
                     ]]);
 
                     return view('carts.index',[

@@ -20,6 +20,7 @@ class CheckoutsController extends Controller
 {
     
     public function index(){
+        //dd(Cart::content());
         if(Cart::count() == 0){
             return redirect('products');
         }

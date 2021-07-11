@@ -48,20 +48,23 @@
                 @foreach ($product->category as $categories)
                     @if ($categories->name == "Apparel")
                     <p class="font-bold">Select Size and Color:</p>
-                    <select name="size">
+                    <select name="attribute">
                         @foreach($product->attributes as $attribute)
                             @if($attribute->attribute_name == "Size")
-                                <option value="{{ $attribute->id }}">{{ $attribute->attribute_name }}: {{ $attribute->attribute_value }}</option>
+                                <option value="{{ $attribute->id }}">
+                                    {{ $attribute->attribute_name }}: {{ $attribute->attribute_value }}, {{ $attribute->attribute_second_name }}: 
+                                    {{ $attribute->attribute_second_value }}, Stock: {{ $attribute->stock }}
+                                </option>
                             @endif
                         @endforeach
                     </select>
-                    <select name="color">
+                    <!--<select name="color">
                         @foreach($product->attributes as $attribute)
                             @if($attribute->attribute_name == "Color")
                                 <option value="{{ $attribute->id }}">{{ $attribute->attribute_name }}: {{ $attribute->attribute_value }}</option>
                             @endif
                         @endforeach
-                    </select>
+                    </select>-->
                     @endif
                 @endforeach
             </p>
