@@ -9,6 +9,7 @@ use App\Models\Orders;
 use Cart;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\OrderConfirmation;
+use App\Models\ProductsAttribute;
 use App\Mail\ShippingDetails;
 use DB;
 use Carbon\Carbon;
@@ -20,7 +21,6 @@ class CheckoutsController extends Controller
 {
     
     public function index(){
-        //dd(Cart::content());
         if(Cart::count() == 0){
             return redirect('products');
         }
@@ -35,13 +35,24 @@ class CheckoutsController extends Controller
     public function confirm(){
         User::where('name', auth()->user()->name)->where('points','>','0')->decrement('points', (float)Cart::subtotal('0','','')); 
         $cart = Cart::content();
+        $cartItem = Cart::content();
+
         
-        foreach ($cart as $product){
-            Products::where('name', $product->name)->where('stock','>','0')->decrement('stock', $product->qty); 
+        foreach ($cart as $item){
+            $nkey = $item->options->attributeId;
+            $cItem = Cart::search(function ($cartItem, $rowId) use ($nkey) {
+                return $cartItem->options->attributeId === $nkey;
+            });
+            Products::where('name', $item->name)->where('stock','>','0')->decrement('stock', $item->qty); 
+            foreach($cItem as $temp){
+                $val = ProductsAttribute::find($temp->options->attributeId);
+                ProductsAttribute::where('id', $temp->options->attributeId)->where('stock','>','0')->decrement('stock', $item->qty);
+            }
+            
         }
             $attributes = ([
                 'user_id' => auth()->user()->id,
-                'product_id' => $product->id,
+                'product_id' => $item->id,
                 'cart' => serialize(Cart::content()),
                 'order_subtotal' => Cart::subtotal('0','',''),
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),

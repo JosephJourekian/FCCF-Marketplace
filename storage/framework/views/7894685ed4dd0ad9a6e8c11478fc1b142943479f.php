@@ -7,8 +7,7 @@ Order summary:<br>
 <?php $__currentLoopData = $cart; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 <h2 class="font-bold text-md block">Product Name: <?php echo e($product->name); ?></h2>
 <h2 class="font-bold text-md block">Quantity: <?php echo e($product->qty); ?></h2>
-<h2 class="font-bold text-md block">Size: <?php echo e($product->options->size); ?></h2>
-<h2 class="font-bold text-md block">Color: <?php echo e($product->options->color); ?></h2>
+<h2 class="font-bold text-md ">Attributes: <?php echo e($product->options->attributename); ?>: <?php echo e($product->options->attributevalue); ?>, <?php echo e($product->options->attributename2); ?>: <?php echo e($product->options->attributevalue2); ?></h2>
 <h2 class="font-bold text-md block">Price: <?php echo e($product->price); ?> Points</h2>
 <h2 class="font-bold text-md block">Total Product Price: <?php echo e($product->subtotal('0','','')); ?> Points</h2><br>
 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

@@ -8,8 +8,10 @@
         <?php $__currentLoopData = unserialize($order['cart']); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <img class="rounded-lg mb-4" src="<?php echo e($item->options->img); ?>" style="width:150px;height:104px;float:left">
             <a class="font-bold text-md mb-3" style="color:blue"href="<?php echo e(route('products.show',$item->options->productname)); ?>"><?php echo e($item->name); ?></a>
-            <h1 class="font-bold text-md block">Size: <?php echo e($item->options->size); ?></h1>
-            <h1 class="font-bold text-md block">Color: <?php echo e($item->options->color); ?></h1>
+            <h1 class="font-bold text-md ">Attributes: <?php echo e($item->options->attributename); ?>: <?php echo e($item->options->attributevalue); ?>, 
+                <?php echo e($item->options->attributename2); ?>: <?php echo e($item->options->attributevalue2); ?>
+
+            </h1>
             <h1 class="font-bold text-md block">Quantity: <?php echo e($item->qty); ?></h1>
             <h1 class="font-bold text-md mb-6 mt-6 block">Product Price: <?php echo e($item->price); ?> Points</h1>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

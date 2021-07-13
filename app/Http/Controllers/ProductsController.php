@@ -47,7 +47,8 @@ class ProductsController extends Controller
         $attributes['image'] = request('image')->store('pics', 'public');
 
         DB::table('products')->insert($attributes);
-    
+        
+        if(request('otherImages') != null){
             foreach ($request->file('otherImages') as $image){
                 $product = Products::where('productname', request('productname'))->first();
                 $val = [
@@ -57,6 +58,7 @@ class ProductsController extends Controller
                 DB::table('products_images')->insert($val);
                 
             }
+        }
 
         if(request('attribute') != null && request('attributeValue')){
             $product = Products::where('productname', request('productname'))->first();
@@ -174,7 +176,12 @@ class ProductsController extends Controller
                 $prodObj = Products::find($product['id']);
                 if($prodObj->category()->where('category_id', $product['categories'])->exists() == false){
                     $prodObj->category()->attach($product['categories']); 
+                    $cat = Category::find($product['categories'])->first();
+                    if($cat->name == 'Apparel'){
+                        DB::table('products')->where('id', $prodObj->id)->update(['stock' => 0]);
+                    }
                 }
+                
             }
             if(isset($product['categoriesR']) == true){
                 $prodObj = Products::find($product['id']);
@@ -200,7 +207,14 @@ class ProductsController extends Controller
         foreach($products as $product){
             if(isset($product['attribute']) == true){
                 foreach($product['attribute'] as $prod){
+                    $subAtt = ProductsAttribute::find($prod)->first();
+                    $subProd = Products::find($product['id'])->first();
+                    DB::table('products')->where('id', $subProd->id)->update(['stock' => $subProd->stock - (int)$subAtt->stock]);
+                    if(($subProd->stock - (float)$subAtt->stock) < 0){
+                        DB::table('products')->where('id', $subProd->id)->update(['stock' => 0]);
+                    }
                     ProductsAttribute::where('id', $prod)->delete();
+
                 }
             }
             if($product['attributeName'] != null && $product['attributeValue'] != null && $product['attributeName2'] != null && $product['attributeValue2'] != null && $product['stock'] !== null){ 
@@ -215,8 +229,11 @@ class ProductsController extends Controller
                     'attribute_second_value' => $product['attributeValue2'],
                     'stock' => $product['stock']
                 ];
+                $prod = Products::find($product['id'])->first();
                 DB::table('products_attribute')->insert($attributes);
+                DB::table('products')->where('id', $prod->id)->update(['stock' => $prod->stock + (int)$product['stock']]);
             }
+
             
         }
 
@@ -232,20 +249,22 @@ class ProductsController extends Controller
             'attributes' => ProductsAttribute::all()
         ]);
     }
-    public function updateAttributesStock(Request $request){
+    public function attributesStockUpdate(Request $request){
         
         $products = $request->products;
-        //dd($products);
+        
         foreach($products as $product){
+            $prod = Products::find($product['productId']);
             if($product['stock'] != null){
                 $attributeId = $product['id'];
                 $attribute = ProductsAttribute::find($attributeId);
-                //dd($attribute);
                 if(($attribute->stock + $product['stock']) < 0){
                     $attribute->update(['stock'=> 0]);
+
                 }
                 else{
                     $attribute->update(['stock'=> $attribute->stock + $product['stock']]);
+                    $prod->update(['stock' => $prod->stock + $product['stock']]);
                 } 
             }
         }

@@ -1,11 +1,11 @@
-@component('components.master')
+<?php $__env->startComponent('components.master'); ?>
 <div class="container mx-auto flex justify-center">
     <div class="px-12 py-6 bg-gray-200 rounded-lg">
         <div class="col-md-8">
-            <div class="font-bold text-lg mb-2">{{ _('Register') }}</div>
+            <div class="font-bold text-lg mb-2"><?php echo e(_('Register')); ?></div>
 
-            <form method="POST" action="{{ route('register') }}">
-                @csrf
+            <form method="POST" action="<?php echo e(route('register')); ?>">
+                <?php echo csrf_field(); ?>
 
                 <div class="mb-6">
                     <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
@@ -18,14 +18,20 @@
                         type="text"
                         name="name"
                         id="name"
-                        autofocus
-                        value="{{ old('name') }}"
+                        value="<?php echo e(old('name')); ?>"
                         required
                     >
 
-                    @error('name')
-                        <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
-                    @enderror
+                    <?php $__errorArgs = ['name'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                        <p class="text-red-500 text-xs mt-2"><?php echo e($message); ?></p>
+                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                 </div>
 
                 <div class="mb-6">
@@ -40,13 +46,21 @@
                         name="username"
                         id="username"
                         autocomplete="username"
-                        value="{{ old('username') }}"
+                        autofocus
+                        value="<?php echo e(old('username')); ?>"
                         required
                     >
 
-                    @error('username')
-                        <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
-                    @enderror
+                    <?php $__errorArgs = ['username'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                        <p class="text-red-500 text-xs mt-2"><?php echo e($message); ?></p>
+                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                 </div>
 
                 <div class="mb-6">
@@ -60,13 +74,20 @@
                         type="text"
                         name="address"
                         id="address"
-                        value="{{ old('address') }}"
+                        value="<?php echo e(old('address')); ?>"
                         required
                     >
 
-                    @error('address')
-                        <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
-                    @enderror
+                    <?php $__errorArgs = ['address'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                        <p class="text-red-500 text-xs mt-2"><?php echo e($message); ?></p>
+                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                 </div>
 
                 <div class="mb-6">
@@ -80,13 +101,20 @@
                         type="text"
                         name="city"
                         id="city"
-                        value="{{ old('city') }}"
+                        value="<?php echo e(old('city')); ?>"
                         required
                     >
 
-                    @error('city')
-                        <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
-                    @enderror
+                    <?php $__errorArgs = ['city'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                        <p class="text-red-500 text-xs mt-2"><?php echo e($message); ?></p>
+                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                 </div>
 
                 <div class="mb-6">
@@ -100,13 +128,20 @@
                         type="text"
                         name="postalCode"
                         id="postalCode"
-                        value="{{ old('postalCode') }}"
+                        value="<?php echo e(old('postalCode')); ?>"
                         required
                     >
 
-                    @error('postalCode')
-                        <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
-                    @enderror
+                    <?php $__errorArgs = ['postalCode'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                        <p class="text-red-500 text-xs mt-2"><?php echo e($message); ?></p>
+                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                 </div>
 
                 <div class="mb-6">
@@ -121,7 +156,7 @@
                         type="text"
                         name="province"
                         id="province"
-                        value="{{ old('province') }}"
+                        value="<?php echo e(old('province')); ?>"
                         required>
                     <option value="Ontario">Ontario</option>
                     <option value="Alberta">Alberta</option>
@@ -139,9 +174,16 @@
 
                     </select>
 
-                    @error('province')
-                        <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
-                    @enderror
+                    <?php $__errorArgs = ['province'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                        <p class="text-red-500 text-xs mt-2"><?php echo e($message); ?></p>
+                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                 </div>
 
                 <div class="mb-6">
@@ -155,13 +197,20 @@
                         type="text"
                         name="phone"
                         id="phone"
-                        value="{{ old('phone') }}"
+                        value="<?php echo e(old('phone')); ?>"
                         required
                     >
 
-                    @error('phone')
-                        <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
-                    @enderror
+                    <?php $__errorArgs = ['phone'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                        <p class="text-red-500 text-xs mt-2"><?php echo e($message); ?></p>
+                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                 </div>
 
                 <div class="mb-6">
@@ -175,14 +224,21 @@
                         type="email"
                         name="email"
                         id="email"
-                        value="{{ old('email') }}"
+                        value="<?php echo e(old('email')); ?>"
                         autocomplete="email"
                         required
                     >
 
-                    @error('email')
-                        <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
-                    @enderror
+                    <?php $__errorArgs = ['email'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                        <p class="text-red-500 text-xs mt-2"><?php echo e($message); ?></p>
+                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                 </div>
 
 
@@ -200,9 +256,16 @@
                         autocomplete="new-password"
                     >
 
-                    @error('password')
-                        <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
-                    @enderror
+                    <?php $__errorArgs = ['password'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                        <p class="text-red-500 text-xs mt-2"><?php echo e($message); ?></p>
+                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                 </div>
 
                 <div class="mb-6">
@@ -219,9 +282,16 @@
                         autocomplete="new-password"
                     >
 
-                    @error('password_confirmation')
-                        <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
-                    @enderror
+                    <?php $__errorArgs = ['password_confirmation'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                        <p class="text-red-500 text-xs mt-2"><?php echo e($message); ?></p>
+                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                 </div>
 
                 <div>
@@ -234,7 +304,12 @@
             </form>
         </div>
         <br>
-        <b><a href="{{ route('login') }}" class="text-xs text-gray-700">Already have an account? Login here</a></b>
+        <b><a href="<?php echo e(route('login')); ?>" class="text-xs text-gray-700">Already have an account? Login here</a></b>
     </div>
 </div>
-@endcomponent
+<?php if (isset($__componentOriginal850c27230e92ef2157925d9cfb0586d6ba56a592)): ?>
+<?php $component = $__componentOriginal850c27230e92ef2157925d9cfb0586d6ba56a592; ?>
+<?php unset($__componentOriginal850c27230e92ef2157925d9cfb0586d6ba56a592); ?>
+<?php endif; ?>
+<?php echo $__env->renderComponent(); ?>
+<?php /**PATH C:\Users\jjour\FCCF-Market\resources\views/auth/register.blade.php ENDPATH**/ ?>

@@ -22,6 +22,7 @@
                 <tr>
                   <td>{{ $attribute->attribute_name }}: {{ $attribute->attribute_value }}, {{ $attribute->attribute_second_name }}: {{ $attribute->attribute_second_value }}</td>
                   <td>{{ $attribute->stock }}</td>
+                  <input hidden type="number" name="products[{{ $index }}][productId]" value="{{ $product->id }}" required>
                   <input hidden type="number" name="products[{{ $index }}][id]" value="{{ $attribute->id }}" required>
                   <td><input type="number" name="products[{{ $index }}][stock]" value="" style="width: 9em"></td>
                 <?php $index++ ?>

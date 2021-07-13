@@ -23,6 +23,7 @@
                 <tr>
                   <td><?php echo e($attribute->attribute_name); ?>: <?php echo e($attribute->attribute_value); ?>, <?php echo e($attribute->attribute_second_name); ?>: <?php echo e($attribute->attribute_second_value); ?></td>
                   <td><?php echo e($attribute->stock); ?></td>
+                  <input hidden type="number" name="products[<?php echo e($index); ?>][productId]" value="<?php echo e($product->id); ?>" required>
                   <input hidden type="number" name="products[<?php echo e($index); ?>][id]" value="<?php echo e($attribute->id); ?>" required>
                   <td><input type="number" name="products[<?php echo e($index); ?>][stock]" value="" style="width: 9em"></td>
                 <?php $index++ ?>

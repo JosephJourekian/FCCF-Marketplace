@@ -80,7 +80,7 @@ class RegisterController extends Controller
             'postalCode' => $data['postalCode'],
             'phone' => $data['phone'],
             'type' => User::DEFAULT_TYPE,
-            'password' => Hash::make($data['password']),
+            'password' => $data['password'],
         ]);
     }
 }

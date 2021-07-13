@@ -21,7 +21,7 @@ Route::middleware('auth')->group(function (){
         Route::get('/products/attributes', 'App\Http\Controllers\ProductsController@showAttributes')->name('products.attributes');
         Route::post('/products/attributes', 'App\Http\Controllers\ProductsController@attributes')->name('products.attributes');
         Route::get('/products/attributesStock/{product:productname}', 'App\Http\Controllers\ProductsController@editAttributesStock')->name('products.attributesStock');
-        Route::patch('/products/attributesStock', 'App\Http\Controllers\ProductsController@updateAttributesStock')->name('products.attributesStockUpdate');
+        Route::patch('/products/attributesStock', 'App\Http\Controllers\ProductsController@attributesStockUpdate')->name('products.attributesStockUpdate');
 
 
         Route::get('/fccfUpdates/edit/{updatename}', 'App\Http\Controllers\FccfUpdatesController@edit')->name('fccfUpdates.edit');

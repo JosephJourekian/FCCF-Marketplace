@@ -27,6 +27,22 @@
     </li>
     <li>
         <div class="dropdown">
+            <button class="dropbtn">FCCF Updates</button>
+            <div class="dropdown-content">
+              <a href="<?php echo e(route('fccfUpdates.index')); ?>">View Updates</a>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="dropdown">
+            <button class="dropbtn">Tech Updates</button>
+            <div class="dropdown-content">
+              <a href="<?php echo e(route('techUpdates.index')); ?>">View Updates</a>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="dropdown">
             <button class="dropbtn">My Profile</button>
             <div class="dropdown-content">
                 <a href="<?php echo e(route('profiles.edit',auth()->user()->username)); ?>">Edit Profile</a>
