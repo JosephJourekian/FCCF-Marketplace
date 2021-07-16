@@ -20,10 +20,7 @@ class CartsController extends Controller
     }
 
     public function add(Products $product, Request $request){
-        //dd(Cart::content());
-        //dd(request('attribute'));
         if(request("attribute") != null){
-            //dd('check');
             $productI = Products::find($product)->first();
             $cart = Cart::content()->where('id',$productI->id);
             $attribute = ProductsAttribute::find(request('attribute'));
@@ -34,14 +31,12 @@ class CartsController extends Controller
             $attributeValue2 = $attribute->attribute_second_value;
             $attributeStock = $attribute->stock;
             
-
             if($productI->stock == 0){ 
                 return view('carts.index',[
                     'cart' => Cart::content(),
                     'categories' => Category::all()
                 ]);
             }
-            
 
             if($cart->count() == 0){
                 //dd('Yo4');
@@ -65,7 +60,7 @@ class CartsController extends Controller
                 ])->with('message', 'Product Added to cart');
             }
 
-            if(Cart::count() == 0){
+            /*if(Cart::count() == 0){
                 dd('Yo3');
                 Cart::add(['id' => $productI->id, 'name' => $productI->name, 'qty' => 1, 'price' => $productI->price,
                 'image' =>  $productI->image,
@@ -84,7 +79,7 @@ class CartsController extends Controller
                     'cart' => Cart::content(),
                     'categories' => Category::all()
                 ])->with('message', 'Product Added to cart');
-            }
+            }*/
 
             
             $cartItem = Cart::content();
@@ -176,7 +171,7 @@ class CartsController extends Controller
             ])->with('message', 'Product Added to cart');
         }
 
-        if(Cart::count() == 0){
+        /*if(Cart::count() == 0){
             Cart::add(['id' => $productI->id, 'name' => $productI->name, 'qty' => 1, 'price' => $productI->price,
             'image' =>  $productI->image,
             'options'=>[
@@ -194,7 +189,7 @@ class CartsController extends Controller
                 'cart' => Cart::content(),
                 'categories' => Category::all()
             ])->with('message', 'Product Added to cart');
-        }
+        }*/
 
         foreach($cart as $items){
             $quantity = $items->qty;
