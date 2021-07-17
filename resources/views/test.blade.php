@@ -21,6 +21,7 @@
 	  pointer-events:none;
 	  z-index:1;
   }
+
   .q2{
 	  position:relative;
 	  z-index:2;
