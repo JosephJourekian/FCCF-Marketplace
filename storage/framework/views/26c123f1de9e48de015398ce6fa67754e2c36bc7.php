@@ -23,11 +23,6 @@
         </a>
     </li>
     <li>
-        <a href="<?php echo e(route('test')); ?>" class="font-bold text-lg mb-4 block">
-            Figma Test
-        </a>
-    </li>
-    <li>
         <div class="dropdown">
             <button class="dropbtn">FCCF Updates</button>
             <div class="dropdown-content">
@@ -65,6 +60,7 @@
                 <a href="<?php echo e(route('purchaseHistory',auth()->user()->username)); ?>">Purchase History</a>
                 <a href="<?php echo e(route('viewUsers')); ?>">View Users</a>            
             </div>
+        </div>
     </li>
     <li>
         <form method="POST" action="/logout">

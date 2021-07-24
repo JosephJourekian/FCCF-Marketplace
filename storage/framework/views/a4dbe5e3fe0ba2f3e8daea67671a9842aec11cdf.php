@@ -1413,9 +1413,9 @@
           <div class="outer_q40">
           <div
             id="q40"
-            data-name="Monday-Friday 9-5 EST"
+            data-name="Monday-Friday9-5 EST"
             class="q40"
-          ><div key="0">Monday-Friday 9-5 EST</div>
+          ><div key="0">Monday-Friday9-5 EST</div>
           </div>
           </div>
           <div class="outer_q41">

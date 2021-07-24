@@ -1,17 +1,18 @@
 <style>
-    @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
     
 .websiteBody{
   margin: auto;
   margin-left: 12%;
+  overflow-x:hidden;
+
 }
 
 @media screen and (max-width: 1152px) {
 	.websiteBody{
   		margin: auto;
+      position: fixed;
 	}
 }
-
 
 .q1{
     display:block;
@@ -64,10 +65,10 @@
     z-index:6;
 }
 .q4{
-    position:relative;
+    position:fixed;
     z-index:7;
     pointer-events:auto;
-    margin-left:0px;
+    margin-left:180px;
     width:282px;
     min-width:282px;
     height:232px;
@@ -76,7 +77,7 @@
     min-height:232px;
 }
 .outer_q4{
-    position:relative;
+    position:fixed;
     display:flex;
     pointer-events:none;
     z-index:7;
@@ -1055,12 +1056,6 @@
     z-index:38;
 }
 
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
 button {
     background-color: Transparent;
     background-repeat:no-repeat;
@@ -1068,34 +1063,37 @@ button {
     cursor:pointer;
     overflow: hidden;
     outline:none;
+    
 }
 .wrapper{
   position: fixed;
   top: 0;
-  left: 0;
+  left: -180;
   height: 100%;
   width: 100%;
-  background: linear-gradient(-135deg, #c850c0, #4158d0);
+  background: linear-gradient(-135deg, #47545C, #47545C);
   clip-path: circle(25px at calc(100% - 45px) 45px);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  
+  
 }
+
 #active:checked ~ .wrapper{
   clip-path: circle(75%);
 }
 .menu-btn{
-  position: absolute;
-  z-index: 2;
-  right: 20px;
-  top: 20px;
-  height: 50px;
-  width: 50px;
-  text-align: center;
+  text-align:center;
   line-height: 50px;
   border-radius: 50%;
   font-size: 30px;
-  color: black;
+  position: fixed;
+  z-index: 2;
+  right: 467px;
+  top: -100px;
+  height: 0px;
+  width: 0px;
   cursor: pointer;
-  background: linear-gradient(-135deg, #c850c0, #4158d0);
+  background: linear-gradient(-135deg, #47545C, #47545C);
   transition: all 0.3s ease-in-out;
   
 }
@@ -1122,24 +1120,27 @@ button {
   color: none;
   text-decoration: none;
   font-size: 30px;
-  font-weight: 500;
-  padding: 5px 30px;
+  font-weight: 300;
+  padding: 5px 10px;
   color: #fff;
   position: relative;
-  line-height: 50px;
+  line-height: 40px;
   transition: all 0.3s ease;
+
 }
+
 .wrapper p{
   color: none;
   text-decoration: none;
   font-size: 30px;
-  font-weight: 500;
-  padding: 5px 30px;
+  font-weight: 300;
+  padding: 5px 10px;
   color: #fff;
   background: rgba(255, 255, 255, 0);
   position: relative;
-  line-height: 50px;
+  line-height: 40px;
   transition: all 0.3s ease;
+
 }
 .wrapper button{
   color: none;
@@ -1164,6 +1165,18 @@ button {
   transition: all 0.3s ease;
 }
 .wrapper ul li a:after{
+  position: absolute;
+  content: "";
+  background: #fff;
+  width: 100%;
+  height: 50px;
+  left: 0;
+  border-radius: 50px;
+  transform: scaleY(0);
+  z-index: -1;
+  transition: transform 0.3s ease;
+}
+.wrapper button:after{
   position: absolute;
   content: "";
   background: #fff;
@@ -1208,68 +1221,86 @@ input[type="checkbox"]{
 }
 .content{
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   z-index: -1;
   text-align: center;
   width: 100%;
   color: #202020;
 }
 .content .title{
-  font-size: 40px;
-  font-weight: 700;
 }
 .content p{
-  font-size: 35px;
-  font-weight: 600;
 }
+.dropbtn {
+  font-weight: bold;
+  color: black;
+  margin-bottom: 16px;
+  font-size: 18px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  font-size: medium;
+  font-weight:bold;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px 10px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
 </style>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
    <head>
       <meta charset="utf-8">
-      <link rel="stylesheet" href="style.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+      
    </head>
    <body>
       <input type="checkbox" id="active">
-      <label for="active" class="menu-btn"><i class="fas fa-bars"></i></label>
-      <div class="wrapper">
+      <label for="active" class="menu-btn">
+        <img style="margin-top:100px; width:282px; height:232px; margin-left: 180px; position: absolute;" src="images/Ellipse_1.png">
+        <img style="text-align:center; margin-top:170px; margin-left:260px; position: relative;"src="images/menu.png">
+      </label>
+      <div class="wrapper" >
          <ul>
             <li><a href="{{ route('home') }}">Home</a></li>
-            <li>
-                <p>
-                    My points: {{ auth()->user()->points }}
-                </p>
-            </li>
             <li><a href="#">About</a></li>
-            <li>
-                <a href="{{ route('carts.index') }}">
-                    My Cart ({{ Cart::count() }})
-                </a>
-            </li>
-            @if(auth()->user()->isAdmin())
-                <li><a href="{{ route('products.add') }}" >Add Products</a></li>
-                <li><a href="{{ route('products.inventory.view') }}">Edit Inventory</a></li>
-                <li><a href="{{ route('products.attributes') }}">Edit Attributes</a></li>
-            @endif
             <li><a href="{{ route('products.index') }}">Shop</a></li>
-            <li><a href="#">Updates</a></li>
-            <li><a href="#">Team</a></li>
+            <li><a href="{{ route('fccfUpdates.index') }}">FCCF Updates</a></li>
+            <li><a href="{{ route('techUpdates.index') }}">Tech Updates</a></li>
+            <li><a href="#">Team</a></li>   
+            <li>
+              <a href="{{ route('profiles.edit',auth()->user()->username) }}">My Account</a>
             </li>
-            @if(auth()->user()->isAdmin())
-                <li><a href="{{ route('viewUsers') }}">View Users</a></li>
-            @endif     
-            <li><a href="{{ route('profiles.edit',auth()->user()->username) }}">My Account</a><li>
-            <li><a href="{{route('purchaseHistory',auth()->user()->username) }}">Purchase History</a><li>
             <li>
                 <form method="POST" action="/logout">
                     @csrf
                     <button>Logout</button>
                 </form>
             </li>
+            @if(auth()->user()->isAdmin())
+            <li>
+              <a href="{{ route('home') }}">Admin Links</a>
+            </li>
+
+            @endif
          </ul>
       </div>
       <div class="content">
@@ -1326,12 +1357,11 @@ input[type="checkbox"]{
                     ></a>
                     </div>
                     <div class="outer_q5">
-                <a href="{{ route('products.index') }}" style="color: white">
                     <div
                       id="q5"
                       data-name="MENU"
                       class="q5"
-                    ><div key="0">MENU</div></a>
+                    ><div key="0">MENU</div>
                     </div>
                     </div>
                   </div>

@@ -279,7 +279,5 @@ class ProductsController extends Controller
     public function menuTest(){
         return view('menuTest');
     }
-    public function test(){
-        return view('test');
-    }
+    
 }
