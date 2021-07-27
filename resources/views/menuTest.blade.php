@@ -4,7 +4,15 @@
   margin: auto;
   margin-left: 12%;
   overflow-x:hidden;
+  position: relative;
 
+}
+@media screen and (max-width: 1920px) {
+	.websiteBody{
+  		margin: auto;
+      margin-left: 12%;
+      overflow-x:hidden;
+	}
 }
 
 @media screen and (max-width: 1152px) {
@@ -505,13 +513,14 @@
     z-index:29;
 }
 .q25{
-    position:relative;
+    position:absolute;
     z-index:28;
     pointer-events:auto;
-    margin-left:0px;
+    margin-left:230px;
+    margin-right: 0px;
     width:63px;
     min-width:63px;
-    margin-top:-83px;
+    margin-top:-262px;
     margin-bottom:65px;
     min-height:18px;
     text-align:center;
@@ -525,6 +534,7 @@
     font-size:14px;
     text-decoration:underline;
     line-height:17.600000381469727px;
+
 }
 .outer_q25{
     position:relative;
@@ -650,7 +660,7 @@
     width:298px;
     min-width:298px;
     height:293px;
-    margin-top:-293px;
+    margin-top:-300px;
     margin-bottom:0px;
     min-height:293px;
 }
@@ -774,7 +784,9 @@
     position:relative;
     z-index:45;
     pointer-events:auto;
-    margin-left:485px;
+    margin:auto;
+    margin-left:140px;
+    margin-right: 140px;
     width:63px;
     min-width:63px;
     margin-top:0px;
@@ -1068,14 +1080,14 @@ button {
 .wrapper{
   position: fixed;
   top: 0;
-  left: -180;
+  left: 0;
+  right:180px;
   height: 100%;
   width: 100%;
   background: linear-gradient(-135deg, #47545C, #47545C);
   clip-path: circle(25px at calc(100% - 45px) 45px);
   transition: all 0.2s ease-in-out;
-  
-  
+   
 }
 
 #active:checked ~ .wrapper{
@@ -1266,19 +1278,35 @@ input[type="checkbox"]{
 .dropdown:hover .dropdown-content {display: block;}
 </style>
 
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html prefix="og: http://ogp.me/ns#" lang="en" dir="ltr" style="height: 100%">
    <head>
       <meta charset="utf-8">
+      <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    
+      <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=5" />
+    
+      <title> Test Homepage </title>
+      <meta name="description" content="Test Home Description">
+      <meta property="og:title" content="Test Home">
+      <meta property="og:description" content="Test Home Description">
+      <meta name="generator" content="Quest">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Baskervville:400">
+      <link rel="stylesheet" href="index.css">
+        
+      <script src="index.js"></script>
       
    </head>
-   <body>
+   <body class="websiteBody">
       <input type="checkbox" id="active">
-      <label for="active" class="menu-btn">
+      <label for="active" style="postion:fixed;"class="menu-btn">
         <img style="margin-top:100px; width:282px; height:232px; margin-left: 180px; position: absolute;" src="images/Ellipse_1.png">
         <img style="text-align:center; margin-top:170px; margin-left:260px; position: relative;"src="images/menu.png">
       </label>
-      <div class="wrapper" >
+      <div class="wrapper">
          <ul>
             <li><a href="{{ route('home') }}">Home</a></li>
             <li><a href="#">About</a></li>
@@ -1304,30 +1332,7 @@ input[type="checkbox"]{
          </ul>
       </div>
       <div class="content">
-         <div class="title">
-          <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-          <html prefix="og: http://ogp.me/ns#" lang="en" style="height: 100%">
-          
-          <head>
-            <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
-            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-            <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-          
-            <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=5" />
-          
-            <title> Test Home </title>
-            <meta name="description" content="Test Home Description">
-            <meta property="og:title" content="Test Home">
-            <meta property="og:description" content="Test Home Description">
-            <meta name="generator" content="Quest">
-          
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Baskervville:400">
-              <link rel="stylesheet" href="index.css">
-              
-                <script src="index.js"></script>
-                
-              </head>
-              <body class="websiteBody">
+         <div class="title">  
                 <div class="outer_q1">
               <div
                 id="q1"
@@ -1347,14 +1352,13 @@ input[type="checkbox"]{
                     class="q3"
                   >
                     <div class="outer_q4">
-                <a href="{{ route('products.index') }}">
                     <img
                       id="q4"
                       data-name="Ellipse 1"
                       src="images/Ellipse_1.png"
                       alt="Ellipse 1"
                       class="q4"
-                    ></a>
+                    >
                     </div>
                     <div class="outer_q5">
                     <div
@@ -1416,14 +1420,6 @@ input[type="checkbox"]{
                     class="q11"
                   >
               
-                    <!--<div class="outer_q12">
-                    <div
-                      id="q12"
-                      data-name="scroll"
-                      class="q12"
-                    ><div key="0">scroll</div>
-                    </div>
-                    </div>-->
                     <div class="outer_q13">
                     <div
                       id="q13"
@@ -1435,15 +1431,6 @@ input[type="checkbox"]{
                     </div>
                   </div>
                   </div>
-                  <!--<div class="outer_q14">
-                  <div
-                    id="q14"
-                    data-name="Line 3"
-                    alt="Line 3"
-                    class="q14"
-                  >
-                  </div>
-                  </div>-->
                   <div class="outer_q15">
                   <div
                     id="q15"
@@ -1526,14 +1513,7 @@ input[type="checkbox"]{
           <div key="2">&nbsp;</div>
                       </div>
                       </div>
-                      <div class="outer_q25">
-                      <div
-                        id="q25"
-                        data-name="read more"
-                        class="q25"
-                      ><div key="0"><a href="#">Read More</a></div>
-                      </div>
-                      </div>
+                      
                     </div>
                     </div>
                     <div class="outer_q26">
@@ -1626,6 +1606,7 @@ input[type="checkbox"]{
                 </div>
                 </div>
                 </div>
+                
                 <div class="outer_q36">
                 <div
                 id="q36"
@@ -1633,6 +1614,14 @@ input[type="checkbox"]{
                 class="q36"
                 >
                 <div class="outer_q37">
+                  <div class="outer_q37">
+                    <div
+                      id="q25"
+                      data-name="read more"
+                      class="q37"
+                    ><div key="0"><a href="#">Read More</a></div>
+                    </div>
+                    </div>
                 <div
                   id="q37"
                   data-name="read more"
@@ -1754,10 +1743,6 @@ input[type="checkbox"]{
                 </div>
               </div>
             </div>
-          
-              </body>
-            </html>
-            
          </div>
       </div>
    </body>
