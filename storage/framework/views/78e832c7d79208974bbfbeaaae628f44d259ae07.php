@@ -543,7 +543,7 @@
         top:0;
     }
     
-    @media screen and (max-width: 1920px) and (max-height: 1080px) {
+    @media  screen and (max-width: 1920px) and (max-height: 1080px) {
         .q2{
             min-width:200px;
             max-width:1920px;
@@ -638,8 +638,8 @@
           
         </head>
         <body class="websiteBody">
-        <form method="POST" action="{{ route('register') }}">
-        @csrf    
+        <form method="POST" action="<?php echo e(route('register')); ?>">
+        <?php echo csrf_field(); ?>    
             
           <div class="outer_q1">
         <div
@@ -752,14 +752,21 @@
                         name="name"
                         id="name"
                         autofocus
-                        value="{{ old('name') }}"
+                        value="<?php echo e(old('name')); ?>"
                         required
                         style="background-color: transparent; width:350px;  height:52px; margin-left:-20px; margin-top:-18px; font-size:17px; font-family:Baskervville;"
                         >
         
-                        @error('name')
-                            <p class="" style="color: red; font-size:13px; margin-top:0px; white-space: nowrap; font-family:Baskervville; font-weight:bold;">{{ $message }}</p>
-                        @enderror</div>
+                        <?php $__errorArgs = ['name'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                            <p class="" style="color: red; font-size:13px; margin-top:0px; white-space: nowrap; font-family:Baskervville; font-weight:bold;"><?php echo e($message); ?></p>
+                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?></div>
                         
                   </div>
                   </div>
@@ -818,14 +825,21 @@
                         name="username"
                         id="username"
                         autocomplete="username"
-                        value="{{ old('username') }}"
+                        value="<?php echo e(old('username')); ?>"
                         required
                         style="background-color: transparent; width:350px;  height:52px; margin-left:-20px; margin-top:-18px; font-size:17px; font-family:Baskervville;"
                         >
         
-                        @error('username')
-                            <p class="" style="color: red; font-size:13px; margin-top:0px; white-space: nowrap; font-family:Baskervville; font-weight:bold;">{{ $message }}</p>
-                        @enderror</div>
+                        <?php $__errorArgs = ['username'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                            <p class="" style="color: red; font-size:13px; margin-top:0px; white-space: nowrap; font-family:Baskervville; font-weight:bold;"><?php echo e($message); ?></p>
+                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?></div>
                         
                   </div>
                   </div>
@@ -883,14 +897,21 @@
                         type="text"
                         name="address"
                         id="address"
-                        value="{{ old('address') }}"
+                        value="<?php echo e(old('address')); ?>"
                         required
                         style="background-color: transparent; width:350px;  height:52px; margin-left:-20px; margin-top:-18px; font-size:17px; font-family:Baskervville;"
                         >
         
-                        @error('address')
-                            <p class="" style="color: red; font-size:13px; margin-top:0px; white-space: nowrap; font-family:Baskervville; font-weight:bold;">{{ $message }}</p>
-                        @enderror</div>
+                        <?php $__errorArgs = ['address'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                            <p class="" style="color: red; font-size:13px; margin-top:0px; white-space: nowrap; font-family:Baskervville; font-weight:bold;"><?php echo e($message); ?></p>
+                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?></div>
                         
                   </div>
                   </div>
@@ -948,14 +969,21 @@
                         type="text"
                         name="city"
                         id="city"
-                        value="{{ old('city') }}"
+                        value="<?php echo e(old('city')); ?>"
                         required
                         style="background-color: transparent; width:350px;  height:52px; margin-left:-20px; margin-top:-18px; font-size:17px; font-family:Baskervville;"
                         >
         
-                        @error('city')
-                            <p class="" style="color: red; font-size:13px; margin-top:0px; white-space: nowrap; font-family:Baskervville; font-weight:bold;">{{ $message }}</p>
-                        @enderror</div>
+                        <?php $__errorArgs = ['city'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                            <p class="" style="color: red; font-size:13px; margin-top:0px; white-space: nowrap; font-family:Baskervville; font-weight:bold;"><?php echo e($message); ?></p>
+                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?></div>
                         
                   </div>
                   </div>
@@ -1013,14 +1041,21 @@
                         type="text"
                         name="postalCode"
                         id="postalCode"
-                        value="{{ old('postalCode') }}"
+                        value="<?php echo e(old('postalCode')); ?>"
                         required
                         style="background-color: transparent; width:350px;  height:52px; margin-left:-20px; margin-top:-18px; font-size:17px; font-family:Baskervville;"
                         >
         
-                        @error('postalCode')
-                            <p class="" style="color: red; font-size:13px; margin-top:0px; white-space: nowrap; font-family:Baskervville; font-weight:bold;">{{ $message }}</p>
-                        @enderror</div>
+                        <?php $__errorArgs = ['postalCode'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                            <p class="" style="color: red; font-size:13px; margin-top:0px; white-space: nowrap; font-family:Baskervville; font-weight:bold;"><?php echo e($message); ?></p>
+                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?></div>
                         
                   </div>
                   </div>
@@ -1078,7 +1113,7 @@
                       type="text"
                       name="province"
                       id="province"
-                      value="{{ old('province') }}"
+                      value="<?php echo e(old('province')); ?>"
                       required
                       style="background-color: transparent; width:350px;  height:52px; margin-left:-20px; margin-top:-18px; font-size:17px; font-family:Baskervville;"
                       >
@@ -1097,9 +1132,16 @@
                       <option value="Yukon">Yukon</option>
                     </select>
         
-                    @error('province')
-                        <p class="" style="color: red; font-size:13px; margin-top:0px; white-space: nowrap; font-family:Baskervville; font-weight:bold;">{{ $message }}</p>
-                    @enderror</div>
+                    <?php $__errorArgs = ['province'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                        <p class="" style="color: red; font-size:13px; margin-top:0px; white-space: nowrap; font-family:Baskervville; font-weight:bold;"><?php echo e($message); ?></p>
+                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?></div>
                         
                   </div>
                   </div>
@@ -1157,14 +1199,21 @@
                         type="text"
                         name="phone"
                         id="phone"
-                        value="{{ old('phone') }}"
+                        value="<?php echo e(old('phone')); ?>"
                         required
                         style="background-color: transparent; width:350px;  height:52px; margin-left:-20px; margin-top:-18px; font-size:17px; font-family:Baskervville;"
                         >
         
-                        @error('phone')
-                            <p class="" style="color: red; font-size:13px; margin-top:0px; white-space: nowrap; font-family:Baskervville; font-weight:bold;">{{ $message }}</p>
-                        @enderror</div>
+                        <?php $__errorArgs = ['phone'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                            <p class="" style="color: red; font-size:13px; margin-top:0px; white-space: nowrap; font-family:Baskervville; font-weight:bold;"><?php echo e($message); ?></p>
+                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?></div>
                         
                   </div>
                   </div>
@@ -1224,14 +1273,21 @@
                     id="email"
                     autocomplete="email"
                     autofocus
-                    value="{{ old('email') }}"
+                    value="<?php echo e(old('email')); ?>"
                     required
                     style="background-color: transparent; width:350px;  height:52px; margin-left:-20px; margin-top:-18px; font-size:17px; font-family:Baskervville;"
                     >
     
-                    @error('email')
-                        <p class="" style="color: red; font-size:13px; margin-top:0px; white-space: nowrap; font-family:Baskervville; font-weight:bold;">{{ $message }}</p>
-                    @enderror</div>
+                    <?php $__errorArgs = ['email'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                        <p class="" style="color: red; font-size:13px; margin-top:0px; white-space: nowrap; font-family:Baskervville; font-weight:bold;"><?php echo e($message); ?></p>
+                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?></div>
                     
               </div>
               </div>
@@ -1292,9 +1348,16 @@
     
                 >
     
-                @error('password')
-                    <p class="" style="color: red; font-size:13px; margin-top:0px; white-space: nowrap; font-family:Baskervville;">{{ $message }}</p>
-                @enderror</div>
+                <?php $__errorArgs = ['password'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                    <p class="" style="color: red; font-size:13px; margin-top:0px; white-space: nowrap; font-family:Baskervville;"><?php echo e($message); ?></p>
+                <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?></div>
               </div>
               </div>
             </div>
@@ -1355,9 +1418,16 @@
                         style="background-color: transparent; width:350px;  height:52px; margin-left:-20px; margin-top:-16px; font-size:17px; font-family:Baskervville;"
                     >
 
-                    @error('password_confirmation')
-                        <p class="text-red-500 text-xs mt-2" style="color: red; font-size:13px; margin-top:0px; white-space: nowrap; font-family:Baskervville;">{{ $message }}</p>
-                    @enderror
+                    <?php $__errorArgs = ['password_confirmation'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                        <p class="text-red-500 text-xs mt-2" style="color: red; font-size:13px; margin-top:0px; white-space: nowrap; font-family:Baskervville;"><?php echo e($message); ?></p>
+                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                     
 
                   </div>
@@ -1376,3 +1446,4 @@
         </body>
 </html>
 
+<?php /**PATH C:\Users\jjour\FCCF-Market\resources\views/auth/register.blade.php ENDPATH**/ ?>
