@@ -111,9 +111,10 @@
         z-index:4;
         pointer-events:auto;
         margin-left:463px;
+        margin-right: 500px;
         width:228px;
         min-width:228px;
-        margin-top:-550px;
+        margin-top:-580px;
         margin-bottom:500px;
         min-height:87px;
         text-align:left;
@@ -128,6 +129,7 @@
         white-space: nowrap;
         text-decoration:underline;
         line-height:87.20000457763672px;
+        
     }
     
     .outer_q6{
@@ -162,7 +164,7 @@
         width:350px;
         min-width:350px;
         height:80px;
-        margin-top:-410px;
+        margin-top:-440px;
         margin-bottom:330px;
         min-height:80px;
     }
@@ -299,7 +301,7 @@
         width:350px;
         min-width:350px;
         height:78px;
-        margin-top:-300px;
+        margin-top:-340px;
         margin-bottom:222px;
         min-height:78px;
     }
@@ -423,7 +425,7 @@
         display:flex;
         pointer-events:none;
         z-index:14;
-        
+        width:100%;
         height:100%;
         left:0;
         top:0;
@@ -542,7 +544,7 @@
         top:0;
     }
     
-    @media screen and (max-width: 1920px) and (max-height: 1080px) {
+    @media  screen and (max-width: 1920px) and (max-height: 1080px) {
         .q2{
             min-width:200px;
             max-width:1920px;
@@ -580,29 +582,31 @@
         }
     }
     .myButton {
-	box-shadow: 0px 1px 0px 0px #f0f7fa;
-	background:linear-gradient(to bottom, #33bdef 5%, #019ad2 100%);
-	background-color:#33bdef;
-	border-radius:6px;
-	border:1px solid #057fd0;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:6px 24px;
-	text-decoration:none;
-	text-shadow:0px -1px 0px #5b6178;
-}
-.myButton:hover {
-	background:linear-gradient(to bottom, #019ad2 5%, #33bdef 100%);
-	background-color:#019ad2;
-}
-.myButton:active {
-	position:relative;
-	top:1px;
-}
+        box-shadow: 0px 1px 0px 0px #f0f7fa;
+        background:linear-gradient(to bottom, #33bdef 5%, #019ad2 100%);
+        background-color:#33bdef;
+        border-radius:6px;
+        border:1px solid #057fd0;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Arial;
+        font-size:15px;
+        font-weight:bold;
+        padding:6px 24px;
+        text-decoration:none;
+        text-shadow:0px -1px 0px #5b6178;
+        margin-left: 115;
+        margin-top: 10;
+    }
+    .myButton:hover {
+        background:linear-gradient(to bottom, #019ad2 5%, #33bdef 100%);
+        background-color:#019ad2;
+    }
+    .myButton:active {
+        position:relative;
+        top:1px;
+    }
 
     
     </style>
@@ -616,7 +620,7 @@
     
       <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=5" />
     
-      <title> Password Reset </title>
+      <title> Reset Password </title>
       <meta name="description" content="Login Description">
       <meta property="og:title" content="Login">
       <meta property="og:description" content="Login Description">
@@ -631,9 +635,12 @@
           
         </head>
         <body class="websiteBody">
-        <form method="POST" action="{{ route('password.email') }}">
-        @csrf
+        <form method="POST" action="<?php echo e(route('password.update')); ?>">
+        <?php echo csrf_field(); ?>
+        <?php echo csrf_field(); ?>
     
+            <input type="hidden" name="token" value="<?php echo e($token); ?>">
+            
           <div class="outer_q1">
         <div
           id="q1"
@@ -650,7 +657,7 @@
             <img
               id="q3"
               data-name="FCCF LOGO 1"
-              src="../images/FCCF_LOGO_1.png"
+              src="../../images/FCCF_LOGO_1.png"
               alt="FCCF LOGO 1"
               class="q3"
             >
@@ -667,7 +674,7 @@
             <img
               id="q5"
               data-name="Ellipse 2"
-              src="../images/Ellipse_2.png"
+              src="../../images/Ellipse_2.png"
               alt="Ellipse 2"
               class="q5"
             >
@@ -684,7 +691,7 @@
             <img
               id="q7"
               data-name="Login"
-              src="../images/Login.png"
+              src="../../images/Login.png"
               alt="Login"
               class="q7"
             >
@@ -736,24 +743,26 @@
                 class="q13"
               ><div key="0">
                   <input 
-                    type="email"
+                    type="text"
                     name="email"
                     id="email"
-                    value="{{ old('email') }}"
-                    required
-                    autofocus
                     autocomplete="email"
-                    style="background-color: transparent; width:350px;  height:52px; margin-left:-20px; margin-top:-17px; font-size:17px; font-family:Baskervville;"
+                    autofocus
+                    value="<?php echo e(old('email')); ?>"
+                    required
+                    style="background-color: transparent; width:350px;  height:52px; margin-left:-20px; margin-top:-18px; font-size:17px; font-family:Baskervville;"
                     >
     
-                    @error('email')
-                        <p class="" style="color: red; font-size:13px; margin-top:0px; white-space: nowrap; font-family:Baskervville; font-weight:bold;">{{ $message }}</p>
-                    @enderror</div>
-                    @if (session('status'))
-                        <div class="text-sm text-red-800" style="color: green; font-size:13px; margin-top:0px; white-space: nowrap; font-family:Baskervville; font-weight:bold;" role="alert">
-                        {{ session('status') }}
-                        </div>
-                     @endif
+                    <?php $__errorArgs = ['email'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                        <p class="" style="color: red; font-size:13px; margin-top:0px; white-space: nowrap; font-family:Baskervville; font-weight:bold;"><?php echo e($message); ?></p>
+                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?></div>
                     
               </div>
               </div>
@@ -771,7 +780,24 @@
                 data-name="password box"
                 class="q15"
               >
-                
+                <div class="outer_q16">
+                <div
+                  id="q16"
+                  data-name="password box"
+                  alt="password box"
+                  class="q16"
+                >
+                </div>
+                </div>
+                <div class="outer_q17">
+                <div
+                  id="q17"
+                  data-name="password box blur"
+                  alt="password box blur"
+                  class="q17"
+                >
+                </div>
+                </div>
               </div>
               </div>
               <div class="outer_q18">
@@ -779,7 +805,7 @@
                 id="q18"
                 data-name="Password"
                 class="q18"
-              ><div key="0"></div>
+              ><div key="0">Password</div>
               </div>
               </div>
               <div class="outer_q19">
@@ -788,22 +814,109 @@
                 data-name="******************"
                 class="q19"
               ><div key="0">
-                <div style="margin-right:-440px;">
-                    <button type="submit" class="myButton" style="">
-                        Send Reset Password Link
-                    </button>
+                <input class="border border-gray-400 p-2 w-full"
+                    type="password"
+                    name="password"
+                    id="password"
+                    autocomplete="current-password"
+                    style="background-color: transparent; width:350px;  height:52px; margin-left:-20px; margin-top:-16px; font-size:17px; font-family:Baskervville;"
+    
+                >
+    
+                <?php $__errorArgs = ['password'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                    <p class="" style="color: red; font-size:13px; margin-top:0px; white-space: nowrap; font-family:Baskervville;"><?php echo e($message); ?></p>
+                <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?></div>
+              </div>
+              </div>
+            </div>
+            </div>
+            <!-- Password Confirmation-->
+            <div class="outer_q14" >
+                <div
+                  id="q14"
+                  data-name="Password"
+                  class="q14"
+                  style="margin-top: -242px;"
+                >
+                  <div class="outer_q15">
+                  <div
+                    id="q15"
+                    data-name="password box"
+                    class="q15"
+                  >
+                    <div class="outer_q16">
+                    <div
+                      id="q16"
+                      data-name="password box"
+                      alt="password box"
+                      class="q16"
+                    >
+                    </div>
+                    </div>
+                    <div class="outer_q17">
+                    <div
+                      id="q17"
+                      data-name="password box blur"
+                      alt="password box blur"
+                      class="q17"
+                    >
+                    </div>
+                    </div>
+                  </div>
+                  </div>
+                  <div class="outer_q18">
+                  <div
+                    id="q18"
+                    data-name="Password"
+                    class="q18"
+                  ><div key="0" style="white-space: nowrap;">Confirm Password</div>
+                  </div>
+                  </div>
+                  <div class="outer_q19">
+                  <div
+                    id="q19"
+                    data-name="******************"
+                    class="q19"
+                  ><div key="0">
+                    <input class="border border-gray-400 p-2 w-full"
+                        type="password"
+                        name="password_confirmation"
+                        id="password_confirmation"
+                        autocomplete="new-password"
+                        style="background-color: transparent; width:350px;  height:52px; margin-left:-20px; margin-top:-16px; font-size:17px; font-family:Baskervville;"
+                    >
+
+                    <?php $__errorArgs = ['password_confirmation'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                        <p class="text-red-500 text-xs mt-2" style="color: red; font-size:13px; margin-top:0px; white-space: nowrap; font-family:Baskervville;"><?php echo e($message); ?></p>
+                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                    
+
+                  </div>
+                  </div>
                 </div>
+                <button type="submit" class="myButton">Submit</button>
+                </div>
+
               </div>
               </div>
-            </div>
-            </div>
-            
-        
           </div>
           </div>
         </div>
-        </div>            
+        </div>
         </form>
         </body>
-      </html>
-
+      </html><?php /**PATH C:\Users\jjour\FCCF-Market\resources\views/auth/passwords/reset.blade.php ENDPATH**/ ?>

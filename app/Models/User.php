@@ -62,10 +62,10 @@ class User extends Authenticatable
         //This is used to search for the name instead of the id\
         return 'name';
     }
-    public function setPasswordAttribute($value)//To hash the password being stored in the database
+    /*public function setPasswordAttribute($value)//To hash the password being stored in the database
     {
         $this->attributes['password'] = bcrypt($value);
-    }
+    }*/
 
     public function purchaseHistory($id){
 
