@@ -279,5 +279,22 @@ class ProductsController extends Controller
     public function menuTest(){
         return view('menuTest');
     }
+    public function productTest(){
+        if (request('category')){
+            $products = Category::where('name', request('category'))->firstOrFail()->products;
+            $title = request('category');
+            
+        }
+        else{
+            $products = Products::paginate(50);
+            $title = 'Shop all';
+        }
+        return view('productTest', [
+            'products' => $products,
+            'title' => $title,
+            'category' => Category::all(),
+            'attributes' => ProductsAttribute::all()
+        ]);
+    }
     
 }

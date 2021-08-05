@@ -124,9 +124,8 @@
         font-style:normal;
         font-family:Baskervville;
         font-weight:400;
-        font-size:55px;
+        font-size:50px;
         white-space: nowrap;
-        text-decoration:underline;
         line-height:87.20000457763672px;
     }
     

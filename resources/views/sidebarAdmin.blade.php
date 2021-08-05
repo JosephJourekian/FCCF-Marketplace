@@ -18,9 +18,15 @@
     </li>
     <li>
         <a href="{{ route('menuTest') }}" class="font-bold text-lg mb-4 block">
-            Menu Test
+            Frontend Homepage
         </a>
     </li>
+    <li>
+        <a href="{{ route('productTest') }}" class="font-bold text-lg mb-4 block">
+            Frontend Product page
+        </a>
+    </li>
+
     <li>
         <div class="dropdown">
             <button class="dropbtn">FCCF Updates</button>

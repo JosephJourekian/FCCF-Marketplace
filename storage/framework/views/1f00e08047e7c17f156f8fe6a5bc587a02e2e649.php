@@ -1295,9 +1295,7 @@ input[type="checkbox"]{
       <meta name="generator" content="Quest">
     
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Baskervville:400">
-      <link rel="stylesheet" href="index.css">
-        
-      <script src="index.js"></script>
+      
       
    </head>
    <body class="websiteBody">
@@ -1320,7 +1318,7 @@ input[type="checkbox"]{
             <li>
                 <form method="POST" action="/logout">
                     <?php echo csrf_field(); ?>
-                    <button>Logout</button>
+                    <button style="font-family: Baskervville">Logout</button>
                 </form>
             </li>
             <?php if(auth()->user()->isAdmin()): ?>

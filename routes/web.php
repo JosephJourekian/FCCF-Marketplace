@@ -43,6 +43,8 @@ Route::middleware('auth')->group(function (){
     });
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('/menuTest', 'App\Http\Controllers\ProductsController@menuTest')->name('menuTest'); 
+    Route::get('/productTest', 'App\Http\Controllers\ProductsController@productTest')->name('productTest'); 
+
     
     Route::get('/products', 'App\Http\Controllers\ProductsController@index')->name('products.index'); 
     Route::get('/products/show/{product:productname}', 'App\Http\Controllers\ProductsController@show')->name('products.show'); 

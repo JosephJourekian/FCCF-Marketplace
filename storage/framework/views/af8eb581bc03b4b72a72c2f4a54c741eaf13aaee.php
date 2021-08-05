@@ -124,8 +124,7 @@
     font-style:normal;
     font-family:Baskervville;
     font-weight:400;
-    font-size:67px;
-    text-decoration:underline;
+    font-size:60px;
     line-height:87.20000457763672px;
 }
 
@@ -563,7 +562,7 @@
         margin-left:500px;
     }
     .q6{
-        margin-left:655px;
+        margin-left:665px;
     }
     .q7{
         margin-left: 730px;
