@@ -42,8 +42,8 @@ Route::middleware('auth')->group(function (){
         Route::patch('/viewUsers', 'App\Http\Controllers\ViewUsersController@edit')->name('viewUsers');  
     });
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-    Route::get('/menuTest', 'App\Http\Controllers\ProductsController@menuTest')->name('menuTest'); 
-    Route::get('/productTest', 'App\Http\Controllers\ProductsController@productTest')->name('productTest'); 
+    Route::get('/menuTest', 'App\Http\Controllers\ProductsController@menuTest')->name('menuTest');  //test homepage frontend
+    Route::get('/productTest', 'App\Http\Controllers\ProductsController@productTest')->name('productTest'); //test products index frontend
 
     
     Route::get('/products', 'App\Http\Controllers\ProductsController@index')->name('products.index'); 
@@ -60,6 +60,11 @@ Route::middleware('auth')->group(function (){
     Route::get('/myCart/add/{product:productname}', 'App\Http\Controllers\CartsController@add')->name('carts.add'); 
     Route::get('/myCart/remove/{id}', 'App\Http\Controllers\CartsController@remove')->name('carts.remove'); 
     Route::post('/myCart/update/{rowId}/{product:productname}', 'App\Http\Controllers\CartsController@update')->name('carts.update'); 
+    Route::get('/myCart', 'App\Http\Controllers\CartsController@index')->name('carts.index'); 
+
+    Route::get('/cartTest', 'App\Http\Controllers\CartsController@cartTest')->name('cartTest'); //test carts index frontend
+
+
 
     Route::get('/checkout', 'App\Http\Controllers\CheckoutsController@index')->name('checkout.index'); 
     Route::get('/checkout/confirm', 'App\Http\Controllers\CheckoutsController@confirm')->name('checkout.confirm'); 

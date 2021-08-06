@@ -272,5 +272,13 @@ class CartsController extends Controller
         }
 
     }
+    public function cartTest(){
+        $cart = Cart::content();
+        
+        return view("cartTest", [
+            'cart' => $cart,
+            'categories' => Category::all()
+        ]);
+    }
     
 }

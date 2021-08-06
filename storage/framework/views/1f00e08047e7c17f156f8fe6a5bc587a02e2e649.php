@@ -842,7 +842,7 @@
     position:relative;
     z-index:46;
     pointer-events:auto;
-    margin-left:898px;
+    margin-left:818px;
     width:59px;
     min-width:59px;
     margin-top:-97px;
@@ -870,7 +870,7 @@
     position:relative;
     z-index:48;
     pointer-events:auto;
-    margin-left:898px;
+    margin-left:818px;
     width:161px;
     min-width:96px;
     margin-top:-62px;
@@ -884,9 +884,10 @@
     font-style:normal;
     font-family:Baskervville;
     font-weight:400;
-    font-size:14px;
+    font-size:18px;
     text-decoration:underline;
     line-height:17.600000381469727px;
+    white-space: nowrap;
 }
 .outer_q40{
     position:relative;
@@ -898,10 +899,10 @@
     position:relative;
     z-index:47;
     pointer-events:auto;
-    margin-left:898px;
+    margin-left:818px;
     width:63px;
     min-width:63px;
-    margin-top:-18px;
+    margin-top:-23px;
     margin-bottom:0px;
     min-height:18px;
     text-align:left;
@@ -912,9 +913,10 @@
     font-style:normal;
     font-family:Baskervville;
     font-weight:400;
-    font-size:14px;
+    font-size:18px;
     text-decoration:underline;
     line-height:17.600000381469727px;
+    white-space: nowrap;
 }
 .outer_q41{
     position:relative;
@@ -1309,6 +1311,7 @@ input[type="checkbox"]{
             <li><a href="<?php echo e(route('home')); ?>">Home</a></li>
             <li><a href="#">About</a></li>
             <li><a href="<?php echo e(route('products.index')); ?>">Shop</a></li>
+            <li><a href="<?php echo e(route('carts.index')); ?>">My Cart (<?php echo e(Cart::count()); ?>)</a></li>
             <li><a href="<?php echo e(route('fccfUpdates.index')); ?>">FCCF Updates</a></li>
             <li><a href="<?php echo e(route('techUpdates.index')); ?>">Tech Updates</a></li>
             <li><a href="#">Team</a></li>   
@@ -1632,7 +1635,7 @@ input[type="checkbox"]{
                       id="q38"
                       data-name="my account"
                       class="q38"
-                    ><div key="0"><a href="<?php echo e(route('profiles.edit',auth()->user()->username)); ?>">My Account</a></div>
+                    ><div key="0"><a href="<?php echo e(route('profiles.edit',auth()->user()->username)); ?>" style="white-space: nowrap; color: rgba(92, 90, 90, 1);">My Account</a></div>
                     </div>
                     </div>
                     <div class="outer_q39">
@@ -1640,7 +1643,7 @@ input[type="checkbox"]{
                       id="q39"
                       data-name="contact"
                       class="q39"
-                    ><div key="0">contact </div>
+                    ><div key="0">Contact </div>
                     </div>
                     </div>
                     <div class="outer_q40">
@@ -1648,7 +1651,7 @@ input[type="checkbox"]{
                       id="q40"
                       data-name="Monday-Friday9-5 EST"
                       class="q40"
-                    ><div key="0">Monday-Friday9-5 EST</div>
+                    ><div key="0">Monday-Friday 9-5 EST</div>
                     </div>
                     </div>
                     <div class="outer_q41">
@@ -1656,7 +1659,7 @@ input[type="checkbox"]{
                       id="q41"
                       data-name="4161234567"
                       class="q41"
-                    ><div key="0">4161234567</div>
+                    ><div key="0">(416) 123-4567</div>
                     </div>
                     </div>
                   </div>

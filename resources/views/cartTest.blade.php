@@ -5,27 +5,23 @@
       margin-left: 12%;
       overflow-x:hidden;
       position: relative;
-      pointer-events:all !important;
-      
+      z-index: 1;
     
     }
     @media screen and (max-width: 1920px) {
         .websiteBody{
-          margin: auto;
+              margin: auto;
           margin-left: 12%;
           overflow-x:hidden;
-          pointer-events:all !important;
           z-index: 1;
-
         }
     }
     
     @media screen and (max-width: 1152px) {
         .websiteBody{
-          margin: auto;
+              margin: auto;
           position: fixed;
           z-index: 1;
-
         }
     }
     
@@ -39,10 +35,12 @@
     .outer_q1{
         position:relative;
         display:flex;
-        pointer-events:auto;
+        pointer-events:none;
+        z-index:1;
     }
     .q2{
         position:relative;
+        z-index:2;
         pointer-events:auto;
         width:100%;
         margin-left:0;
@@ -50,15 +48,18 @@
         max-width:1920px;
         margin:auto;
         background-color:rgba(255, 255, 255, 1);
+        overflow:hidden;
         display:block;
     }
     .outer_q2{
         position:relative;
         display:flex;
         pointer-events:none;
+        z-index:2;
     }
     .q3{
         position:relative;
+        z-index:6;
         pointer-events:auto;
         margin-left:870px;
         width:321px;
@@ -72,9 +73,11 @@
         position:relative;
         display:flex;
         pointer-events:none;
+        z-index:6;
     }
     .q4{
         position:fixed;
+        z-index:7;
         pointer-events:auto;
         margin-left:180px;
         width:282px;
@@ -88,9 +91,11 @@
         position:fixed;
         display:flex;
         pointer-events:none;
+        z-index:7;
     }
     .q5{
         position:relative;
+        z-index:8;
         pointer-events:auto;
         margin-left:77px;
         width:156px;
@@ -114,9 +119,11 @@
         position:relative;
         display:flex;
         pointer-events:none;
+        z-index:8;
     }
     .q6{
         position:relative;
+        z-index:12;
         pointer-events:auto;
         margin-left:55px;
         width:815px;
@@ -129,10 +136,12 @@
     .outer_q6{
         position:relative;
         display:flex;
-        pointer-events:auto;
+        pointer-events:none;
+        z-index:12;
     }
     .q7{
         position:relative;
+        z-index:14;
         pointer-events:auto;
         margin-left:2px;
         width:175px;
@@ -146,9 +155,11 @@
         position:relative;
         display:flex;
         pointer-events:none;
+        z-index:14;
     }
     .q8{
         position:relative;
+        z-index:13;
         pointer-events:auto;
         transform:rotate(-0.5968094512291771deg);
         margin-left:0px;
@@ -163,24 +174,31 @@
         position:relative;
         display:flex;
         pointer-events:none;
+        z-index:13;
     }
     .q9{
         position:relative;
+        z-index:4;
         pointer-events:auto;
         margin-left:114px;
-        width:100%;
-        height:100%;
-        margin-bottom:200px;
-        white-space: nowrap;
+        width:922px;
+        min-width:922px;
+        height:307px;
+        margin-top:-996px;
+        margin-bottom:289px;
+        min-height:307px;
         
+    width: 100%;
+    height: 100%;
+    white-space: nowrap;
     }
     .outer_q9{
-        position:relative;
-        display:flex;
-        margin-top: -996px;
-        margin-bottom: 80px;
-        pointer-events:none;
+        position: relative;
+        display: flex;
+        margin-bottom: -100px;
+        pointer-events: none;
         white-space: nowrap;
+        
     }
     .q10{
         position:relative;
@@ -755,7 +773,6 @@
     }
     .q36{
         position:relative;
-        z-index:44;
         pointer-events:auto;
         margin-left:83px;
         width:994px;
@@ -769,7 +786,7 @@
         position:relative;
         display:flex;
         pointer-events:none;
-        z-index:44;
+        
     }
     .q37{
         position:relative;
@@ -821,7 +838,6 @@
         font-weight:400;
         font-size:18px;
         text-decoration:underline;
-        white-space: nowrap;
         line-height:23.200000762939453px;
     }
     .outer_q38{
@@ -834,10 +850,10 @@
         position:relative;
         z-index:46;
         pointer-events:auto;
-        margin-left:-780px;
+        margin-left:818px;
         width:59px;
         min-width:59px;
-        margin-top:460px;
+        margin-top:-97px;
         margin-bottom:74px;
         min-height:23px;
         text-align:left;
@@ -862,10 +878,10 @@
         position:relative;
         z-index:48;
         pointer-events:auto;
-        margin-left:-780px;
+        margin-left:818px;
         width:161px;
         min-width:96px;
-        margin-top:500px;
+        margin-top:-62px;
         margin-bottom:26px;
         min-height:36px;
         text-align:left;
@@ -876,9 +892,10 @@
         font-style:normal;
         font-family:Baskervville;
         font-weight:400;
-        font-size:14px;
+        font-size:18px;
         text-decoration:underline;
         line-height:17.600000381469727px;
+        white-space: nowrap;
     }
     .outer_q40{
         position:relative;
@@ -890,10 +907,10 @@
         position:relative;
         z-index:47;
         pointer-events:auto;
-        margin-left:-780px;
+        margin-left:818px;
         width:63px;
         min-width:63px;
-        margin-top:530px;
+        margin-top:-23px;
         margin-bottom:0px;
         min-height:18px;
         text-align:left;
@@ -904,7 +921,7 @@
         font-style:normal;
         font-family:Baskervville;
         font-weight:400;
-        font-size:14px;
+        font-size:18px;
         text-decoration:underline;
         line-height:17.600000381469727px;
         white-space: nowrap;
@@ -925,7 +942,7 @@
         min-width:1003px;
         margin-top:-131px;
         margin-bottom:131px;
-        min-height:undefinedpx;
+        min-height:undefined;
         border:1px solid rgba(0, 0, 0, 1);
     }
     .outer_q42{
@@ -1092,7 +1109,7 @@
       border-radius: 50%;
       font-size: 30px;
       position: fixed;
-      z-index: 1;
+      z-index: 2;
       right: 467px;
       top: -100px;
       height: 0px;
@@ -1256,7 +1273,7 @@
       background-color: #f1f1f1;
       min-width: 160px;
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 0;
+      z-index: 1;
     }
     
     .dropdown-content a {
@@ -1270,263 +1287,264 @@
     
     .dropdown:hover .dropdown-content {display: block;}
 
-    .card {
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-      width: 250px;
-      margin-right: 550px;
-      text-align: center;
-      font-family: Baskervville;
+    .MY-CART{
+        position: relative;
+        z-index: 3;
+        pointer-events: none;
+        min-width: 172px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        min-height: 47px;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        color: rgba(71, 84, 92, 1);
+        font-style: normal;
+        font-family: Baskervville;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 46.400001525878906px;
+        white-space: nowrap;
+        text-decoration: underline;
+        left: 350px;
+    }
+    .MY-CART-outer{
+        position:relative;
+        display:flex;
+        pointer-events:none;
+        z-index:3;
+    }
+    .Group-16{
+        position:relative;
+        z-index:4;
+        pointer-events:none;
+        margin-left:-300px;
+        width:194px;
+        min-width:194px;
+        height:62px;
+        margin-top:150px;
+        min-height:62px;
+    }
+    .Group-16-outer{
+        position:relative;
+        display:flex;
+        pointer-events:none;
+        z-index:4;
+    }
+    .Cart{
+        position:relative;
+        z-index:5;
+        pointer-events:none;
+        margin-left:0px;
+        width:170px;
+        min-width:170px;
+        height:62px;
+        margin-top:0px;
+        margin-bottom:0px;
+        min-height:62px;
+        content:url(../images/Cart.png);
+    }
+    .Cart-outer{
+        position:relative;
+        display:flex;
+        pointer-events:none;
+        z-index:5;
+    }
+    .items-{
+        position:relative;
+        z-index:6;
+        pointer-events:none;
+        margin-left:131px;
+        width:63px;
+        min-width:63px;
+        margin-top:-45px;
+        margin-bottom:14px;
+        min-height:31px;
+        text-align:left;
+        display:flex;
+        flex-direction:column;
+        justify-content:flex-start;
+        color:rgba(92, 90, 90, 1);
+        font-style:normal;
+        font-family:Baskervville;
+        font-weight:400;
+        font-size:24px;
+        line-height:31.200000762939453px;
+    }
+    .items--outer{
+        position:relative;
+        display:flex;
+        pointer-events:none;
+        z-index:6;
     }
     
-    .price {
-      color: grey;
-      font-size: 22px;
+    .cart-item-group-1-outer{
+        position:relative;
+        display:flex;
+        pointer-events:none;
+        z-index:14;
+        margin-top: 50;
+        height: 150px;
     }
-    
-    .card button {
-      border: none;
-      outline: 0;
-      padding: 12px;
-      color: white;
-      background-color: #000;
-      text-align: center;
-      cursor: pointer;
-      width: 100%;
-      font-family: 'Baskervville';
-      font-size: 18px;
+    .image-3{
+        position:relative;
+        z-index:17;
+        pointer-events:none;
+        margin-left:72px;
+        width:164px;
+        min-width:164px;
+        height:92px;
+        margin-top:0px;
+        margin-bottom:0px;
+        min-height:92px;
     }
-    
-    .card button:hover {
-      opacity: 0.7;
+    .image-3-outer{
+        position:relative;
+        display:flex;
+        pointer-events:none;
+        z-index:17;
     }
-    #header {
-      width: 100%;
-      background-color: red;
-      height: 30px;
+    .Rectangle-3{
+        position: relative;
+        z-index: 15;
+        pointer-events: none;
+        margin-left: 62px;
+        width: 149px;
+        min-width: 115px;
+        height: 125px;
+        margin-top: -92px;
+        margin-bottom: 1px;
+        min-height: 91px;
+        border: 7px solid rgba(92, 90, 90, 1);
+        border-radius: 10px;
     }
-    .row {
-      display: -webkit-box;
-      flex-wrap: wrap;
-      flex-direction: row;
-      margin-right: -15px;
-      margin-left: -35px;
+    .Rectangle-3-outer{
+        position:relative;
+        display:flex;
+        pointer-events:none;
+        z-index:15;
+    }
+    .Lorem-ipsum-dolor-si-3{
+        position:relative;
+        z-index:18;
+        pointer-events:all;
+        margin-left:244px;
+        width:min-content;
+        min-width:min-content;
+        margin-top:-130px;
+        margin-bottom:11px;
+        min-height:70px;
+        text-align:left;
+        display:flex;
+        flex-direction:column;
+        justify-content:flex-start;
+        color:rgba(92, 90, 90, 1);
+        font-style:normal;
+        font-family:Baskervville;
+        font-weight:400;
+        font-size:22px;
+        line-height:28px;
+        white-space: nowrap;
+        display:block;
 
     }
-
-    .divClass{
-      background-repeat:no-repeat;
-      background-size:cover;
-      width:300px;
-      height:300px;
-      
+    .Lorem-ipsum-dolor-si-3-outer{
+        position:relative;
+        display:flex;
+        pointer-events:all;
+        z-index:18;
     }
-    .col-3 {
-        -webkit-box-flex: 0;
-        flex: 0 0 30%;
-        width: 100%;
-        margin-left:23px;
+    .Price-3{
+        position:relative;
+        z-index:16;
+        pointer-events:none;
+        margin-left:0px;
+        width:64px;
+        min-width:64px;
+        height:55px;
+        margin-top:-130px;
+        margin-bottom:19px;
+        min-height:55px;
+        content:url(../images/Price_3.png);
     }
-
-    @media screen and (max-width: 1920px) {
-        .q38{
-          margin-left: -1660px;
-          margin-top: 760px;
-         
-        }
-        .q39{
-          margin-top: 760px;
-        }
-        .q40{
-          margin-top: 800px;
-        }
-        .q41{
-          margin-top: 830px;
-        }
-        
-        .row{
-          width: 1000px;
-        }
-        .card{
-          width: 300px;
-        }
-        .myAccount{
-          margin-right:1070px;  
-          top:-110px;
-          position:relative;
-          z-index:4;
-          pointer-events:auto;
-          width:270px;
-          min-width:92px;
-          min-height:23px;
-          text-align:left;
-          justify-content:flex-start;
-          color:rgba(92, 90, 90, 1);
-          font-style:normal;
-          font-family:Baskervville;
-          font-weight:400;
-          font-size:18px;
-          text-decoration:underline;
-          white-space: nowrap;
-          line-height:23.200000762939453px;
-        }
-        .Contact{
-          margin-left:810px;  
-          top:-151px;
-          position:relative;
-          pointer-events:auto;
-          width:270px;
-          min-width:92px;
-          min-height:23px;
-          text-align:left;
-          justify-content:flex-start;
-          color:rgba(92, 90, 90, 1);
-          font-style:normal;
-          font-family:Baskervville;
-          font-weight:400;
-          font-size:18px;
-          text-decoration:underline;
-          white-space: nowrap;
-          line-height:23.200000762939453px;
-        }
-        .Dates{
-          margin-left:810px;  
-          top:-171px;
-          position:relative;
-          pointer-events:auto;
-          width:270px;
-          min-width:92px;
-          min-height:23px;
-          text-align:left;
-          justify-content:flex-start;
-          color:rgba(92, 90, 90, 1);
-          font-style:normal;
-          font-family:Baskervville;
-          font-weight:400;
-          font-size:18px;
-          text-decoration:underline;
-          white-space: nowrap;
-          line-height:23.200000762939453px;
-        }
-        .PhoneNum{
-          margin-left:810px;  
-          top:-191px;
-          position:relative;
-          pointer-events:auto;
-          width:270px;
-          min-width:92px;
-          min-height:23px;
-          text-align:left;
-          justify-content:flex-start;
-          color:rgba(92, 90, 90, 1);
-          font-style:normal;
-          font-family:Baskervville;
-          font-weight:400;
-          font-size:18px;
-          text-decoration:underline;
-          white-space: nowrap;
-          line-height:23.200000762939453px;
-          overflow-y:hidden;
-        }
-        .mainCategory{
-          position: relative;
-          margin-right: 900;
-          bottom: 1000px;
-          white-space: nowrap;
-          font-size: 40px;
-          font-family: Baskervville;
-          text-decoration:underline;
-        }
-        .subCategory{
-          bottom: 1060px;
-          right: -400px;
-          position: relative;
-          pointer-events: all !important;
-          cursor:  pointer !important;
-          font-family: Baskervville;
-          white-space: nowrap;
-          font-size: 24px;
-          z-index: 999999999999999;
-          height: 20px;
-          visibility:visible;
-          color: black;
-          margin-right: 90px; 
-          
-        }
-        .box{
-          display: inline-block; 
-          height: 20px;
-        }
-        .oneLine {
-          display: inline-block;
-        }
-        .content2{
-          z-index: -1;
-          text-align: center;
-          width: 100%;
-          color: #202020;
-        }
+    .Price-3-outer{
+        position:relative;
+        display:flex;
+        pointer-events:none;
+        z-index:16;
     }
-    
+    .delete-3{
+        position:relative;
+        z-index:20;
+        pointer-events:all;
+        margin-left:830px;
+        width:58px;
+        min-width:58px;
+        height:34px;
+        margin-top:-62px;
+        margin-bottom:28px;
+        min-height:34px;
+        content:url(../images/delete_3.png);
+    }
+    .delete-3-outer{
+        position:relative;
+        display:flex;
+        pointer-events:all;
+        z-index:20;
+    }
+    .q-20-3{
+        position:relative;
+        z-index:19;
+        pointer-events:none;
+        margin-left:700px;
+        width:36px;
+        min-width:36px;
+        margin-top:-59px;
+        margin-bottom:28px;
+        min-height:31px;
+        text-align:left;
+        display:flex;
+        flex-direction:column;
+        justify-content:flex-start;
+        color:rgba(92, 90, 90, 1);
+        font-style:normal;
+        font-family:Baskervville;
+        font-weight:400;
+        font-size:24px;
+        line-height:31.200000762939453px;
+        white-space: nowrap;
+    }
+    .q-20-3-outer{
+        position:relative;
+        display:flex;
+        pointer-events:none;
+        z-index:19;
+    }
     .myButton {
-      box-shadow:inset 0px 1px 0px 0px #97c4fe;
-      background:linear-gradient(to bottom, #3d94f6 5%, #1e62d0 100%);
-      background-color:#3d94f6;
-      border-radius:6px;
-      border:1px solid #337fed;
-      display:inline-block;
-      cursor:pointer;
-      color:#ffffff;
-      font-family:Arial;
-      font-size:15px;
-      font-weight:bold;
-      padding:6px 24px;
-      text-decoration:none;
-      text-shadow:0px 1px 0px #1570cd;
+        box-shadow: 0px 1px 0px 0px #f0f7fa;
+        background:linear-gradient(to bottom, #33bdef 5%, #019ad2 100%);
+        background-color:#33bdef;
+        border-radius:20px;
+        border:1px solid #057fd0;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Arial;
+        font-size:13px;
+        font-weight:bold;
+        padding:6px 24px;
+        text-decoration:none;
+        text-shadow:0px -1px 0px #5b6178;
     }
     .myButton:hover {
-      background:linear-gradient(to bottom, #1e62d0 5%, #3d94f6 100%);
-      background-color:#1e62d0;
+        background:linear-gradient(to bottom, #019ad2 5%, #33bdef 100%);
+        background-color:#019ad2;
     }
     .myButton:active {
-      position:relative;
-      top:1px;
+        position:relative;
+        top:1px;
     }
-    .myButton2 {
-      box-shadow:inset 0px 1px 0px 0px #f29c93;
-      background:linear-gradient(to bottom, #fe1a00 5%, #ce0100 100%);
-      background-color:#fe1a00;
-      border-radius:6px;
-      border:1px solid #d83526;
-      display:inline-block;
-      cursor:pointer;
-      color:#ffffff;
-      font-family:Arial;
-      font-size:15px;
-      font-weight:bold;
-      padding:6px 24px;
-      text-decoration:none;
-      text-shadow:0px 1px 0px #b23e35;
-    }
-    .myButton2:hover {
-      background:linear-gradient(to bottom, #ce0100 5%, #fe1a00 100%);
-      background-color:#ce0100;
-    }
-    .myButton2:active {
-      position:relative;
-      top:1px;
-    }
-
-    .links {
-      text-decoration: none;
-      font-weight: bold;
-      color:white; 
-      
-    }
-    p{
-      height: 39px;
-    }
-    
-    
 
     </style>
     
@@ -1540,13 +1558,14 @@
         
           <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=5" />
         
-          <title> Test Product Page </title>
+          <title> Test Cart Page </title>
           <meta name="description" content="Test Home Description">
           <meta property="og:title" content="Test Home">
           <meta property="og:description" content="Test Home Description">
           <meta name="generator" content="Quest">
         
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Baskervville:400">
+          
           
        </head>
        <body class="websiteBody">
@@ -1581,11 +1600,9 @@
                 @endif
              </ul>
           </div>
-          
-
           <div class="content">
-             <div class="title">
-                  <div class="outer_q1">
+             <div class="title">  
+                    <div class="outer_q1">
                   <div
                     id="q1"
                     data-name="Artboards"
@@ -1622,6 +1639,7 @@
                         </div>
                       </div>
                       </div>
+                      
                       <div class="outer_q6">
                       <div
                         id="q6"
@@ -1635,7 +1653,7 @@
                           src="images/First_Class_Conferencing_Facilitation_Logo.png"
                           alt="First Class Conferencing Facilitation Logo"
                           class="q7"
-                          >
+                        >
                         </div>
                         <div class="outer_q8">
                         <div
@@ -1647,100 +1665,146 @@
                         </div>
                         </div>
                       </div>
-                      <div style="display: inline-block;">
-                        
                       </div>
-                    </div>
-                    <h1 class="mainCategory">{{ $title }}</h1>
-                    <div style="position: absolute; pointer-events:all;">
-                      @foreach($category as $categorie)
-                        @if ($categorie->name == $title)
-                        <a class="subCategory" href="{{ route('productTest') }}">Shop All</a>
-                        @else
-                        <a class="subCategory" href="{{ route('productTest', ['category' => $categorie->name]) }}">{{ $categorie->name }}</a>
-                        @endif
-                      @endforeach
-                    </div>
-                    
-                    
-                    <div class="outer_q9">
-                      
+                      <div class="outer_q9">
                       <div
-                      id="q9"
-                      data-name="Group 1"
-                      class="q9"
+                        id="q9"
+                        data-name="Group 1"
+                        class="q9"
                       >
-                      
-                      <div>
-                        <div class="oneLine">
-                        
-                        <!--<div class="oneLine">
-                          <div class="dropdown-content">
-                            @foreach($category as $categorie)
-                              <a class="subCategory" href="{{ route('productTest', ['category' => $categorie->name]) }}">{{ $categorie->name }}</a>
-                            @endforeach 
-                          </div>
-                        </div>-->
+                        <div class="outer_q10">
+                        <div class="MY-CART-outer">
+                            <div
+                              id="MY-CART"
+                              data-name="MY CART"
+                              class="MY-CART"
+                            ><div key="0"><h1>MY CART</h1></div>
+                            </div>
                         </div>
-                        
-                      <div class="row mb-3">
-                        <?php $index = 0 ?>
-                            @foreach($products as $product) 
-                                <div class="col-3">   
-                                    <div class="card mb-5">
-                                    <img src="{{ $product->image }}" class="divClass" alt="Test image" style="width: 300px;">
-                                    <h1>{{ $product->name }}</h1>
-                                    <p class="price">{{ $product->price }} Points</p>
-                                    <p style="margin-bottom:-20px;">Stock: {{ $product->stock }}</p>
-                                    <p style="margin-bottom:-70px;">{{ \Illuminate\Support\Str::limit($product->description, 20) }}</p>
-                                    </p>
-                                    @if($product->stock == 0)
-                                      <p><button class="myButton2"><a href="#" class="card-link">Out of Stock</a></button></p>
-                                    @else
-                                      <?php $cond = true ?>
-                                      @foreach ($product->category as $categories)
-                                        @if ($categories->name == "Apparel")
-                                          <?php $cond = false ?>
-                                        @endif
-                                      @endforeach
-                                      @if ($cond == true)
-                                        <p style="height: 39px;"><button class="myButton"><a href="{{ route('carts.add',$product->productname) }}" class="links">Add to Cart</a></button></p>
-                                      @endif
-                                    @endif
-                                    <p><button class="myButton"><a href="{{ route('products.show',$product->productname) }}" class="links">View Product</a></button></p>
-                                    @if(auth()->user()->isAdmin())
-                                     <p><button class="myButton"><a href="{{ route('products.edit',$product->productname) }}" class="links">Edit Product</a></button></p>
-                                    <form method="POST" action="{{ route('products.delete') }}"> 
-                                      @csrf
-                                      @method('DELETE')
-                                      <input type="hidden" name="id" value="{{ $product->id }}"> 
-                                      <input type="hidden" name="_method" value="DELETE">
-                                      <button type="submit" class="myButton2" style="">Remove</button>
-                                    </form>
-                                    @endif
-                                    </div>
-                                </div>
-                                <?php $index++ ?>
+                        <div class="Group-16-outer">
+                            <div
+                              id="Group-16"
+                              data-name="Group 16"
+                              class="Group-16"
+                            >
+                              <div class="Cart-outer">
+                              <img
+                                id="Cart"
+                                data-name="Cart"
+                                alt="Cart"
+                                class="Cart"
+                              >
+                              </div>
+                              <div class="items--outer">
+                              <div
+                                id="items-"
+                                data-name="items:"
+                                class="items-"
+                              ><div key="0">Items:</div>
+                              </div>
+                              </div>
+                            </div>
+                            </div>
+                        </div>
+                        @foreach($cart as $product)
+                        <div class="cart-item-group-1-outer">
+                            <div
+                              id="cart-item-group-1"
+                              data-name="cart item group 1"
+                              class="cart-item-group-1"
+                            >
+                              <div class="image-3-outer">
+                              <div
+                                id="image-3"
+                                data-name="image"
+                                alt="image"
+                                class="image-3"
+                              >
+                              </div>
+                              </div>
+                              <div class="Rectangle-3-outer">
+                              <div
+                                id="Rectangle-3"
+                                data-name="Rectangle"
+                                alt="Rectangle"
+                                class="Rectangle-3"
+                              >
+                              <img src="{{ $product->options->img }}" style="width:151px;height:125px; margin-left:-1;">
+                              </div>
+                              </div>
+                              <div class="Lorem-ipsum-dolor-si-3-outer">
+                              <div
+                                id="Lorem-ipsum-dolor-si-3"
+                                data-name="Lorem ipsum dolor sit amet"
+                                class="Lorem-ipsum-dolor-si-3"
+                              ><a style="color:rgba(92, 90, 90, 1);" href="{{ route('products.show',$product->options->productname) }}">{{ $product->name }}</a>
+                              <p style="margin-top:2px;">Quantity: {{ $product->qty }}</p>
+                              @if($product->options->attributename == 'N/A')
+                                <p style="margin-top:-16px;">Attributes: None</p>
+                              @else
+                                <p style="margin-top:-12px;">Attributes: {{ $product->options->attributename }}: {{ $product->options->attributevalue }}, 
+                                    {{ $product->options->attributename2 }}: {{ $product->options->attributevalue2 }}, Stock: {{ $product->options->attributeStock }}
+                                </p>
+                              @endif
+                              <form method="POST" action='{{ route('carts.update',[$product->rowId,$product->options->productname]) }}' enctype="multipart/form-data" >
+                                @csrf
+                                   <p style="margin-top:-20px;">Update Quantity: <input type="number" id="num" name="num" value="1">
+                                       <input class="myButton" type="submit" value="Update" name="update" id="update">
+                                   </p>
+                               </form>
+                              </div>
+                              </div>
+                              <div class="Price-3-outer">
+                              <img
+                                id="Price-3"
+                                data-name="Price"
+                                alt="Price"
+                                class="Price-3"
+                              >
+                              </div>
+                              <div class="delete-3-outer">
+                              <a href="{{ route('carts.remove',$product->rowId) }}">
+                              <img
+                                id="delete-3"
+                                data-name="delete"
+                                alt="delete"
+                                class="delete-3"
+                              ></a>
+                              </div>
+                              <div class="q-20-3-outer">
+                              <div
+                                id="q-20-3"
+                                data-name="$20"
+                                class="q-20-3"
+                              ><div key="0">{{ $product->price }} Points</div>
+                              </div>
+                              </div>
+                            </div>
+                            </div>
                             @endforeach
-                        </div>
                       </div>
                       </div>
-                      
+                        
                     <div class="outer_q36">
+                    <div
+                    id="q36"
+                    data-name="Group 8"
+                    class="q36"
+                    >
                     <div class="outer_q37">
                       <div class="outer_q37">
                         <div
                           id="q25"
                           data-name="read more"
                           class="q37"
-                        >
+                        ><div key="0"></div>
                         </div>
                         </div>
                     <div
                       id="q37"
                       data-name="read more"
                       class="q37"
-                    >
+                    ><div key="0"></div>
                     </div>
                     </div>
                         <div class="outer_q38">
@@ -1748,7 +1812,7 @@
                           id="q38"
                           data-name="my account"
                           class="q38"
-                        ><div key="0"><a hidden href="{{ route('profiles.edit',auth()->user()->username) }}" style="color: #000">My Account</a></div>
+                        ><div key="0"><a href="{{ route('profiles.edit',auth()->user()->username) }}" style="white-space: nowrap; color: rgba(92, 90, 90, 1);">My Account</a></div>
                         </div>
                         </div>
                         <div class="outer_q39">
@@ -1756,7 +1820,7 @@
                           id="q39"
                           data-name="contact"
                           class="q39"
-                        ><div key="0"></div>
+                        ><div key="0">Contact </div>
                         </div>
                         </div>
                         <div class="outer_q40">
@@ -1764,7 +1828,7 @@
                           id="q40"
                           data-name="Monday-Friday9-5 EST"
                           class="q40"
-                        ><div key="0"></div>
+                        ><div key="0">Monday-Friday 9-5 EST</div>
                         </div>
                         </div>
                         <div class="outer_q41">
@@ -1772,7 +1836,7 @@
                           id="q41"
                           data-name="4161234567"
                           class="q41"
-                        ><div key="0"></div>
+                        ><div key="0">(416) 123-4567</div>
                         </div>
                         </div>
                       </div>
@@ -1783,13 +1847,8 @@
                         data-name="Line 18"
                         alt="Line 18"
                         class="q42"
-                      ></div>                      
+                      >
                       </div>
-                      <div class="box">
-                        <a href="{{ route('profiles.edit',auth()->user()->username) }}" class="myAccount">My Account</a>
-                        <p class="Contact">Contact</p>
-                        <p class="Dates">Monday-Friday 9-5 EST</p>
-                        <p class="PhoneNum">(416) 123-4567</p>
                       </div>
                       <div class="outer_q43">
                       <div

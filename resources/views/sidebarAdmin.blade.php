@@ -26,6 +26,11 @@
             Frontend Product page
         </a>
     </li>
+    <li>
+        <a href="{{ route('cartTest') }}" class="font-bold text-lg mb-4 block">
+            Frontend Cart Page ({{ Cart::count() }})
+        </a>
+    </li>
 
     <li>
         <div class="dropdown">

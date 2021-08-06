@@ -296,5 +296,5 @@ class ProductsController extends Controller
             'attributes' => ProductsAttribute::all()
         ]);
     }
-    
+
 }
