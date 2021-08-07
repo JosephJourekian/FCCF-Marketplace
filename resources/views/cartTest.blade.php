@@ -185,7 +185,7 @@
         min-width:922px;
         height:307px;
         margin-top:-996px;
-        margin-bottom:289px;
+        margin-bottom:310px;
         min-height:307px;
         
     width: 100%;
@@ -825,7 +825,7 @@
         margin-left:0px;
         width:92px;
         min-width:92px;
-        margin-top:-97px;
+        margin-top:-150px;
         margin-bottom:74px;
         min-height:23px;
         text-align:left;
@@ -853,7 +853,7 @@
         margin-left:818px;
         width:59px;
         min-width:59px;
-        margin-top:-97px;
+        margin-top:-150px;
         margin-bottom:74px;
         min-height:23px;
         text-align:left;
@@ -881,7 +881,7 @@
         margin-left:818px;
         width:161px;
         min-width:96px;
-        margin-top:-62px;
+        margin-top:-110px;
         margin-bottom:26px;
         min-height:36px;
         text-align:left;
@@ -910,7 +910,7 @@
         margin-left:818px;
         width:63px;
         min-width:63px;
-        margin-top:-23px;
+        margin-top:-70px;
         margin-bottom:0px;
         min-height:18px;
         text-align:left;
@@ -1545,6 +1545,172 @@
         position:relative;
         top:1px;
     }
+    .total-and-link{
+  position:relative;
+  z-index:7;
+  pointer-events:none;
+  margin-left:450px;
+  width:505px;
+  min-width:505px;
+  height:45px;
+  margin-top:0px;
+  top:auto;
+  bottom:-50px;
+  margin-bottom:12px;
+  min-height:45px;
+}
+.total-and-link-outer{
+  position:relative;
+  display:flex;
+  pointer-events:none;
+  z-index:7;
+}
+.Rectangle-4{
+  position:relative;
+  z-index:8;
+  pointer-events:none;
+  margin-left:0px;
+  width:273px;
+  min-width:273px;
+  height:45px;
+  margin-top:0px;
+  margin-bottom:0px;
+  min-height:45px;
+  border:2px solid rgba(92, 90, 90, 1);
+}
+.Rectangle-4-outer{
+  position:relative;
+  display:flex;
+  pointer-events:none;
+  z-index:8;
+}
+.Shopping{
+  position:relative;
+  z-index:11;
+  pointer-events:none;
+  margin-left:276px;
+  width:58px;
+  min-width:58px;
+  height:37px;
+  margin-top:-43px;
+  margin-bottom:6px;
+  min-height:37px;
+  content:url(../images/Shopping.png);
+}
+.Shopping-outer{
+  position:relative;
+  display:flex;
+  pointer-events:none;
+  z-index:11;
+}
+.checkout{
+  position:relative;
+  z-index:12;
+  pointer-events:all;
+  margin-left:346px;
+  width:111px;
+  min-width:111px;
+  margin-top:-40px;
+  margin-bottom:4px;
+  min-height:36px;
+  text-align:left;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  color:rgba(92, 90, 90, 1);
+  font-style:normal;
+  font-family:Baskervville;
+  font-weight:400;
+  font-size:28px;
+  line-height:36px;
+  white-space: nowrap;
+  left: -20px;
+}
+.checkout-outer{
+  position:relative;
+  display:flex;
+  pointer-events:none;
+  z-index:12;
+}
+.q-20-4{
+  position:relative;
+  z-index:10;
+  pointer-events:none;
+  opacity:0.800000011920929;
+  margin-left:217px;
+  width:36px;
+  min-width:36px;
+  margin-top:-38px;
+  margin-bottom:7px;
+  min-height:31px;
+  text-align:left;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  color:rgba(92, 90, 90, 1);
+  font-style:normal;
+  font-family:Baskervville;
+  font-weight:400;
+  font-size:24px;
+  line-height:31.200000762939453px;
+  white-space: nowrap;
+  left:-100px;
+}
+.q-20-4-outer{
+  position:relative;
+  display:flex;
+  pointer-events:none;
+  z-index:10;
+}
+.cart-total-{
+  position:relative;
+  z-index:9;
+  pointer-events:none;
+  margin-left:36px;
+  width:101px;
+  min-width:101px;
+  margin-top:-37px;
+  margin-bottom:6px;
+  min-height:31px;
+  text-align:left;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  color:rgba(92, 90, 90, 1);
+  font-style:normal;
+  font-family:Baskervville;
+  font-weight:400;
+  font-size:24px;
+  line-height:31.200000762939453px;
+  white-space: nowrap;
+  left: -33px;
+}
+.cart-total--outer{
+  position:relative;
+  display:flex;
+  pointer-events:none;
+  z-index:9;
+}
+.Arrow-1{
+  position:relative;
+  z-index:13;
+  pointer-events:all;
+  margin-left:470px;
+  width:35px;
+  height: 25px;
+  min-width:35px;
+  margin-top:-32px;
+  margin-bottom:21px;
+  min-height:undefinedpx;
+  content:url(../images/Arrow_1.png);
+}
+.Arrow-1-outer{
+  position:relative;
+  display:flex;
+  pointer-events:none;
+  z-index:13;
+}
+
 
     </style>
     
@@ -1706,6 +1872,9 @@
                             </div>
                             </div>
                         </div>
+                        @if(Cart::count() == 0)
+                              <img src="../images/cartEmpty.jpg" width="476px"  height="374px" style="position: relative; top: -50; right: 150;">
+                        @else
                         @foreach($cart as $product)
                         <div class="cart-item-group-1-outer">
                             <div
@@ -1782,15 +1951,104 @@
                             </div>
                             </div>
                             @endforeach
+                            @endif
+                            
                       </div>
                       </div>
                         
                     <div class="outer_q36">
+                      
                     <div
                     id="q36"
                     data-name="Group 8"
                     class="q36"
                     >
+                    <div class="total-and-link-outer">
+                      <div
+                        id="total-and-link"
+                        data-name="total and link"
+                        class="total-and-link"
+                      >
+                        <div class="Rectangle-4-outer">
+                        <div
+                          id="Rectangle-4"
+                          data-name="Rectangle"
+                          alt="Rectangle"
+                          class="Rectangle-4"
+                        >
+                        </div>
+                        </div>
+                        <div class="Shopping-outer">
+                        <img
+                          id="Shopping"
+                          data-name="Shopping"
+                          alt="Shopping"
+                          class="Shopping"
+                        >
+                        </div>
+                        <div class="checkout-outer">
+                        <div
+                          id="checkout"
+                          data-name="checkout"
+                          class="checkout"
+                        ><div key="0">
+                          @if(Cart::count() == 0)
+                            <a href="#" style="font-size: 18px; color:rgba(92, 90, 90, 1);">Need more points!</a>
+                          @else
+                            @if(((float)auth()->user()->points) >= ((float)Cart::subtotal('0','','')))
+                            <a href="{{ route('checkout.index') }}" style="color:rgba(92, 90, 90, 1);">Checkout</a>
+                            @else
+                            <a href="#" style="font-size: 18px; color:rgba(92, 90, 90, 1);">Need more points!</a>
+                            @endif
+                          @endif
+                        </div>
+                        </div>
+                        </div>
+                        <div class="q-20-4-outer">
+                        <div
+                          id="q-20-4"
+                          data-name="$20"
+                          class="q-20-4"
+                        ><div key="0">{{ Cart::subtotal('0','','')}} Points</div>
+                        </div>
+                        </div>
+                        <div class="cart-total--outer">
+                        <div
+                          id="cart-total-"
+                          data-name="cart total:"
+                          class="cart-total-"
+                        ><div key="0">Cart total: </div>
+                        </div>
+                        </div>
+                        <div class="Arrow-1-outer">
+                          @if(Cart::count() == 0)
+                            <a href="#" style="font-size: 18px; color:rgba(92, 90, 90, 1);">
+                              <img
+                              id="Arrow-1"
+                              data-name="Arrow 1"
+                              alt="Arrow 1"
+                              class="Arrow-1"
+                              ></a>
+                          @else
+                            @if(((float)auth()->user()->points) >= ((float)Cart::subtotal('0','','')))
+                            <a href="{{ route('checkout.index') }}" style="color:rgba(92, 90, 90, 1);"><img
+                              id="Arrow-1"
+                              data-name="Arrow 1"
+                              alt="Arrow 1"
+                              class="Arrow-1"
+                              ></a>
+                            @else
+                            <a href="#" style="font-size: 18px; color:rgba(92, 90, 90, 1);"><img
+                              id="Arrow-1"
+                              data-name="Arrow 1"
+                              alt="Arrow 1"
+                              class="Arrow-1"
+                              ></a>
+                            @endif
+                          @endif
+                        </div>
+                      </div>
+                      </div>
                     <div class="outer_q37">
                       <div class="outer_q37">
                         <div
