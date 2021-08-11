@@ -1342,6 +1342,9 @@
         .q41{
           margin-top: 830px;
         }
+        .q43{
+          top:-20px;
+        }
         
         .row{
           width: 1000px;

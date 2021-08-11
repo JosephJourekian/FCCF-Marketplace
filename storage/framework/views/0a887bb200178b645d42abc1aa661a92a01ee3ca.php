@@ -1711,6 +1711,11 @@
   z-index:13;
 }
 
+@media  screen and (max-width: 1920px) {
+	.q43{
+  		top:-20px;
+	}
+}
 
     </style>
     
@@ -1997,7 +2002,7 @@
                             <a href="#" style="font-size: 18px; color:rgba(92, 90, 90, 1);">Need more points!</a>
                           <?php else: ?>
                             <?php if(((float)auth()->user()->points) >= ((float)Cart::subtotal('0','',''))): ?>
-                            <a href="<?php echo e(route('checkout.index')); ?>" style="color:rgba(92, 90, 90, 1);">Checkout</a>
+                            <a href="<?php echo e(route('checkoutTest')); ?>" style="color:rgba(92, 90, 90, 1);">Checkout</a>
                             <?php else: ?>
                             <a href="#" style="font-size: 18px; color:rgba(92, 90, 90, 1);">Need more points!</a>
                             <?php endif; ?>
@@ -2032,7 +2037,7 @@
                               ></a>
                           <?php else: ?>
                             <?php if(((float)auth()->user()->points) >= ((float)Cart::subtotal('0','',''))): ?>
-                            <a href="<?php echo e(route('checkout.index')); ?>" style="color:rgba(92, 90, 90, 1);"><img
+                            <a href="<?php echo e(route('checkoutTest')); ?>" style="color:rgba(92, 90, 90, 1);"><img
                               id="Arrow-1"
                               data-name="Arrow 1"
                               alt="Arrow 1"
@@ -2047,7 +2052,6 @@
                               ></a>
                             <?php endif; ?>
                           <?php endif; ?>
-                      
                         </div>
                       </div>
                       </div>

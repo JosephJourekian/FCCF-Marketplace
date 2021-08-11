@@ -31,6 +31,27 @@ class CheckoutsController extends Controller
         }
         
     }
+    public function checkoutTest(){
+        if(Cart::count() == 0){
+            return redirect('productsTest');
+        }
+        else{
+            return view("checkoutTest", [
+                'cart' => Cart::content()
+            ]);
+        }
+    }
+    public function checkoutComplete(){
+        if(Cart::count() == 0){
+            return redirect('productsTest');
+        }
+        else{
+            return view("checkout.complete", [
+                'cart' => Cart::content()
+            ]);
+        }
+    }
+
 
     public function confirm(){
         User::where('name', auth()->user()->name)->where('points','>','0')->decrement('points', (float)Cart::subtotal('0','','')); 
@@ -64,6 +85,7 @@ class CheckoutsController extends Controller
         Mail::to('jjourekian@gmail.com')->send(new ShippingDetails(), ['cart'=> $cart]);
         
         Cart::destroy();
+
         return redirect('/products')->with('message', 'Order Confirmed!');
     }
 }

@@ -1711,6 +1711,11 @@
   z-index:13;
 }
 
+@media screen and (max-width: 1920px) {
+	.q43{
+  		top:-20px;
+	}
+}
 
     </style>
     
@@ -1996,7 +2001,7 @@
                             <a href="#" style="font-size: 18px; color:rgba(92, 90, 90, 1);">Need more points!</a>
                           @else
                             @if(((float)auth()->user()->points) >= ((float)Cart::subtotal('0','','')))
-                            <a href="{{ route('checkout.index') }}" style="color:rgba(92, 90, 90, 1);">Checkout</a>
+                            <a href="{{ route('checkoutTest') }}" style="color:rgba(92, 90, 90, 1);">Checkout</a>
                             @else
                             <a href="#" style="font-size: 18px; color:rgba(92, 90, 90, 1);">Need more points!</a>
                             @endif
@@ -2031,7 +2036,7 @@
                               ></a>
                           @else
                             @if(((float)auth()->user()->points) >= ((float)Cart::subtotal('0','','')))
-                            <a href="{{ route('checkout.index') }}" style="color:rgba(92, 90, 90, 1);"><img
+                            <a href="{{ route('checkoutTest') }}" style="color:rgba(92, 90, 90, 1);"><img
                               id="Arrow-1"
                               data-name="Arrow 1"
                               alt="Arrow 1"

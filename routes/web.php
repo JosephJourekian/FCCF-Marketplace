@@ -63,6 +63,8 @@ Route::middleware('auth')->group(function (){
     Route::get('/myCart', 'App\Http\Controllers\CartsController@index')->name('carts.index'); 
 
     Route::get('/cartTest', 'App\Http\Controllers\CartsController@cartTest')->name('cartTest'); //test carts index frontend
+    Route::get('/checkoutTest', 'App\Http\Controllers\CheckoutsController@checkoutTest')->name('checkoutTest');  //Checkout frontend 
+    Route::get('/checkoutComplete', 'App\Http\Controllers\CheckoutsController@checkoutComplete')->name('checkout.complete'); 
 
 
 
@@ -72,6 +74,7 @@ Route::middleware('auth')->group(function (){
     Route::get('/profiles/edit/{user:username}', 'App\Http\Controllers\ProfilesController@edit')->name('profiles.edit');
     Route::patch('/profiles/update/{user:username}', 'App\Http\Controllers\ProfilesController@update')->name('profiles.update');
     Route::get('/purchaseHistory/{user:username}', 'App\Http\Controllers\PurchaseHistoryController@index')->name('purchaseHistory');
+    Route::get('/purchaseHistoryTest/{user:username}', 'App\Http\Controllers\PurchaseHistoryController@indexTest')->name('purchaseHistoryTest');
 
 
 
