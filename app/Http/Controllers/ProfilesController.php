@@ -8,6 +8,10 @@ use App\Models\User;
 
 class ProfilesController extends Controller
 {
+    public function index(){
+        return view('profiles.index');
+    }
+    
     public function edit(User $user){
 
         $userA = User::find($user)->first();

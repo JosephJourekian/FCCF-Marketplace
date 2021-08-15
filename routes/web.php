@@ -70,7 +70,8 @@ Route::middleware('auth')->group(function (){
 
     Route::get('/checkout', 'App\Http\Controllers\CheckoutsController@index')->name('checkout.index'); 
     Route::get('/checkout/confirm', 'App\Http\Controllers\CheckoutsController@confirm')->name('checkout.confirm'); 
-    
+
+    Route::get('/profiles', 'App\Http\Controllers\ProfilesController@index')->name('profiles.index');
     Route::get('/profiles/edit/{user:username}', 'App\Http\Controllers\ProfilesController@edit')->name('profiles.edit');
     Route::patch('/profiles/update/{user:username}', 'App\Http\Controllers\ProfilesController@update')->name('profiles.update');
     Route::get('/purchaseHistory/{user:username}', 'App\Http\Controllers\PurchaseHistoryController@index')->name('purchaseHistory');
