@@ -74,6 +74,9 @@ Route::middleware('auth')->group(function (){
     Route::get('/profiles', 'App\Http\Controllers\ProfilesController@index')->name('profiles.index');
     Route::get('/profiles/edit/{user:username}', 'App\Http\Controllers\ProfilesController@edit')->name('profiles.edit');
     Route::patch('/profiles/update/{user:username}', 'App\Http\Controllers\ProfilesController@update')->name('profiles.update');
+    Route::get('/profiles/editAddress/{user:username}', 'App\Http\Controllers\ProfilesController@editAddress')->name('profiles.editAddress');
+    Route::patch('/profiles/updateAddress/{user:username}', 'App\Http\Controllers\ProfilesController@updateAddress')->name('profiles.updateAddress');
+
     Route::get('/purchaseHistory/{user:username}', 'App\Http\Controllers\PurchaseHistoryController@index')->name('purchaseHistory');
     Route::get('/purchaseHistoryTest/{user:username}', 'App\Http\Controllers\PurchaseHistoryController@indexTest')->name('purchaseHistoryTest');
 

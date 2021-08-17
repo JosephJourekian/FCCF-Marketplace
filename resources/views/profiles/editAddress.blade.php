@@ -8,7 +8,7 @@
       z-index: 1;
     
     }
-    @media  screen and (max-width: 1920px) {
+    @media screen and (max-width: 1920px) {
         .websiteBody{
               margin: auto;
           margin-left: 12%;
@@ -17,7 +17,7 @@
         }
     }
     
-    @media  screen and (max-width: 1152px) {
+    @media screen and (max-width: 1152px) {
         .websiteBody{
               margin: auto;
           position: fixed;
@@ -1711,7 +1711,7 @@
   z-index:13;
 }
 
-@media  screen and (max-width: 1920px) {
+@media screen and (max-width: 1920px) {
 	.q43{
   		top:-20px;
 	}
@@ -1800,10 +1800,6 @@
 	position:relative;
 	top:1px;
 }
-.error{
-    text-align: left;
-    color: red;
-}
 
 
 
@@ -1819,7 +1815,7 @@
         
           <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=5" />
         
-          <title> Test Edit Address Page </title>
+          <title>Edit Address Info</title>
           <meta name="description" content="Test Home Description">
           <meta property="og:title" content="Test Home">
           <meta property="og:description" content="Test Home Description">
@@ -1837,28 +1833,28 @@
           </label>
           <div class="wrapper">
              <ul>
-                <li><a href="<?php echo e(route('home')); ?>">Home</a></li>
+                <li><a href="{{ route('home') }}">Home</a></li>
                 <li><a href="#">About</a></li>
-                <li><a href="<?php echo e(route('products.index')); ?>">Shop</a></li>
-                <li><a href="<?php echo e(route('carts.index')); ?>">My Cart (<?php echo e(Cart::count()); ?>)</a></li>
-                <li><a href="<?php echo e(route('fccfUpdates.index')); ?>">FCCF Updates</a></li>
-                <li><a href="<?php echo e(route('techUpdates.index')); ?>">Tech Updates</a></li>
+                <li><a href="{{ route('products.index') }}">Shop</a></li>
+                <li><a href="{{ route('carts.index') }}">My Cart ({{ Cart::count() }})</a></li>
+                <li><a href="{{ route('fccfUpdates.index') }}">FCCF Updates</a></li>
+                <li><a href="{{ route('techUpdates.index') }}">Tech Updates</a></li>
                 <li><a href="#">Team</a></li>   
                 <li>
-                  <a href="<?php echo e(route('profiles.edit',auth()->user()->username)); ?>">My Account</a>
+                  <a href="{{ route('profiles.edit',auth()->user()->username) }}">My Account</a>
                 </li>
                 <li>
                     <form method="POST" action="/logout">
-                        <?php echo csrf_field(); ?>
+                        @csrf
                         <button style="font-family: Baskervville">Logout</button>
                     </form>
                 </li>
-                <?php if(auth()->user()->isAdmin()): ?>
+                @if(auth()->user()->isAdmin())
                 <li>
-                  <a href="<?php echo e(route('home')); ?>">Admin Links</a>
+                  <a href="{{ route('home') }}">Admin Links</a>
                 </li>
     
-                <?php endif; ?>
+                @endif
              </ul>
           </div>
           <div class="content">
@@ -1962,87 +1958,121 @@
                             </div>
                         </div>
                         
-                        <form method="POST" action="<?php echo e(route('profiles.update',auth()->user()->username)); ?>" enctype="multipart/form-data">
-                            <?php echo csrf_field(); ?>
-                            <?php echo method_field('PATCH'); ?>
+                        <form method="POST" action="{{ route('profiles.updateAddress',auth()->user()->username)}}" enctype="multipart/form-data">
+                            @csrf
+                            @method('PATCH')
                         
                             <div class="mb-6">
                                 <label class="label"
-                                    for="email"
+                                    for="address"
                                 >
-                                    Email
+                                    Address
                                 </label>
                         
                                 <input class="input"
-                                    type="email"
-                                    name="email"
-                                    id="email"
-                                    value="<?php echo e($user->email); ?>"
+                                    type="text"
+                                    name="address"
+                                    id="address"
+                                    value="{{ $user->address }}"
                                     required
                                 >
                         
-                                <?php $__errorArgs = ['email'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                                    <p class="error"><?php echo e($message); ?></p>
-                                <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
+                                @error('address')
+                                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                                @enderror
                             </div>
                         
                             <div class="mb-6">
                                 <label class="label"
-                                    for="password"
+                                    for="city"
                                 >
-                                    Password
+                                    City
                                 </label>
                         
                                 <input class="input"
-                                    type="password"
-                                    name="password"
-                                    id="password"
+                                    type="text"
+                                    name="city"
+                                    id="city"
+                                    value="{{ $user->city }}"
                                     required
                                 >
                         
-                                <?php $__errorArgs = ['password'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                                    <p class="error"><?php echo e($message); ?></p>
-                                <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
+                                @error('city')
+                                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                                @enderror
                             </div>
                         
                             <div class="mb-6">
                                 <label class="label"
-                                    for="password_confirmation"
+                                    for="province"
                                 >
-                                    Password Confirmation
+                                    Province
+                                </label>
+                        
+                                <select class="input"
+                                    type="text"
+                                    name="province"
+                                    id="province"
+                                    value="{{ $user->province }}"
+                                    required>
+                                        <option value="Ontario">Ontario</option>
+                                        <option value="Alberta">Alberta</option>
+                                        <option value="British Columbia">British Columbia</option>
+                                        <option value="Manitoba">Manitoba</option>
+                                        <option value="New Brunswick">New Brunswick</option>
+                                        <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+                                        <option value="Northwest Territories">Northwest Territories</option>
+                                        <option value="Nova Scotia">Nova Scotia</option>
+                                        <option value="Nunavut">Nunavut</option>
+                                        <option value="Prince Edward Island">Prince Edward Island</option>
+                                        <option value="Quebec">Quebec</option>
+                                        <option value="Saskatchewan">Saskatchewan</option>
+                                        <option value="Yukon">Yukon</option>
+                                </select>
+                        
+                                @error('province')
+                                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                                @enderror
+                            </div>
+                        
+                            <div class="mb-6">
+                                <label class="label"
+                                    for="postalCode"
+                                >
+                                    Postal/Zip Code
                                 </label>
                         
                                 <input class="input"
-                                    type="password"
-                                    name="password_confirmation"
-                                    id="password_confirmation"
+                                    type="text"
+                                    name="postalCode"
+                                    id="postalCode"
+                                    value="{{ $user->postalCode }}"
                                     required
                                 >
                         
-                                <?php $__errorArgs = ['password_confirmation'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                                    <p class="error"><?php echo e($message); ?></p>
-                                <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
+                                @error('postalCode')
+                                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                                @enderror
+                            </div>
+                        
+                            <div class="mb-6">
+                                <label class="label"
+                                    for="phone"
+                                >
+                                    Phone Number
+                                </label>
+                        
+                                <input class="input"
+                                    type="text"
+                                    name="phone"
+                                    id="phone"
+                                    value="{{ $user->phone }}"
+                                    required
+                                >
+                        
+                                @error('phone')
+                                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                                @enderror
                             </div>
                         
                             <div class="mb-6">
@@ -2051,7 +2081,7 @@ unset($__errorArgs, $__bag); ?>
                                 >
                                     Submit
                                 </button>
-                                <a href="<?php echo e(route('home')); ?>"
+                                <a href="{{ route('home') }}"
                                             class="myButton2"
                                     >
                                         Back To Home
@@ -2092,7 +2122,7 @@ unset($__errorArgs, $__bag); ?>
                           id="q38"
                           data-name="my account"
                           class="q38"
-                        ><div key="0"><a href="<?php echo e(route('profiles.index')); ?>" style="white-space: nowrap; color: rgba(92, 90, 90, 1);">My Account</a></div>
+                        ><div key="0"><a href="{{ route('profiles.edit',auth()->user()->username) }}" style="white-space: nowrap; color: rgba(92, 90, 90, 1);">My Account</a></div>
                         </div>
                         </div>
                         <div class="outer_q39">
@@ -2204,4 +2234,4 @@ unset($__errorArgs, $__bag); ?>
              </div>
           </div>
        </body>
-    </html><?php /**PATH C:\Users\jjour\FCCF-Market\resources\views/profiles/edit.blade.php ENDPATH**/ ?>
+    </html>

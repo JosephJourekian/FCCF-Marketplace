@@ -1800,10 +1800,6 @@
 	position:relative;
 	top:1px;
 }
-.error{
-    text-align: left;
-    color: red;
-}
 
 
 
@@ -1962,31 +1958,31 @@
                             </div>
                         </div>
                         
-                        <form method="POST" action="<?php echo e(route('profiles.update',auth()->user()->username)); ?>" enctype="multipart/form-data">
+                        <form method="POST" action="<?php echo e(route('profiles.updateAddress',auth()->user()->username)); ?>" enctype="multipart/form-data">
                             <?php echo csrf_field(); ?>
                             <?php echo method_field('PATCH'); ?>
                         
                             <div class="mb-6">
                                 <label class="label"
-                                    for="email"
+                                    for="address"
                                 >
-                                    Email
+                                    Address
                                 </label>
                         
                                 <input class="input"
-                                    type="email"
-                                    name="email"
-                                    id="email"
-                                    value="<?php echo e($user->email); ?>"
+                                    type="text"
+                                    name="address"
+                                    id="address"
+                                    value="<?php echo e($user->address); ?>"
                                     required
                                 >
                         
-                                <?php $__errorArgs = ['email'];
+                                <?php $__errorArgs = ['address'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                    <p class="error"><?php echo e($message); ?></p>
+                                    <p class="text-red-500 text-xs mt-2"><?php echo e($message); ?></p>
                                 <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
@@ -1995,24 +1991,25 @@ unset($__errorArgs, $__bag); ?>
                         
                             <div class="mb-6">
                                 <label class="label"
-                                    for="password"
+                                    for="city"
                                 >
-                                    Password
+                                    City
                                 </label>
                         
                                 <input class="input"
-                                    type="password"
-                                    name="password"
-                                    id="password"
+                                    type="text"
+                                    name="city"
+                                    id="city"
+                                    value="<?php echo e($user->city); ?>"
                                     required
                                 >
                         
-                                <?php $__errorArgs = ['password'];
+                                <?php $__errorArgs = ['city'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                    <p class="error"><?php echo e($message); ?></p>
+                                    <p class="text-red-500 text-xs mt-2"><?php echo e($message); ?></p>
                                 <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
@@ -2021,24 +2018,92 @@ unset($__errorArgs, $__bag); ?>
                         
                             <div class="mb-6">
                                 <label class="label"
-                                    for="password_confirmation"
+                                    for="province"
                                 >
-                                    Password Confirmation
+                                    Province
                                 </label>
                         
-                                <input class="input"
-                                    type="password"
-                                    name="password_confirmation"
-                                    id="password_confirmation"
-                                    required
-                                >
+                                <select class="input"
+                                    type="text"
+                                    name="province"
+                                    id="province"
+                                    value="<?php echo e($user->province); ?>"
+                                    required>
+                                        <option value="Ontario">Ontario</option>
+                                        <option value="Alberta">Alberta</option>
+                                        <option value="British Columbia">British Columbia</option>
+                                        <option value="Manitoba">Manitoba</option>
+                                        <option value="New Brunswick">New Brunswick</option>
+                                        <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+                                        <option value="Northwest Territories">Northwest Territories</option>
+                                        <option value="Nova Scotia">Nova Scotia</option>
+                                        <option value="Nunavut">Nunavut</option>
+                                        <option value="Prince Edward Island">Prince Edward Island</option>
+                                        <option value="Quebec">Quebec</option>
+                                        <option value="Saskatchewan">Saskatchewan</option>
+                                        <option value="Yukon">Yukon</option>
+                                </select>
                         
-                                <?php $__errorArgs = ['password_confirmation'];
+                                <?php $__errorArgs = ['province'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                    <p class="error"><?php echo e($message); ?></p>
+                                    <p class="text-red-500 text-xs mt-2"><?php echo e($message); ?></p>
+                                <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                            </div>
+                        
+                            <div class="mb-6">
+                                <label class="label"
+                                    for="postalCode"
+                                >
+                                    Postal/Zip Code
+                                </label>
+                        
+                                <input class="input"
+                                    type="text"
+                                    name="postalCode"
+                                    id="postalCode"
+                                    value="<?php echo e($user->postalCode); ?>"
+                                    required
+                                >
+                        
+                                <?php $__errorArgs = ['postalCode'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                    <p class="text-red-500 text-xs mt-2"><?php echo e($message); ?></p>
+                                <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                            </div>
+                        
+                            <div class="mb-6">
+                                <label class="label"
+                                    for="phone"
+                                >
+                                    Phone Number
+                                </label>
+                        
+                                <input class="input"
+                                    type="text"
+                                    name="phone"
+                                    id="phone"
+                                    value="<?php echo e($user->phone); ?>"
+                                    required
+                                >
+                        
+                                <?php $__errorArgs = ['phone'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                    <p class="text-red-500 text-xs mt-2"><?php echo e($message); ?></p>
                                 <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
@@ -2092,7 +2157,7 @@ unset($__errorArgs, $__bag); ?>
                           id="q38"
                           data-name="my account"
                           class="q38"
-                        ><div key="0"><a href="<?php echo e(route('profiles.index')); ?>" style="white-space: nowrap; color: rgba(92, 90, 90, 1);">My Account</a></div>
+                        ><div key="0"><a href="<?php echo e(route('profiles.edit',auth()->user()->username)); ?>" style="white-space: nowrap; color: rgba(92, 90, 90, 1);">My Account</a></div>
                         </div>
                         </div>
                         <div class="outer_q39">
@@ -2204,4 +2269,4 @@ unset($__errorArgs, $__bag); ?>
              </div>
           </div>
        </body>
-    </html><?php /**PATH C:\Users\jjour\FCCF-Market\resources\views/profiles/edit.blade.php ENDPATH**/ ?>
+    </html><?php /**PATH C:\Users\jjour\FCCF-Market\resources\views/profiles/editAddress.blade.php ENDPATH**/ ?>

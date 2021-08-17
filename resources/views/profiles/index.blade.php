@@ -1307,7 +1307,7 @@
       line-height: 46.400001525878906px;
       white-space: nowrap;
       text-decoration: underline;
-      left: -39px;
+      left: 13px;
   }
   .MY-CART-outer{
       position:relative;
@@ -1714,6 +1714,18 @@ z-index:13;
 .q43{
     top:-20px;
   }
+  .q38{
+    top: 55;
+  }
+  .q39{
+    top: 55;
+  }
+  .q40{
+    top: 55;
+  }
+  .q41{
+    top: 55;
+  }
 }
 .Picture{
   position:relative;
@@ -1762,7 +1774,7 @@ z-index:13;
   height:76px;
   min-height:76px;
   top: 34;
-  left: 350;
+  left: 668;
 }
 .Wish-List-outer{
   position:relative;
@@ -1870,7 +1882,7 @@ z-index:13;
   pointer-events:all;
   z-index:11;
   top: -75;
-  left: 250;
+  left: 2px;
 }
 .OrderHistoryList{
   position:relative;
@@ -1955,6 +1967,314 @@ z-index:13;
   pointer-events:all;
   z-index:13;
 }
+
+.Payment{
+  position:relative;
+  z-index:11;
+  pointer-events:all;
+  width:241px;
+  min-width:241px;
+  height:76px;
+  min-height:76px;
+  
+}
+.PaymentOuter{
+  position:relative;
+  display:inline;
+  pointer-events:all;
+  z-index:11;
+  top: 25px;
+  left: 349px;
+}
+.PaymentList{
+  position:relative;
+  z-index:12;
+  pointer-events:all;
+  margin-left:0px;
+  width:88px;
+  min-width:88px;
+  margin-top:0px;
+  margin-bottom:60px;
+  min-height:31px;
+  text-align:left;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  color:rgba(92, 90, 90, 1);
+  font-style:normal;
+  font-family:Baskervville;
+  font-weight:400;
+  font-size:18px;
+  text-decoration:underline;
+  line-height:15.199999809265137px;
+}
+.PaymentListOuter{
+  position:relative;
+  display:flex;
+  pointer-events:all;
+  z-index:12;
+}
+.PaymentText{
+  position:relative;
+  z-index:14;
+  pointer-events:none;
+  margin-left:0px;
+  width:241px;
+  min-width:241px;
+  margin-top:-55px;
+  margin-bottom:30px;
+  min-height:31px;
+  text-align:left;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  color:rgba(92, 90, 90, 1);
+  font-style:normal;
+  font-family:Baskervville;
+  font-weight:400;
+  font-size:16px;
+  line-height:15.199999809265137px;
+}
+.PaymentTextOuter{
+  position:relative;
+  display:flex;
+  pointer-events:none;
+  z-index:14;
+}
+.PaymentView{
+  position:relative;
+  z-index:13;
+  pointer-events:all;
+  margin-left:0px;
+  width:52px;
+  min-width:52px;
+  margin-top:-16px;
+  margin-bottom:0px;
+  min-height:16px;
+  text-align:left;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  color:rgba(92, 90, 90, 1);
+  font-style:normal;
+  font-family:Baskervville;
+  font-weight:400;
+  font-size:16px;
+  text-decoration:underline;
+  line-height:15.199999809265137px;
+}
+.PaymentViewOuter{
+  position:relative;
+  display:flex;
+  pointer-events:all;
+  z-index:13;
+}
+
+.Address{
+  position:relative;
+  z-index:11;
+  pointer-events:all;
+  width:241px;
+  min-width:241px;
+  height:76px;
+  min-height:76px;
+  top: 34;
+  left: 350;
+}
+.AddressOuter{
+  position:relative;
+  display:inline;
+  pointer-events:all;
+  z-index:11;
+  top: -84px;
+  left: 317px;
+
+}
+.AddressList{
+  position:relative;
+  z-index:12;
+  pointer-events:all;
+  margin-left:0px;
+  width:88px;
+  min-width:88px;
+  margin-top:0px;
+  margin-bottom:60px;
+  min-height:31px;
+  text-align:left;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  color:rgba(92, 90, 90, 1);
+  font-style:normal;
+  font-family:Baskervville;
+  font-weight:400;
+  font-size:18px;
+  text-decoration:underline;
+  line-height:15.199999809265137px;
+}
+.AddressListOuter{
+  position:relative;
+  display:flex;
+  pointer-events:all;
+  z-index:12;
+}
+.AddressText{
+  position:relative;
+  z-index:14;
+  pointer-events:none;
+  margin-left:0px;
+  width:241px;
+  min-width:241px;
+  margin-top:-55px;
+  margin-bottom:30px;
+  min-height:31px;
+  text-align:left;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  color:rgba(92, 90, 90, 1);
+  font-style:normal;
+  font-family:Baskervville;
+  font-weight:400;
+  font-size:16px;
+  line-height:15.199999809265137px;
+}
+.AddressTextOuter{
+  position:relative;
+  display:flex;
+  pointer-events:none;
+  z-index:14;
+}
+.AddressView{
+  position:relative;
+  z-index:13;
+  pointer-events:all;
+  margin-left:0px;
+  width:52px;
+  min-width:52px;
+  margin-top:-16px;
+  margin-bottom:0px;
+  min-height:16px;
+  text-align:left;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  color:rgba(92, 90, 90, 1);
+  font-style:normal;
+  font-family:Baskervville;
+  font-weight:400;
+  font-size:16px;
+  text-decoration:underline;
+  line-height:15.199999809265137px;
+}
+.AddressViewOuter{
+  position:relative;
+  display:flex;
+  pointer-events:all;
+  z-index:13;
+}
+
+.Account{
+  position:relative;
+  z-index:11;
+  pointer-events:all;
+  width:241px;
+  min-width:241px;
+  height:76px;
+  min-height:76px;
+  
+}
+.AccountOuter{
+  position:relative;
+  display:inline;
+  pointer-events:all;
+  z-index:11;
+  top: 25px;
+  left: 349px;
+}
+.AccountList{
+  position:relative;
+  z-index:12;
+  pointer-events:all;
+  margin-left:0px;
+  width:88px;
+  min-width:88px;
+  margin-top:0px;
+  margin-bottom:60px;
+  min-height:31px;
+  text-align:left;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  color:rgba(92, 90, 90, 1);
+  font-style:normal;
+  font-family:Baskervville;
+  font-weight:400;
+  font-size:18px;
+  text-decoration:underline;
+  line-height:15.199999809265137px;
+}
+.AccountListOuter{
+  position:relative;
+  display:flex;
+  pointer-events:all;
+  z-index:12;
+}
+.AccountText{
+  position:relative;
+  z-index:14;
+  pointer-events:none;
+  margin-left:0px;
+  width:241px;
+  min-width:241px;
+  margin-top:-55px;
+  margin-bottom:30px;
+  min-height:31px;
+  text-align:left;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  color:rgba(92, 90, 90, 1);
+  font-style:normal;
+  font-family:Baskervville;
+  font-weight:400;
+  font-size:16px;
+  line-height:15.199999809265137px;
+}
+.AccountTextOuter{
+  position:relative;
+  display:flex;
+  pointer-events:none;
+  z-index:14;
+}
+.AccountView{
+  position:relative;
+  z-index:13;
+  pointer-events:all;
+  margin-left:0px;
+  width:52px;
+  min-width:52px;
+  margin-top:-16px;
+  margin-bottom:0px;
+  min-height:16px;
+  text-align:left;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  color:rgba(92, 90, 90, 1);
+  font-style:normal;
+  font-family:Baskervville;
+  font-weight:400;
+  font-size:16px;
+  text-decoration:underline;
+  line-height:15.199999809265137px;
+}
+.AccountViewOuter{
+  position:relative;
+  display:flex;
+  pointer-events:all;
+  z-index:13;
+}
   </style>
   
   <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -1967,7 +2287,7 @@ z-index:13;
       
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=5" />
       
-        <title> Test Cart Page </title>
+        <title> Test My Account Page </title>
         <meta name="description" content="Test Home Description">
         <meta property="og:title" content="Test Home">
         <meta property="og:description" content="Test Home Description">
@@ -2172,7 +2492,7 @@ z-index:13;
                               id="OrderHistoryList"
                               data-name="OrderHistoryList"
                               class="OrderHistoryList"
-                            ><div key="0"><a href="#" style="color:rgba(92, 90, 90, 1);">ORDER HISTORY</a></div>
+                            ><div key="0"><a href="{{route('purchaseHistoryTest',auth()->user()->username) }}"style="color:rgba(92, 90, 90, 1);">ORDER HISTORY</a></div>
                             </div>
                             </div>
                             <div class="OrderHistoryTextOuter">
@@ -2180,8 +2500,8 @@ z-index:13;
                               id="OrderHistoryText"
                               data-name="OrderHistoryText"
                               class="OrderHistoryText"
-                            ><div key="0">Look at your order history, manage your current</div>
-                            <div key="1">orders or track deliveries</div>
+                            ><div key="0">Look at your order history, manage</div>
+                            <div key="1">your current orders or track deliveries</div>
                             </div>
                             </div>
                             <div class="OrderHistoryViewOuter">
@@ -2189,13 +2509,113 @@ z-index:13;
                               id="OrderHistoryView"
                               data-name="OrderHistoryView"
                               class="OrderHistoryView"
-                            ><div key="0"><a href="#" style="color:rgba(92, 90, 90, 1);">View/Edit</a></div>
+                            ><div key="0"><a href="{{route('purchaseHistoryTest',auth()->user()->username) }}" style="color:rgba(92, 90, 90, 1);">View/Edit</a></div>
                             </div>
                             </div>
                           </div>
                           </div>
+
+                          <div class="PaymentOuter">
+                            <div
+                              id="OrderHistory"
+                              data-name="OrderHistory"
+                              class="Payment"
+                            >
+                              <div class="PaymentListOuter">
+                              <div
+                                id="OrderHistoryList"
+                                data-name="OrderHistoryList"
+                                class="PaymentList"
+                              ><div key="0"><a href="#" style="color:rgba(92, 90, 90, 1);">PAYMENT METHOD</a></div>
+                              </div>
+                              </div>
+                              <div class="PaymentTextOuter">
+                              <div
+                                id="OrderHistoryText"
+                                data-name="OrderHistoryText"
+                                class="PaymentText"
+                              ><div key="0">Add or edit credit card details stored on</div>
+                              <div key="1">your account.</div>
+                              </div>
+                              </div>
+                              <div class="PaymentViewOuter">
+                              <div
+                                id="OrderHistoryView"
+                                data-name="OrderHistoryView"
+                                class="PaymentView"
+                              ><div key="0"><a href="#" style="color:rgba(92, 90, 90, 1);">View/Edit</a></div>
+                              </div>
+                              </div>
+                            </div>
+                            </div>
                             
+                            <div class="AddressOuter">
+                              <div
+                                id="OrderHistory"
+                                data-name="OrderHistory"
+                                class="Address"
+                              >
+                                <div class="AddressListOuter">
+                                <div
+                                  id="OrderHistoryList"
+                                  data-name="OrderHistoryList"
+                                  class="AddressList"
+                                ><div key="0"><a href="{{ route('profiles.edit',auth()->user()->username) }}" style="color:rgba(92, 90, 90, 1);">ADDRESS BOOK</a></div>
+                                </div>
+                                </div>
+                                <div class="AddressTextOuter">
+                                <div
+                                  id="OrderHistoryText"
+                                  data-name="OrderHistoryText"
+                                  class="AddressText"
+                                ><div key="0">Add or edit your saved billing</div>
+                                <div key="1">and shipping addresses.</div>
+                                </div>
+                                </div>
+                                <div class="AddressViewOuter">
+                                <div
+                                  id="OrderHistoryView"
+                                  data-name="OrderHistoryView"
+                                  class="AddressView"
+                                ><div key="0"><a href="{{ route('profiles.edit',auth()->user()->username) }}" style="color:rgba(92, 90, 90, 1);">View/Edit</a></div>
+                                </div>
+                                </div>
+                              </div>
+                              </div>
                           
+                              <div class="AccountOuter">
+                                <div
+                                  id="OrderHistory"
+                                  data-name="OrderHistory"
+                                  class="Account"
+                                >
+                                  <div class="AccountListOuter">
+                                  <div
+                                    id="OrderHistoryList"
+                                    data-name="OrderHistoryList"
+                                    class="AccountList"
+                                  ><div key="0"><a href="{{ route('profiles.edit',auth()->user()->username) }}" style="color:rgba(92, 90, 90, 1);">ACCOUNT DETAILS</a></div>
+                                  </div>
+                                  </div>
+                                  <div class="AccountTextOuter">
+                                  <div
+                                    id="OrderHistoryText"
+                                    data-name="OrderHistoryText"
+                                    class="AccountText"
+                                  ><div key="0">Add or edit your e-mail address, password, </div>
+                                  <div key="1">and contact details.</div>
+                                  </div>
+                                  </div>
+                                  <div class="AccountViewOuter">
+                                  <div
+                                    id="OrderHistoryView"
+                                    data-name="OrderHistoryView"
+                                    class="AccountView"
+                                  ><div key="0"><a href="{{ route('profiles.edit',auth()->user()->username) }}" style="color:rgba(92, 90, 90, 1);">View/Edit</a></div>
+                                  </div>
+                                  </div>
+                                </div>
+                                </div>
                     </div>
                     </div>
                       
