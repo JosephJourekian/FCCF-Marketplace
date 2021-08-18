@@ -49,6 +49,9 @@ Route::middleware('auth')->group(function (){
     Route::get('/products', 'App\Http\Controllers\ProductsController@index')->name('products.index'); 
     Route::get('/products/show/{product:productname}', 'App\Http\Controllers\ProductsController@show')->name('products.show'); 
 
+    Route::get('/updates', 'App\Http\Controllers\UpdatesController@index')->name('updates'); 
+
+
     Route::get('/fccfUpdates', 'App\Http\Controllers\FccfUpdatesController@index')->name('fccfUpdates.index'); 
     Route::get('/fccfUpdates/show/{updatename}', 'App\Http\Controllers\FccfUpdatesController@show')->name('fccfUpdates.show');
     

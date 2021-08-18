@@ -8,7 +8,7 @@
       z-index: 1;
     
     }
-    @media screen and (max-width: 1920px) {
+    @media  screen and (max-width: 1920px) {
         .websiteBody{
               margin: auto;
           margin-left: 12%;
@@ -17,7 +17,7 @@
         }
     }
     
-    @media screen and (max-width: 1152px) {
+    @media  screen and (max-width: 1152px) {
         .websiteBody{
               margin: auto;
           position: fixed;
@@ -179,30 +179,31 @@
     .q9{
         position:relative;
         z-index:4;
-        pointer-events:auto;
+        pointer-events:all;
         margin-left:114px;
         width:922px;
         min-width:922px;
-        height:550px;
+        height:307px;
         margin-top:-996px;
-        margin-bottom:0px;
+        margin-bottom:310px;
         min-height:307px;
+        
     width: 100%;
-
+    height: 100%;
     white-space: nowrap;
     }
     .outer_q9{
         position: relative;
         display: flex;
         margin-bottom: -100px;
-        pointer-events: none;
+        pointer-events: all;
         white-space: nowrap;
         
     }
     .q10{
         position:relative;
         z-index:5;
-        pointer-events:auto;
+        pointer-events:all;
         margin-left:0px;
         width:922px;
         min-width:922px;
@@ -214,7 +215,7 @@
     .outer_q10{
         position:relative;
         display:flex;
-        pointer-events:none;
+        pointer-events:all;
         z-index:5;
     }
     .q11{
@@ -780,6 +781,7 @@
         margin-top:-262px;
         margin-bottom:26px;
         min-height:236px;
+        top: 53px;
     }
     .outer_q36{
         position:relative;
@@ -1306,7 +1308,6 @@
         line-height: 46.400001525878906px;
         white-space: nowrap;
         text-decoration: underline;
-        left: 350px;
     }
     .MY-CART-outer{
         position:relative;
@@ -1317,7 +1318,7 @@
     .Group-16{
         position:relative;
         z-index:4;
-        pointer-events:none;
+        pointer-events:all;
         margin-left:-300px;
         width:194px;
         min-width:194px;
@@ -1328,7 +1329,7 @@
     .Group-16-outer{
         position:relative;
         display:flex;
-        pointer-events:none;
+        pointer-events:all;
         z-index:4;
     }
     .Cart{
@@ -1357,8 +1358,6 @@
         margin-left:131px;
         width:63px;
         min-width:63px;
-        margin-top:-45px;
-        margin-bottom:14px;
         min-height:31px;
         text-align:left;
         display:flex;
@@ -1709,101 +1708,12 @@
   pointer-events:none;
   z-index:13;
 }
-@media screen and (max-width: 1920px){
-    .check{
-        position: relative; 
-        top: -200px; 
-        right: 180px;
-        width: 307px;
-        height: 278px;
-    }
-    .orderComplete{
-        font-family: Baskervville; 
-        font-size: 36px; 
-        position: relative; 
-        top: -200px; 
-        right: 180px;
-    }
-    .thanks{
-        font-family: Baskervville; 
-        font-size: 20px; 
-        position: relative; 
-        top: -220px; 
-        right: 180px;
-    }
-    .orderMessage{
-        font-family: Baskervville; 
-        font-size: 20px; 
-        position: relative; 
-        top: -230px; 
-        right: 180px;
-        
-    }
-    
-    .myButton {
-	box-shadow: 0px 1px 0px 0px #f0f7fa;
-	background:linear-gradient(to bottom, #33bdef 5%, #019ad2 100%);
-	background-color:#33bdef;
-	border-radius:20px;
-	border:1px solid #057fd0;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:'Baskervville';
-	font-size:18px;
-	font-weight:bold;
-	padding:6px 24px;
-	text-decoration:none;
-	text-shadow:0px -1px 0px #5b6178;
-  width: 150;
-  height: 25;
-  bottom: 400; 
-  right: 350; 
-  position: relative;
 
+@media  screen and (max-width: 1920px) {
+	.q43{
+  		top:-20px;
+	}
 }
-.myButton:hover {
-	background:linear-gradient(to bottom, #019ad2 5%, #33bdef 100%);
-	background-color:#019ad2;
-}
-.myButton:active {
-	position:relative;
-	top:-400px;
-}
-
-    .q38{
-        top:56px;
-    }
-    .q39{
-        top:56px;
-    }
-    .q40{
-        top:56px;
-    }
-    .q41{
-        top:56px;
-    }
-    .q43{
-      top:-20px;
-    }
-    .celebration{
-        width: 170px;
-        height: 200px;
-        position: relative;
-        bottom: 500px;
-        left: 270px;
-    }
-    .celebration2{
-        width: 170px;
-        height: 200px;
-        position: relative;
-        bottom: 500px;
-        right: 420px;
-        transform: scaleX(-1);
-    }
-
-}
-
 
     </style>
     
@@ -1817,7 +1727,7 @@
         
           <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=5" />
         
-          <title> Order Complete </title>
+          <title> Test Updates Page </title>
           <meta name="description" content="Test Home Description">
           <meta property="og:title" content="Test Home">
           <meta property="og:description" content="Test Home Description">
@@ -1835,27 +1745,27 @@
           </label>
           <div class="wrapper">
              <ul>
-                <li><a href="{{ route('home') }}">Home</a></li>
+                <li><a href="<?php echo e(route('home')); ?>">Home</a></li>
                 <li><a href="#">About</a></li>
-                <li><a href="{{ route('products.index') }}">Shop</a></li>
-                <li><a href="{{ route('carts.index') }}">My Cart ({{ Cart::count() }})</a></li>
-                <li><a href="{{ route('updates') }}">Updates</a></li>
+                <li><a href="<?php echo e(route('products.index')); ?>">Shop</a></li>
+                <li><a href="<?php echo e(route('carts.index')); ?>">My Cart (<?php echo e(Cart::count()); ?>)</a></li>
+                <li><a href="<?php echo e(route('updates')); ?>">Updates</a></li>
                 <li><a href="#">Team</a></li>   
                 <li>
-                  <a href="{{ route('profiles') }}">My Account</a>
+                  <a href="<?php echo e(route('profiles.edit',auth()->user()->username)); ?>">My Account</a>
                 </li>
                 <li>
                     <form method="POST" action="/logout">
-                        @csrf
+                        <?php echo csrf_field(); ?>
                         <button style="font-family: Baskervville">Logout</button>
                     </form>
                 </li>
-                @if(auth()->user()->isAdmin())
+                <?php if(auth()->user()->isAdmin()): ?>
                 <li>
-                  <a href="{{ route('home') }}">Admin Links</a>
+                  <a href="<?php echo e(route('home')); ?>">Admin Links</a>
                 </li>
     
-                @endif
+                <?php endif; ?>
              </ul>
           </div>
           <div class="content">
@@ -1929,7 +1839,6 @@
                         id="q9"
                         data-name="Group 1"
                         class="q9"
-                        
                       >
                         <div class="outer_q10">
                         <div class="MY-CART-outer">
@@ -1937,7 +1846,7 @@
                               id="MY-CART"
                               data-name="MY CART"
                               class="MY-CART"
-                            ><div key="0"><h1></h1></div>
+                            ><div key="0"><h1>UPDATES</h1></div>
                             </div>
                         </div>
                         <div class="Group-16-outer">
@@ -1947,32 +1856,89 @@
                               class="Group-16"
                             >
                               <div class="Cart-outer">
-                              <!--<img
-                                id="Cart"
-                                data-name="Cart"
-                                alt="Cart"
-                                class="Cart"
-                              >-->
+                              
                               </div>
                               <div class="items--outer">
                               <div
                                 id="items-"
                                 data-name="items:"
                                 class="items-"
-                              ><div key="0"></div>
+                              ><div key="0">Here you wil find recent tech updates, company updates, job postings, and more.</div>
                               </div>
                               </div>
                             </div>
                             </div>
+                            <a href="<?php echo e(route('fccfUpdates.index')); ?>" 
+                            style="POSITION: RELATIVE;
+                                    top: 304px;
+                                    left: -239px;
+                                    font-family: 'Baskervville';
+                                    color:rgba(92, 90, 90, 1);
+                                    font-size: 24;"
+                            >COMPANY UPDATES</a>
+                            <a href="<?php echo e(route('techUpdates.index')); ?>" 
+                            style="POSITION: RELATIVE;
+                                    top: 304px;
+                                    left: -132px;
+                                    font-family: 'Baskervville';
+                                    color:rgba(92, 90, 90, 1);
+                                    font-size: 24;"
+                            >TECH UPDATES</a>
+                            <a href="#" 
+                            style="POSITION: RELATIVE;
+                                    top: 304px;
+                                    left: 28px;
+                                    font-family: 'Baskervville';
+                                    color:rgba(92, 90, 90, 1);
+                                    font-size: 24;"
+                            >FCCF BLOG</a>
                         </div>
-                        <img src="../images/check2.png" class="check">
-                        <p class="orderComplete">Order Complete!</p>
-                        <p class="thanks">Thank you for your purchase!</p>
-                        <p class="orderMessage">An Email confirmation will be sent once the order has been submitted.</p>
-                        <img src="../images/celebration.jpg" class="celebration">
-                        <img src="../images/celebration.jpg" class="celebration2">
-                        <a href="{{ route('home') }}" class="myButton" >Back home</a>
-
+                        
+                        <div style="display: inline-flex;">
+                            <div id="q21" data-name="Rectangle 33" alt="Rectangle 33" 
+                            style="height: 311px;
+                                    width: 317px;
+                                    position: relative;
+                                    top: 128px;
+                                    left: 378px;"
+                            class="q21">
+                            <img src="../images/blog.png" 
+                                style="position: relative;
+                                        top: 25px;
+                                        width: 306px;
+                                        height: 286px;"
+                                >
+                            </div> 
+                            <div id="q21" data-name="Rectangle 33" alt="Rectangle 33" 
+                            style="height: 309px;
+                                        width: 317px;
+                                        position: relative;
+                                        top: 129px;
+                                        left: -510px;"
+                                class="q21">
+                                <img src="../images/techUp.png" 
+                                style="position: relative;
+                                        top: 25px;
+                                        width: 306px;
+                                        height: 255px;"
+                                >
+                            </div> 
+                            <div id="q21" data-name="Rectangle 33" alt="Rectangle 33" 
+                            style="height: 309px;
+                                        width: 317px;
+                                        position: relative;
+                                        top: 130px;
+                                        left: -1401px;"
+                                class="q21">
+                                <img src="../images/company.png" 
+                                style="position: relative;
+                                        top: 25px;
+                                        width: 351px;
+                                        height: 255px;
+                                        left: -15;"
+                                >
+                            </div> 
+                        </div>
                       </div>
                       </div>
                         
@@ -2005,7 +1971,7 @@
                           id="q38"
                           data-name="my account"
                           class="q38"
-                        ><div key="0"><a href="{{ route('profiles.edit',auth()->user()->username) }}" style="white-space: nowrap; color: rgba(92, 90, 90, 1);">My Account</a></div>
+                        ><div key="0"><a href="<?php echo e(route('profiles.edit',auth()->user()->username)); ?>" style="white-space: nowrap; color: rgba(92, 90, 90, 1);">My Account</a></div>
                         </div>
                         </div>
                         <div class="outer_q39">
@@ -2117,4 +2083,4 @@
              </div>
           </div>
        </body>
-    </html>
+    </html><?php /**PATH C:\Users\jjour\FCCF-Market\resources\views/updates.blade.php ENDPATH**/ ?>

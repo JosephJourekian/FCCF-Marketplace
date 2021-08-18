@@ -1819,7 +1819,7 @@
         
           <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=5" />
         
-          <title> Test Edit Address Page </title>
+          <title>Edit Account Info</title>
           <meta name="description" content="Test Home Description">
           <meta property="og:title" content="Test Home">
           <meta property="og:description" content="Test Home Description">
@@ -1841,8 +1841,7 @@
                 <li><a href="#">About</a></li>
                 <li><a href="<?php echo e(route('products.index')); ?>">Shop</a></li>
                 <li><a href="<?php echo e(route('carts.index')); ?>">My Cart (<?php echo e(Cart::count()); ?>)</a></li>
-                <li><a href="<?php echo e(route('fccfUpdates.index')); ?>">FCCF Updates</a></li>
-                <li><a href="<?php echo e(route('techUpdates.index')); ?>">Tech Updates</a></li>
+                <li><a href="<?php echo e(route('updates')); ?>">Updates</a></li>
                 <li><a href="#">Team</a></li>   
                 <li>
                   <a href="<?php echo e(route('profiles.edit',auth()->user()->username)); ?>">My Account</a>
@@ -1939,7 +1938,7 @@
                               id="MY-CART"
                               data-name="MY CART"
                               class="MY-CART"
-                            ><div key="0"><h1>Edit Shipping Info</h1></div>
+                            ><div key="0"><h1>Edit Account Info</h1></div>
                             </div>
                         </div>
                         <div class="Group-16-outer">

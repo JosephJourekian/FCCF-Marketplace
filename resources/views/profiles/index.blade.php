@@ -2309,11 +2309,10 @@ z-index:13;
               <li><a href="#">About</a></li>
               <li><a href="{{ route('products.index') }}">Shop</a></li>
               <li><a href="{{ route('carts.index') }}">My Cart ({{ Cart::count() }})</a></li>
-              <li><a href="{{ route('fccfUpdates.index') }}">FCCF Updates</a></li>
-              <li><a href="{{ route('techUpdates.index') }}">Tech Updates</a></li>
+              <li><a href="{{ route('updates') }}">Updates</a></li>
               <li><a href="#">Team</a></li>   
               <li>
-                <a href="{{ route('profiles.edit',auth()->user()->username) }}">My Account</a>
+                <a href="{{ route('profiles') }}">My Account</a>
               </li>
               <li>
                   <form method="POST" action="/logout">
@@ -2560,7 +2559,7 @@ z-index:13;
                                   id="OrderHistoryList"
                                   data-name="OrderHistoryList"
                                   class="AddressList"
-                                ><div key="0"><a href="{{ route('profiles.edit',auth()->user()->username) }}" style="color:rgba(92, 90, 90, 1);">ADDRESS BOOK</a></div>
+                                ><div key="0"><a href="{{ route('profiles.editAddress',auth()->user()->username) }}" style="color:rgba(92, 90, 90, 1);">ADDRESS BOOK</a></div>
                                 </div>
                                 </div>
                                 <div class="AddressTextOuter">
@@ -2577,7 +2576,7 @@ z-index:13;
                                   id="OrderHistoryView"
                                   data-name="OrderHistoryView"
                                   class="AddressView"
-                                ><div key="0"><a href="{{ route('profiles.edit',auth()->user()->username) }}" style="color:rgba(92, 90, 90, 1);">View/Edit</a></div>
+                                ><div key="0"><a href="{{ route('profiles.editAddress',auth()->user()->username) }}" style="color:rgba(92, 90, 90, 1);">View/Edit</a></div>
                                 </div>
                                 </div>
                               </div>
