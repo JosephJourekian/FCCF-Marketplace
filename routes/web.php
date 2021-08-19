@@ -50,6 +50,8 @@ Route::middleware('auth')->group(function (){
     Route::get('/products/show/{product:productname}', 'App\Http\Controllers\ProductsController@show')->name('products.show'); 
 
     Route::get('/updates', 'App\Http\Controllers\UpdatesController@index')->name('updates'); 
+    Route::get('/about', 'App\Http\Controllers\AboutsController@index')->name('about'); 
+
 
 
     Route::get('/fccfUpdates', 'App\Http\Controllers\FccfUpdatesController@index')->name('fccfUpdates.index'); 
@@ -57,6 +59,8 @@ Route::middleware('auth')->group(function (){
     
     Route::get('/techUpdates', 'App\Http\Controllers\TechUpdatesController@index')->name('techUpdates.index'); 
     Route::get('/techUpdates/show/{techname}', 'App\Http\Controllers\TechUpdatesController@show')->name('techUpdates.show');
+    Route::get('/techUpdatesTest', 'App\Http\Controllers\TechUpdatesController@test')->name('techUpdatesTest');
+
 
 
     Route::get('/myCart', 'App\Http\Controllers\CartsController@index')->name('carts.index'); 

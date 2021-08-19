@@ -1752,7 +1752,7 @@
                 <li><a href="{{ route('updates') }}">Updates</a></li>
                 <li><a href="#">Team</a></li>   
                 <li>
-                    <a href="{{ route('profiles') }}">My Account</a>
+                    <a href="{{ route('profiles.index') }}">My Account</a>
                 </li>
                 <li>
                     <form method="POST" action="/logout">
@@ -1876,7 +1876,7 @@
                                     color:rgba(92, 90, 90, 1);
                                     font-size: 24;"
                             >COMPANY UPDATES</a>
-                            <a href="{{ route('techUpdates.index') }}" 
+                            <a href="{{ route('techUpdatesTest') }}" 
                             style="POSITION: RELATIVE;
                                     top: 304px;
                                     left: -132px;

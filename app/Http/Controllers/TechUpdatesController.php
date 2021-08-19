@@ -16,6 +16,9 @@ class TechUpdatesController extends Controller
             'updates' => TechUpdates::latest()->get()
         ]);
     }
+    public function test(){
+        return view('techUpdatesTest');
+    }
 
     public function show(TechUpdates $techname){
 

@@ -2312,7 +2312,7 @@ z-index:13;
               <li><a href="{{ route('updates') }}">Updates</a></li>
               <li><a href="#">Team</a></li>   
               <li>
-                <a href="{{ route('profiles') }}">My Account</a>
+                <a href="{{ route('profiles.index') }}">My Account</a>
               </li>
               <li>
                   <form method="POST" action="/logout">
