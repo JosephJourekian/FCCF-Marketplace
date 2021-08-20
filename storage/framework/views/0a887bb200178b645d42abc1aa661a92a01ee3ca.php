@@ -1754,7 +1754,7 @@
                 <li><a href="<?php echo e(route('updates')); ?>">Updates</a></li>
                 <li><a href="#">Team</a></li>   
                 <li>
-                  <a href="<?php echo e(route('profiles.edit',auth()->user()->username)); ?>">My Account</a>
+                  <a href="<?php echo e(route('profiles.index')); ?>">My Account</a>
                 </li>
                 <li>
                     <form method="POST" action="/logout">

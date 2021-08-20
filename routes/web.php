@@ -56,6 +56,8 @@ Route::middleware('auth')->group(function (){
 
     Route::get('/fccfUpdates', 'App\Http\Controllers\FccfUpdatesController@index')->name('fccfUpdates.index'); 
     Route::get('/fccfUpdates/show/{updatename}', 'App\Http\Controllers\FccfUpdatesController@show')->name('fccfUpdates.show');
+    Route::get('/fccfUpdatesTest', 'App\Http\Controllers\FccfUpdatesController@test')->name('fccfUpdatesTest'); 
+
     
     Route::get('/techUpdates', 'App\Http\Controllers\TechUpdatesController@index')->name('techUpdates.index'); 
     Route::get('/techUpdates/show/{techname}', 'App\Http\Controllers\TechUpdatesController@show')->name('techUpdates.show');
@@ -67,7 +69,7 @@ Route::middleware('auth')->group(function (){
     Route::get('/myCart/add/{product:productname}', 'App\Http\Controllers\CartsController@add')->name('carts.add'); 
     Route::get('/myCart/remove/{id}', 'App\Http\Controllers\CartsController@remove')->name('carts.remove'); 
     Route::post('/myCart/update/{rowId}/{product:productname}', 'App\Http\Controllers\CartsController@update')->name('carts.update'); 
-    Route::get('/myCart', 'App\Http\Controllers\CartsController@index')->name('carts.index'); 
+  
 
     Route::get('/cartTest', 'App\Http\Controllers\CartsController@cartTest')->name('cartTest'); //test carts index frontend
     Route::get('/checkoutTest', 'App\Http\Controllers\CheckoutsController@checkoutTest')->name('checkoutTest');  //Checkout frontend 

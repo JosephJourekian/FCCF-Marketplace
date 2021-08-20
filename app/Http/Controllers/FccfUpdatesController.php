@@ -17,6 +17,12 @@ class FccfUpdatesController extends Controller
             'updates' => FccfUpdates::latest()->get()
         ]);
     }
+    public function test(){
+
+        return view('fccfUpdatesTest', [
+            'updates' => FccfUpdates::latest()->get()
+        ]);
+    }
 
     public function show(FccfUpdates $updatename){
 

@@ -1307,7 +1307,7 @@
         line-height: 46.400001525878906px;
         white-space: nowrap;
         text-decoration: underline;
-        left: 350px;
+        left: 50px;
     }
     .MY-CART-outer{
         position:relative;
@@ -1337,12 +1337,13 @@
         z-index:5;
         pointer-events:none;
         margin-left:0px;
-        width:120px;
-        height:100px;
+        width:170px;
+        min-width:170px;
+        height:62px;
         margin-top:0px;
         margin-bottom:0px;
         min-height:62px;
-        content:url(../images/history.png);
+        content:url(../images/Cart.png);
     }
     .Cart-outer{
         position:relative;
@@ -1714,37 +1715,136 @@
 	.q43{
   		top:-20px;
 	}
-  .date{
+    .q36{
+        top:56px;
+    }
+    .article{
+        width: 900px;
+        height: 200px;
+        margin-bottom: 30;
+    }
+    .articlePic{
+        position: relative;
+        width: 308;
+        height: 200;
+        border-radius: 20px;
+        background: #47545C;
+    }
+    .articleTitle{
+        font-family: Baskervville;
+        font-size: 24px;
+    }
+    .links{
+        position: relative;
+        top: -200;
+        display: table;
+        left: 314px;
+    }
+    .articleDate{
+        font-family: Baskervville;
+        font-size: 20px;
+        position: relative;
+        top: -200;
+        display: flex;
+        left: 314px;
+    }
+    .articleAuthor{
+        font-family: Baskervville;
+        font-size: 20px;
+        position: relative;
+        top: -200;
+        display: flex;
+        left: 314px;
+    }
+    .articleExcerpt{
+        font-family: Baskervville;
+        font-size: 25px;
+        position: relative;
+        top: -175px;
+        display: flex;
+        left: 314px;
+    }
+    .myButton {
+	box-shadow: 0px 1px 0px 0px #f0f7fa;
+	background:linear-gradient(to bottom, #33bdef 5%, #019ad2 100%);
+	background-color:#33bdef;
+	border-radius:20px;
+	border:1px solid #057fd0;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Baskervville;
+	font-size:15px;
+	padding:10px 23px;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #5b6178;
     position: relative;
-    top: 30;
-    left: -410;
-    font-size: 25;
-    margin-bottom: -25;
-    font-family: Baskervville;
-    font-weight: bold;
-  }
-  .subtotal{
-    font-family: 'Baskervville';
+    
+    }
+    .myButton:hover {
+        background:linear-gradient(to bottom, #019ad2 5%, #33bdef 100%);
+        background-color:#019ad2;
+
+    }
+    .myButton:active {
+        position:relative;
+
+    }
+    .myButton2 {
+	box-shadow: 0px 1px 0px 0px #f0f7fa;
+	background:linear-gradient(to bottom, #c62d1f 5%, red 100%);
+	background-color:red;
+	border-radius:20px;
+	border:1px solid red;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Baskervville;
+	font-size:15px;
+	padding:10px 23px;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #5b6178;
     position: relative;
-    top: 15;
-    font-size: 22;
-    right: 400;
-  }
-  .q38{
-    top:56px;
-  }
-  .q39{
-    top:56px;
+    left: -10;
+    
+    }
+    .myButton2:hover {
+        background:linear-gradient(to bottom, red 5%, #c62d1f 100%);
+        background-color:red;
 
-  }.q40{
-    top:56px;
+    }
+    .myButton2:active {
+        position:relative;
 
-  }.q41{
-    top:56px;
+    }
+    .myButton3 {
+    box-shadow:inset 0px 1px 0px 0px #fce2c1;
+	background:linear-gradient(to bottom, #ffc477 5%, #fb9e25 100%);
+	background-color:#ffc477;
+	border-radius:20px;
+	border:1px solid #eeb44f;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Baskervville;
+	font-size:15px;
+	padding:10px 23px;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #5b6178;
+    position: relative;
+    left: -5;
+    
+    }
+    .myButton3:hover {
+        background:linear-gradient(to bottom, #fb9e25 5%, #ffc477 100%);
+	    background-color:#fb9e25;
 
-  }
-  
+    }
+    .myButton3:active {
+        position:relative;
 
+    }
+    
 }
 
     </style>
@@ -1759,7 +1859,7 @@
         
           <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=5" />
         
-          <title> Test Purchase History Page </title>
+          <title> Test FCCF Updates Page </title>
           <meta name="description" content="Test Home Description">
           <meta property="og:title" content="Test Home">
           <meta property="og:description" content="Test Home Description">
@@ -1772,8 +1872,8 @@
        <body class="websiteBody">
           <input type="checkbox" id="active">
           <label for="active" style="postion:fixed;"class="menu-btn">
-            <img style="margin-top:100px; width:282px; height:232px; margin-left: 180px; position: absolute;" src="../images/Ellipse_1.png">
-            <img style="text-align:center; margin-top:170px; margin-left:260px; position: relative;"src="../images/menu.png">
+            <img style="margin-top:100px; width:282px; height:232px; margin-left: 180px; position: absolute;" src="images/Ellipse_1.png">
+            <img style="text-align:center; margin-top:170px; margin-left:260px; position: relative;"src="images/menu.png">
           </label>
           <div class="wrapper">
              <ul>
@@ -1824,7 +1924,7 @@
                         <img
                           id="q4"
                           data-name="Ellipse 1"
-                          src="../images/Ellipse_1.png"
+                          src="images/Ellipse_1.png"
                           alt="Ellipse 1"
                           class="q4"
                         >
@@ -1850,7 +1950,7 @@
                         <img
                           id="q7"
                           data-name="First Class Conferencing Facilitation Logo"
-                          src="../images/First_Class_Conferencing_Facilitation_Logo.png"
+                          src="images/First_Class_Conferencing_Facilitation_Logo.png"
                           alt="First Class Conferencing Facilitation Logo"
                           class="q7"
                         >
@@ -1878,7 +1978,7 @@
                               id="MY-CART"
                               data-name="MY CART"
                               class="MY-CART"
-                            ><div key="0"><h1>Purchase History</h1></div>
+                            ><div key="0"><h1>FCCF UPDATES</h1></div>
                             </div>
                         </div>
                         <div class="Group-16-outer">
@@ -1888,94 +1988,70 @@
                               class="Group-16"
                             >
                               <div class="Cart-outer">
-                              <img
-                                id="Cart"
-                                data-name="Cart"
-                                alt="Cart"
-                                class="Cart"
-                              >
+                              
                               </div>
                               <div class="items--outer">
                               <div
                                 id="items-"
                                 data-name="items:"
                                 class="items-"
-                              ><div key="0">Orders:</div>
+                              ><div key="0"></div>
                               </div>
                               </div>
                             </div>
                             </div>
                         </div>
-                        <?php $__currentLoopData = $orders; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $order): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <p class="date">Purchased on: <?php echo e($order->created_at->format('Y-m-d')); ?></p>
-                        <?php $__currentLoopData = unserialize($order['cart']); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <div class="cart-item-group-1-outer" style="margin-bottom:-40px;">
-                            <div
-                              id="cart-item-group-1"
-                              data-name="cart item group 1"
-                              class="cart-item-group-1"
-                            >
-                              <div class="image-3-outer">
-                              <div
-                                id="image-3"
-                                data-name="image"
-                                alt="image"
-                                class="image-3"
-                              >
-                              </div>
-                              </div>
-                              <div class="Rectangle-3-outer">
-                              <div
-                                id="Rectangle-3"
-                                data-name="Rectangle"
-                                alt="Rectangle"
-                                class="Rectangle-3"
-                              >
-                              <img src="<?php echo e($item->options->img); ?>" style="width:151px;height:129px; margin-left:-1; margin-top:-1px; border-radius:3%;">
-                              </div>
-                              </div>
-                              <div class="Lorem-ipsum-dolor-si-3-outer">
-                              <div
-                                id="Lorem-ipsum-dolor-si-3"
-                                data-name="Lorem ipsum dolor sit amet"
-                                class="Lorem-ipsum-dolor-si-3"
-                              >
-                              <a style="color:rgba(92, 90, 90, 1);" href="<?php echo e(route('products.show',$item->options->productname)); ?>"><?php echo e($item->name); ?></a>
-                              <p style="margin-top:2px;">Quantity: <?php echo e($item->qty); ?></p>
-                              <?php if($item->options->attributename == 'N/A'): ?>
-                                <p style="margin-top:-16px; font-size: 20px;">Attributes: None</p>
-                              <?php else: ?>
-                                <p style="margin-top:-12px; font-size: 20px;">Attributes: <?php echo e($item->options->attributename); ?>: <?php echo e($item->options->attributevalue); ?>, 
-                                    <?php echo e($item->options->attributename2); ?>: <?php echo e($item->options->attributevalue2); ?>, Stock: <?php echo e($item->options->attributeStock); ?>
+                        <?php $__currentLoopData = $updates; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $update): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <div class="article">
+                            <div class="articlePic">
+                                <img src="<?php echo e($update->image); ?>" style="width: 308; height: 200; border-radius:20px;">
+                            </div>
+                            <a href="<?php echo e(route('fccfUpdates.show',$update->updatename)); ?>" style="color:rgba(92, 90, 90, 1);" class="links">
+                                <div class="articleTitle">
+                                    <?php echo e($update->title); ?>
 
-                                </p>
-                              <?php endif; ?>
-                              </div>
-                              </div>
-                              <div class="Price-3-outer">
-                              <img
-                                id="Price-3"
-                                data-name="Price"
-                                alt="Price"
-                                class="Price-3"
-                              >
-                              </div>
-                              <div class="delete-3-outer">
-                              </a>
-                              </div>
-                              <div class="q-20-3-outer">
-                              <div
-                                id="q-20-3"
-                                data-name="$20"
-                                class="q-20-3"
-                              ><div key="0">Price: <?php echo e(($item->price * $item->qty)); ?> Points</div>
-                              </div>
-                              </div>
+                                </div>
+                            </a>
+                            <div class="articleDate">
+                                Posted on: <?php echo e($update->created_at->format('Y-m-d')); ?>
+
                             </div>
+                            <div class="articleAuthor">
+                                By: <?php echo e($update->author); ?>
+
                             </div>
-                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                            <p class="subtotal">Subtotal of the order: <?php echo e($order->order_subtotal); ?> Points</p>
-                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            <div class="articleExcerpt">
+                                <?php echo e(\Illuminate\Support\Str::limit($update->excerpt, 75)); ?>
+
+                            </div>
+                            <div style="display: -webkit-inline-box; left: 333; top: -150; position: relative;">
+                                <?php if(auth()->user()->isAdmin()): ?>
+                                    <form method="POST" action="<?php echo e(route('fccfUpdates.delete')); ?>"> 
+                                        <?php echo csrf_field(); ?>
+                                        <?php echo method_field('DELETE'); ?>
+                                        <input type="hidden" name="id" value="<?php echo e($update->id); ?>"> 
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <button type="submit" class="myButton2" style="color:rgba(92, 90, 90, 1); text-decoration:underline;">
+                                            Delete
+                                        </button>
+                                    </form>
+                                    <div class="myButton3">
+                                        <a href="<?php echo e(route('fccfUpdates.edit',$update->updatename)); ?>" style="color:rgba(92, 90, 90, 1);">
+                                            Edit
+                                        </a>
+                                    </div>
+                                <?php endif; ?>
+                                <div class="myButton">
+                                    <a href="<?php echo e(route('fccfUpdates.show',$update->updatename)); ?>" style="color:rgba(92, 90, 90, 1);">
+                                        Read More
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                            
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            
                       </div>
                       </div>
                         
@@ -1986,6 +2062,7 @@
                     data-name="Group 8"
                     class="q36"
                     >
+                    
                     <div class="outer_q37">
                       <div class="outer_q37">
                         <div
@@ -2056,7 +2133,7 @@
                         <img
                           id="q44"
                           data-name="WordPress"
-                          src="../images/WordPress.png"
+                          src="images/WordPress.png"
                           alt="WordPress"
                           class="q44"
                         ></a>
@@ -2066,7 +2143,7 @@
                         <img
                           id="q45"
                           data-name="TikTok"
-                          src="../images/TikTok.png"
+                          src="images/TikTok.png"
                           alt="TikTok"
                           class="q45"
                         ></a>
@@ -2076,7 +2153,7 @@
                         <img
                           id="q46"
                           data-name="Facebook"
-                          src="../images/Facebook.png"
+                          src="images/Facebook.png"
                           alt="Facebook"
                           class="q46"
                         ></a>
@@ -2086,7 +2163,7 @@
                         <img
                           id="q47"
                           data-name="LinkedIn"
-                          src="../images/LinkedIn.png"
+                          src="images/LinkedIn.png"
                           alt="LinkedIn"
                           class="q47"></a>
                         </div>
@@ -2095,7 +2172,7 @@
                         <img
                           id="q48"
                           data-name="Twitter Squared"
-                          src="../images/Twitter_Squared.png"
+                          src="images/Twitter_Squared.png"
                           alt="Twitter Squared"
                           class="q48"
                         ></a>
@@ -2105,7 +2182,7 @@
                         <img
                           id="q49"
                           data-name="Instagram"
-                          src="../images/Instagram.png"
+                          src="images/Instagram.png"
                           alt="Instagram"
                           class="q49"
                         ></a>
@@ -2119,4 +2196,4 @@
              </div>
           </div>
        </body>
-    </html><?php /**PATH C:\Users\jjour\FCCF-Market\resources\views/purchaseHistory/indexTest.blade.php ENDPATH**/ ?>
+    </html><?php /**PATH C:\Users\jjour\FCCF-Market\resources\views/fccfUpdatesTest.blade.php ENDPATH**/ ?>

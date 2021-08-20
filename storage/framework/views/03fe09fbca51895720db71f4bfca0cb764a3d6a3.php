@@ -1564,11 +1564,10 @@
                 <li><a href="#">About</a></li>
                 <li><a href="<?php echo e(route('products.index')); ?>">Shop</a></li>
                 <li><a href="<?php echo e(route('carts.index')); ?>">My Cart (<?php echo e(Cart::count()); ?>)</a></li>
-                <li><a href="<?php echo e(route('fccfUpdates.index')); ?>">FCCF Updates</a></li>
-                <li><a href="<?php echo e(route('techUpdates.index')); ?>">Tech Updates</a></li>
+                <li><a href="<?php echo e(route('updates')); ?>">Updates</a></li>
                 <li><a href="#">Team</a></li>   
                 <li>
-                  <a href="<?php echo e(route('profiles.edit',auth()->user()->username)); ?>">My Account</a>
+                  <a href="<?php echo e(route('profiles.index')); ?>">My Account</a>
                 </li>
                 <li>
                     <form method="POST" action="/logout">
