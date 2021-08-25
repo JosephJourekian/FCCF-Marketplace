@@ -1385,7 +1385,7 @@
         pointer-events:none;
         z-index:14;
         margin-top: 50;
-        height: 150px;
+        
     }
     .image-3{
         position:relative;
@@ -1555,7 +1555,7 @@
   height:45px;
   margin-top:0px;
   top:auto;
-  bottom:-50px;
+  bottom:-112px;
   margin-bottom:12px;
   min-height:45px;
 }
@@ -1714,6 +1714,107 @@
 	.q43{
   		top:-20px;
 	}
+  .shippingInfo{
+    font-family: Baskervville;
+    font-weight: 400;
+    font-size: 24px;
+    position: relative;
+    top: -44px;
+    right: -11px;
+  }
+  .shippingBox{
+    border: 10px solid rgba(196, 196, 196, 0.5299999713897705);
+    width: 286px;
+    height: 280px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    background-color: rgba(196, 196, 196, 0.5299999713897705);
+    position: relative;
+    left: -227px;
+  }
+  .shippingText{
+    font-size: 20;
+    margin-bottom: 10;
+    font-family: 'Baskervville';
+    margin-top: 10;
+  }
+  .shippingMethod{
+    font-family: Baskervville;
+    font-weight: 400;
+    font-size: 24px;
+    position: relative;
+    top: -44px;
+    right: 211px;
+  }
+  .shippingMethodBox{
+    border: 10px solid rgba(196, 196, 196, 0.5299999713897705);
+    width: 286px;
+    height: 280px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    background-color: rgba(196, 196, 196, 0.5299999713897705);
+    position: relative;
+    left: -409px;
+  }
+  .buttonMethod{
+    font-size: 20;
+    text-align: left;
+    position: relative;
+    left: 22;
+    font-family: 'Baskervville';
+  }
+  .buttonText{
+    margin-right: 50;
+    font-family: 'Baskervville';
+  }
+  .buttonPrice{
+    position: relative;
+    top: -33px;
+    right: -120px;
+    font-size: 20;
+    font-family: 'Baskervville';
+  }
+  .orderSummary{
+    position: relative;
+    left: -1025px;
+    top: 304px;
+    font-size: 24;
+    font-family: 'Baskervville';
+  }
+  .orderSummaryBox{
+    border: 10px solid rgba(196, 196, 196, 0.5299999713897705);
+    width: 286px;
+    height: 280px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    background-color: rgba(196, 196, 196, 0.5299999713897705);
+    position: relative;
+    left: -409px;
+  }
+  .submitButton{
+    position: relative;
+    z-index: 12;
+    pointer-events: all;
+    margin-left: 346px;
+    width: 220px;
+    min-width: 111px;
+    margin-top: -25px;
+    margin-bottom: 4px;
+    min-height: 36px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    color: rgba(92, 90, 90, 1);
+    font-style: normal;
+    font-family: Baskervville;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 36px;
+    white-space: nowrap;
+    left: -356px;
+    top: 25;
+  }
 }
 
 
@@ -1742,7 +1843,7 @@
        </head>
        <body class="websiteBody">
           <input type="checkbox" id="active">
-          <label for="active" style="postion:fixed;"class="menu-btn">
+          <label for="active" style="position:fixed;"class="menu-btn">
             <img style="margin-top:100px; width:282px; height:232px; margin-left: 180px; position: absolute;" src="images/Ellipse_1.png">
             <img style="text-align:center; margin-top:170px; margin-left:260px; position: relative;"src="images/menu.png">
           </label>
@@ -1752,11 +1853,10 @@
                 <li><a href="#">About</a></li>
                 <li><a href="<?php echo e(route('products.index')); ?>">Shop</a></li>
                 <li><a href="<?php echo e(route('carts.index')); ?>">My Cart (<?php echo e(Cart::count()); ?>)</a></li>
-                <li><a href="<?php echo e(route('fccfUpdates.index')); ?>">FCCF Updates</a></li>
-                <li><a href="<?php echo e(route('techUpdates.index')); ?>">Tech Updates</a></li>
+                <li><a href="<?php echo e(route('updates')); ?>">Updates</a></li>
                 <li><a href="#">Team</a></li>   
                 <li>
-                  <a href="<?php echo e(route('profiles.edit',auth()->user()->username)); ?>">My Account</a>
+                  <a href="<?php echo e(route('profiles.index')); ?>">My Account</a>
                 </li>
                 <li>
                     <form method="POST" action="/logout">
@@ -1772,6 +1872,9 @@
                 <?php endif; ?>
              </ul>
           </div>
+          <form method="GET" action="<?php echo e(route('checkout.payment')); ?>" enctype="multipart/form-data">
+            <?php echo csrf_field(); ?>
+            <?php echo method_field('POST'); ?>
           <div class="content">
              <div class="title">  
                     <div class="outer_q1">
@@ -1853,6 +1956,7 @@
                             ><div key="0"><h1>Checkout</h1></div>
                             </div>
                         </div>
+                        
                         <div class="Group-16-outer">
                             <div
                               id="Group-16"
@@ -1872,13 +1976,15 @@
                                 id="items-"
                                 data-name="items:"
                                 class="items-"
-                              ><div key="0">Order Summary:</div>
+                              ><div key="0">Items In Cart:</div>
                               </div>
                               </div>
                             </div>
                             </div>
                         </div>
-                        <div style="border: 10px solid gray; width: 910; height: 100%; border-radius: 15px; margin-bottom:10px;">
+                    
+                      <div style="display: -webkit-box;">
+                        <div style="border: 10px solid rgba(196, 196, 196, 0.5299999713897705); width: 269; height: 100%; border-radius: 15px; margin-bottom:10px;background-color:rgba(196, 196, 196, 0.5299999713897705);">
                         <?php if(Cart::count() == 0): ?>
                               <img src="../images/cartEmpty.jpg" width="476px"  height="374px" style="position: relative; top: -50; right: 150;">
                         <?php else: ?>
@@ -1963,31 +2069,58 @@
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             <?php endif; ?>
                         </div>
+                        <div class="shippingInfo">Shipping Information:</div>
+                        <div class="shippingBox">
+                          <div class="shippingText">Name: <?php echo e(auth()->user()->name); ?></div>
+                          <div class="shippingText">Email: <?php echo e(auth()->user()->email); ?></div>
+                          <div class="shippingText">Address: <?php echo e(auth()->user()->address); ?></div>
+                          <div class="shippingText">City: <?php echo e(auth()->user()->city); ?></div>
+                          <div class="shippingText">Province: <?php echo e(auth()->user()->province); ?></div>
+                          <div class="shippingText">Postal Code/Zip: <?php echo e(auth()->user()->postalCode); ?></div>
+                          <a class="shippingText" style="  color:rgba(92, 90, 90, 1);"href="<?php echo e(route('profiles.editAddress',auth()->user()->username)); ?>">Change Shipping Info</a>
+                        </div>
+                        <div class="shippingMethod">Shipping Method:</div>
+                        <div class="shippingMethodBox">
+                            <input type="radio" required id="standard" name="method" value="standard" style="position: relative;left: -130px;bottom: -17px;">
+                            <label for="standard">
+                              <div class="buttonMethod">Standard Shipping</div>
+                              <div class="buttonText">Delivers in 1-4 buisness days</div>
+                              <div class="buttonPrice">5$</div>
+                            </label>
+                            <input type="radio" required id="express" name="method" value="express" style="position: relative;left: -130px;bottom: -17px;">
+                            <label for="express">
+                              <div class="buttonMethod">Express Shipping</div>
+                              <div class="buttonText">Delivers in 1-3 buisness days</div>
+                              <div class="buttonPrice">10$</div>
+                            </label>
+                            <input type="radio" required id="priority" name="method" value="priority" style="position: relative;left: -130px;bottom: -17px;">
+                            <label for="priority">
+                              <div class="buttonMethod">Priority Shipping</div>
+                              <div class="buttonText">Delivers in 1-2 buisness days</div>
+                              <div class="buttonPrice">15$</div>
+                            </label>
+                        </div>
+                        
+                        <!--<button type="submit" style="position: absolute">Submit</button>-->
+                      </div>
+
                       </div>
                       </div>
                         
                     <div class="outer_q36">
                       
-                    <div
-                    id="q36"
-                    data-name="Group 8"
-                    class="q36"
-                    >
+                      <div
+                      id="q36"
+                      data-name="Group 8"
+                      class="q36"
+                      >
                     <div class="total-and-link-outer">
                       <div
                         id="total-and-link"
                         data-name="total and link"
                         class="total-and-link"
                       >
-                        <div class="Rectangle-4-outer">
-                        <div
-                          id="Rectangle-4"
-                          data-name="Rectangle"
-                          alt="Rectangle"
-                          class="Rectangle-4"
-                        >
-                        </div>
-                        </div>
+                        
                         <div class="Shopping-outer">
                         <img
                           id="Shopping"
@@ -2006,7 +2139,7 @@
                             <a href="#" style="font-size: 18px; color:rgba(92, 90, 90, 1);">Need more points!</a>
                           <?php else: ?>
                             <?php if(((float)auth()->user()->points) >= ((float)Cart::subtotal('0','',''))): ?>
-                            <a href="<?php echo e(route('checkout.complete')); ?>" style="color:rgba(92, 90, 90, 1);">Complete Order</a>
+                            <button type="submit" class="submitButton">Complete Order</button>
                             <?php else: ?>
                             <a href="#" style="font-size: 18px; color:rgba(92, 90, 90, 1);">Need more points!</a>
                             <?php endif; ?>
@@ -2014,22 +2147,7 @@
                         </div>
                         </div>
                         </div>
-                        <div class="q-20-4-outer">
-                        <div
-                          id="q-20-4"
-                          data-name="$20"
-                          class="q-20-4"
-                        ><div key="0"><?php echo e(Auth()->user()->points - Cart::subtotal('0','','')); ?> Points </div>
-                        </div>
-                        </div>
-                        <div class="cart-total--outer">
-                        <div
-                          id="cart-total-"
-                          data-name="cart total:"
-                          class="cart-total-"
-                        ><div key="0">Remaining:</div>
-                        </div>
-                        </div>
+                        
                         <div class="Arrow-1-outer">
                           <?php if(Cart::count() == 0): ?>
                             <a href="#" style="font-size: 18px; color:rgba(92, 90, 90, 1);">
@@ -2041,12 +2159,8 @@
                               ></a>
                           <?php else: ?>
                             <?php if(((float)auth()->user()->points) >= ((float)Cart::subtotal('0','',''))): ?>
-                            <a href="<?php echo e(route('checkout.complete')); ?>" style="color:rgba(92, 90, 90, 1);"><img
-                              id="Arrow-1"
-                              data-name="Arrow 1"
-                              alt="Arrow 1"
-                              class="Arrow-1"
-                              ></a>
+                            <!--<a href="<?php echo e(route('checkout.payment')); ?>" style="color:rgba(92, 90, 90, 1);">-->
+                            <input type="image" src="../images/Arrow_1.png" class="Arrow-1" id="Arrow-1" data-name="Arrow-1" alt="submit">
                             <?php else: ?>
                             <a href="#" style="font-size: 18px; color:rgba(92, 90, 90, 1);"><img
                               id="Arrow-1"
@@ -2058,7 +2172,8 @@
                           <?php endif; ?>
                         </div>
                       </div>
-                      </div>
+                    </div>
+                    
                     <div class="outer_q37">
                       <div class="outer_q37">
                         <div
@@ -2191,5 +2306,6 @@
                 </div>
              </div>
           </div>
+          </form>
        </body>
     </html><?php /**PATH C:\Users\jjour\FCCF-Market\resources\views/checkoutTest.blade.php ENDPATH**/ ?>

@@ -1343,7 +1343,7 @@
         margin-top:0px;
         margin-bottom:0px;
         min-height:62px;
-        content:url(../images/Cart.png);
+        content:url(../../images/Cart.png);
     }
     .Cart-outer{
         position:relative;
@@ -1466,7 +1466,7 @@
         margin-top:-130px;
         margin-bottom:19px;
         min-height:55px;
-        content:url(../images/Price_3.png);
+        content:url(../../images/Price_3.png);
     }
     .Price-3-outer{
         position:relative;
@@ -1754,7 +1754,7 @@
     margin-bottom: 10px;
     background-color: rgba(196, 196, 196, 0.5299999713897705);
     position: relative;
-    left: -409px;
+    left: -395px;
   }
   .buttonMethod{
     font-size: 20;
@@ -1791,29 +1791,12 @@
     position: relative;
     left: -409px;
   }
-  .submitButton{
-    position: relative;
-    z-index: 12;
-    pointer-events: all;
-    margin-left: 346px;
-    width: 220px;
-    min-width: 111px;
-    margin-top: -25px;
-    margin-bottom: 4px;
-    min-height: 36px;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    color: rgba(92, 90, 90, 1);
-    font-style: normal;
-    font-family: Baskervville;
-    font-weight: 400;
-    font-size: 28px;
-    line-height: 36px;
-    white-space: nowrap;
-    left: -356px;
-    top: 25;
+  .orderSummaryText{
+    font-size: 20;
+    margin-bottom: 10;
+    font-family: 'Baskervville';
+    margin-top: 20;
+}
   }
 }
 
@@ -1831,7 +1814,7 @@
         
           <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=5" />
         
-          <title> Test Checkout page </title>
+          <title> Test Checkout Payment Page </title>
           <meta name="description" content="Test Home Description">
           <meta property="og:title" content="Test Home">
           <meta property="og:description" content="Test Home Description">
@@ -1843,9 +1826,9 @@
        </head>
        <body class="websiteBody">
           <input type="checkbox" id="active">
-          <label for="active" style="position:fixed;"class="menu-btn">
-            <img style="margin-top:100px; width:282px; height:232px; margin-left: 180px; position: absolute;" src="images/Ellipse_1.png">
-            <img style="text-align:center; margin-top:170px; margin-left:260px; position: relative;"src="images/menu.png">
+          <label for="active" style="postion:fixed;"class="menu-btn">
+            <img style="margin-top:100px; width:282px; height:232px; margin-left: 180px; position: absolute;" src="../images/Ellipse_1.png">
+            <img style="text-align:center; margin-top:170px; margin-left:260px; position: relative;"src="../images/menu.png">
           </label>
           <div class="wrapper">
              <ul>
@@ -1872,9 +1855,6 @@
                 @endif
              </ul>
           </div>
-          <form method="GET" action="{{ route('checkout.payment') }}" enctype="multipart/form-data">
-            @csrf
-            @method('POST')
           <div class="content">
              <div class="title">  
                     <div class="outer_q1">
@@ -1899,7 +1879,7 @@
                         <img
                           id="q4"
                           data-name="Ellipse 1"
-                          src="images/Ellipse_1.png"
+                          src="../images/Ellipse_1.png"
                           alt="Ellipse 1"
                           class="q4"
                         >
@@ -1925,7 +1905,7 @@
                         <img
                           id="q7"
                           data-name="First Class Conferencing Facilitation Logo"
-                          src="images/First_Class_Conferencing_Facilitation_Logo.png"
+                          src="../images/First_Class_Conferencing_Facilitation_Logo.png"
                           alt="First Class Conferencing Facilitation Logo"
                           class="q7"
                         >
@@ -1982,7 +1962,8 @@
                             </div>
                             </div>
                         </div>
-                    
+                      <form method="GET" action="#">
+                      @csrf 
                       <div style="display: -webkit-box;">
                         <div style="border: 10px solid rgba(196, 196, 196, 0.5299999713897705); width: 269; height: 100%; border-radius: 15px; margin-bottom:10px;background-color:rgba(196, 196, 196, 0.5299999713897705);">
                         @if(Cart::count() == 0)
@@ -2068,39 +2049,38 @@
                             @endforeach
                             @endif
                         </div>
-                        <div class="shippingInfo">Shipping Information:</div>
+                        <div class="shippingInfo">Payment Information:</div>
                         <div class="shippingBox">
                           <div class="shippingText">Name: {{ auth()->user()->name }}</div>
                           <div class="shippingText">Email: {{ auth()->user()->email }}</div>
-                          <div class="shippingText">Address: {{ auth()->user()->address }}</div>
-                          <div class="shippingText">City: {{ auth()->user()->city }}</div>
-                          <div class="shippingText">Province: {{ auth()->user()->province }}</div>
-                          <div class="shippingText">Postal Code/Zip: {{ auth()->user()->postalCode }}</div>
-                          <a class="shippingText" style="  color:rgba(92, 90, 90, 1);"href="{{ route('profiles.editAddress',auth()->user()->username) }}">Change Shipping Info</a>
+                          <div class="shippingText">Card Number: 1234567890</div>
+                          <div class="shippingText">CVC: 123</div>
+                          <div class="shippingText">EXP Date: MM/YY</div>
+                          <a class="shippingText" style="  color:rgba(92, 90, 90, 1);"href="{{ route('profiles.editAddress',auth()->user()->username) }}">Change Payment Info</a>
                         </div>
-                        <div class="shippingMethod">Shipping Method:</div>
+                        <div class="shippingMethod">Order Summary:</div>
                         <div class="shippingMethodBox">
-                            <input type="radio" required id="standard" name="method" value="standard" style="position: relative;left: -130px;bottom: -17px;">
-                            <label for="standard">
-                              <div class="buttonMethod">Standard Shipping</div>
-                              <div class="buttonText">Delivers in 1-4 buisness days</div>
-                              <div class="buttonPrice">5$</div>
-                            </label>
-                            <input type="radio" required id="express" name="method" value="express" style="position: relative;left: -130px;bottom: -17px;">
-                            <label for="express">
-                              <div class="buttonMethod">Express Shipping</div>
-                              <div class="buttonText">Delivers in 1-3 buisness days</div>
-                              <div class="buttonPrice">10$</div>
-                            </label>
-                            <input type="radio" required id="priority" name="method" value="priority" style="position: relative;left: -130px;bottom: -17px;">
-                            <label for="priority">
-                              <div class="buttonMethod">Priority Shipping</div>
-                              <div class="buttonText">Delivers in 1-2 buisness days</div>
-                              <div class="buttonPrice">15$</div>
-                            </label>
+                            <div class="orderSummaryText">Items ({{ Cart::count() }})</div>
+                            <div class="orderSummaryText">Shipping: {{ $shipping }}</div>
+                            @if($shipping == 'standard')
+                              <div class="orderSummaryText">Taxes Estimate: 5.65$</div>
+                              <div class="orderSummaryText">Total: {{ Cart::subtotal('0','','')}} Points and 5.65$</div>
+                            @elseif($shipping == 'express')
+                              <div class="orderSummaryText">Taxes Estimate: 11.30$</div>
+                              <div class="orderSummaryText">Total: {{ Cart::subtotal('0','','')}} Points and 11.30$</div>
+                            @elseif($shipping == 'priority')
+                              <div class="orderSummaryText">Taxes Estimate: 16.95$</div>
+                              <div class="orderSummaryText">Total: {{ Cart::subtotal('0','','')}} Points and 16.95$</div>
+                            @endif
+                            <div class="orderSummaryText">Your Points: {{ auth()->user()->points }}</div>
+                            <div class="orderSummaryText">Remaining points {{ Auth()->user()->points - Cart::subtotal('0','','')}} Points</div>
+
+                            
                         </div>
+                       
+
                         
-                        <!--<button type="submit" style="position: absolute">Submit</button>-->
+
                       </div>
 
                       </div>
@@ -2138,7 +2118,7 @@
                             <a href="#" style="font-size: 18px; color:rgba(92, 90, 90, 1);">Need more points!</a>
                           @else
                             @if(((float)auth()->user()->points) >= ((float)Cart::subtotal('0','','')))
-                            <button type="submit" class="submitButton">Complete Order</button>
+                            <a href="{{ route('checkout.complete') }}" style="color:rgba(92, 90, 90, 1);">Complete Order</a>
                             @else
                             <a href="#" style="font-size: 18px; color:rgba(92, 90, 90, 1);">Need more points!</a>
                             @endif
@@ -2158,8 +2138,12 @@
                               ></a>
                           @else
                             @if(((float)auth()->user()->points) >= ((float)Cart::subtotal('0','','')))
-                            <!--<a href="{{ route('checkout.payment') }}" style="color:rgba(92, 90, 90, 1);">-->
-                            <input type="image" src="../images/Arrow_1.png" class="Arrow-1" id="Arrow-1" data-name="Arrow-1" alt="submit">
+                            <a href="{{ route('checkout.complete') }}" style="color:rgba(92, 90, 90, 1);"><img
+                              id="Arrow-1"
+                              data-name="Arrow 1"
+                              alt="Arrow 1"
+                              class="Arrow-1"
+                              ></a>
                             @else
                             <a href="#" style="font-size: 18px; color:rgba(92, 90, 90, 1);"><img
                               id="Arrow-1"
@@ -2171,8 +2155,8 @@
                           @endif
                         </div>
                       </div>
-                    </div>
-                    
+                      </div>
+                    </form>
                     <div class="outer_q37">
                       <div class="outer_q37">
                         <div
@@ -2243,7 +2227,7 @@
                         <img
                           id="q44"
                           data-name="WordPress"
-                          src="images/WordPress.png"
+                          src="../images/WordPress.png"
                           alt="WordPress"
                           class="q44"
                         ></a>
@@ -2253,7 +2237,7 @@
                         <img
                           id="q45"
                           data-name="TikTok"
-                          src="images/TikTok.png"
+                          src="../images/TikTok.png"
                           alt="TikTok"
                           class="q45"
                         ></a>
@@ -2263,7 +2247,7 @@
                         <img
                           id="q46"
                           data-name="Facebook"
-                          src="images/Facebook.png"
+                          src="../images/Facebook.png"
                           alt="Facebook"
                           class="q46"
                         ></a>
@@ -2273,7 +2257,7 @@
                         <img
                           id="q47"
                           data-name="LinkedIn"
-                          src="images/LinkedIn.png"
+                          src="../images/LinkedIn.png"
                           alt="LinkedIn"
                           class="q47"></a>
                         </div>
@@ -2282,7 +2266,7 @@
                         <img
                           id="q48"
                           data-name="Twitter Squared"
-                          src="images/Twitter_Squared.png"
+                          src="../images/Twitter_Squared.png"
                           alt="Twitter Squared"
                           class="q48"
                         ></a>
@@ -2292,7 +2276,7 @@
                         <img
                           id="q49"
                           data-name="Instagram"
-                          src="images/Instagram.png"
+                          src="../images/Instagram.png"
                           alt="Instagram"
                           class="q49"
                         ></a>
@@ -2305,6 +2289,5 @@
                 </div>
              </div>
           </div>
-          </form>
        </body>
     </html>

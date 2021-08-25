@@ -73,11 +73,14 @@ Route::middleware('auth')->group(function (){
 
     Route::get('/cartTest', 'App\Http\Controllers\CartsController@cartTest')->name('cartTest'); //test carts index frontend
     Route::get('/checkoutTest', 'App\Http\Controllers\CheckoutsController@checkoutTest')->name('checkoutTest');  //Checkout frontend 
-    Route::get('/checkoutComplete', 'App\Http\Controllers\CheckoutsController@checkoutComplete')->name('checkout.complete'); 
+    Route::get('/checkoutComplete', 'App\Http\Controllers\CheckoutsController@checkoutComplete')->name('checkout.complete');
+    Route::get('/checkoutExtraTest', 'App\Http\Controllers\CheckoutsController@checkoutExtraTest')->name('checkoutExtraTest');
+
 
 
 
     Route::get('/checkout', 'App\Http\Controllers\CheckoutsController@index')->name('checkout.index'); 
+    Route::get('/checkout/payment', 'App\Http\Controllers\CheckoutsController@payment')->name('checkout.payment'); 
     Route::get('/checkout/confirm', 'App\Http\Controllers\CheckoutsController@confirm')->name('checkout.confirm'); 
 
     Route::get('/profiles', 'App\Http\Controllers\ProfilesController@index')->name('profiles.index');

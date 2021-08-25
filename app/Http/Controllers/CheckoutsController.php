@@ -41,6 +41,17 @@ class CheckoutsController extends Controller
             ]);
         }
     }
+    public function checkoutExtraTest(){
+        if(Cart::count() == 0){
+            return redirect('productsTest');
+        }
+        else{
+            return view("checkoutExtraTest", [
+                'cart' => Cart::content()
+            ]);
+        }
+    }
+
     public function checkoutComplete(){
         if(Cart::count() == 0){
             return redirect('productsTest');
@@ -48,6 +59,19 @@ class CheckoutsController extends Controller
         else{
             return view("checkout.complete", [
                 'cart' => Cart::content()
+            ]);
+        }
+    }
+    public function payment(Request $request){
+        $method = $request->method;
+
+        if(Cart::count() == 0){
+            return redirect('productsTest');
+        }
+        else{
+            return view("checkout.payment", [
+                'cart' => Cart::content(),
+                'shipping' =>$method
             ]);
         }
     }
