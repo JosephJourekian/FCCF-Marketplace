@@ -56,6 +56,8 @@ Route::middleware('auth')->group(function (){
 
     Route::get('/fccfUpdates', 'App\Http\Controllers\FccfUpdatesController@index')->name('fccfUpdates.index'); 
     Route::get('/fccfUpdates/show/{updatename}', 'App\Http\Controllers\FccfUpdatesController@show')->name('fccfUpdates.show');
+    Route::get('/fccfUpdates/showTest/{updatename}', 'App\Http\Controllers\FccfUpdatesController@showTest')->name('fccfUpdates.showTest');
+
     Route::get('/fccfUpdatesTest', 'App\Http\Controllers\FccfUpdatesController@test')->name('fccfUpdatesTest'); 
 
     

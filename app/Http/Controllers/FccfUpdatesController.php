@@ -32,6 +32,15 @@ class FccfUpdatesController extends Controller
         ]);
 
     }
+
+    public function showTest(FccfUpdates $updatename){
+
+        return view('fccfUpdates.showTest', [ 
+            'update' => FccfUpdates::find($updatename)->first(),
+            'url' => FccfUrls::all(),
+        ]);
+
+    }
     public function edit(FccfUpdates $updatename){
 
         return view('fccfUpdates.edit', [

@@ -1732,7 +1732,10 @@
     }
     .articleTitle{
         font-family: Baskervville;
-        font-size: 24px;
+        font-size: 22px;
+        text-align: justify;
+        width: 600;
+        white-space: normal;
     }
     .links{
         position: relative;
@@ -1758,11 +1761,15 @@
     }
     .articleExcerpt{
         font-family: Baskervville;
-        font-size: 25px;
+        font-size: 20px;
         position: relative;
         top: -175px;
         display: flex;
         left: 314px;
+        width: 600;
+        white-space: normal;
+        text-align: justify;
+        height: 30;
     }
     .myButton {
 	box-shadow: 0px 1px 0px 0px #f0f7fa;
@@ -2021,7 +2028,7 @@
 
                             </div>
                             <div class="articleExcerpt">
-                                <?php echo e(\Illuminate\Support\Str::limit($update->excerpt, 75)); ?>
+                                <?php echo e(\Illuminate\Support\Str::limit($update->excerpt, 85)); ?>
 
                             </div>
                             <div style="display: -webkit-inline-box; left: 333; top: -150; position: relative;">
@@ -2042,7 +2049,7 @@
                                     </div>
                                 <?php endif; ?>
                                 <div class="myButton">
-                                    <a href="<?php echo e(route('fccfUpdates.show',$update->updatename)); ?>" style="color:rgba(92, 90, 90, 1);">
+                                    <a href="<?php echo e(route('fccfUpdates.showTest',$update->updatename)); ?>" style="color:rgba(92, 90, 90, 1);">
                                         Read More
                                     </a>
                                 </div>

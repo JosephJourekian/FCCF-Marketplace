@@ -8,7 +8,7 @@
       z-index: 1;
     
     }
-    @media screen and (max-width: 1920px) {
+    @media  screen and (max-width: 1920px) {
         .websiteBody{
               margin: auto;
           margin-left: 12%;
@@ -17,7 +17,7 @@
         }
     }
     
-    @media screen and (max-width: 1152px) {
+    @media  screen and (max-width: 1152px) {
         .websiteBody{
               margin: auto;
           position: fixed;
@@ -1305,9 +1305,10 @@
         font-weight: 400;
         font-size: 24px;
         line-height: 46.400001525878906px;
-        white-space: nowrap;
+        white-space: normal;
         text-decoration: underline;
         left: 50px;
+        width: 900;
     }
     .MY-CART-outer{
         position:relative;
@@ -1711,7 +1712,7 @@
   z-index:13;
 }
 
-@media screen and (max-width: 1920px) {
+@media  screen and (max-width: 1920px) {
 	.q43{
   		top:-20px;
 	}
@@ -1720,22 +1721,19 @@
     }
     .article{
         width: 900px;
-        height: 200px;
+        height: fit-content;
         margin-bottom: 30;
     }
     .articlePic{
         position: relative;
-        width: 308;
-        height: 200;
+        width: 424px;
+        height: 243px;
         border-radius: 20px;
         background: #47545C;
     }
     .articleTitle{
         font-family: Baskervville;
-        font-size: 22px;
-        text-align: justify;
-        width: 600;
-        white-space: normal;
+        font-size: 24px;
     }
     .links{
         position: relative;
@@ -1747,17 +1745,17 @@
         font-family: Baskervville;
         font-size: 20px;
         position: relative;
-        top: -200;
+        top: -240;
         display: flex;
-        left: 314px;
+        left: 430px;
     }
     .articleAuthor{
         font-family: Baskervville;
         font-size: 20px;
         position: relative;
-        top: -200;
+        top: -240;
         display: flex;
-        left: 314px;
+        left: 430px;
     }
     .articleExcerpt{
         font-family: Baskervville;
@@ -1765,11 +1763,29 @@
         position: relative;
         top: -175px;
         display: flex;
-        left: 314px;
-        width: 600;
+        left: 427px;
+        width: 508px;
+        height: fit-content;
         white-space: normal;
         text-align: justify;
-        height: 30;
+    }
+    .articleBody{
+        font-family: Baskervville;
+        font-size: 19px;
+        position: relative;
+        top: -100px;
+        height: fit-content;
+        width: fit-content;
+        white-space: pre-wrap;
+        text-align: justify;
+    }
+    .articleLink{
+        font-family: Baskervville;
+        font-size: 25px;
+        position: relative;
+        top: -110px;
+        display: flex;
+        left: 0px;
     }
     .myButton {
 	box-shadow: 0px 1px 0px 0px #f0f7fa;
@@ -1866,7 +1882,7 @@
         
           <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=5" />
         
-          <title> Test FCCF Updates Page </title>
+          <title> <?php echo e($update->title); ?> </title>
           <meta name="description" content="Test Home Description">
           <meta property="og:title" content="Test Home">
           <meta property="og:description" content="Test Home Description">
@@ -1879,32 +1895,32 @@
        <body class="websiteBody">
           <input type="checkbox" id="active">
           <label for="active" style="postion:fixed;"class="menu-btn">
-            <img style="margin-top:100px; width:282px; height:232px; margin-left: 180px; position: absolute;" src="images/Ellipse_1.png">
-            <img style="text-align:center; margin-top:170px; margin-left:260px; position: relative;"src="images/menu.png">
+            <img style="margin-top:100px; width:282px; height:232px; margin-left: 180px; position: absolute;" src="../../images/Ellipse_1.png">
+            <img style="text-align:center; margin-top:170px; margin-left:260px; position: relative;"src="../../images/menu.png">
           </label>
           <div class="wrapper">
              <ul>
-                <li><a href="{{ route('home') }}">Home</a></li>
+                <li><a href="<?php echo e(route('home')); ?>">Home</a></li>
                 <li><a href="#">About</a></li>
-                <li><a href="{{ route('products.index') }}">Shop</a></li>
-                <li><a href="{{ route('carts.index') }}">My Cart ({{ Cart::count() }})</a></li>
-                <li><a href="{{ route('updates') }}">Updates</a></li>
+                <li><a href="<?php echo e(route('products.index')); ?>">Shop</a></li>
+                <li><a href="<?php echo e(route('carts.index')); ?>">My Cart (<?php echo e(Cart::count()); ?>)</a></li>
+                <li><a href="<?php echo e(route('updates')); ?>">Updates</a></li>
                 <li><a href="#">Team</a></li>   
                 <li>
-                  <a href="{{ route('profiles.index') }}">My Account</a>
+                  <a href="<?php echo e(route('profiles.index')); ?>">My Account</a>
                 </li>
                 <li>
                     <form method="POST" action="/logout">
-                        @csrf
+                        <?php echo csrf_field(); ?>
                         <button style="font-family: Baskervville">Logout</button>
                     </form>
                 </li>
-                @if(auth()->user()->isAdmin())
+                <?php if(auth()->user()->isAdmin()): ?>
                 <li>
-                  <a href="{{ route('home') }}">Admin Links</a>
+                  <a href="<?php echo e(route('home')); ?>">Admin Links</a>
                 </li>
     
-                @endif
+                <?php endif; ?>
              </ul>
           </div>
           <div class="content">
@@ -1931,7 +1947,7 @@
                         <img
                           id="q4"
                           data-name="Ellipse 1"
-                          src="images/Ellipse_1.png"
+                          src="../../images/Ellipse_1.png"
                           alt="Ellipse 1"
                           class="q4"
                         >
@@ -1957,7 +1973,7 @@
                         <img
                           id="q7"
                           data-name="First Class Conferencing Facilitation Logo"
-                          src="images/First_Class_Conferencing_Facilitation_Logo.png"
+                          src="../../images/First_Class_Conferencing_Facilitation_Logo.png"
                           alt="First Class Conferencing Facilitation Logo"
                           class="q7"
                         >
@@ -1985,7 +2001,7 @@
                               id="MY-CART"
                               data-name="MY CART"
                               class="MY-CART"
-                            ><div key="0"><h1>FCCF UPDATES</h1></div>
+                            ><div key="0"><h1><?php echo e($update->title); ?></h1></div>
                             </div>
                         </div>
                         <div class="Group-16-outer">
@@ -2008,52 +2024,64 @@
                             </div>
                             </div>
                         </div>
-                        @foreach ($updates as $update)
                         <div class="article">
                             <div class="articlePic">
-                                <img src="{{ $update->image }}" style="width: 308; height: 200; border-radius:20px;">
+                                <img src="<?php echo e($update->image); ?>" style="width: 424px;height: 243px;border-radius: 20px;">
                             </div>
-                            <a href="{{ route('fccfUpdates.show',$update->updatename) }}" style="color:rgba(92, 90, 90, 1);" class="links">
-                                <div class="articleTitle">
-                                    {{ $update->title }}
-                                </div>
-                            </a>
+                            
                             <div class="articleDate">
-                                Posted on: {{ $update->created_at->format('Y-m-d')}}
+                                Posted on: <?php echo e($update->created_at->format('Y-m-d')); ?>
+
                             </div>
                             <div class="articleAuthor">
-                                By: {{ $update->author }}
+                                By: <?php echo e($update->author); ?>
+
                             </div>
                             <div class="articleExcerpt">
-                                {{ \Illuminate\Support\Str::limit($update->excerpt, 85) }}
+                                <?php echo e($update->excerpt); ?>
+
                             </div>
-                            <div style="display: -webkit-inline-box; left: 333; top: -150; position: relative;">
-                                @if(auth()->user()->isAdmin())
-                                    <form method="POST" action="{{ route('fccfUpdates.delete') }}"> 
-                                        @csrf
-                                        @method('DELETE')
-                                        <input type="hidden" name="id" value="{{ $update->id }}"> 
+                            <div class="articleBody">
+                                <?php echo e($update->body); ?>
+
+                            </div>
+                            <div class="articleLink">Links:</div>
+                            <?php $__currentLoopData = $update->url; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $link): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <a style="color:rgba(92, 90, 90, 1); 
+                                text-decoration:underline;
+                                position: relative;
+                                display:flex;
+                                top: -107px;
+                                width: fit-content;
+                                font-size: 20;" href="<?php echo e($link->url); ?>"><?php echo e($link->url); ?></a><br>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            <div style="display: -webkit-inline-box; left: 333; top: -19; position: relative;">
+                                <?php if(auth()->user()->isAdmin()): ?>
+                                    <form method="POST" action="<?php echo e(route('fccfUpdates.delete')); ?>"> 
+                                        <?php echo csrf_field(); ?>
+                                        <?php echo method_field('DELETE'); ?>
+                                        <input type="hidden" name="id" value="<?php echo e($update->id); ?>"> 
                                         <input type="hidden" name="_method" value="DELETE">
                                         <button type="submit" class="myButton2" style="color:rgba(92, 90, 90, 1); text-decoration:underline;">
                                             Delete
                                         </button>
                                     </form>
                                     <div class="myButton3">
-                                        <a href="{{ route('fccfUpdates.edit',$update->updatename) }}" style="color:rgba(92, 90, 90, 1);">
+                                        <a href="<?php echo e(route('fccfUpdates.edit',$update->updatename)); ?>" style="color:rgba(92, 90, 90, 1);">
                                             Edit
                                         </a>
                                     </div>
-                                @endif
+                                <?php endif; ?>
                                 <div class="myButton">
-                                    <a href="{{ route('fccfUpdates.showTest',$update->updatename) }}" style="color:rgba(92, 90, 90, 1);">
-                                        Read More
+                                    <a href="<?php echo e(route('fccfUpdatesTest')); ?>" style="color:rgba(92, 90, 90, 1);">
+                                        Back to updates
                                     </a>
                                 </div>
                             </div>
+                            
 
                         </div>
                             
-                        @endforeach
                             
                       </div>
                       </div>
@@ -2087,7 +2115,7 @@
                           id="q38"
                           data-name="my account"
                           class="q38"
-                        ><div key="0"><a href="{{ route('profiles.edit',auth()->user()->username) }}" style="white-space: nowrap; color: rgba(92, 90, 90, 1);">My Account</a></div>
+                        ><div key="0"><a href="<?php echo e(route('profiles.edit',auth()->user()->username)); ?>" style="white-space: nowrap; color: rgba(92, 90, 90, 1);">My Account</a></div>
                         </div>
                         </div>
                         <div class="outer_q39">
@@ -2136,7 +2164,7 @@
                         <img
                           id="q44"
                           data-name="WordPress"
-                          src="images/WordPress.png"
+                          src="../../images/WordPress.png"
                           alt="WordPress"
                           class="q44"
                         ></a>
@@ -2146,7 +2174,7 @@
                         <img
                           id="q45"
                           data-name="TikTok"
-                          src="images/TikTok.png"
+                          src="../../images/TikTok.png"
                           alt="TikTok"
                           class="q45"
                         ></a>
@@ -2156,7 +2184,7 @@
                         <img
                           id="q46"
                           data-name="Facebook"
-                          src="images/Facebook.png"
+                          src="../../images/Facebook.png"
                           alt="Facebook"
                           class="q46"
                         ></a>
@@ -2166,7 +2194,7 @@
                         <img
                           id="q47"
                           data-name="LinkedIn"
-                          src="images/LinkedIn.png"
+                          src="../../images/LinkedIn.png"
                           alt="LinkedIn"
                           class="q47"></a>
                         </div>
@@ -2175,7 +2203,7 @@
                         <img
                           id="q48"
                           data-name="Twitter Squared"
-                          src="images/Twitter_Squared.png"
+                          src="../../images/Twitter_Squared.png"
                           alt="Twitter Squared"
                           class="q48"
                         ></a>
@@ -2185,7 +2213,7 @@
                         <img
                           id="q49"
                           data-name="Instagram"
-                          src="images/Instagram.png"
+                          src="../../images/Instagram.png"
                           alt="Instagram"
                           class="q49"
                         ></a>
@@ -2199,4 +2227,4 @@
              </div>
           </div>
        </body>
-    </html>
+    </html><?php /**PATH C:\Users\jjour\FCCF-Market\resources\views/fccfUpdates/showTest.blade.php ENDPATH**/ ?>
