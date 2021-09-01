@@ -1927,6 +1927,41 @@ html, body {
   background-color: #64af3d;
 }
 
+.cart-btn2 {
+    display: inline-block;
+    background-color: deepskyblue;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 12px 6px;
+    transition: all .5s;
+    width: 149px;
+    height: 48px;
+    position: relative;
+    left: 8px;
+}
+.cart-btn2:hover {
+  background-color: #057fd0;
+}
+.cart-btn3 {
+    display: inline-block;
+    background-color: black;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 12px 6px;
+    transition: all .5s;
+    width: 149px;
+    height: 48px;
+    position: relative;
+    left: -204px;
+    top: 56px;  
+}
+.cart-btn3:hover {
+  background-color: black;
+}
 /* Responsive */
 @media (max-width: 940px) {
   .container {
@@ -1967,7 +2002,7 @@ html, body {
         
           <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=5" />
         
-          <title> Test Cart Page </title>
+          <title> {{ $product->name }}</title>
           <meta name="description" content="Test Home Description">
           <meta property="og:title" content="Test Home">
           <meta property="og:description" content="Test Home Description">
@@ -1991,7 +2026,7 @@ html, body {
           <div class="wrapper">
              <ul>
                 <li><a href="{{ route('home') }}">Home</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="{{ route('about') }}">About</a></li>
                 <li><a href="{{ route('products.index') }}">Shop</a></li>
                 <li><a href="{{ route('carts.index') }}">My Cart ({{ Cart::count() }})</a></li>
                 <li><a href="{{ route('updates') }}">Updates</a></li>
@@ -2007,7 +2042,7 @@ html, body {
                 </li>
                 @if(auth()->user()->isAdmin())
                 <li>
-                  <a href="{{ route('home') }}">Admin Links</a>
+                  <a href="{{ route('adminLinks') }}">Admin Links</a>
                 </li>
     
                 @endif
@@ -2185,10 +2220,16 @@ html, body {
                                     class="cart-btn">
                                     Out of Stock
                                 </a>
+                                <a href="{{ route('products.index') }}" class="cart-btn2">Back To Products</a>
                                 @else
-                                    <input class="cart-btn" type="submit" value="Add to Cart">       
-                                @endif
-                              </div>
+                                    <input class="cart-btn" type="submit" value="Add to Cart">
+                                    <a href="{{ route('products.index') }}" class="cart-btn2">Back To Products</a>
+                                @endif 
+                                    @if(auth()->user()->isAdmin())
+                                      <a href="{{ route('products.edit',$product->productname) }}" class="cart-btn3">Edit This Product</a>
+                                    @endif
+                                    
+                                  </div>
                             </div>
                           </main>
                       </form>

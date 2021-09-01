@@ -42,12 +42,15 @@ Route::middleware('auth')->group(function (){
         Route::patch('/viewUsers', 'App\Http\Controllers\ViewUsersController@edit')->name('viewUsers');  
     });
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/adminLinks', 'App\Http\Controllers\AdminLinksController@index')->name('adminLinks');  
+
     Route::get('/menuTest', 'App\Http\Controllers\ProductsController@menuTest')->name('menuTest');  //test homepage frontend
     Route::get('/productTest', 'App\Http\Controllers\ProductsController@productTest')->name('productTest'); //test products index frontend
 
     
     Route::get('/products', 'App\Http\Controllers\ProductsController@index')->name('products.index'); 
     Route::get('/products/show/{product:productname}', 'App\Http\Controllers\ProductsController@show')->name('products.show'); 
+    Route::get('/products/showTest/{product:productname}', 'App\Http\Controllers\ProductsController@showTest')->name('products.showTest'); 
 
     Route::get('/updates', 'App\Http\Controllers\UpdatesController@index')->name('updates'); 
     Route::get('/about', 'App\Http\Controllers\AboutsController@index')->name('about'); 

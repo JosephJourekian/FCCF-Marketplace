@@ -18,13 +18,17 @@ class ProductsController extends Controller
 
         if (request('category')){
             $products = Category::where('name', request('category'))->firstOrFail()->products;
+            $title = request('category');
         }
         else{
             $products = Products::paginate(50);
+            $title = 'Shop all';
+
         }
 
         return view('products.index', [
             'products' => $products,
+            'title' => $title,
             'category' => Category::all(),
             'attributes' => ProductsAttribute::all()
         ]);
@@ -84,6 +88,17 @@ class ProductsController extends Controller
         $productI = Products::find($product)->first();
 
         return view('products.show', [
+            'product' => $productI,
+            'attributes' => ProductsAttribute::all(),
+            'images' => ProductsImage::all(),
+        ]);
+
+    }
+    public function showTest(Products $product){
+
+        $productI = Products::find($product)->first();
+
+        return view('products.showTest', [
             'product' => $productI,
             'attributes' => ProductsAttribute::all(),
             'images' => ProductsImage::all(),

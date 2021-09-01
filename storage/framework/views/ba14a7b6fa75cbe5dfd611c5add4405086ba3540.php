@@ -6,22 +6,28 @@
       overflow-x:hidden;
       position: relative;
       z-index: 1;
+      font-family:Baskervville;
+
     
     }
-    @media screen and (max-width: 1920px) {
+    @media  screen and (max-width: 1920px) {
         .websiteBody{
               margin: auto;
           margin-left: 12%;
           overflow-x:hidden;
           z-index: 1;
+          font-family:Baskervville;
+
         }
     }
     
-    @media screen and (max-width: 1152px) {
+    @media  screen and (max-width: 1152px) {
         .websiteBody{
               margin: auto;
           position: fixed;
           z-index: 1;
+          font-family:Baskervville;
+
         }
     }
     
@@ -179,7 +185,7 @@
     .q9{
         position:relative;
         z-index:4;
-        pointer-events:all;
+        pointer-events:auto;
         margin-left:114px;
         width:922px;
         min-width:922px;
@@ -196,14 +202,14 @@
         position: relative;
         display: flex;
         margin-bottom: -100px;
-        pointer-events: all;
+        pointer-events: none;
         white-space: nowrap;
         
     }
     .q10{
         position:relative;
         z-index:5;
-        pointer-events:all;
+        pointer-events:auto;
         margin-left:0px;
         width:922px;
         min-width:922px;
@@ -215,7 +221,7 @@
     .outer_q10{
         position:relative;
         display:flex;
-        pointer-events:all;
+        pointer-events:none;
         z-index:5;
     }
     .q11{
@@ -781,7 +787,7 @@
         margin-top:-262px;
         margin-bottom:26px;
         min-height:236px;
-        top: 53px;
+        top: 75px;
     }
     .outer_q36{
         position:relative;
@@ -1308,6 +1314,7 @@
         line-height: 46.400001525878906px;
         white-space: nowrap;
         text-decoration: underline;
+        left: 350px;
     }
     .MY-CART-outer{
         position:relative;
@@ -1318,7 +1325,7 @@
     .Group-16{
         position:relative;
         z-index:4;
-        pointer-events:all;
+        pointer-events:none;
         margin-left:-300px;
         width:194px;
         min-width:194px;
@@ -1329,7 +1336,7 @@
     .Group-16-outer{
         position:relative;
         display:flex;
-        pointer-events:all;
+        pointer-events:none;
         z-index:4;
     }
     .Cart{
@@ -1358,6 +1365,8 @@
         margin-left:131px;
         width:63px;
         min-width:63px;
+        margin-top:-45px;
+        margin-bottom:14px;
         min-height:31px;
         text-align:left;
         display:flex;
@@ -1709,11 +1718,277 @@
   z-index:13;
 }
 
-@media screen and (max-width: 1920px) {
+@media  screen and (max-width: 1920px) {
 	.q43{
   		top:-20px;
 	}
 }
+
+/* Basic Styling */
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-family:Baskervville;
+}
+
+.container {
+  max-width: 1200px;
+  display: flex;
+  position: relative;
+  top: 15px;
+}
+}
+
+/* Columns */
+.left-column {
+  width: 65%;
+  position: relative;
+}
+
+.right-column {
+    width: 39%;
+    margin-top: 60px;
+    position: relative;
+    right: -12;
+}
+
+
+/* Left Column */
+.left-column img {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.left-column img.active {
+  opacity: 1;
+}
+
+
+/* Right Column */
+
+/* Product Description */
+.product-description {
+  margin-bottom: 20px;
+}
+.product-description span {
+  font-size: 12px;
+  color: #358ED7;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.product-description h1 {
+  font-weight: 300;
+  font-size: 52px;
+  color: #43484D;
+  letter-spacing: -2px;
+}
+.product-description p {
+  font-size: 16px;
+  font-weight: 300;
+  color: #86939E;
+  line-height: 24px;
+}
+
+/* Product Configuration */
+.product-color span,
+.cable-config span {
+  font-size: 14px;
+  font-weight: 400;
+  color: #86939E;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+/* Product Color */
+.product-color {
+  margin-bottom: 30px;
+}
+
+.color-choose div {
+  display: inline-block;
+}
+
+.color-choose input[type="radio"] {
+  display: none;
+}
+
+.color-choose input[type="radio"] + label span {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin: -1px 4px 0 0;
+  vertical-align: middle;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.color-choose input[type="radio"] + label span {
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.33);
+}
+
+.color-choose input[type="radio"]#red + label span {
+  background-color: #C91524;
+}
+.color-choose input[type="radio"]#blue + label span {
+  background-color: #314780;
+}
+.color-choose input[type="radio"]#black + label span {
+  background-color: #323232;
+}
+
+.color-choose input[type="radio"]:checked + label span {
+  background-image: url(images/check-icn.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Cable Configuration */
+.cable-choose {
+  margin-bottom: 20px;
+}
+
+.cable-choose button {
+  border: 2px solid #E1E8EE;
+  border-radius: 6px;
+  padding: 13px 20px;
+  font-size: 14px;
+  color: #5E6977;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all .5s;
+}
+
+.cable-choose button:hover,
+.cable-choose button:active,
+.cable-choose button:focus {
+  border: 2px solid #86939E;
+  outline: none;
+}
+
+.cable-config {
+  border-bottom: 1px solid #E1E8EE;
+  margin-bottom: 20px;
+}
+
+.cable-config a {
+  color: #358ED7;
+  text-decoration: none;
+  font-size: 12px;
+  position: relative;
+  margin: 10px 0;
+  display: inline-block;
+}
+.cable-config a:before {
+  content: "?";
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  border: 2px solid rgba(53, 142, 215, 0.5);
+  display: inline-block;
+  text-align: center;
+  line-height: 16px;
+  opacity: 0.5;
+  margin-right: 5px;
+}
+
+/* Product Price */
+.product-price {
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: 90px;
+}
+
+.product-price span {
+  font-size: 26px;
+  font-weight: 300;
+  color: #43474D;
+  margin-right: 20px;
+}
+
+.cart-btn {
+  display: inline-block;
+  background-color: #7DC855;
+  border-radius: 6px;
+  font-size: 16px;
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 12px 30px;
+  transition: all .5s;
+}
+.cart-btn:hover {
+  background-color: #64af3d;
+}
+
+.cart-btn2 {
+    display: inline-block;
+    background-color: deepskyblue;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 12px 6px;
+    transition: all .5s;
+    width: 149px;
+    height: 48px;
+    position: relative;
+    left: 8px;
+}
+.cart-btn2:hover {
+  background-color: #057fd0;
+}
+.cart-btn3 {
+    display: inline-block;
+    background-color: black;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 12px 6px;
+    transition: all .5s;
+    width: 149px;
+    height: 48px;
+    position: relative;
+    left: -204px;
+    top: 56px;  
+}
+.cart-btn3:hover {
+  background-color: black;
+}
+/* Responsive */
+@media (max-width: 940px) {
+  .container {
+    flex-direction: column;
+    margin-top: 60px;
+  }
+
+  .left-column,
+  .right-column {
+    width: 100%;
+  }
+
+  .left-column img {
+    width: 300px;
+    right: 0;
+    top: -65px;
+    left: initial;
+  }
+}
+
+@media (max-width: 535px) {
+  .left-column img {
+    width: 220px;
+    top: -85px;
+  }
+}
+
 
     </style>
     
@@ -1727,45 +2002,50 @@
         
           <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=5" />
         
-          <title> Updates </title>
+          <title> <?php echo e($product->name); ?></title>
           <meta name="description" content="Test Home Description">
           <meta property="og:title" content="Test Home">
           <meta property="og:description" content="Test Home Description">
           <meta name="generator" content="Quest">
         
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Baskervville:400">
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">  
+
           
           
        </head>
        <body class="websiteBody">
           <input type="checkbox" id="active">
           <label for="active" style="postion:fixed;"class="menu-btn">
-            <img style="margin-top:100px; width:282px; height:232px; margin-left: 180px; position: absolute;" src="images/Ellipse_1.png">
-            <img style="text-align:center; margin-top:170px; margin-left:260px; position: relative;"src="images/menu.png">
+            <img style="margin-top:100px; width:282px; height:232px; margin-left: 180px; position: absolute;" src="../../images/Ellipse_1.png">
+            <img style="text-align:center; margin-top:170px; margin-left:260px; position: relative;"src="../../images/menu.png">
           </label>
           <div class="wrapper">
              <ul>
-                <li><a href="{{ route('home') }}">Home</a></li>
-                <li><a href="{{ route('about') }}">About</a></li>
-                <li><a href="{{ route('products.index') }}">Shop</a></li>
-                <li><a href="{{ route('carts.index') }}">My Cart ({{ Cart::count() }})</a></li>
-                <li><a href="{{ route('updates') }}">Updates</a></li>
+                <li><a href="<?php echo e(route('home')); ?>">Home</a></li>
+                <li><a href="<?php echo e(route('about')); ?>">About</a></li>
+                <li><a href="<?php echo e(route('products.index')); ?>">Shop</a></li>
+                <li><a href="<?php echo e(route('carts.index')); ?>">My Cart (<?php echo e(Cart::count()); ?>)</a></li>
+                <li><a href="<?php echo e(route('updates')); ?>">Updates</a></li>
                 <li><a href="#">Team</a></li>   
                 <li>
-                    <a href="{{ route('profiles.index') }}">My Account</a>
+                  <a href="<?php echo e(route('profiles.index')); ?>">My Account</a>
                 </li>
                 <li>
                     <form method="POST" action="/logout">
-                        @csrf
+                        <?php echo csrf_field(); ?>
                         <button style="font-family: Baskervville">Logout</button>
                     </form>
                 </li>
-                @if(auth()->user()->isAdmin())
+                <?php if(auth()->user()->isAdmin()): ?>
                 <li>
-                  <a href="{{ route('adminLinks') }}">Admin Links</a>
+                  <a href="<?php echo e(route('adminLinks')); ?>">Admin Links</a>
                 </li>
     
-                @endif
+                <?php endif; ?>
              </ul>
           </div>
           <div class="content">
@@ -1792,7 +2072,7 @@
                         <img
                           id="q4"
                           data-name="Ellipse 1"
-                          src="images/Ellipse_1.png"
+                          src="../../images/Ellipse_1.png"
                           alt="Ellipse 1"
                           class="q4"
                         >
@@ -1818,7 +2098,7 @@
                         <img
                           id="q7"
                           data-name="First Class Conferencing Facilitation Logo"
-                          src="images/First_Class_Conferencing_Facilitation_Logo.png"
+                          src="../../images/First_Class_Conferencing_Facilitation_Logo.png"
                           alt="First Class Conferencing Facilitation Logo"
                           class="q7"
                         >
@@ -1840,105 +2120,120 @@
                         data-name="Group 1"
                         class="q9"
                       >
-                        <div class="outer_q10">
-                        <div class="MY-CART-outer">
-                            <div
-                              id="MY-CART"
-                              data-name="MY CART"
-                              class="MY-CART"
-                            ><div key="0"><h1>UPDATES</h1></div>
+                      <form method="GET" action='<?php echo e(route('carts.add',$product->productname)); ?>' enctype="multipart/form-data" class="mb-8"  >
+                        <main class="container">
+                            <div style="width: 30%;position: relative;right: 252px;top: 65px;">
+                                <div id="demo" class="carousel slide carousel-fade " data-ride="carousel" style="position:absolute">
+    
+                                    <div class="carousel-inner" role="listbox">
+                                        <div class="carousel-item active">
+                                            <img src="<?php echo e($product->image); ?>" style="width:575px;height:500px;">
+                                        </div>
+                                        <?php $__currentLoopData = $product->images; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pic): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                           <div class="carousel-item <?php echo e($loop->first); ?>" style="width: 575px;">
+                                               <img style="width:575px;height:500px;" width=575px class="d-block img-fluid" src="<?php echo e(asset("storage/{$pic->image}")); ?>">
+                                           </div>
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                    </div>
+                    
+                                    <a class="carousel-control-prev" href="#demo" data-slide="prev" >
+                                      <span class="carousel-control-prev-icon"></span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#demo" data-slide="next">
+                                      <span class="carousel-control-next-icon"></span>
+                                    </a>
+                                  
+                                </div>
                             </div>
-                        </div>
-                        <div class="Group-16-outer">
-                            <div
-                              id="Group-16"
-                              data-name="Group 16"
-                              class="Group-16"
-                            >
-                              <div class="Cart-outer">
-                              
+
+                            <!-- Right Column -->
+                            <div class="right-column">
+                      
+                              <!-- Product Description -->
+                              <div class="product-description">
+                                <?php $__currentLoopData = $product->category; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $categories): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <a  href="<?php echo e(route('products.index', ['category' => $categories->name])); ?>" style="position: relative; right: 0px; margin-right:20px;"><u><?php echo e($categories->name); ?></u></a>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                <h1 style="position: relative;top: 40px;"><?php echo e($product->name); ?></h1>
+                                <p style="white-space: pre-wrap;text-align: left; border-bottom: 2px solid #E1E8EE;position: relative;top: 60px;"><?php echo e($product->description); ?></p>
                               </div>
-                              <div class="items--outer">
-                              <div
-                                id="items-"
-                                data-name="items:"
-                                class="items-"
-                              ><div key="0">Here you wil find recent tech updates, company updates, job postings, and more.</div>
+                      
+                              <!-- Product Configuration -->
+                              <div class="product-configuration" style="position: relative; top: 70px;">
+                      
+                                <!-- Product Color -->
+                                <div class="product-color">
+                                  <span style="font-size: 25;">Stock: <?php echo e($product->stock); ?></span>
+                                  <p>
+                                    <?php $__currentLoopData = $product->category; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $categories): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <?php if($categories->name == "Apparel"): ?>
+                                        <p class="font-bold">Select Size and Color:</p>
+                                        <select name="attribute">
+                                            <?php $__currentLoopData = $product->attributes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $attribute): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                <?php if($attribute->attribute_name == "Size" or $attribute->attribute_name == "size"): ?>
+                                                    <option value="<?php echo e($attribute->id); ?>">
+                                                        <?php echo e($attribute->attribute_name); ?>: <?php echo e($attribute->attribute_value); ?>, <?php echo e($attribute->attribute_second_name); ?>: 
+                                                        <?php echo e($attribute->attribute_second_value); ?>, Stock: <?php echo e($attribute->stock); ?>
+
+                                                    </option>
+                                                <?php endif; ?>
+                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                        </select>
+                                        <?php endif; ?>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                </p>
+                      
+                                  <!--<div class="color-choose">
+                                    <div>
+                                      <input data-image="red" type="radio" id="red" name="color" value="red" checked>
+                                      <label for="red"><span></span></label>
+                                    </div>
+                                    <div>
+                                      <input data-image="blue" type="radio" id="blue" name="color" value="blue">
+                                      <label for="blue"><span></span></label>
+                                    </div>
+                                    <div>
+                                      <input data-image="black" type="radio" id="black" name="color" value="black">
+                                      <label for="black"><span></span></label>
+                                    </div>
+                                  </div>-->
+                      
+                                </div>
+                      
+                                <!-- Cable Configuration -->
+                                <!--<div class="cable-config">
+                                  <span>Cable configuration</span>
+                      
+                                  <div class="cable-choose">
+                                    <button>Straight</button>
+                                    <button>Coiled</button>
+                                    <button>Long-coiled</button>
+                                  </div>
+                      
+                                </div>-->
                               </div>
-                              </div>
+                      
+                              <!-- Product Pricing -->
+                              <div class="product-price">
+                                <span><?php echo e($product->price); ?> Points</span>
+                                <?php if($product->stock == 0): ?>
+                                <a href="#"
+                                    class="cart-btn">
+                                    Out of Stock
+                                </a>
+                                <a href="<?php echo e(route('products.index')); ?>" class="cart-btn2">Back To Products</a>
+                                <?php else: ?>
+                                    <input class="cart-btn" type="submit" value="Add to Cart">
+                                    <a href="<?php echo e(route('products.index')); ?>" class="cart-btn2">Back To Products</a>
+                                <?php endif; ?> 
+                                    <?php if(auth()->user()->isAdmin()): ?>
+                                      <a href="<?php echo e(route('products.edit',$product->productname)); ?>" class="cart-btn3">Edit This Product</a>
+                                    <?php endif; ?>
+                                    
+                                  </div>
                             </div>
-                            </div>
-                            <a href="{{ route('fccfUpdates.index') }}" 
-                            style="POSITION: RELATIVE;
-                                    top: 304px;
-                                    left: -239px;
-                                    font-family: 'Baskervville';
-                                    color:rgba(92, 90, 90, 1);
-                                    font-size: 24;"
-                            >COMPANY UPDATES</a>
-                            <a href="{{ route('techUpdates.index') }}" 
-                            style="POSITION: RELATIVE;
-                                    top: 304px;
-                                    left: -132px;
-                                    font-family: 'Baskervville';
-                                    color:rgba(92, 90, 90, 1);
-                                    font-size: 24;"
-                            >TECH UPDATES</a>
-                            <a href="#" 
-                            style="POSITION: RELATIVE;
-                                    top: 304px;
-                                    left: 28px;
-                                    font-family: 'Baskervville';
-                                    color:rgba(92, 90, 90, 1);
-                                    font-size: 24;"
-                            >FCCF BLOG</a>
-                        </div>
-                        
-                        <div style="display: inline-flex;">
-                            <div id="q21" data-name="Rectangle 33" alt="Rectangle 33" 
-                            style="height: 311px;
-                                    width: 317px;
-                                    position: relative;
-                                    top: 128px;
-                                    left: 378px;"
-                            class="q21">
-                            <img src="../images/blog.png" 
-                                style="position: relative;
-                                        top: 25px;
-                                        width: 306px;
-                                        height: 286px;"
-                                >
-                            </div> 
-                            <div id="q21" data-name="Rectangle 33" alt="Rectangle 33" 
-                            style="height: 309px;
-                                        width: 317px;
-                                        position: relative;
-                                        top: 129px;
-                                        left: -510px;"
-                                class="q21">
-                                <img src="../images/techUp.png" 
-                                style="position: relative;
-                                        top: 25px;
-                                        width: 306px;
-                                        height: 255px;"
-                                >
-                            </div> 
-                            <div id="q21" data-name="Rectangle 33" alt="Rectangle 33" 
-                            style="height: 309px;
-                                        width: 317px;
-                                        position: relative;
-                                        top: 130px;
-                                        left: -1401px;"
-                                class="q21">
-                                <img src="../images/company.png" 
-                                style="position: relative;
-                                        top: 25px;
-                                        width: 351px;
-                                        height: 255px;
-                                        left: -15;"
-                                >
-                            </div> 
-                        </div>
+                          </main>
+                      </form>
                       </div>
                       </div>
                         
@@ -1971,7 +2266,7 @@
                           id="q38"
                           data-name="my account"
                           class="q38"
-                        ><div key="0"><a href="{{ route('profiles.edit',auth()->user()->username) }}" style="white-space: nowrap; color: rgba(92, 90, 90, 1);">My Account</a></div>
+                        ><div key="0"><a href="<?php echo e(route('profiles.edit',auth()->user()->username)); ?>" style="white-space: nowrap; color: rgba(92, 90, 90, 1);">My Account</a></div>
                         </div>
                         </div>
                         <div class="outer_q39">
@@ -2020,7 +2315,7 @@
                         <img
                           id="q44"
                           data-name="WordPress"
-                          src="images/WordPress.png"
+                          src="../../images/WordPress.png"
                           alt="WordPress"
                           class="q44"
                         ></a>
@@ -2030,7 +2325,7 @@
                         <img
                           id="q45"
                           data-name="TikTok"
-                          src="images/TikTok.png"
+                          src="../../images/TikTok.png"
                           alt="TikTok"
                           class="q45"
                         ></a>
@@ -2040,7 +2335,7 @@
                         <img
                           id="q46"
                           data-name="Facebook"
-                          src="images/Facebook.png"
+                          src="../../images/Facebook.png"
                           alt="Facebook"
                           class="q46"
                         ></a>
@@ -2050,7 +2345,7 @@
                         <img
                           id="q47"
                           data-name="LinkedIn"
-                          src="images/LinkedIn.png"
+                          src="../../images/LinkedIn.png"
                           alt="LinkedIn"
                           class="q47"></a>
                         </div>
@@ -2059,7 +2354,7 @@
                         <img
                           id="q48"
                           data-name="Twitter Squared"
-                          src="images/Twitter_Squared.png"
+                          src="../../images/Twitter_Squared.png"
                           alt="Twitter Squared"
                           class="q48"
                         ></a>
@@ -2069,7 +2364,7 @@
                         <img
                           id="q49"
                           data-name="Instagram"
-                          src="images/Instagram.png"
+                          src="../../images/Instagram.png"
                           alt="Instagram"
                           class="q49"
                         ></a>
@@ -2083,4 +2378,4 @@
              </div>
           </div>
        </body>
-    </html>
+    </html><?php /**PATH C:\Users\jjour\FCCF-Market\resources\views/products/showTest.blade.php ENDPATH**/ ?>

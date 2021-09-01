@@ -1543,7 +1543,7 @@
         
           <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=5" />
         
-          <title> Test Product Page </title>
+          <title> Products </title>
           <meta name="description" content="Test Home Description">
           <meta property="og:title" content="Test Home">
           <meta property="og:description" content="Test Home Description">
@@ -1561,7 +1561,7 @@
           <div class="wrapper">
              <ul>
                 <li><a href="{{ route('home') }}">Home</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="{{ route('about') }}">About</a></li>
                 <li><a href="{{ route('products.index') }}">Shop</a></li>
                 <li><a href="{{ route('carts.index') }}">My Cart ({{ Cart::count() }})</a></li>
                 <li><a href="{{ route('updates') }}">Updates</a></li>
@@ -1577,7 +1577,7 @@
                 </li>
                 @if(auth()->user()->isAdmin())
                 <li>
-                  <a href="{{ route('home') }}">Admin Links</a>
+                  <a href="{{ route('adminLinks') }}">Admin Links</a>
                 </li>
     
                 @endif

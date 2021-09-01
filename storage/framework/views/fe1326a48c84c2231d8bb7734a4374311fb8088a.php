@@ -1727,7 +1727,7 @@
         
           <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=5" />
         
-          <title> Test Updates Page </title>
+          <title> Updates </title>
           <meta name="description" content="Test Home Description">
           <meta property="og:title" content="Test Home">
           <meta property="og:description" content="Test Home Description">
@@ -1746,7 +1746,7 @@
           <div class="wrapper">
              <ul>
                 <li><a href="<?php echo e(route('home')); ?>">Home</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="<?php echo e(route('about')); ?>">About</a></li>
                 <li><a href="<?php echo e(route('products.index')); ?>">Shop</a></li>
                 <li><a href="<?php echo e(route('carts.index')); ?>">My Cart (<?php echo e(Cart::count()); ?>)</a></li>
                 <li><a href="<?php echo e(route('updates')); ?>">Updates</a></li>
@@ -1762,7 +1762,7 @@
                 </li>
                 <?php if(auth()->user()->isAdmin()): ?>
                 <li>
-                  <a href="<?php echo e(route('home')); ?>">Admin Links</a>
+                  <a href="<?php echo e(route('adminLinks')); ?>">Admin Links</a>
                 </li>
     
                 <?php endif; ?>
@@ -1876,7 +1876,7 @@
                                     color:rgba(92, 90, 90, 1);
                                     font-size: 24;"
                             >COMPANY UPDATES</a>
-                            <a href="<?php echo e(route('techUpdatesTest')); ?>" 
+                            <a href="<?php echo e(route('techUpdates.index')); ?>" 
                             style="POSITION: RELATIVE;
                                     top: 304px;
                                     left: -132px;
