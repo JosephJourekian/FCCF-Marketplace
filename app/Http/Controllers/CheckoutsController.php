@@ -31,27 +31,7 @@ class CheckoutsController extends Controller
         }
         
     }
-    public function checkoutTest(){
-        if(Cart::count() == 0){
-            return redirect('productsTest');
-        }
-        else{
-            return view("checkoutTest", [
-                'cart' => Cart::content()
-            ]);
-        }
-    }
-    public function checkoutExtraTest(){
-        if(Cart::count() == 0){
-            return redirect('productsTest');
-        }
-        else{
-            return view("checkoutExtraTest", [
-                'cart' => Cart::content()
-            ]);
-        }
-    }
-
+    
     public function checkoutComplete(){
         if(Cart::count() == 0){
             return redirect('productsTest');

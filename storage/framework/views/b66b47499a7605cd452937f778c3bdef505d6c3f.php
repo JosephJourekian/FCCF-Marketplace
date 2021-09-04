@@ -2152,7 +2152,7 @@ html, body {
                               <!-- Product Description -->
                               <div class="product-description">
                                 <?php $__currentLoopData = $product->category; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $categories): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <a  href="<?php echo e(route('products.index', ['category' => $categories->name])); ?>" style="position: relative; right: 0px; margin-right:20px;"><u><?php echo e($categories->name); ?></u></a>
+                                    <a  href="<?php echo e(route('products.index', ['category' => $categories->name])); ?>" style="position: relative; right: 70px; margin-right:20px;"><u><?php echo e($categories->name); ?></u></a>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 <h1 style="position: relative;top: 40px;"><?php echo e($product->name); ?></h1>
                                 <p style="white-space: pre-wrap;text-align: left; border-bottom: 2px solid #E1E8EE;position: relative;top: 60px;"><?php echo e($product->description); ?></p>
@@ -2266,7 +2266,7 @@ html, body {
                           id="q38"
                           data-name="my account"
                           class="q38"
-                        ><div key="0"><a href="<?php echo e(route('profiles.edit',auth()->user()->username)); ?>" style="white-space: nowrap; color: rgba(92, 90, 90, 1);">My Account</a></div>
+                        ><div key="0"><a href="<?php echo e(route('profiles.index')); ?>" style="white-space: nowrap; color: rgba(92, 90, 90, 1);">My Account</a></div>
                         </div>
                         </div>
                         <div class="outer_q39">

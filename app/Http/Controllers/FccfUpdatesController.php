@@ -17,12 +17,6 @@ class FccfUpdatesController extends Controller
             'updates' => FccfUpdates::latest()->get()
         ]);
     }
-    public function test(){
-
-        return view('fccfUpdatesTest', [
-            'updates' => FccfUpdates::latest()->get()
-        ]);
-    }
 
     public function show(FccfUpdates $updatename){
 
@@ -33,14 +27,6 @@ class FccfUpdatesController extends Controller
 
     }
 
-    public function showTest(FccfUpdates $updatename){
-
-        return view('fccfUpdates.showTest', [ 
-            'update' => FccfUpdates::find($updatename)->first(),
-            'url' => FccfUrls::all(),
-        ]);
-
-    }
     public function edit(FccfUpdates $updatename){
 
         return view('fccfUpdates.edit', [

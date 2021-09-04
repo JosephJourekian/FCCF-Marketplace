@@ -1657,9 +1657,9 @@
                   <div style="position: absolute; pointer-events:all;">
                     <?php $__currentLoopData = $category; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $categorie): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                       <?php if($categorie->name == $title): ?>
-                      <a class="subCategory" href="<?php echo e(route('productTest')); ?>">Shop All</a>
+                      <a class="subCategory" href="<?php echo e(route('products.index')); ?>">Shop All</a>
                       <?php else: ?>
-                      <a class="subCategory" href="<?php echo e(route('productTest', ['category' => $categorie->name])); ?>"><?php echo e($categorie->name); ?></a>
+                      <a class="subCategory" href="<?php echo e(route('products.index', ['category' => $categorie->name])); ?>"><?php echo e($categorie->name); ?></a>
                       <?php endif; ?>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                   </div>
@@ -1679,7 +1679,6 @@
                       <!--<div class="oneLine">
                         <div class="dropdown-content">
                           <?php $__currentLoopData = $category; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $categorie): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <a class="subCategory" href="<?php echo e(route('productTest', ['category' => $categorie->name])); ?>"><?php echo e($categorie->name); ?></a>
                           <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> 
                         </div>
                       </div>-->
@@ -1788,7 +1787,7 @@
                     ></div>                      
                     </div>
                     <div class="box">
-                      <a href="<?php echo e(route('profiles.edit',auth()->user()->username)); ?>" class="myAccount">My Account</a>
+                      <a href="<?php echo e(route('profiles.index')); ?>" class="myAccount">My Account</a>
                       <p class="Contact">Contact</p>
                       <p class="Dates">Monday-Friday 9-5 EST</p>
                       <p class="PhoneNum">(416) 123-4567</p>

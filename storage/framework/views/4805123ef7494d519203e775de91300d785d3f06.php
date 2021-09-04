@@ -1,5 +1,5 @@
 <?php $__env->startComponent('components.app'); ?>
-<p style="position: relative;top: 81px;text-align: center;font-size: 32px;width: fit-content;left: 460px;">Welcome to the Admin links!</p>
+<p style="position: relative;top: 81px;text-align: center;font-size: 32px;width: fit-content;left: 230px;">Welcome to the Admin links!</p>
 <?php if(session()->has('message')): ?>
 <div class="alert alert-success font-bold color:green" >
     <?php echo e(session()->get('message')); ?>

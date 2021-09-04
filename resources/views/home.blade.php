@@ -1314,7 +1314,7 @@
           <div class="wrapper">
              <ul>
                 <li><a href="{{ route('home') }}">Home</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="{{ route('about') }}">About</a></li>
                 <li><a href="{{ route('products.index') }}">Shop</a></li>
                 <li><a href="{{ route('carts.index') }}">My Cart ({{ Cart::count() }})</a></li>
                 <li><a href="{{ route('updates') }}">Updates</a></li>
@@ -1624,7 +1624,7 @@
                           id="q25"
                           data-name="read more"
                           class="q37"
-                        ><div key="0"><a href="#">Read More</a></div>
+                        ><div key="0"><a href="{{ route('about') }}">Read More</a></div>
                         </div>
                         </div>
                     <div
@@ -1639,7 +1639,7 @@
                           id="q38"
                           data-name="my account"
                           class="q38"
-                        ><div key="0"><a href="{{ route('profiles.edit',auth()->user()->username) }}" style="white-space: nowrap; color: rgba(92, 90, 90, 1);">My Account</a></div>
+                        ><div key="0"><a href="{{ route('profiles.index') }}" style="white-space: nowrap; color: rgba(92, 90, 90, 1);">My Account</a></div>
                         </div>
                         </div>
                         <div class="outer_q39">

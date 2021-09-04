@@ -60,27 +60,6 @@ class CartsController extends Controller
                 ])->with('message', 'Product Added to cart');
             }
 
-            /*if(Cart::count() == 0){
-                dd('Yo3');
-                Cart::add(['id' => $productI->id, 'name' => $productI->name, 'qty' => 1, 'price' => $productI->price,
-                'image' =>  $productI->image,
-                'options'=>[
-                'img' => $productI->image,
-                'productname' => $productI->productname,
-                'attributeId' => $attributeId,
-                'attributename' => $attributeName,
-                'attributevalue' => $attributeValue,
-                'attributename2' => $attributeName2,
-                'attributevalue2' => $attributeValue2,
-                'attributeStock' => $attributeStock
-                ]]);
-
-                return view('carts.index',[
-                    'cart' => Cart::content(),
-                    'categories' => Category::all()
-                ])->with('message', 'Product Added to cart');
-            }*/
-
             
             $cartItem = Cart::content();
             $nkey = (int)request('attribute');
@@ -171,25 +150,6 @@ class CartsController extends Controller
             ])->with('message', 'Product Added to cart');
         }
 
-        /*if(Cart::count() == 0){
-            Cart::add(['id' => $productI->id, 'name' => $productI->name, 'qty' => 1, 'price' => $productI->price,
-            'image' =>  $productI->image,
-            'options'=>[
-            'img' => $productI->image,
-            'productname' => $productI->productname,
-            'attributeId' => 'N/A',
-            'attributename' => 'N/A',
-            'attributevalue' => 'N/A',
-            'attributename2' => 'N/A',
-            'attributevalue2' => 'N/A',
-            'attributeStock' => 'N/A'
-            ]]);
-
-            return view('carts.index',[
-                'cart' => Cart::content(),
-                'categories' => Category::all()
-            ])->with('message', 'Product Added to cart');
-        }*/
 
         foreach($cart as $items){
             $quantity = $items->qty;
@@ -250,17 +210,19 @@ class CartsController extends Controller
         ])->with('message', 'Product Removed!');
     }
 
-    public function update(Request $request, $rowId, Products $product){
+    public function update(Request $request, $rowId, Products $product, ProductsAttribute $stock){
 
         $cart = Cart::get($rowId);
         $productI = Products::find($product)->first();
+        $prodAttr = ProductsAttribute::find($product->id);
 
-        if($productI->stock < request('num')){
+
+        if($productI->stock < request('num') || request('stock') < request('num')){
             
             return view('carts.index',[
                 'cart' => Cart::content(),
                 'categories' => Category::all()
-            ])->with('message', 'Cannot Update!');
+            ]);
 
         }
         else{
@@ -268,17 +230,9 @@ class CartsController extends Controller
             return view('carts.index',[
                 'cart' => Cart::content(),
                 'categories' => Category::all()
-            ])->with('message', 'Product Updated!');
+            ]);
         }
 
-    }
-    public function cartTest(){
-        $cart = Cart::content();
-        
-        return view("cartTest", [
-            'cart' => $cart,
-            'categories' => Category::all()
-        ]);
     }
     
 }

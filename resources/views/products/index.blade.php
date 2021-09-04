@@ -1657,9 +1657,9 @@
                   <div style="position: absolute; pointer-events:all;">
                     @foreach($category as $categorie)
                       @if ($categorie->name == $title)
-                      <a class="subCategory" href="{{ route('productTest') }}">Shop All</a>
+                      <a class="subCategory" href="{{ route('products.index') }}">Shop All</a>
                       @else
-                      <a class="subCategory" href="{{ route('productTest', ['category' => $categorie->name]) }}">{{ $categorie->name }}</a>
+                      <a class="subCategory" href="{{ route('products.index', ['category' => $categorie->name]) }}">{{ $categorie->name }}</a>
                       @endif
                     @endforeach
                   </div>
@@ -1679,7 +1679,6 @@
                       <!--<div class="oneLine">
                         <div class="dropdown-content">
                           @foreach($category as $categorie)
-                            <a class="subCategory" href="{{ route('productTest', ['category' => $categorie->name]) }}">{{ $categorie->name }}</a>
                           @endforeach 
                         </div>
                       </div>-->
@@ -1788,7 +1787,7 @@
                     ></div>                      
                     </div>
                     <div class="box">
-                      <a href="{{ route('profiles.edit',auth()->user()->username) }}" class="myAccount">My Account</a>
+                      <a href="{{ route('profiles.index') }}" class="myAccount">My Account</a>
                       <p class="Contact">Contact</p>
                       <p class="Dates">Monday-Friday 9-5 EST</p>
                       <p class="PhoneNum">(416) 123-4567</p>

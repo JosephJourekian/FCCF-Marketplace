@@ -2152,7 +2152,7 @@ html, body {
                               <!-- Product Description -->
                               <div class="product-description">
                                 @foreach ($product->category as $categories)
-                                    <a  href="{{ route('products.index', ['category' => $categories->name]) }}" style="position: relative; right: 0px; margin-right:20px;"><u>{{ $categories->name }}</u></a>
+                                    <a  href="{{ route('products.index', ['category' => $categories->name]) }}" style="position: relative; right: 70px; margin-right:20px;"><u>{{ $categories->name }}</u></a>
                                 @endforeach
                                 <h1 style="position: relative;top: 40px;">{{ $product->name }}</h1>
                                 <p style="white-space: pre-wrap;text-align: left; border-bottom: 2px solid #E1E8EE;position: relative;top: 60px;">{{ $product->description }}</p>
@@ -2265,7 +2265,7 @@ html, body {
                           id="q38"
                           data-name="my account"
                           class="q38"
-                        ><div key="0"><a href="{{ route('profiles.edit',auth()->user()->username) }}" style="white-space: nowrap; color: rgba(92, 90, 90, 1);">My Account</a></div>
+                        ><div key="0"><a href="{{ route('profiles.index') }}" style="white-space: nowrap; color: rgba(92, 90, 90, 1);">My Account</a></div>
                         </div>
                         </div>
                         <div class="outer_q39">

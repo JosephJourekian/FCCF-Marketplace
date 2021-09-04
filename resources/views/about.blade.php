@@ -1794,7 +1794,7 @@
                 </li>
                 @if(auth()->user()->isAdmin())
                 <li>
-                  <a href="{{ route('home') }}">Admin Links</a>
+                  <a href="{{ route('adminLinks') }}">Admin Links</a>
                 </li>
     
                 @endif
@@ -1956,7 +1956,7 @@
                           id="q38"
                           data-name="my account"
                           class="q38"
-                        ><div key="0"><a href="{{ route('profiles.edit',auth()->user()->username) }}" style="white-space: nowrap; color: rgba(92, 90, 90, 1);">My Account</a></div>
+                        ><div key="0"><a href="{{ route('profiles.index') }}" style="white-space: nowrap; color: rgba(92, 90, 90, 1);">My Account</a></div>
                         </div>
                         </div>
                         <div class="outer_q39">

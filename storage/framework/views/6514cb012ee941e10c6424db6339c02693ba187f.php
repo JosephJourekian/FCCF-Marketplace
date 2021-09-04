@@ -1343,7 +1343,7 @@
         margin-top:0px;
         margin-bottom:0px;
         min-height:62px;
-        content:url(../../images/Cart.png);
+        
     }
     .Cart-outer{
         position:relative;
@@ -1466,7 +1466,6 @@
         margin-top:-130px;
         margin-bottom:19px;
         min-height:55px;
-        content:url(../../images/Price_3.png);
     }
     .Price-3-outer{
         position:relative;
@@ -1485,7 +1484,6 @@
         margin-top:-62px;
         margin-bottom:28px;
         min-height:34px;
-        content:url(../../images/delete_3.png);
     }
     .delete-3-outer{
         position:relative;
@@ -1595,7 +1593,6 @@
   margin-top:-43px;
   margin-bottom:6px;
   min-height:37px;
-  content:url(../../images/Shopping.png);
 }
 .Shopping-outer{
   position:relative;
@@ -1702,7 +1699,6 @@
   margin-top:-32px;
   margin-bottom:21px;
   min-height:undefinedpx;
-  content:url(../../images/Arrow_1.png);
 }
 .Arrow-1-outer{
   position:relative;
@@ -1742,8 +1738,8 @@
        <body class="websiteBody">
           <input type="checkbox" id="active">
           <label for="active" style="postion:fixed;"class="menu-btn">
-            <img style="margin-top:100px; width:282px; height:232px; margin-left: 180px; position: absolute;" src="../../images/Ellipse_1.png">
-            <img style="text-align:center; margin-top:170px; margin-left:260px; position: relative;"src="../../images/menu.png">
+            <img style="margin-top:100px; width:282px; height:232px; margin-left: 180px; position: absolute;" src="<?php echo e(URL::asset("../images/Ellipse_1.png")); ?>">
+            <img style="text-align:center; margin-top:170px; margin-left:260px; position: relative;"src="<?php echo e(URL::asset("../images/menu.png")); ?>">
           </label>
           <div class="wrapper">
              <ul>
@@ -1794,7 +1790,7 @@
                         <img
                           id="q4"
                           data-name="Ellipse 1"
-                          src="../../images/Ellipse_1.png"
+                          src="<?php echo e(URL::asset("../images/Ellipse_1.png")); ?>"
                           alt="Ellipse 1"
                           class="q4"
                         >
@@ -1820,7 +1816,7 @@
                         <img
                           id="q7"
                           data-name="First Class Conferencing Facilitation Logo"
-                          src="../../images/First_Class_Conferencing_Facilitation_Logo.png"
+                          src="<?php echo e(URL::asset("../images/First_Class_Conferencing_Facilitation_Logo.png")); ?>"
                           alt="First Class Conferencing Facilitation Logo"
                           class="q7"
                         >
@@ -1863,6 +1859,7 @@
                                 data-name="Cart"
                                 alt="Cart"
                                 class="Cart"
+                                src="<?php echo e(URL::asset("../images/Cart.png")); ?>"
                               >
                               </div>
                               <div class="items--outer">
@@ -1877,7 +1874,7 @@
                             </div>
                         </div>
                         <?php if(Cart::count() == 0): ?>
-                              <img src="../../images/cartEmpty.jpg" width="476px"  height="374px" style="position: relative; top: -50; right: 150;">
+                              <img src="<?php echo e(URL::asset("../images/cartEmpty.jpg")); ?>" width="476px"  height="374px" style="position: relative; top: -50; right: 150;">
                         <?php else: ?>
                         <?php $__currentLoopData = $cart; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <div class="cart-item-group-1-outer">
@@ -1922,6 +1919,7 @@
                               <?php endif; ?>
                               <form method="POST" action='<?php echo e(route('carts.update',[$product->rowId,$product->options->productname])); ?>' enctype="multipart/form-data" >
                                 <?php echo csrf_field(); ?>
+                                  <input hidden name="stock" value="<?php echo e($product->options->attributeStock); ?>">
                                    <p style="margin-top:-20px;">Update Quantity: <input type="number" id="num" name="num" value="1">
                                        <input class="myButton" type="submit" value="Update" name="update" id="update">
                                    </p>
@@ -1934,6 +1932,7 @@
                                 data-name="Price"
                                 alt="Price"
                                 class="Price-3"
+                                src="<?php echo e(URL::asset("../images/Price_3.png")); ?>"
                               >
                               </div>
                               <div class="delete-3-outer">
@@ -1943,6 +1942,7 @@
                                 data-name="delete"
                                 alt="delete"
                                 class="delete-3"
+                                src="<?php echo e(URL::asset("../images/delete_3.png")); ?>"
                               ></a>
                               </div>
                               <div class="q-20-3-outer">
@@ -1989,6 +1989,7 @@
                           data-name="Shopping"
                           alt="Shopping"
                           class="Shopping"
+                          src="<?php echo e(URL::asset("../images/Shopping.png")); ?>"
                         >
                         </div>
                         <div class="checkout-outer">
@@ -2001,7 +2002,7 @@
                             <a href="#" style="font-size: 18px; color:rgba(92, 90, 90, 1);">Need more points!</a>
                           <?php else: ?>
                             <?php if(((float)auth()->user()->points) >= ((float)Cart::subtotal('0','',''))): ?>
-                            <a href="<?php echo e(route('checkoutTest')); ?>" style="color:rgba(92, 90, 90, 1);">Checkout</a>
+                            <a href="<?php echo e(route('checkout.index')); ?>" style="color:rgba(92, 90, 90, 1);">Checkout</a>
                             <?php else: ?>
                             <a href="#" style="font-size: 18px; color:rgba(92, 90, 90, 1);">Need more points!</a>
                             <?php endif; ?>
@@ -2033,14 +2034,16 @@
                               data-name="Arrow 1"
                               alt="Arrow 1"
                               class="Arrow-1"
+                              src="<?php echo e(URL::asset("../images/Arrow_1.png")); ?>"
                               ></a>
                           <?php else: ?>
                             <?php if(((float)auth()->user()->points) >= ((float)Cart::subtotal('0','',''))): ?>
-                            <a href="<?php echo e(route('checkoutTest')); ?>" style="color:rgba(92, 90, 90, 1);"><img
+                            <a href="<?php echo e(route('checkout.index')); ?>" style="color:rgba(92, 90, 90, 1);"><img
                               id="Arrow-1"
                               data-name="Arrow 1"
                               alt="Arrow 1"
                               class="Arrow-1"
+                              src="<?php echo e(URL::asset("../images/Arrow_1.png")); ?>"
                               ></a>
                             <?php else: ?>
                             <a href="#" style="font-size: 18px; color:rgba(92, 90, 90, 1);"><img
@@ -2048,6 +2051,7 @@
                               data-name="Arrow 1"
                               alt="Arrow 1"
                               class="Arrow-1"
+                              src="<?php echo e(URL::asset("../images/Arrow_1.png")); ?>"
                               ></a>
                             <?php endif; ?>
                           <?php endif; ?>
@@ -2075,7 +2079,7 @@
                           id="q38"
                           data-name="my account"
                           class="q38"
-                        ><div key="0"><a href="<?php echo e(route('profiles.edit',auth()->user()->username)); ?>" style="white-space: nowrap; color: rgba(92, 90, 90, 1);">My Account</a></div>
+                        ><div key="0"><a href="<?php echo e(route('profiles.index')); ?>" style="white-space: nowrap; color: rgba(92, 90, 90, 1);">My Account</a></div>
                         </div>
                         </div>
                         <div class="outer_q39">
@@ -2124,7 +2128,7 @@
                         <img
                           id="q44"
                           data-name="WordPress"
-                          src="../../images/WordPress.png"
+                          src="<?php echo e(URL::asset("../images/WordPress.png")); ?>"
                           alt="WordPress"
                           class="q44"
                         ></a>
@@ -2134,7 +2138,7 @@
                         <img
                           id="q45"
                           data-name="TikTok"
-                          src="../../images/TikTok.png"
+                          src="<?php echo e(URL::asset("../images/TikTok.png")); ?>"
                           alt="TikTok"
                           class="q45"
                         ></a>
@@ -2144,7 +2148,7 @@
                         <img
                           id="q46"
                           data-name="Facebook"
-                          src="../../images/Facebook.png"
+                          src="<?php echo e(URL::asset("../images/Facebook.png")); ?>"
                           alt="Facebook"
                           class="q46"
                         ></a>
@@ -2154,7 +2158,7 @@
                         <img
                           id="q47"
                           data-name="LinkedIn"
-                          src="../../images/LinkedIn.png"
+                          src="<?php echo e(URL::asset("../images/LinkedIn.png")); ?>"
                           alt="LinkedIn"
                           class="q47"></a>
                         </div>
@@ -2163,7 +2167,7 @@
                         <img
                           id="q48"
                           data-name="Twitter Squared"
-                          src="../../images/Twitter_Squared.png"
+                          src="<?php echo e(URL::asset("../images/Twitter_Squared.png")); ?>"
                           alt="Twitter Squared"
                           class="q48"
                         ></a>
@@ -2173,7 +2177,7 @@
                         <img
                           id="q49"
                           data-name="Instagram"
-                          src="../../images/Instagram.png"
+                          src="<?php echo e(URL::asset("../images/Instagram.png")); ?>"
                           alt="Instagram"
                           class="q49"
                         ></a>

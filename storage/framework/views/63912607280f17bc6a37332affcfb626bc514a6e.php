@@ -1801,7 +1801,6 @@ z-index:13;
   font-family:Baskervville;
   font-weight:400;
   font-size:18px;
-  text-decoration:underline;
   line-height:15.199999809265137px;
 }
 .MY-WISH-LIST-outer{
@@ -1903,7 +1902,6 @@ z-index:13;
   font-family:Baskervville;
   font-weight:400;
   font-size:18px;
-  text-decoration:underline;
   line-height:15.199999809265137px;
 }
 .OrderHistoryListOuter{
@@ -2005,7 +2003,6 @@ z-index:13;
   font-family:Baskervville;
   font-weight:400;
   font-size:18px;
-  text-decoration:underline;
   line-height:15.199999809265137px;
 }
 .PaymentListOuter{
@@ -2060,7 +2057,6 @@ z-index:13;
   font-family:Baskervville;
   font-weight:400;
   font-size:16px;
-  text-decoration:underline;
   line-height:15.199999809265137px;
 }
 .PaymentViewOuter{
@@ -2109,7 +2105,6 @@ z-index:13;
   font-family:Baskervville;
   font-weight:400;
   font-size:18px;
-  text-decoration:underline;
   line-height:15.199999809265137px;
 }
 .AddressListOuter{
@@ -2164,7 +2159,6 @@ z-index:13;
   font-family:Baskervville;
   font-weight:400;
   font-size:16px;
-  text-decoration:underline;
   line-height:15.199999809265137px;
 }
 .AddressViewOuter{
@@ -2211,7 +2205,6 @@ z-index:13;
   font-family:Baskervville;
   font-weight:400;
   font-size:18px;
-  text-decoration:underline;
   line-height:15.199999809265137px;
 }
 .AccountListOuter{
@@ -2287,7 +2280,7 @@ z-index:13;
       
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=5" />
       
-        <title> Test My Account Page </title>
+        <title>My Account </title>
         <meta name="description" content="Test Home Description">
         <meta property="og:title" content="Test Home">
         <meta property="og:description" content="Test Home Description">
@@ -2306,7 +2299,7 @@ z-index:13;
         <div class="wrapper">
            <ul>
               <li><a href="<?php echo e(route('home')); ?>">Home</a></li>
-              <li><a href="#">About</a></li>
+              <li><a href="<?php echo e(route('about')); ?>">About</a></li>
               <li><a href="<?php echo e(route('products.index')); ?>">Shop</a></li>
               <li><a href="<?php echo e(route('carts.index')); ?>">My Cart (<?php echo e(Cart::count()); ?>)</a></li>
               <li><a href="<?php echo e(route('updates')); ?>">Updates</a></li>
@@ -2322,7 +2315,7 @@ z-index:13;
               </li>
               <?php if(auth()->user()->isAdmin()): ?>
               <li>
-                <a href="<?php echo e(route('home')); ?>">Admin Links</a>
+                <a href="<?php echo e(route('adminLinks')); ?>">Admin Links</a>
               </li>
   
               <?php endif; ?>
@@ -2457,7 +2450,7 @@ z-index:13;
                             id="MY-WISH-LIST"
                             data-name="MY WISH LIST"
                             class="MY-WISH-LIST"
-                          ><div key="0"><a href="#" style="color:rgba(92, 90, 90, 1);">MY WISH LIST</a></div>
+                          ><div key="0">MY WISH LIST</div>
                           </div>
                           </div>
                           <div class="Want-it--wish-for-it-outer">
@@ -2491,7 +2484,7 @@ z-index:13;
                               id="OrderHistoryList"
                               data-name="OrderHistoryList"
                               class="OrderHistoryList"
-                            ><div key="0"><a href="<?php echo e(route('purchaseHistoryTest',auth()->user()->username)); ?>"style="color:rgba(92, 90, 90, 1);">ORDER HISTORY</a></div>
+                            ><div key="0">ORDER HISTORY</div>
                             </div>
                             </div>
                             <div class="OrderHistoryTextOuter">
@@ -2508,7 +2501,7 @@ z-index:13;
                               id="OrderHistoryView"
                               data-name="OrderHistoryView"
                               class="OrderHistoryView"
-                            ><div key="0"><a href="<?php echo e(route('purchaseHistoryTest',auth()->user()->username)); ?>" style="color:rgba(92, 90, 90, 1);">View/Edit</a></div>
+                            ><div key="0"><a href="<?php echo e(route('purchaseHistory',auth()->user()->username)); ?>" style="color:rgba(92, 90, 90, 1);">View/Edit</a></div>
                             </div>
                             </div>
                           </div>
@@ -2525,7 +2518,7 @@ z-index:13;
                                 id="OrderHistoryList"
                                 data-name="OrderHistoryList"
                                 class="PaymentList"
-                              ><div key="0"><a href="#" style="color:rgba(92, 90, 90, 1);">PAYMENT METHOD</a></div>
+                              ><div key="0">PAYMENT METHOD</div>
                               </div>
                               </div>
                               <div class="PaymentTextOuter">
@@ -2559,7 +2552,7 @@ z-index:13;
                                   id="OrderHistoryList"
                                   data-name="OrderHistoryList"
                                   class="AddressList"
-                                ><div key="0"><a href="<?php echo e(route('profiles.editAddress',auth()->user()->username)); ?>" style="color:rgba(92, 90, 90, 1);">ADDRESS BOOK</a></div>
+                                ><div key="0">ADDRESS BOOK</div>
                                 </div>
                                 </div>
                                 <div class="AddressTextOuter">
@@ -2593,7 +2586,7 @@ z-index:13;
                                     id="OrderHistoryList"
                                     data-name="OrderHistoryList"
                                     class="AccountList"
-                                  ><div key="0"><a href="<?php echo e(route('profiles.edit',auth()->user()->username)); ?>" style="color:rgba(92, 90, 90, 1);">ACCOUNT DETAILS</a></div>
+                                  ><div key="0">ACCOUNT DETAILS</div>
                                   </div>
                                   </div>
                                   <div class="AccountTextOuter">
@@ -2646,7 +2639,7 @@ z-index:13;
                         id="q38"
                         data-name="my account"
                         class="q38"
-                      ><div key="0"><a href="<?php echo e(route('profiles.edit',auth()->user()->username)); ?>" style="white-space: nowrap; color: rgba(92, 90, 90, 1);">My Account</a></div>
+                      ><div key="0"><a href="<?php echo e(route('profiles.index')); ?>" style="white-space: nowrap; color: rgba(92, 90, 90, 1);">My Account</a></div>
                       </div>
                       </div>
                       <div class="outer_q39">

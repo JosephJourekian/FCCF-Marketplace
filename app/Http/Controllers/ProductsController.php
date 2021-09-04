@@ -94,17 +94,6 @@ class ProductsController extends Controller
         ]);
 
     }
-    public function showTest(Products $product){
-
-        $productI = Products::find($product)->first();
-
-        return view('products.showTest', [
-            'product' => $productI,
-            'attributes' => ProductsAttribute::all(),
-            'images' => ProductsImage::all(),
-        ]);
-
-    }
     public function edit(Products $product){
 
         $productI = Products::find($product)->first();
@@ -290,26 +279,6 @@ class ProductsController extends Controller
             'attributes' => ProductsAttribute::all()
         ]);
         
-    }
-    public function menuTest(){
-        return view('menuTest');
-    }
-    public function productTest(){
-        if (request('category')){
-            $products = Category::where('name', request('category'))->firstOrFail()->products;
-            $title = request('category');
-            
-        }
-        else{
-            $products = Products::paginate(50);
-            $title = 'Shop all';
-        }
-        return view('productTest', [
-            'products' => $products,
-            'title' => $title,
-            'category' => Category::all(),
-            'attributes' => ProductsAttribute::all()
-        ]);
     }
 
 }
