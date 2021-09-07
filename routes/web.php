@@ -81,9 +81,6 @@ Route::middleware('auth')->group(function (){
     Route::get('/checkoutComplete', 'App\Http\Controllers\CheckoutsController@checkoutComplete')->name('checkout.complete');
     Route::get('/checkoutExtraTest', 'App\Http\Controllers\CheckoutsController@checkoutExtraTest')->name('checkoutExtraTest');
 
-
-
-
     Route::get('/checkout', 'App\Http\Controllers\CheckoutsController@index')->name('checkout.index'); 
     Route::get('/checkout/payment', 'App\Http\Controllers\CheckoutsController@payment')->name('checkout.payment'); 
     Route::get('/checkout/confirm', 'App\Http\Controllers\CheckoutsController@confirm')->name('checkout.confirm'); 

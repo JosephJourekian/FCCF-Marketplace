@@ -1629,7 +1629,7 @@
 .checkout-outer{
   position:relative;
   display:flex;
-  pointer-events:none;
+  pointer-events:all;
   z-index:12;
 }
 .q-20-4{
@@ -2066,21 +2066,21 @@
                             <?php if($shipping == 'standard'): ?>
                               <div class="orderSummaryText">Taxes Estimate: 5.65$</div>
                               <div class="orderSummaryText">Total: <?php echo e(Cart::subtotal('0','','')); ?> Points and 5.65$</div>
+                              <script>var price = 5.65;</script>
                             <?php elseif($shipping == 'express'): ?>
                               <div class="orderSummaryText">Taxes Estimate: 11.30$</div>
                               <div class="orderSummaryText">Total: <?php echo e(Cart::subtotal('0','','')); ?> Points and 11.30$</div>
+                              <script>var price = 11.30;</script>
                             <?php elseif($shipping == 'priority'): ?>
                               <div class="orderSummaryText">Taxes Estimate: 16.95$</div>
                               <div class="orderSummaryText">Total: <?php echo e(Cart::subtotal('0','','')); ?> Points and 16.95$</div>
+                              <script>var price = 16.95;</script>
                             <?php endif; ?>
                             <div class="orderSummaryText">Your Points: <?php echo e(auth()->user()->points); ?></div>
                             <div class="orderSummaryText">Remaining points <?php echo e(Auth()->user()->points - Cart::subtotal('0','','')); ?> Points</div>
 
-                            
                         </div>
                        
-
-                        
 
                       </div>
 
@@ -2110,7 +2110,54 @@
                         >
                         </div>
                         <div class="checkout-outer">
-                        <div
+                          <!-- Set up a container element for the button -->
+                        <div id="paypal-button-container" style="position: relative;
+                        top: -40px;
+                        left: 329px;
+                        z-index: 1;"></div>
+
+                        <!-- Include the PayPal JavaScript SDK -->
+                        <script src="https://www.paypal.com/sdk/js?client-id=test&currency=CAD&disable-funding=credit,card"></script>
+
+                        <script>
+                            // Render the PayPal button into #paypal-button-container
+                            paypal.Buttons({
+
+                                // Set up the transaction
+                                createOrder: function(data, actions) {
+                                    return actions.order.create({
+                                        purchase_units: [{
+                                            amount: {
+                                                value: price
+                                            }
+                                        }]
+                                    });
+                                },
+
+                                // Finalize the transaction
+                                onApprove: function(data, actions) {
+                                  alert('Transaction Complete!');
+                                  window.location.href = "<?php echo e(URL::to('checkout/confirm')); ?>";
+                                  /*return view('checkout.comfirm');
+                                    return actions.order.capture().then(function(orderData) {
+                                        // Successful capture! For demo purposes:
+                                        console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                                        var transaction = orderData.purchase_units[0].payments.captures[0];
+                                        
+                                        //alert('YO');
+                                        //alert('Transaction '+ transaction.status + ': ' + transaction.id + '\n\nSee console for all available details');
+
+                                        // Replace the above to show a success message within this page, e.g.
+                                        // const element = document.getElementById('paypal-button-container');
+                                        // element.innerHTML = '';
+                                        // element.innerHTML = '<h3>Thank you for your payment!</h3>';
+                                        // Or go to another URL:  actions.redirect('thank_you.html');
+                                    });*/
+                                }
+
+                            }).render('#paypal-button-container');
+                        </script>
+                        <!--<div
                           id="checkout"
                           data-name="checkout"
                           class="checkout"
@@ -2125,10 +2172,10 @@
                             <?php endif; ?>
                           <?php endif; ?>
                         </div>
-                        </div>
+                        </div>-->
                         </div>
                         
-                        <div class="Arrow-1-outer">
+                        <!--<div class="Arrow-1-outer">
                           <?php if(Cart::count() == 0): ?>
                             <a href="#" style="font-size: 18px; color:rgba(92, 90, 90, 1);">
                               <img
@@ -2154,7 +2201,7 @@
                               ></a>
                             <?php endif; ?>
                           <?php endif; ?>
-                        </div>
+                        </div>-->
                       </div>
                       </div>
                     </form>
@@ -2179,7 +2226,7 @@
                           id="q38"
                           data-name="my account"
                           class="q38"
-                        ><div key="0"><a href="<?php echo e(route('profiles.edit',auth()->user()->username)); ?>" style="white-space: nowrap; color: rgba(92, 90, 90, 1);">My Account</a></div>
+                        ><div key="0"><a href="<?php echo e(route('profiles.index')); ?>" style="white-space: nowrap; color: rgba(92, 90, 90, 1);">My Account</a></div>
                         </div>
                         </div>
                         <div class="outer_q39">

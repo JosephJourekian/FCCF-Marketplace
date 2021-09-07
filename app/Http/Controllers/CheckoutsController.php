@@ -34,7 +34,7 @@ class CheckoutsController extends Controller
     
     public function checkoutComplete(){
         if(Cart::count() == 0){
-            return redirect('productsTest');
+            return redirect('products');
         }
         else{
             return view("checkout.complete", [
@@ -46,7 +46,7 @@ class CheckoutsController extends Controller
         $method = $request->method;
 
         if(Cart::count() == 0){
-            return redirect('productsTest');
+            return redirect('products');
         }
         else{
             return view("checkout.payment", [
@@ -62,7 +62,6 @@ class CheckoutsController extends Controller
         $cart = Cart::content();
         $cartItem = Cart::content();
 
-        
         foreach ($cart as $item){
             $nkey = $item->options->attributeId;
             $cItem = Cart::search(function ($cartItem, $rowId) use ($nkey) {
@@ -90,6 +89,6 @@ class CheckoutsController extends Controller
         
         Cart::destroy();
 
-        return redirect('/products')->with('message', 'Order Confirmed!');
+        return view('checkout.complete');
     }
 }

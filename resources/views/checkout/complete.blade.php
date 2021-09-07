@@ -1830,8 +1830,8 @@
        <body class="websiteBody">
           <input type="checkbox" id="active">
           <label for="active" style="postion:fixed;"class="menu-btn">
-            <img style="margin-top:100px; width:282px; height:232px; margin-left: 180px; position: absolute;" src="images/Ellipse_1.png">
-            <img style="text-align:center; margin-top:170px; margin-left:260px; position: relative;"src="images/menu.png">
+            <img style="margin-top:100px; width:282px; height:232px; margin-left: 180px; position: absolute;" src="../images/Ellipse_1.png">
+            <img style="text-align:center; margin-top:170px; margin-left:260px; position: relative;"src="../images/menu.png">
           </label>
           <div class="wrapper">
              <ul>
@@ -1882,7 +1882,7 @@
                         <img
                           id="q4"
                           data-name="Ellipse 1"
-                          src="images/Ellipse_1.png"
+                          src="../images/Ellipse_1.png"
                           alt="Ellipse 1"
                           class="q4"
                         >
@@ -1908,7 +1908,7 @@
                         <img
                           id="q7"
                           data-name="First Class Conferencing Facilitation Logo"
-                          src="images/First_Class_Conferencing_Facilitation_Logo.png"
+                          src="../images/First_Class_Conferencing_Facilitation_Logo.png"
                           alt="First Class Conferencing Facilitation Logo"
                           class="q7"
                         >
@@ -2054,7 +2054,7 @@
                         <img
                           id="q44"
                           data-name="WordPress"
-                          src="images/WordPress.png"
+                          src="../images/WordPress.png"
                           alt="WordPress"
                           class="q44"
                         ></a>
@@ -2064,7 +2064,7 @@
                         <img
                           id="q45"
                           data-name="TikTok"
-                          src="images/TikTok.png"
+                          src="../images/TikTok.png"
                           alt="TikTok"
                           class="q45"
                         ></a>
@@ -2074,7 +2074,7 @@
                         <img
                           id="q46"
                           data-name="Facebook"
-                          src="images/Facebook.png"
+                          src="../images/Facebook.png"
                           alt="Facebook"
                           class="q46"
                         ></a>
@@ -2084,7 +2084,7 @@
                         <img
                           id="q47"
                           data-name="LinkedIn"
-                          src="images/LinkedIn.png"
+                          src="../images/LinkedIn.png"
                           alt="LinkedIn"
                           class="q47"></a>
                         </div>
@@ -2093,7 +2093,7 @@
                         <img
                           id="q48"
                           data-name="Twitter Squared"
-                          src="images/Twitter_Squared.png"
+                          src="../images/Twitter_Squared.png"
                           alt="Twitter Squared"
                           class="q48"
                         ></a>
@@ -2103,7 +2103,7 @@
                         <img
                           id="q49"
                           data-name="Instagram"
-                          src="images/Instagram.png"
+                          src="../images/Instagram.png"
                           alt="Instagram"
                           class="q49"
                         ></a>
