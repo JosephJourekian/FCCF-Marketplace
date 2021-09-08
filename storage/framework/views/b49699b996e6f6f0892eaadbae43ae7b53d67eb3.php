@@ -2006,7 +2006,7 @@
                               <?php if($product->options->attributename == 'N/A'): ?>
                                 <p style="margin-top:-16px;">Attributes: None</p>
                               <?php else: ?>
-                                <p style="margin-top:-12px;">Attributes: <?php echo e($product->options->attributename); ?>: <?php echo e($product->options->attributevalue); ?>, 
+                                <p style="margin-top:-12px; font-size: 18px; width: 240px; height: 60; white-space: pre-line;">Attributes: <?php echo e($product->options->attributename); ?>: <?php echo e($product->options->attributevalue); ?>, 
                                     <?php echo e($product->options->attributename2); ?>: <?php echo e($product->options->attributevalue2); ?>, Stock: <?php echo e($product->options->attributeStock); ?>
 
                                 </p>

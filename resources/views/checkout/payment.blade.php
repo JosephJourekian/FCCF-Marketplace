@@ -2006,7 +2006,7 @@
                               @if($product->options->attributename == 'N/A')
                                 <p style="margin-top:-16px;">Attributes: None</p>
                               @else
-                                <p style="margin-top:-12px;">Attributes: {{ $product->options->attributename }}: {{ $product->options->attributevalue }}, 
+                                <p style="margin-top:-12px; font-size: 18px; width: 240px; height: 60; white-space: pre-line;">Attributes: {{ $product->options->attributename }}: {{ $product->options->attributevalue }}, 
                                     {{ $product->options->attributename2 }}: {{ $product->options->attributevalue2 }}, Stock: {{ $product->options->attributeStock }}
                                 </p>
                               @endif

@@ -1462,7 +1462,7 @@
         width:64px;
         min-width:64px;
         height:55px;
-        margin-top:-130px;
+        margin-top:-190px;
         margin-bottom:19px;
         min-height:55px;
         content:url(../images/Price_3.png);
@@ -1513,6 +1513,7 @@
         font-size:24px;
         line-height:31.200000762939453px;
         white-space: nowrap;
+        top: -75px;
     }
     .q-20-3-outer{
         position:relative;
@@ -1942,13 +1943,15 @@
                               >
                               <a style="color:rgba(92, 90, 90, 1);" href="{{ route('products.show',$item->options->productname) }}">{{ $item->name }}</a>
                               <p style="margin-top:2px;">Quantity: {{ $item->qty }}</p>
+                              <p style="position: relative; top: -20px;">Shipping Method: {{ $order->shippingMethod }}</p>
                               @if($item->options->attributename == 'N/A')
-                                <p style="margin-top:-16px; font-size: 20px;">Attributes: None</p>
+                                <p style="margin-top:-16px; font-size: 20px; position: relative; top: -25px;">Attributes: None</p>
                               @else
-                                <p style="margin-top:-12px; font-size: 20px;">Attributes: {{ $item->options->attributename }}: {{ $item->options->attributevalue }}, 
+                                <p style="margin-top:-12px; font-size: 20px; position: relative; top: -25px;">Attributes: {{ $item->options->attributename }}: {{ $item->options->attributevalue }}, 
                                     {{ $item->options->attributename2 }}: {{ $item->options->attributevalue2 }}, Stock: {{ $item->options->attributeStock }}
                                 </p>
-                              @endif
+                                @endif
+                              <p style="position: relative; top: -103px;left: 424px;">Shipping Price: {{ $order->shippingPrice }}$</p>
                               </div>
                               </div>
                               <div class="Price-3-outer">

@@ -2081,19 +2081,19 @@
                         </div>
                         <div class="shippingMethod">Shipping Method:</div>
                         <div class="shippingMethodBox">
-                            <input type="radio" required id="standard" name="method" value="standard" style="position: relative;left: -130px;bottom: -17px;">
+                            <input type="radio" required id="standard" name="method" value="standard" style="position: relative;left: -130px;bottom: -20px;">
                             <label for="standard">
                               <div class="buttonMethod">Standard Shipping</div>
                               <div class="buttonText">Delivers in 1-4 buisness days</div>
                               <div class="buttonPrice">5$</div>
                             </label>
-                            <input type="radio" required id="express" name="method" value="express" style="position: relative;left: -130px;bottom: -17px;">
+                            <input type="radio" required id="express" name="method" value="express" style="position: relative;left: -130px;bottom: -20px;">
                             <label for="express">
                               <div class="buttonMethod">Express Shipping</div>
                               <div class="buttonText">Delivers in 1-3 buisness days</div>
                               <div class="buttonPrice">10$</div>
                             </label>
-                            <input type="radio" required id="priority" name="method" value="priority" style="position: relative;left: -130px;bottom: -17px;">
+                            <input type="radio" required id="priority" name="method" value="priority" style="position: relative;left: -130px;bottom: -23px;">
                             <label for="priority">
                               <div class="buttonMethod">Priority Shipping</div>
                               <div class="buttonText">Delivers in 1-2 buisness days</div>

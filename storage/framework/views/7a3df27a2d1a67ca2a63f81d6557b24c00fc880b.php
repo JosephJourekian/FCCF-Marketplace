@@ -1462,7 +1462,7 @@
         width:64px;
         min-width:64px;
         height:55px;
-        margin-top:-130px;
+        margin-top:-190px;
         margin-bottom:19px;
         min-height:55px;
         content:url(../images/Price_3.png);
@@ -1513,6 +1513,7 @@
         font-size:24px;
         line-height:31.200000762939453px;
         white-space: nowrap;
+        top: -75px;
     }
     .q-20-3-outer{
         position:relative;
@@ -1942,14 +1943,16 @@
                               >
                               <a style="color:rgba(92, 90, 90, 1);" href="<?php echo e(route('products.show',$item->options->productname)); ?>"><?php echo e($item->name); ?></a>
                               <p style="margin-top:2px;">Quantity: <?php echo e($item->qty); ?></p>
+                              <p style="position: relative; top: -20px;">Shipping Method: <?php echo e($order->shippingMethod); ?></p>
                               <?php if($item->options->attributename == 'N/A'): ?>
-                                <p style="margin-top:-16px; font-size: 20px;">Attributes: None</p>
+                                <p style="margin-top:-16px; font-size: 20px; position: relative; top: -25px;">Attributes: None</p>
                               <?php else: ?>
-                                <p style="margin-top:-12px; font-size: 20px;">Attributes: <?php echo e($item->options->attributename); ?>: <?php echo e($item->options->attributevalue); ?>, 
+                                <p style="margin-top:-12px; font-size: 20px; position: relative; top: -25px;">Attributes: <?php echo e($item->options->attributename); ?>: <?php echo e($item->options->attributevalue); ?>, 
                                     <?php echo e($item->options->attributename2); ?>: <?php echo e($item->options->attributevalue2); ?>, Stock: <?php echo e($item->options->attributeStock); ?>
 
                                 </p>
-                              <?php endif; ?>
+                                <?php endif; ?>
+                              <p style="position: relative; top: -103px;left: 424px;">Shipping Price: <?php echo e($order->shippingPrice); ?>$</p>
                               </div>
                               </div>
                               <div class="Price-3-outer">
