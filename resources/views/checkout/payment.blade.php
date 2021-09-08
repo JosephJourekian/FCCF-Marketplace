@@ -2065,14 +2065,17 @@
                             @if($shipping == 'standard')
                               <div class="orderSummaryText">Taxes Estimate: 5.65$</div>
                               <div class="orderSummaryText">Total: {{ Cart::subtotal('0','','')}} Points and 5.65$</div>
+                              <?php $shipping = 5.65;?>
                               <script>var price = 5.65;</script>
                             @elseif($shipping == 'express')
                               <div class="orderSummaryText">Taxes Estimate: 11.30$</div>
                               <div class="orderSummaryText">Total: {{ Cart::subtotal('0','','')}} Points and 11.30$</div>
+                              <?php $shipping = 11.30;?>
                               <script>var price = 11.30;</script>
                             @elseif($shipping == 'priority')
                               <div class="orderSummaryText">Taxes Estimate: 16.95$</div>
                               <div class="orderSummaryText">Total: {{ Cart::subtotal('0','','')}} Points and 16.95$</div>
+                              <?php $shipping = 16.95;?>
                               <script>var price = 16.95;</script>
                             @endif
                             <div class="orderSummaryText">Your Points: {{ auth()->user()->points }}</div>
@@ -2135,7 +2138,9 @@
 
                                 // Finalize the transaction
                                 onApprove: function(data, actions) {
+                              
                                   alert('Transaction Complete!');
+                                  
                                   window.location.href = "{{URL::to('checkout/confirm')}}";
                                   /*return view('checkout.comfirm');
                                     return actions.order.capture().then(function(orderData) {

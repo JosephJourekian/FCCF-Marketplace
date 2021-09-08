@@ -13,6 +13,9 @@ Order summary:<br>
 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 <h2 class="font-bold text-md mb-4 block">Subtotal: <?php echo e(Cart::subtotal('0','','')); ?> Points</h2>
 <h2 class="font-bold text-md mb-4 block">Point Balance After Purchase: <?php echo e(auth()->user()->points - Cart::subtotal('0','','')); ?> Points</h2>
+<h2 class="font-bold text-md mb-4 block">Shipping Method: <?php echo e($shipping); ?></h2>
+<h2 class="font-bold text-md mb-4 block">Shipping Amount Paid: <?php echo e($shippingPrice); ?> $</h2>
+
 
 
 Thanks,<br>

@@ -44,7 +44,9 @@ class CheckoutsController extends Controller
     }
     public function payment(Request $request){
         $method = $request->method;
-
+        session(["shipping"=>$method]);
+        //$this->confirm($method);
+        
         if(Cart::count() == 0){
             return redirect('products');
         }
@@ -58,6 +60,20 @@ class CheckoutsController extends Controller
 
 
     public function confirm(){
+
+        $shipping = session("shipping");
+        $shippingPrice = 0;
+
+        if($shipping == 'standard'){
+            $shippingPrice = 5.65;
+        }
+        elseif($shipping == 'express'){
+            $shippingPrice = 11.30;
+        }
+        elseif($shipping == 'priority'){
+            $shippingPrice = 16.95;
+        }
+
         User::where('name', auth()->user()->name)->where('points','>','0')->decrement('points', (float)Cart::subtotal('0','','')); 
         $cart = Cart::content();
         $cartItem = Cart::content();
@@ -80,12 +96,14 @@ class CheckoutsController extends Controller
                 'cart' => serialize(Cart::content()),
                 'order_subtotal' => Cart::subtotal('0','',''),
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'shippingMethod' => $shipping,
+                'shippingPrice' => $shippingPrice
                 
             ]);
             DB::table('orders')->insert($attributes);
         
-        Mail::to(auth()->user()->email)->send(new OrderConfirmation(), ['cart' => $cart]);
-        Mail::to('jjourekian@gmail.com')->send(new ShippingDetails(), ['cart'=> $cart]);
+        Mail::to(auth()->user()->email)->send(new OrderConfirmation($shipping,$shippingPrice), ['cart' => $cart]);
+        Mail::to('jjourekian@gmail.com')->send(new ShippingDetails($shipping,$shippingPrice), ['cart' => $cart, 'shipping' => $shipping, 'shippingPrice'=> $shippingPrice]);
         
         Cart::destroy();
 

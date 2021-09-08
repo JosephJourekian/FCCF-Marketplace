@@ -13,6 +13,9 @@ Order summary:<br>
 @endforeach
 <h2 class="font-bold text-md mb-4 block">Subtotal: {{ Cart::subtotal('0','','')}} Points</h2>
 <h2 class="font-bold text-md mb-4 block">Point Balance After Purchase: {{ auth()->user()->points - Cart::subtotal('0','','')}} Points</h2>
+<h2 class="font-bold text-md mb-4 block">Shipping Method: {{$shipping }}</h2>
+<h2 class="font-bold text-md mb-4 block">Shipping Amount Paid: {{$shippingPrice}} $</h2>
+
 
 
 Thanks,<br>

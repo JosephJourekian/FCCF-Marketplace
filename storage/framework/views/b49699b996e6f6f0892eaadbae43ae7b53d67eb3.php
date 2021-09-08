@@ -2066,14 +2066,17 @@
                             <?php if($shipping == 'standard'): ?>
                               <div class="orderSummaryText">Taxes Estimate: 5.65$</div>
                               <div class="orderSummaryText">Total: <?php echo e(Cart::subtotal('0','','')); ?> Points and 5.65$</div>
+                              <?php $shipping = 5.65;?>
                               <script>var price = 5.65;</script>
                             <?php elseif($shipping == 'express'): ?>
                               <div class="orderSummaryText">Taxes Estimate: 11.30$</div>
                               <div class="orderSummaryText">Total: <?php echo e(Cart::subtotal('0','','')); ?> Points and 11.30$</div>
+                              <?php $shipping = 11.30;?>
                               <script>var price = 11.30;</script>
                             <?php elseif($shipping == 'priority'): ?>
                               <div class="orderSummaryText">Taxes Estimate: 16.95$</div>
                               <div class="orderSummaryText">Total: <?php echo e(Cart::subtotal('0','','')); ?> Points and 16.95$</div>
+                              <?php $shipping = 16.95;?>
                               <script>var price = 16.95;</script>
                             <?php endif; ?>
                             <div class="orderSummaryText">Your Points: <?php echo e(auth()->user()->points); ?></div>
@@ -2118,7 +2121,7 @@
 
                         <!-- Include the PayPal JavaScript SDK -->
                         <script src="https://www.paypal.com/sdk/js?client-id=test&currency=CAD&disable-funding=credit,card"></script>
-
+                          <!--Remember to change client ID when launching site-->
                         <script>
                             // Render the PayPal button into #paypal-button-container
                             paypal.Buttons({
@@ -2136,7 +2139,9 @@
 
                                 // Finalize the transaction
                                 onApprove: function(data, actions) {
+                              
                                   alert('Transaction Complete!');
+                                  
                                   window.location.href = "<?php echo e(URL::to('checkout/confirm')); ?>";
                                   /*return view('checkout.comfirm');
                                     return actions.order.capture().then(function(orderData) {
