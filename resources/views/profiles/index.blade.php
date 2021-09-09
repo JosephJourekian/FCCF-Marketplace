@@ -2535,7 +2535,7 @@ z-index:13;
                                 id="OrderHistoryView"
                                 data-name="OrderHistoryView"
                                 class="PaymentView"
-                              ><div key="0"><a href="#" style="color:rgba(92, 90, 90, 1);">View/Edit</a></div>
+                              ><div key="0"><a href="{{route('profiles.editPayment',auth()->user()->username) }}" style="color:rgba(92, 90, 90, 1);">View/Edit</a></div>
                               </div>
                               </div>
                             </div>

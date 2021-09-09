@@ -1307,7 +1307,7 @@
         line-height: 46.400001525878906px;
         white-space: normal;
         text-decoration: underline;
-        left: 50px;
+        left: 0px;
         width: 900;
     }
     .MY-CART-outer{
@@ -1734,6 +1734,7 @@
     .articleTitle{
         font-family: Baskervville;
         font-size: 24px;
+        
     }
     .links{
         position: relative;
@@ -2073,7 +2074,7 @@
                                     </div>
                                 <?php endif; ?>
                                 <div class="myButton">
-                                    <a href="<?php echo e(route('fccfUpdatesTest')); ?>" style="color:rgba(92, 90, 90, 1);">
+                                    <a href="<?php echo e(route('fccfUpdates.index')); ?>" style="color:rgba(92, 90, 90, 1);">
                                         Back to updates
                                     </a>
                                 </div>

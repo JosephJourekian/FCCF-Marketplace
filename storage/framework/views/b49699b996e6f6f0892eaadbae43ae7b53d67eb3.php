@@ -1711,6 +1711,31 @@
   pointer-events:none;
   z-index:13;
 }@media  screen and (max-width: 1920px) {
+  .submitButton {
+    position: relative;
+    z-index: 12;
+    pointer-events: all;
+    margin-left: 346px;
+    width: 220px;
+    min-width: 111px;
+    margin-top: -25px;
+    margin-bottom: 4px;
+    min-height: 36px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    color: rgba(92, 90, 90, 1);
+    font-style: normal;
+    font-family: Baskervville;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 36px;
+    white-space: nowrap;
+    left: -344px;
+    top: 25;
+    text-decoration: none;
+}
 	.q43{
   		top:-20px;
 	}
@@ -1723,20 +1748,20 @@
     right: -11px;
   }
   .shippingBox{
-    border: 10px solid rgba(196, 196, 196, 0.5299999713897705);
     width: 286px;
     height: 280px;
-    border-radius: 15px;
     margin-bottom: 10px;
     background-color: rgba(196, 196, 196, 0.5299999713897705);
     position: relative;
     left: -227px;
+    text-align: left;
+    padding:15px;
   }
   .shippingText{
     font-size: 20;
     margin-bottom: 10;
     font-family: 'Baskervville';
-    margin-top: 10;
+    margin-top: 15px;
   }
   .shippingMethod{
     font-family: Baskervville;
@@ -1747,14 +1772,14 @@
     right: 211px;
   }
   .shippingMethodBox{
-    border: 10px solid rgba(196, 196, 196, 0.5299999713897705);
     width: 286px;
     height: 280px;
-    border-radius: 15px;
     margin-bottom: 10px;
     background-color: rgba(196, 196, 196, 0.5299999713897705);
     position: relative;
     left: -395px;
+    text-align: left;
+    padding: 15px;
   }
   .buttonMethod{
     font-size: 20;
@@ -1965,7 +1990,7 @@
                       <form method="GET" action="#">
                       <?php echo csrf_field(); ?> 
                       <div style="display: -webkit-box;">
-                        <div style="border: 10px solid rgba(196, 196, 196, 0.5299999713897705); width: 269; height: 100%; border-radius: 15px; margin-bottom:10px;background-color:rgba(196, 196, 196, 0.5299999713897705);">
+                        <div style="width: 269; height: 100%; margin-bottom:10px;background-color:rgba(196, 196, 196, 0.5299999713897705);">
                         <?php if(Cart::count() == 0): ?>
                               <img src="../images/cartEmpty.jpg" width="476px"  height="374px" style="position: relative; top: -50; right: 150;">
                         <?php else: ?>
@@ -2057,7 +2082,7 @@
                           <div class="shippingText">Card Number: 1234567890</div>
                           <div class="shippingText">CVC: 123</div>
                           <div class="shippingText">EXP Date: MM/YY</div>
-                          <a class="shippingText" style="  color:rgba(92, 90, 90, 1);"href="<?php echo e(route('profiles.editAddress',auth()->user()->username)); ?>">Change Payment Info</a>
+                          <a class="shippingText" style="  color:rgba(92, 90, 90, 1);"href="<?php echo e(route('profiles.editPayment',auth()->user()->username)); ?>">Change Payment Info</a>
                         </div>
                         <div class="shippingMethod">Order Summary:</div>
                         <div class="shippingMethodBox">
@@ -2112,12 +2137,15 @@
                           class="Shopping"
                         >
                         </div>
+                        
                         <div class="checkout-outer">
+                          <div id="checkout" data-name="checkout" class="checkout">
+                            <div key="0">
+                              <a href="#" class="submitButton">Complete Order</a>
+                            </div>
+                          </div>
                           <!-- Set up a container element for the button -->
-                        <div id="paypal-button-container" style="position: relative;
-                        top: -40px;
-                        left: 329px;
-                        z-index: 1;"></div>
+                        <div id="paypal-button-container" style="position: relative;top: -271px;left: -585px;z-index: 1;"></div>
 
                         <!-- Include the PayPal JavaScript SDK -->
                         <script src="https://www.paypal.com/sdk/js?client-id=test&currency=CAD&disable-funding=credit,card"></script>

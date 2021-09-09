@@ -1719,9 +1719,9 @@
         top:56px;
     }
     .article{
-        width: 900px;
-        height: 200px;
-        margin-bottom: 30;
+        width: 935px;
+        height: 340px;
+        margin-bottom: 80;
     }
     .articlePic{
         position: relative;
@@ -2010,51 +2010,52 @@
                         </div>
                         <?php $__currentLoopData = $updates; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $update): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <div class="article">
-                            <div class="articlePic">
-                                <img src="<?php echo e($update->image); ?>" style="width: 308; height: 200; border-radius:20px;">
-                            </div>
-                            <a href="<?php echo e(route('fccfUpdates.show',$update->updatename)); ?>" style="color:rgba(92, 90, 90, 1);" class="links">
-                                <div class="articleTitle">
-                                    <?php echo e($update->title); ?>
+                            <div style="border-style: solid;border-width: 3px;height: 239px; padding:13;">
+                                <div class="articlePic">
+                                    <img src="<?php echo e($update->image); ?>" style="width: 308; height: 200; border-radius:20px;">
+                                </div>
+                                <a href="<?php echo e(route('fccfUpdates.show',$update->updatename)); ?>" style="color:rgba(92, 90, 90, 1); width:fit-content;" class="links">
+                                    <div class="articleTitle">
+                                        <?php echo e($update->title); ?>
+
+                                    </div>
+                                </a>
+                                <div class="articleDate">
+                                    Posted on: <?php echo e($update->created_at->format('Y-m-d')); ?>
 
                                 </div>
-                            </a>
-                            <div class="articleDate">
-                                Posted on: <?php echo e($update->created_at->format('Y-m-d')); ?>
+                                <div class="articleAuthor">
+                                    By: <?php echo e($update->author); ?>
 
-                            </div>
-                            <div class="articleAuthor">
-                                By: <?php echo e($update->author); ?>
+                                </div>
+                                <div class="articleExcerpt">
+                                    <?php echo e(\Illuminate\Support\Str::limit($update->excerpt, 85)); ?>
 
-                            </div>
-                            <div class="articleExcerpt">
-                                <?php echo e(\Illuminate\Support\Str::limit($update->excerpt, 85)); ?>
-
-                            </div>
-                            <div style="display: -webkit-inline-box; left: 333; top: -150; position: relative;">
-                                <?php if(auth()->user()->isAdmin()): ?>
-                                    <form method="POST" action="<?php echo e(route('fccfUpdates.delete')); ?>"> 
-                                        <?php echo csrf_field(); ?>
-                                        <?php echo method_field('DELETE'); ?>
-                                        <input type="hidden" name="id" value="<?php echo e($update->id); ?>"> 
-                                        <input type="hidden" name="_method" value="DELETE">
-                                        <button type="submit" class="myButton2" style="color:rgba(92, 90, 90, 1); text-decoration:underline;">
-                                            Delete
-                                        </button>
-                                    </form>
-                                    <div class="myButton3">
-                                        <a href="<?php echo e(route('fccfUpdates.edit',$update->updatename)); ?>" style="color:rgba(92, 90, 90, 1);">
-                                            Edit
+                                </div>
+                                <div style="display: -webkit-inline-box; left: 313; top: -150; position: relative;">
+                                    <?php if(auth()->user()->isAdmin()): ?>
+                                        <form method="POST" action="<?php echo e(route('fccfUpdates.delete')); ?>"> 
+                                            <?php echo csrf_field(); ?>
+                                            <?php echo method_field('DELETE'); ?>
+                                            <input type="hidden" name="id" value="<?php echo e($update->id); ?>"> 
+                                            <input type="hidden" name="_method" value="DELETE">
+                                            <button type="submit" class="myButton2" style="color:rgba(92, 90, 90, 1); text-decoration:underline;">
+                                                Delete
+                                            </button>
+                                        </form>
+                                        <div class="myButton3">
+                                            <a href="<?php echo e(route('fccfUpdates.edit',$update->updatename)); ?>" style="color:rgba(92, 90, 90, 1);">
+                                                Edit
+                                            </a>
+                                        </div>
+                                    <?php endif; ?>
+                                    <div class="myButton">
+                                        <a href="<?php echo e(route('fccfUpdates.show',$update->updatename)); ?>" style="color:rgba(92, 90, 90, 1);">
+                                            Read More
                                         </a>
                                     </div>
-                                <?php endif; ?>
-                                <div class="myButton">
-                                    <a href="<?php echo e(route('fccfUpdates.showTest',$update->updatename)); ?>" style="color:rgba(92, 90, 90, 1);">
-                                        Read More
-                                    </a>
                                 </div>
                             </div>
-
                         </div>
                             
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

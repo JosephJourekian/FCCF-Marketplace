@@ -1774,6 +1774,7 @@ html, body {
 /* Product Description */
 .product-description {
   margin-bottom: 20px;
+  text-align: left;
 }
 .product-description span {
   font-size: 12px;
@@ -1808,6 +1809,7 @@ html, body {
 /* Product Color */
 .product-color {
   margin-bottom: 30px;
+  text-align: left;
 }
 
 .color-choose div {
@@ -2127,11 +2129,11 @@ html, body {
     
                                     <div class="carousel-inner" role="listbox">
                                         <div class="carousel-item active">
-                                            <img src="{{ $product->image }}" style="width:575px;height:500px;">
+                                            <img src="{{ $product->image }}" style="width:520px;height:490px;">
                                         </div>
                                         @foreach( $product->images as $pic )
                                            <div class="carousel-item {{ $loop->first }}" style="width: 575px;">
-                                               <img style="width:575px;height:500px;" width=575px class="d-block img-fluid" src="{{ asset("storage/{$pic->image}") }}">
+                                               <img style="width:520px;height:490px;" width=575px class="d-block img-fluid" src="{{ asset("storage/{$pic->image}") }}">
                                            </div>
                                         @endforeach
                                     </div>
@@ -2152,10 +2154,10 @@ html, body {
                               <!-- Product Description -->
                               <div class="product-description">
                                 @foreach ($product->category as $categories)
-                                    <a  href="{{ route('products.index', ['category' => $categories->name]) }}" style="position: relative; right: 70px; margin-right:20px;"><u>{{ $categories->name }}</u></a>
+                                    <a  href="{{ route('products.index', ['category' => $categories->name]) }}" style="position: relative; right: 0px; margin-right:20px;color: rgba(92, 90, 90, 1);"><u>{{ $categories->name }}</u></a>
                                 @endforeach
                                 <h1 style="position: relative;top: 40px;">{{ $product->name }}</h1>
-                                <p style="white-space: pre-wrap;text-align: left; border-bottom: 2px solid #E1E8EE;position: relative;top: 60px;">{{ $product->description }}</p>
+                                <p style="color:#42494e; white-space: pre-wrap;text-align: left; border-bottom: 2px solid #42494e;position: relative;top: 60px;">{{ $product->description }}</p>
                               </div>
                       
                               <!-- Product Configuration -->
@@ -2163,7 +2165,7 @@ html, body {
                       
                                 <!-- Product Color -->
                                 <div class="product-color">
-                                  <span style="font-size: 25;">Stock: {{ $product->stock }}</span>
+                                  <span style="font-size: 25; text-align:left;">Stock: {{ $product->stock }}</span>
                                   <p>
                                     @foreach ($product->category as $categories)
                                         @if ($categories->name == "Apparel")

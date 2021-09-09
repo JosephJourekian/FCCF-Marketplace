@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 
 class ProfilesController extends Controller
@@ -42,6 +44,22 @@ class ProfilesController extends Controller
 
     }
 
+    public function editPayment(User $user){
+
+        $userA = User::find($user)->first();
+        //$decrypted = Crypt::decrypt($user->card_number); Decrypt card number
+        
+        if(auth()->user()->username != $userA->username)
+        {
+            abort(404);
+        }
+        
+        return view('profiles.editPayment', [
+            'user' => $userA
+        ]);
+
+    }
+
     public function update(User $user){
 
         $userA = User::find($user)->first();
@@ -52,10 +70,10 @@ class ProfilesController extends Controller
             ],
             'password' => ['string','required','min:8','max:255','confirmed',],
         ]);   
-
+        $attributes['password'] = Hash::make($attributes['password']);
         $userA->update($attributes);
         
-        return view('home')->with('message', 'Profile Updated!');
+        return redirect()->back();
     }
 
     public function updateAddress(User $user){
@@ -72,6 +90,21 @@ class ProfilesController extends Controller
         ]);   
 
         $userA->update($attributes);
+        
+        return redirect()->back();
+    }
+
+    public function updatePayment(User $user){
+
+        $userA = User::find($user)->first();
+        $attributes = request()->validate([
+            'card_number' => ['string','required','max:255',],
+            'cvc' => ['string','required','min:3','max:255',],
+            'exp_date' => ['string','required','min:3','max:255',],
+        ]);   
+        $attributes['card_number'] = Crypt::encrypt($attributes['card_number']);
+        $userA->update($attributes);
+
         
         return redirect()->back();
     }

@@ -1723,14 +1723,14 @@
     right: -11px;
   }
   .shippingBox{
-    border: 10px solid rgba(196, 196, 196, 0.5299999713897705);
     width: 286px;
     height: 280px;
-    border-radius: 15px;
     margin-bottom: 10px;
     background-color: rgba(196, 196, 196, 0.5299999713897705);
     position: relative;
     left: -227px;
+    padding: 15px;
+    text-align: left;
   }
   .shippingText{
     font-size: 20;
@@ -1747,10 +1747,8 @@
     right: 211px;
   }
   .shippingMethodBox{
-    border: 10px solid rgba(196, 196, 196, 0.5299999713897705);
     width: 286px;
     height: 280px;
-    border-radius: 15px;
     margin-bottom: 10px;
     background-color: rgba(196, 196, 196, 0.5299999713897705);
     position: relative;
@@ -1984,7 +1982,7 @@
                         </div>
                     
                       <div style="display: -webkit-box;">
-                        <div style="border: 10px solid rgba(196, 196, 196, 0.5299999713897705); width: 269; height: 100%; border-radius: 15px; margin-bottom:10px;background-color:rgba(196, 196, 196, 0.5299999713897705);">
+                        <div style="width: 269; height: 100%; margin-bottom:10px;background-color:rgba(196, 196, 196, 0.5299999713897705);">
                         @if(Cart::count() == 0)
                               <img src="../images/cartEmpty.jpg" width="476px"  height="374px" style="position: relative; top: -50; right: 150;">
                         @else

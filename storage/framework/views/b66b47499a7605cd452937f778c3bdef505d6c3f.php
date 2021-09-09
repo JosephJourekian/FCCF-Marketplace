@@ -1774,6 +1774,7 @@ html, body {
 /* Product Description */
 .product-description {
   margin-bottom: 20px;
+  text-align: left;
 }
 .product-description span {
   font-size: 12px;
@@ -1808,6 +1809,7 @@ html, body {
 /* Product Color */
 .product-color {
   margin-bottom: 30px;
+  text-align: left;
 }
 
 .color-choose div {
@@ -2127,11 +2129,11 @@ html, body {
     
                                     <div class="carousel-inner" role="listbox">
                                         <div class="carousel-item active">
-                                            <img src="<?php echo e($product->image); ?>" style="width:575px;height:500px;">
+                                            <img src="<?php echo e($product->image); ?>" style="width:520px;height:490px;">
                                         </div>
                                         <?php $__currentLoopData = $product->images; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pic): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                            <div class="carousel-item <?php echo e($loop->first); ?>" style="width: 575px;">
-                                               <img style="width:575px;height:500px;" width=575px class="d-block img-fluid" src="<?php echo e(asset("storage/{$pic->image}")); ?>">
+                                               <img style="width:520px;height:490px;" width=575px class="d-block img-fluid" src="<?php echo e(asset("storage/{$pic->image}")); ?>">
                                            </div>
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                     </div>
@@ -2152,10 +2154,10 @@ html, body {
                               <!-- Product Description -->
                               <div class="product-description">
                                 <?php $__currentLoopData = $product->category; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $categories): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <a  href="<?php echo e(route('products.index', ['category' => $categories->name])); ?>" style="position: relative; right: 70px; margin-right:20px;"><u><?php echo e($categories->name); ?></u></a>
+                                    <a  href="<?php echo e(route('products.index', ['category' => $categories->name])); ?>" style="position: relative; right: 0px; margin-right:20px;color: rgba(92, 90, 90, 1);"><u><?php echo e($categories->name); ?></u></a>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 <h1 style="position: relative;top: 40px;"><?php echo e($product->name); ?></h1>
-                                <p style="white-space: pre-wrap;text-align: left; border-bottom: 2px solid #E1E8EE;position: relative;top: 60px;"><?php echo e($product->description); ?></p>
+                                <p style="color:#42494e; white-space: pre-wrap;text-align: left; border-bottom: 2px solid #42494e;position: relative;top: 60px;"><?php echo e($product->description); ?></p>
                               </div>
                       
                               <!-- Product Configuration -->
@@ -2163,7 +2165,7 @@ html, body {
                       
                                 <!-- Product Color -->
                                 <div class="product-color">
-                                  <span style="font-size: 25;">Stock: <?php echo e($product->stock); ?></span>
+                                  <span style="font-size: 25; text-align:left;">Stock: <?php echo e($product->stock); ?></span>
                                   <p>
                                     <?php $__currentLoopData = $product->category; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $categories): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <?php if($categories->name == "Apparel"): ?>

@@ -8,7 +8,7 @@
       z-index: 1;
     
     }
-    @media screen and (max-width: 1920px) {
+    @media  screen and (max-width: 1920px) {
         .websiteBody{
               margin: auto;
           margin-left: 12%;
@@ -17,7 +17,7 @@
         }
     }
     
-    @media screen and (max-width: 1152px) {
+    @media  screen and (max-width: 1152px) {
         .websiteBody{
               margin: auto;
           position: fixed;
@@ -1305,10 +1305,9 @@
         font-weight: 400;
         font-size: 24px;
         line-height: 46.400001525878906px;
-        white-space: normal;
+        white-space: nowrap;
         text-decoration: underline;
-        left: 0px;
-        width: 900;
+        left: 255px;
     }
     .MY-CART-outer{
         position:relative;
@@ -1712,164 +1711,101 @@
   z-index:13;
 }
 
-@media screen and (max-width: 1920px) {
+@media  screen and (max-width: 1920px) {
 	.q43{
   		top:-20px;
 	}
-    .q36{
-        top:56px;
-    }
-    .article{
-        width: 900px;
-        height: fit-content;
-        margin-bottom: 30;
-    }
-    .articlePic{
-        position: relative;
-        width: 424px;
-        height: 243px;
-        border-radius: 20px;
-        background: #47545C;
-    }
-    .articleTitle{
-        font-family: Baskervville;
-        font-size: 24px;
-        
-    }
-    .links{
-        position: relative;
-        top: -200;
-        display: table;
-        left: 314px;
-    }
-    .articleDate{
-        font-family: Baskervville;
-        font-size: 20px;
-        position: relative;
-        top: -240;
-        display: flex;
-        left: 430px;
-    }
-    .articleAuthor{
-        font-family: Baskervville;
-        font-size: 20px;
-        position: relative;
-        top: -240;
-        display: flex;
-        left: 430px;
-    }
-    .articleExcerpt{
-        font-family: Baskervville;
-        font-size: 20px;
-        position: relative;
-        top: -175px;
-        display: flex;
-        left: 427px;
-        width: 508px;
-        height: fit-content;
-        white-space: normal;
-        text-align: justify;
-    }
-    .articleBody{
-        font-family: Baskervville;
-        font-size: 19px;
-        position: relative;
-        top: -100px;
-        height: fit-content;
-        width: fit-content;
-        white-space: pre-wrap;
-        text-align: justify;
-    }
-    .articleLink{
-        font-family: Baskervville;
-        font-size: 25px;
-        position: relative;
-        top: -110px;
-        display: flex;
-        left: 0px;
-    }
-    .myButton {
-	box-shadow: 0px 1px 0px 0px #f0f7fa;
-	background:linear-gradient(to bottom, #33bdef 5%, #019ad2 100%);
-	background-color:#33bdef;
-	border-radius:20px;
-	border:1px solid #057fd0;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Baskervville;
-	font-size:15px;
-	padding:10px 23px;
-	text-decoration:none;
-	text-shadow:0px -1px 0px #5b6178;
-    position: relative;
-    
-    }
-    .myButton:hover {
-        background:linear-gradient(to bottom, #019ad2 5%, #33bdef 100%);
-        background-color:#019ad2;
-
-    }
-    .myButton:active {
-        position:relative;
-
-    }
-    .myButton2 {
-	box-shadow: 0px 1px 0px 0px #f0f7fa;
-	background:linear-gradient(to bottom, #c62d1f 5%, red 100%);
-	background-color:red;
-	border-radius:20px;
-	border:1px solid red;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Baskervville;
-	font-size:15px;
-	padding:10px 23px;
-	text-decoration:none;
-	text-shadow:0px -1px 0px #5b6178;
-    position: relative;
-    left: -10;
-    
-    }
-    .myButton2:hover {
-        background:linear-gradient(to bottom, red 5%, #c62d1f 100%);
-        background-color:red;
-
-    }
-    .myButton2:active {
-        position:relative;
-
-    }
-    .myButton3 {
-    box-shadow:inset 0px 1px 0px 0px #fce2c1;
-	background:linear-gradient(to bottom, #ffc477 5%, #fb9e25 100%);
-	background-color:#ffc477;
-	border-radius:20px;
-	border:1px solid #eeb44f;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Baskervville;
-	font-size:15px;
-	padding:10px 23px;
-	text-decoration:none;
-	text-shadow:0px -1px 0px #5b6178;
-    position: relative;
-    left: -5;
-    
-    }
-    .myButton3:hover {
-        background:linear-gradient(to bottom, #fb9e25 5%, #ffc477 100%);
-	    background-color:#fb9e25;
-
-    }
-    .myButton3:active {
-        position:relative;
-
-    }
-    
+    .q43{
+    top:-20px;
+  }
+  .q38{
+    top: 55;
+  }
+  .q39{
+    top: 55;
+  }
+  .q40{
+    top: 55;
+  }
+  .q41{
+    top: 55;
+  }
 }
+.input{
+    width: 60%;
+    padding: 0.5em;
+    border-width: 1px;
+    --border-opacity: 1;
+    line-height: 2px;
+    margin-bottom: 25;
+    font-family: Baskervville;
+    margin-left: -492px;
+    font-size: 16px;
+}
+.label{
+    margin-bottom: 0.5em;
+    display: block;
+    text-align: left;
+    font-family: 'Baskervville';
+    font-size: 20;
+    }
+
+    .myButton {
+	box-shadow:inset 0px -3px 7px 0px #29bbff;
+	background:linear-gradient(to bottom, #2dabf9 5%, #0688fa 100%);
+	background-color:#2dabf9;
+	border-radius:16px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Baskervville;
+	font-size:15px;
+	padding:9px 23px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #263666;
+    position: relative;
+    left: -486px;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #0688fa 5%, #2dabf9 100%);
+	background-color:#0688fa;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+.myButton2 {
+	box-shadow:inset 0px 1px 0px 0px #cf866c;
+	background:linear-gradient(to bottom, #d0451b 5%, #bc3315 100%);
+	background-color:#d0451b;
+	border-radius:16px;
+	border:1px solid #942911;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Baskervville;
+	font-size:15px;
+	padding:9px 23px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #854629;
+    position: relative;
+    left: -467px;
+}
+.myButton2:hover {
+	background:linear-gradient(to bottom, #bc3315 5%, #d0451b 100%);
+	background-color:#bc3315;
+}
+.myButton2:active {
+	position:relative;
+	top:1px;
+}
+.error{
+    text-align: left;
+    color: red;
+}
+
+
 
     </style>
     
@@ -1883,7 +1819,7 @@
         
           <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=5" />
         
-          <title> {{ $update->title }} </title>
+          <title>Edit Payment Info</title>
           <meta name="description" content="Test Home Description">
           <meta property="og:title" content="Test Home">
           <meta property="og:description" content="Test Home Description">
@@ -1901,27 +1837,27 @@
           </label>
           <div class="wrapper">
              <ul>
-                <li><a href="{{ route('home') }}">Home</a></li>
-                <li><a href="{{ route('about') }}">About</a></li>
-                <li><a href="{{ route('products.index') }}">Shop</a></li>
-                <li><a href="{{ route('carts.index') }}">My Cart ({{ Cart::count() }})</a></li>
-                <li><a href="{{ route('updates') }}">Updates</a></li>
+                <li><a href="<?php echo e(route('home')); ?>">Home</a></li>
+                <li><a href="<?php echo e(route('about')); ?>">About</a></li>
+                <li><a href="<?php echo e(route('products.index')); ?>">Shop</a></li>
+                <li><a href="<?php echo e(route('carts.index')); ?>">My Cart (<?php echo e(Cart::count()); ?>)</a></li>
+                <li><a href="<?php echo e(route('updates')); ?>">Updates</a></li>
                 <li><a href="#">Team</a></li>   
                 <li>
-                  <a href="{{ route('profiles.index') }}">My Account</a>
+                  <a href="<?php echo e(route('profiles.index')); ?>">My Account</a>
                 </li>
                 <li>
                     <form method="POST" action="/logout">
-                        @csrf
+                        <?php echo csrf_field(); ?>
                         <button style="font-family: Baskervville">Logout</button>
                     </form>
                 </li>
-                @if(auth()->user()->isAdmin())
+                <?php if(auth()->user()->isAdmin()): ?>
                 <li>
-                  <a href="{{ route('adminLinks') }}">Admin Links</a>
+                  <a href="<?php echo e(route('adminLinks')); ?>">Admin Links</a>
                 </li>
     
-                @endif
+                <?php endif; ?>
              </ul>
           </div>
           <div class="content">
@@ -2002,7 +1938,7 @@
                               id="MY-CART"
                               data-name="MY CART"
                               class="MY-CART"
-                            ><div key="0"><h1>{{ $update->title }}</h1></div>
+                            ><div key="0"><h1>Edit Payment Info</h1></div>
                             </div>
                         </div>
                         <div class="Group-16-outer">
@@ -2012,7 +1948,6 @@
                               class="Group-16"
                             >
                               <div class="Cart-outer">
-                              
                               </div>
                               <div class="items--outer">
                               <div
@@ -2025,60 +1960,109 @@
                             </div>
                             </div>
                         </div>
-                        <div class="article">
-                            <div class="articlePic">
-                                <img src="{{ $update->image }}" style="width: 424px;height: 243px;border-radius: 20px;">
+                        
+                        <form method="POST" action="<?php echo e(route('profiles.updatePayment',auth()->user()->username)); ?>" enctype="multipart/form-data">
+                            <?php echo csrf_field(); ?>
+                            <?php echo method_field('PATCH'); ?>
+                        
+                            <div class="mb-6">
+                                <label class="label"
+                                    for="card_number"
+                                >
+                                    Card Number
+                                </label>
+                        
+                                <input class="input"
+                                    type="text"
+                                    name="card_number"
+                                    id="card_number"
+                                    value="<?php echo e($user->card_number); ?>"
+                                    required
+                                >
+                        
+                                <?php $__errorArgs = ['card_number'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                    <p class="error"><?php echo e($message); ?></p>
+                                <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                             </div>
-                            
-                            <div class="articleDate">
-                                Posted on: {{ $update->created_at->format('Y-m-d')}}
+                        
+                            <div class="mb-6">
+                                <label class="label"
+                                    for="cvc"
+                                >
+                                    CVC
+                                </label>
+                        
+                                <input class="input"
+                                    type="text"
+                                    name="cvc"
+                                    id="cvc"
+                                    value="<?php echo e($user->cvc); ?>"
+                                    required
+                                >
+                        
+                                <?php $__errorArgs = ['cvc'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                    <p class="error"><?php echo e($message); ?></p>
+                                <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                             </div>
-                            <div class="articleAuthor">
-                                By: {{ $update->author }}
+                        
+                            <div class="mb-6">
+                                <label class="label"
+                                    for="exp_date"
+                                >
+                                    Expiration Date
+                                </label>
+                        
+                                <input class="input"
+                                    type="date"
+                                    name="exp_date"
+                                    id="exp_date"
+                                    style="line-height:2;"
+                                    value="<?php echo e($user->exp_date); ?>"
+                                    class="form-control"
+                                    required
+                                >
+                        
+                                <?php $__errorArgs = ['exp_date'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                    <p class="error"><?php echo e($message); ?></p>
+                                <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                             </div>
-                            <div class="articleExcerpt">
-                                {{ $update->excerpt}}
+                        
+                            <div class="mb-6">
+                                <button type="submit"
+                                        class="myButton"
+                                >
+                                    Submit
+                                </button>
+                                <a href="<?php echo e(route('home')); ?>"
+                                            class="myButton2"
+                                    >
+                                        Back To Home
+                                </a>
+                        
                             </div>
-                            <div class="articleBody">
-                                {{ $update->body }}
-                            </div>
-                            <div class="articleLink">Links:</div>
-                            @foreach ($update->url as $link)
-                                <a style="color:rgba(92, 90, 90, 1); 
-                                text-decoration:underline;
-                                position: relative;
-                                display:flex;
-                                top: -107px;
-                                width: fit-content;
-                                font-size: 20;" href="{{ $link->url }}">{{ $link->url  }}</a><br>
-                            @endforeach
-                            <div style="display: -webkit-inline-box; left: 333; top: -19; position: relative;">
-                                @if(auth()->user()->isAdmin())
-                                    <form method="POST" action="{{ route('fccfUpdates.delete') }}"> 
-                                        @csrf
-                                        @method('DELETE')
-                                        <input type="hidden" name="id" value="{{ $update->id }}"> 
-                                        <input type="hidden" name="_method" value="DELETE">
-                                        <button type="submit" class="myButton2" style="color:rgba(92, 90, 90, 1); text-decoration:underline;">
-                                            Delete
-                                        </button>
-                                    </form>
-                                    <div class="myButton3">
-                                        <a href="{{ route('fccfUpdates.edit',$update->updatename) }}" style="color:rgba(92, 90, 90, 1);">
-                                            Edit
-                                        </a>
-                                    </div>
-                                @endif
-                                <div class="myButton">
-                                    <a href="{{ route('fccfUpdates.index') }}" style="color:rgba(92, 90, 90, 1);">
-                                        Back to updates
-                                    </a>
-                                </div>
-                            </div>
-                            
+                        </form>
 
-                        </div>
-                            
                             
                       </div>
                       </div>
@@ -2090,7 +2074,6 @@
                     data-name="Group 8"
                     class="q36"
                     >
-                    
                     <div class="outer_q37">
                       <div class="outer_q37">
                         <div
@@ -2112,7 +2095,7 @@
                           id="q38"
                           data-name="my account"
                           class="q38"
-                        ><div key="0"><a href="{{ route('profiles.edit',auth()->user()->username) }}" style="white-space: nowrap; color: rgba(92, 90, 90, 1);">My Account</a></div>
+                        ><div key="0"><a href="<?php echo e(route('profiles.index')); ?>" style="white-space: nowrap; color: rgba(92, 90, 90, 1);">My Account</a></div>
                         </div>
                         </div>
                         <div class="outer_q39">
@@ -2224,4 +2207,4 @@
              </div>
           </div>
        </body>
-    </html>
+    </html><?php /**PATH C:\Users\jjour\FCCF-Market\resources\views/profiles/editPayment.blade.php ENDPATH**/ ?>

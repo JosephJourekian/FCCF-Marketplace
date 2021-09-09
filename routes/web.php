@@ -36,39 +36,23 @@ Route::middleware('auth')->group(function (){
         Route::post('/techUpdates', 'App\Http\Controllers\TechUpdatesController@store')->name('techUpdates.store');
         Route::delete('/techUpdates', 'App\Http\Controllers\TechUpdatesController@delete')->name('techUpdates.delete');
 
-        
-        
         Route::get('/viewUsers', 'App\Http\Controllers\ViewUsersController@index')->name('viewUsers');  
         Route::patch('/viewUsers', 'App\Http\Controllers\ViewUsersController@edit')->name('viewUsers');  
     });
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('/adminLinks', 'App\Http\Controllers\AdminLinksController@index')->name('adminLinks');  
-
-    Route::get('/menuTest', 'App\Http\Controllers\ProductsController@menuTest')->name('menuTest');  //test homepage frontend
-    Route::get('/productTest', 'App\Http\Controllers\ProductsController@productTest')->name('productTest'); //test products index frontend
-
     
     Route::get('/products', 'App\Http\Controllers\ProductsController@index')->name('products.index'); 
     Route::get('/products/show/{product:productname}', 'App\Http\Controllers\ProductsController@show')->name('products.show'); 
-    Route::get('/products/showTest/{product:productname}', 'App\Http\Controllers\ProductsController@showTest')->name('products.showTest'); 
 
     Route::get('/updates', 'App\Http\Controllers\UpdatesController@index')->name('updates'); 
     Route::get('/about', 'App\Http\Controllers\AboutsController@index')->name('about'); 
 
-
-
     Route::get('/fccfUpdates', 'App\Http\Controllers\FccfUpdatesController@index')->name('fccfUpdates.index'); 
     Route::get('/fccfUpdates/show/{updatename}', 'App\Http\Controllers\FccfUpdatesController@show')->name('fccfUpdates.show');
-    Route::get('/fccfUpdates/showTest/{updatename}', 'App\Http\Controllers\FccfUpdatesController@showTest')->name('fccfUpdates.showTest');
-
-    Route::get('/fccfUpdatesTest', 'App\Http\Controllers\FccfUpdatesController@test')->name('fccfUpdatesTest'); 
-
     
     Route::get('/techUpdates', 'App\Http\Controllers\TechUpdatesController@index')->name('techUpdates.index'); 
     Route::get('/techUpdates/show/{techname}', 'App\Http\Controllers\TechUpdatesController@show')->name('techUpdates.show');
-    Route::get('/techUpdatesTest', 'App\Http\Controllers\TechUpdatesController@test')->name('techUpdatesTest');
-
-
 
     Route::get('/myCart', 'App\Http\Controllers\CartsController@index')->name('carts.index'); 
     Route::get('/myCart/add/{product:productname}', 'App\Http\Controllers\CartsController@add')->name('carts.add'); 
@@ -76,11 +60,7 @@ Route::middleware('auth')->group(function (){
     Route::post('/myCart/update/{rowId}/{product:productname}', 'App\Http\Controllers\CartsController@update')->name('carts.update'); 
   
 
-    Route::get('/cartTest', 'App\Http\Controllers\CartsController@cartTest')->name('cartTest'); //test carts index frontend
-    Route::get('/checkoutTest', 'App\Http\Controllers\CheckoutsController@checkoutTest')->name('checkoutTest');  //Checkout frontend 
     Route::get('/checkoutComplete', 'App\Http\Controllers\CheckoutsController@checkoutComplete')->name('checkout.complete');
-    Route::get('/checkoutExtraTest', 'App\Http\Controllers\CheckoutsController@checkoutExtraTest')->name('checkoutExtraTest');
-
     Route::get('/checkout', 'App\Http\Controllers\CheckoutsController@index')->name('checkout.index'); 
     Route::get('/checkout/payment', 'App\Http\Controllers\CheckoutsController@payment')->name('checkout.payment'); 
     Route::get('/checkout/confirm', 'App\Http\Controllers\CheckoutsController@confirm')->name('checkout.confirm'); 
@@ -90,9 +70,10 @@ Route::middleware('auth')->group(function (){
     Route::patch('/profiles/update/{user:username}', 'App\Http\Controllers\ProfilesController@update')->name('profiles.update');
     Route::get('/profiles/editAddress/{user:username}', 'App\Http\Controllers\ProfilesController@editAddress')->name('profiles.editAddress');
     Route::patch('/profiles/updateAddress/{user:username}', 'App\Http\Controllers\ProfilesController@updateAddress')->name('profiles.updateAddress');
+    Route::get('/profiles/editPayment/{user:username}', 'App\Http\Controllers\ProfilesController@editPayment')->name('profiles.editPayment');
+    Route::patch('/profiles/updatePayment/{user:username}', 'App\Http\Controllers\ProfilesController@updatePayment')->name('profiles.updatePayment');
 
     Route::get('/purchaseHistory/{user:username}', 'App\Http\Controllers\PurchaseHistoryController@index')->name('purchaseHistory');
-    Route::get('/purchaseHistoryTest/{user:username}', 'App\Http\Controllers\PurchaseHistoryController@indexTest')->name('purchaseHistoryTest');
 
 
 

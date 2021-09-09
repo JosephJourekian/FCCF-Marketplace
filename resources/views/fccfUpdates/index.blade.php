@@ -1719,9 +1719,9 @@
         top:56px;
     }
     .article{
-        width: 900px;
-        height: 200px;
-        margin-bottom: 30;
+        width: 935px;
+        height: 340px;
+        margin-bottom: 80;
     }
     .articlePic{
         position: relative;
@@ -2010,47 +2010,48 @@
                         </div>
                         @foreach ($updates as $update)
                         <div class="article">
-                            <div class="articlePic">
-                                <img src="{{ $update->image }}" style="width: 308; height: 200; border-radius:20px;">
-                            </div>
-                            <a href="{{ route('fccfUpdates.show',$update->updatename) }}" style="color:rgba(92, 90, 90, 1);" class="links">
-                                <div class="articleTitle">
-                                    {{ $update->title }}
+                            <div style="border-style: solid;border-width: 3px;height: 239px; padding:13;">
+                                <div class="articlePic">
+                                    <img src="{{ $update->image }}" style="width: 308; height: 200; border-radius:20px;">
                                 </div>
-                            </a>
-                            <div class="articleDate">
-                                Posted on: {{ $update->created_at->format('Y-m-d')}}
-                            </div>
-                            <div class="articleAuthor">
-                                By: {{ $update->author }}
-                            </div>
-                            <div class="articleExcerpt">
-                                {{ \Illuminate\Support\Str::limit($update->excerpt, 85) }}
-                            </div>
-                            <div style="display: -webkit-inline-box; left: 333; top: -150; position: relative;">
-                                @if(auth()->user()->isAdmin())
-                                    <form method="POST" action="{{ route('fccfUpdates.delete') }}"> 
-                                        @csrf
-                                        @method('DELETE')
-                                        <input type="hidden" name="id" value="{{ $update->id }}"> 
-                                        <input type="hidden" name="_method" value="DELETE">
-                                        <button type="submit" class="myButton2" style="color:rgba(92, 90, 90, 1); text-decoration:underline;">
-                                            Delete
-                                        </button>
-                                    </form>
-                                    <div class="myButton3">
-                                        <a href="{{ route('fccfUpdates.edit',$update->updatename) }}" style="color:rgba(92, 90, 90, 1);">
-                                            Edit
+                                <a href="{{ route('fccfUpdates.show',$update->updatename) }}" style="color:rgba(92, 90, 90, 1); width:fit-content;" class="links">
+                                    <div class="articleTitle">
+                                        {{ $update->title }}
+                                    </div>
+                                </a>
+                                <div class="articleDate">
+                                    Posted on: {{ $update->created_at->format('Y-m-d')}}
+                                </div>
+                                <div class="articleAuthor">
+                                    By: {{ $update->author }}
+                                </div>
+                                <div class="articleExcerpt">
+                                    {{ \Illuminate\Support\Str::limit($update->excerpt, 85) }}
+                                </div>
+                                <div style="display: -webkit-inline-box; left: 313; top: -150; position: relative;">
+                                    @if(auth()->user()->isAdmin())
+                                        <form method="POST" action="{{ route('fccfUpdates.delete') }}"> 
+                                            @csrf
+                                            @method('DELETE')
+                                            <input type="hidden" name="id" value="{{ $update->id }}"> 
+                                            <input type="hidden" name="_method" value="DELETE">
+                                            <button type="submit" class="myButton2" style="color:rgba(92, 90, 90, 1); text-decoration:underline;">
+                                                Delete
+                                            </button>
+                                        </form>
+                                        <div class="myButton3">
+                                            <a href="{{ route('fccfUpdates.edit',$update->updatename) }}" style="color:rgba(92, 90, 90, 1);">
+                                                Edit
+                                            </a>
+                                        </div>
+                                    @endif
+                                    <div class="myButton">
+                                        <a href="{{ route('fccfUpdates.show',$update->updatename) }}" style="color:rgba(92, 90, 90, 1);">
+                                            Read More
                                         </a>
                                     </div>
-                                @endif
-                                <div class="myButton">
-                                    <a href="{{ route('fccfUpdates.showTest',$update->updatename) }}" style="color:rgba(92, 90, 90, 1);">
-                                        Read More
-                                    </a>
                                 </div>
                             </div>
-
                         </div>
                             
                         @endforeach
