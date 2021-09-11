@@ -76,16 +76,15 @@
         z-index:6;
     }
     .q4{
-        position:fixed;
-        z-index:7;
-        pointer-events:auto;
-        margin-left:180px;
-        width:282px;
-        min-width:282px;
-        height:232px;
-        margin-top:80px;
-        margin-bottom:0px;
-        min-height:232px;
+      position: fixed;
+      z-index: 7;
+      pointer-events: auto;
+      margin-left: 180px;
+      width: 193px;
+      height: 142px;
+      margin-top: 80px;
+      margin-bottom: 0px;
+      left: 1150px;
     }
     .outer_q4{
         position:fixed;
@@ -153,22 +152,21 @@
     }
     .outer_q7{
         position:relative;
+        font-family: 'Baskervville';
+        font-size:25px;
         display:flex;
-        pointer-events:none;
+        pointer-events:all;
         z-index:14;
     }
     .q8{
         position:relative;
         z-index:13;
         pointer-events:auto;
-        transform:rotate(-0.5968094512291771deg);
-        margin-left:0px;
+        margin-left:120px;
         width:815.04px;
         min-width:815.04px;
-        margin-top:-4px;
+        margin-top:-25px;
         margin-bottom:4px;
-        min-height:undefinedpx;
-        border:1px solid rgba(92, 90, 90, 1);
     }
     .outer_q8{
         position:relative;
@@ -182,11 +180,9 @@
         pointer-events:all;
         margin-left:114px;
         width:922px;
-        min-width:922px;
-        height:307px;
+        height:800px;
         margin-top:-996px;
         margin-bottom:310px;
-        min-height:307px;
         
     width: 100%;
     height: 100%;
@@ -777,16 +773,17 @@
         margin-left:83px;
         width:994px;
         min-width:994px;
-        height:236px;
+        height:270px;
         margin-top:-262px;
         margin-bottom:26px;
         min-height:236px;
-        top: 53px;
+        top: 130px;
+        border-top: 2px solid #42494e;
     }
     .outer_q36{
         position:relative;
         display:flex;
-        pointer-events:none;
+        pointer-events:all;
         
     }
     .q37{
@@ -816,7 +813,7 @@
     .outer_q37{
         position:relative;
         display:flex;
-        pointer-events:none;
+        pointer-events:all;
         z-index:45;
     }
     .q38{
@@ -956,7 +953,7 @@
         position:relative;
         z-index:37;
         pointer-events:auto;
-        margin-left:430px;
+        margin-left:705px;
         width:234px;
         min-width:234px;
         height:38px;
@@ -1249,8 +1246,6 @@
       width: 100%;
       color: #202020;
     }
-    .content .title{
-    }
     .content p{
     }
     .dropbtn {
@@ -1293,7 +1288,8 @@
         z-index: 3;
         pointer-events: none;
         min-width: 172px;
-        margin-top: 0px;
+        margin-top: 109px;
+        margin-left: 60px;
         margin-bottom: 0px;
         min-height: 47px;
         text-align: left;
@@ -1304,10 +1300,9 @@
         font-style: normal;
         font-family: Baskervville;
         font-weight: 400;
-        font-size: 24px;
+        font-size: 64px;
         line-height: 46.400001525878906px;
         white-space: nowrap;
-        text-decoration: underline;
     }
     .MY-CART-outer{
         position:relative;
@@ -1711,39 +1706,67 @@
 
 @media  screen and (max-width: 1920px) {
 	.q43{
-  		top:-20px;
+  		top:0px;
+      left:100px;
 	}
     .textbox1 {
         position: absolute;
-        width: 527px;
+        width: 680px;
         height: 160px;
-        left: 405px;
-        top: 166px;
+        left: 345px;
+        top: 230px;
         font-family: Baskervville;
         font-style: normal;
         font-weight: normal;
-        font-size: 24px;
+        font-size: 20px;
         line-height: 31px;
         color: #5C5A5A;
         white-space: pre-wrap;
-        text-align: justify;
+        text-align: center;
 
     }
     .textbox2{
         position: absolute;
-        width: 527px;
+        width: 680px;
         height: 160px;
-        left: 405px;
-        top: 463px;
+        left: 345px;
+        top: 578px;
         font-family: Baskervville;
         font-style: normal;
         font-weight: normal;
-        font-size: 24px;
+        font-size: 20px;
         line-height: 31px;
         color: #5C5A5A;
         white-space: pre-wrap;
-        text-align: justify;
-
+        text-align: center;
+    }
+    .title{
+      color: rgba(0, 0, 0, 1);
+      font-style: normal;
+      font-family: Baskervville;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 17px;
+      
+    }
+    .aboutPic{
+      width: 454px;
+      position: absolute;
+      left: -123px;
+      height: 545px;
+      top: 207px;
+    }
+    .footerRectangle{
+      position: relative;
+      z-index: 11;
+      pointer-events: all;
+      margin-left: 0px;
+      width: auto;
+      height: 296px;
+      margin-top: 15px;
+      margin-bottom: 0px;
+      min-height: 296px;
+      background-color: rgba(36, 36, 36, 1);
     }
 }
 
@@ -1759,7 +1782,7 @@
         
           <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=5" />
         
-          <title> Test About Page </title>
+          <title> About </title>
           <meta name="description" content="Test Home Description">
           <meta property="og:title" content="Test Home">
           <meta property="og:description" content="Test Home Description">
@@ -1772,8 +1795,8 @@
        <body class="websiteBody">
           <input type="checkbox" id="active">
           <label for="active" style="postion:fixed;"class="menu-btn">
-            <img style="margin-top:100px; width:282px; height:232px; margin-left: 180px; position: absolute;" src="images/Ellipse_1.png">
-            <img style="text-align:center; margin-top:170px; margin-left:260px; position: relative;"src="images/menu.png">
+            <img style="margin-top: 100px;width: 193px;height: 142px;margin-left: 280px;position: absolute;" src="images/Ellipse_1.png">
+            <img style="text-align: center;margin-top: 143px;margin-left: 314px;position: relative;width: 116px;"src="images/menu.png">
           </label>
           <div class="wrapper">
              <ul>
@@ -1847,13 +1870,7 @@
                         class="q6"
                       >
                         <div class="outer_q7">
-                        <img
-                          id="q7"
-                          data-name="First Class Conferencing Facilitation Logo"
-                          src="images/First_Class_Conferencing_Facilitation_Logo.png"
-                          alt="First Class Conferencing Facilitation Logo"
-                          class="q7"
-                        >
+                        <a href="<?php echo e(route('profiles.index')); ?>"style="color: rgba(92, 90, 90, 1); text-decoration:none;">My Account</a>
                         </div>
                         <div class="outer_q8">
                         <div
@@ -1862,6 +1879,10 @@
                           alt="Line 6"
                           class="q8"
                         >
+                        <img src="images/fccfhead.png" width="254" height="79">
+                        <div class="title" style="margin-left: 287px;margin-top: 15px; width:fit-content;">BEHIND THE BRAND</div>
+                        <img scr='images/line.png' width="400" height="1.8" style="position: relative; left: 555px; top:-14;">
+                        <img scr='images/line.png' width="400" height="1.8" style="position: relative; left: -555px; top:-14;">
                         </div>
                         </div>
                       </div>
@@ -1878,7 +1899,7 @@
                               id="MY-CART"
                               data-name="MY CART"
                               class="MY-CART"
-                            ><div key="0"><h1>ABOUT</h1></div>
+                            ><div key="0">Sleek. Comfortable. Simplistic</div>
                             </div>
                         </div>
                         <div class="Group-16-outer">
@@ -1900,29 +1921,11 @@
                               </div>
                             </div>
                             </div>
-                            <div 
-                                style="position: relative;
-                                width: 299px;
-                                height: 287px;
-                                left: -136px;                                
-                                top: 146px;
-                                background: #B5EBFF;
-                                border-radius:50%;"
-                            ><img src="../images/fccf_logo_2.png" style="position: relative; top: 118px; width: 299px;">
-                            </div>
-                            <div 
-                                style="position: relative;
-                                width: 299px;
-                                height: 287px;
-                                left: -434px;
-                                top: 458px;
-                                background: #B5EBFF;
-                                border-radius:50%;"
-                            ><img src="../images/marketplace.png" style="position: relative; top: 118px; width: 250px;">
-                            </div>
-                            <div class="textbox1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </div>
-                            <div class="textbox2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </div>
-
+                            
+                            
+                            <div class="textbox1">Here at First Class we've created a lifestyle brand that is both comfortable and stylish. Being a remote-work, technology-based company means that comfort is a must. Sweatpants and a good sweater are always the go-to. We've found that comfort and productivity go hand-in-hand so when it came time to curating our company’s merchandise it was no question it would be structured around comfort. Style is also very important to us and we want to bridge the gap between something our staff will love, but also something our clients will enjoy relaxing in.</div>
+                            <div class="textbox2">The results?  Sleek, comfortable, simplistic wear and products that both rep the brand, but are also convenient for any lifestyle - busy or relaxing. We want to share our line of First Class products with you.</div>
+                            <img class="aboutPic" src="images/squad.png">
                         </div>
                       </div>
                       </div>
@@ -1932,94 +1935,33 @@
                     <div
                     id="q36"
                     data-name="Group 8"
-                    class="q36"
-                    >
-                    
-                    <div class="outer_q37">
-                      <div class="outer_q37">
-                        <div
-                          id="q25"
-                          data-name="read more"
-                          class="q37"
-                        ><div key="0"></div>
-                        </div>
-                        </div>
-                    <div
-                      id="q37"
-                      data-name="read more"
-                      class="q37"
-                    ><div key="0"></div>
+                    class="q36">
+                    <div class="footerRectangle">
+                      <img src="images/footerPic.png" style="width: 990;position: relative;top: 15px;">
+                      <div><a href="<?php echo e(route('home')); ?>" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -15px;left: -154px; text-decoration:none;">Home</a></div>
+                      <div><a href="<?php echo e(route('products.index')); ?>" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -12px;left: -157px; text-decoration:none;">Shop</a></div>
+                      <div><a href="<?php echo e(route('about')); ?>" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -10px;left: -154px; text-decoration:none;">About</a></div>
+                      <div><a href="#" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -5px;left: -158px; text-decoration:none;">Blog</a></div>
+                      <div><a href="#" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -2px;left: -157px; text-decoration:none;">Team</a></div>
+                      <div><a href="<?php echo e(route('fccfUpdates.index')); ?>" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -98px;left: -50px; text-decoration:none;">Careers</a></div>
+                      <div><a href="<?php echo e(route('profiles.index')); ?>" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -96px;left: -32px; text-decoration:none;">My Account</a></div>
+                      <div><a href="<?php echo e(route('purchaseHistory',auth()->user()->username)); ?>" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -94px;left: -38px; text-decoration:none;">My Orders</a></div>
+                      <div><a href="#" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -92px;left: -23px; text-decoration:none;">Order Tracking</a></div>
+                      <div><a href="#" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -90px;left: 0px; text-decoration:none;">Returns & Exchanges</a></div>
+                      <div><a href="#" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -180px;left: 157px; text-decoration:none;">Payments & Security</a></div>
+                      <div><a href="#" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -180px;left: 118px; text-decoration:none;">Contact Us</a></div>
+
                     </div>
-                    </div>
-                        <div class="outer_q38">
-                        <div
-                          id="q38"
-                          data-name="my account"
-                          class="q38"
-                        ><div key="0"><a href="<?php echo e(route('profiles.index')); ?>" style="white-space: nowrap; color: rgba(92, 90, 90, 1);">My Account</a></div>
-                        </div>
-                        </div>
-                        <div class="outer_q39">
-                        <div
-                          id="q39"
-                          data-name="contact"
-                          class="q39"
-                        ><div key="0">Contact </div>
-                        </div>
-                        </div>
-                        <div class="outer_q40">
-                        <div
-                          id="q40"
-                          data-name="Monday-Friday9-5 EST"
-                          class="q40"
-                        ><div key="0">Monday-Friday 9-5 EST</div>
-                        </div>
-                        </div>
-                        <div class="outer_q41">
-                        <div
-                          id="q41"
-                          data-name="4161234567"
-                          class="q41"
-                        ><div key="0">(416) 123-4567</div>
-                        </div>
-                        </div>
                       </div>
+                      
                       </div>
-                      <div class="outer_q42">
-                      <div
-                        id="q42"
-                        data-name="Line 18"
-                        alt="Line 18"
-                        class="q42"
-                      >
-                      </div>
-                      </div>
+                      
                       <div class="outer_q43">
                       <div
                         id="q43"
                         data-name="Media"
                         class="q43"
                       >
-                        <div class="outer_q44">
-                    <a href="#">
-                        <img
-                          id="q44"
-                          data-name="WordPress"
-                          src="images/WordPress.png"
-                          alt="WordPress"
-                          class="q44"
-                        ></a>
-                        </div>
-                        <div class="outer_q45">
-                    <a href="#">
-                        <img
-                          id="q45"
-                          data-name="TikTok"
-                          src="images/TikTok.png"
-                          alt="TikTok"
-                          class="q45"
-                        ></a>
-                        </div>
                         <div class="outer_q46">
                     <a href="https://www.facebook.com/firstclassfacilitation/">
                         <img

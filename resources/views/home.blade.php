@@ -5,6 +5,8 @@
       margin-left: 12%;
       overflow-x:hidden;
       position: relative;
+      pointer-events: all;
+      z-index: 1;
     
     }
     @media screen and (max-width: 1920px) {
@@ -12,6 +14,9 @@
               margin: auto;
           margin-left: 12%;
           overflow-x:hidden;
+          pointer-events: all;
+          z-index: 1;
+
         }
     }
     
@@ -19,6 +24,9 @@
         .websiteBody{
               margin: auto;
           position: fixed;
+          pointer-events: all;
+          z-index: 1;
+
         }
     }
     
@@ -133,13 +141,13 @@
     .outer_q6{
         position:relative;
         display:flex;
-        pointer-events:none;
+        pointer-events:all;
         z-index:12;
     }
     .q7{
         position:relative;
         z-index:14;
-        pointer-events:auto;
+        pointer-events:all;
         margin-left:2px;
         width:175px;
         min-width:175px;
@@ -150,27 +158,26 @@
     }
     .outer_q7{
         position:relative;
+        font-family: 'Baskervville';
         display:flex;
-        pointer-events:none;
+        pointer-events:all;
         z-index:14;
     }
     .q8{
         position:relative;
         z-index:13;
         pointer-events:auto;
-        transform:rotate(-0.5968094512291771deg);
-        margin-left:0px;
+        margin-left:120px;
         width:815.04px;
         min-width:815.04px;
-        margin-top:-4px;
+        margin-top:-25px;
         margin-bottom:4px;
-        min-height:undefinedpx;
-        border:1px solid rgba(92, 90, 90, 1);
+       
     }
     .outer_q8{
         position:relative;
         display:flex;
-        pointer-events:none;
+        pointer-events:all;
         z-index:13;
     }
     .q9{
@@ -392,7 +399,7 @@
         width:951px;
         min-width:951px;
         height:301px;
-        margin-top:-478px;
+        margin-top:-520px;
         margin-bottom:177px;
         min-height:301px;
     }
@@ -431,8 +438,8 @@
         margin-top:0px;
         margin-bottom:19px;
         min-height:280px;
-        background-color:rgba(189, 199, 207, 1);
-        border-radius:10px;
+        background-color: rgb(196, 196, 196);
+        border-radius:0px;
     }
     .outer_q21{
         position:relative;
@@ -571,8 +578,8 @@
         margin-top:0px;
         margin-bottom:0px;
         min-height:280px;
-        background-color:rgba(189, 199, 207, 1);
-        border-radius:10px;
+        background-color: rgb(196, 196, 196);
+        border-radius:0px;
     }
     .outer_q27{
         position:relative;
@@ -681,8 +688,8 @@
         margin-top:0px;
         margin-bottom:13px;
         min-height:280px;
-        background-color:rgba(189, 199, 207, 1);
-        border-radius:10px;
+        background-color: rgb(196, 196, 196);
+        border-radius:0px;
     }
     .outer_q32{
         position:relative;
@@ -763,22 +770,22 @@
         z-index:23;
     }
     .q36{
-        position:relative;
-        z-index:44;
+      position:relative;
         pointer-events:auto;
         margin-left:83px;
         width:994px;
         min-width:994px;
-        height:236px;
+        height:270px;
         margin-top:-262px;
         margin-bottom:26px;
         min-height:236px;
+        top: 130px;
+        border-top: 2px solid #42494e;
     }
     .outer_q36{
         position:relative;
         display:flex;
         pointer-events:none;
-        z-index:44;
     }
     .q37{
         position:relative;
@@ -947,7 +954,7 @@
         position:relative;
         z-index:37;
         pointer-events:auto;
-        margin-left:430px;
+        margin-left:705px;
         width:234px;
         min-width:234px;
         height:38px;
@@ -1274,13 +1281,63 @@
       text-decoration: none;
       display: block;
     }
+
+    .BUTTON_TRE {
+      -webkit-border-radius: 1px;
+      -moz-border-radius: 1px;
+      border-radius: 1px;
+      color: rgba(2, 3, 3, 0.65);
+      font-family: sans-serif;
+      font-size: 20px;
+      font-weight: 100;
+      padding: 8px;
+      background-color: #FFFFFF;
+      -webkit-box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.68);
+      -moz-box-shadow: 1px 1px 20px 0 rgba(0, 0, 0, 0.68);
+      text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.13);
+      border: solid rgba(0, 0, 0, 0.76) 1px;
+      text-decoration: none;
+      display: inline-block;
+      cursor: pointer;
+      text-align: center;
+    }
+    .BUTTON_TRE:hover {
+      background: #6C8499;
+      border: solid #000000 1px;
+      -webkit-border-radius: 2px;
+      -moz-border-radius: 2px;
+      border-radius: 2px;
+      text-decoration: none;
+    }
     
     .dropdown-content a:hover {background-color: #ddd;}
     
     .dropdown:hover .dropdown-content {display: block;}
     @media screen and (max-width: 1920px) {
         .q43{
-              top:-20px;
+              top:0px;
+              left: 100px;
+        }
+        .title{
+          color: rgba(0, 0, 0, 1);
+          font-style: normal;
+          font-family: Baskervville;
+          font-weight: 400;
+          font-size: 24px;
+          line-height: 17px;
+      
+        }
+        .footerRectangle{
+          position: relative;
+          z-index: 11;
+          pointer-events: all;
+          margin-left: 0px;
+          width: auto;
+          height: 296px;
+          margin-top: 15px;
+          margin-bottom: 0px;
+          min-height: 296px;
+          background-color: rgba(36, 36, 36, 1);
         }
     }
     </style>
@@ -1308,8 +1365,8 @@
        <body class="websiteBody">
           <input type="checkbox" id="active">
           <label for="active" style="postion:fixed;"class="menu-btn">
-            <img style="margin-top:100px; width:282px; height:232px; margin-left: 180px; position: absolute;" src="images/Ellipse_1.png">
-            <img style="text-align:center; margin-top:170px; margin-left:260px; position: relative;"src="images/menu.png">
+            <img style="margin-top: 100px;width: 193px;height: 142px;margin-left: 280px;position: absolute;" src="images/Ellipse_1.png">
+            <img style="text-align: center;margin-top: 143px;margin-left: 314px;position: relative;width: 116px;"src="images/menu.png">
           </label>
           <div class="wrapper">
              <ul>
@@ -1356,15 +1413,6 @@
                         data-name="Group 3"
                         class="q3"
                       >
-                        <div class="outer_q4">
-                        <img
-                          id="q4"
-                          data-name="Ellipse 1"
-                          src="images/Ellipse_1.png"
-                          alt="Ellipse 1"
-                          class="q4"
-                        >
-                        </div>
                         <div class="outer_q5">
                         <div
                           id="q5"
@@ -1382,13 +1430,7 @@
                         class="q6"
                       >
                         <div class="outer_q7">
-                        <img
-                          id="q7"
-                          data-name="First Class Conferencing Facilitation Logo"
-                          src="images/First_Class_Conferencing_Facilitation_Logo.png"
-                          alt="First Class Conferencing Facilitation Logo"
-                          class="q7"
-                        >
+                          <a href="{{ route('profiles.index') }}"style="color: rgba(92, 90, 90, 1); text-decoration:none;">My Account</a>
                         </div>
                         <div class="outer_q8">
                         <div
@@ -1397,6 +1439,10 @@
                           alt="Line 6"
                           class="q8"
                         >
+                        <img src="images/fccfhead.png" width="254" height="79">
+                        <div class="title" style="margin-left: 365px;margin-top: 15px; width:fit-content;">HOME</div>
+                        <img scr='images/line.png' width="500" height="1.8" style="position: relative; left: 309px; top:-3;">
+                        <img scr='images/line.png' width="500" height="1.8" style="position: relative; left: -309px; top:-4;">
                         </div>
                         </div>
                       </div>
@@ -1408,31 +1454,7 @@
                         class="q9"
                       >
                         <div class="outer_q10">
-                        <img
-                          id="q10"
-                          data-name="Rectangle 1"
-                          src="images/Rectangle_1.png"
-                          alt="Rectangle 1"
-                          class="q10"
-                        >
-                        </div>
-                      </div>
-                      </div>
-                      <div class="outer_q11">
-                      <div
-                        id="q11"
-                        data-name="Group 9"
-                        class="q11"
-                      >
-                  
-                        <div class="outer_q13">
-                        <div
-                          id="q13"
-                          data-name="Line 1"
-                          alt="Line 1"
-                          class="q13"
-                        >
-                        </div>
+                        <img src="images/sweatshirt.png" width="1000" height="400" style="margin-top: 55;margin-left: -50px;">
                         </div>
                       </div>
                       </div>
@@ -1441,31 +1463,13 @@
                         id="q15"
                         data-name="Group 2"
                         class="q15"
-                      >
-                        <div class="outer_q16">
-                        <div
-                          id="q16"
-                          data-name="Hi, John Doe!"
-                          class="q16"
-                        ><div key="0">Hi, {{ auth()->user()->name }}!</div>
-                        </div>
-                        </div>
-                        <div class="outer_q17">
-                        <img
-                          id="q17"
-                          data-name="Hi Five"
-                          src="images/Hi_Five.png"
-                          alt="Hi Five"
-                          class="q17"
-                        >
-                        </div>
+                      > 
                         <div class="outer_q18">
                         <div
                           id="q18"
                           data-name="Welcome to FCCF’s internal portal."
                           class="q18"
-                        ><div key="0">Welcome to FCCF’s internal portal! </div>
-              <div key="1">&nbsp;</div>
+                        ><div key="0"><img src="images/homeFeatured.png" width="1095" style="margin-left: -154px; margin-top:145px;"></div>
                         </div>
                         </div>
                       </div>
@@ -1491,33 +1495,7 @@
                           >
                           </div>
                           </div>
-                          <div class="outer_q22">
-                          <div
-                            id="q22"
-                            data-name="Tech Updates"
-                            class="q22"
-                          ><div key="0">Tech Updates</div>
-                          </div>
-                          </div>
-                          <div class="outer_q23">
-                          <img
-                            id="q23"
-                            data-name="Tech"
-                            src="images/Tech.png"
-                            alt="Tech"
-                            class="q23"
-                          >
-                          </div>
-                          <div class="outer_q24">
-                          <div
-                            id="q24"
-                            data-name="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                            class="q24"
-                          ><div key="0">Lorem ipsum dolor sit amet, consectetur </div>
-              <div key="1">adipiscing elit. </div>
-              <div key="2">&nbsp;</div>
-                          </div>
-                          </div>
+                          
                           
                         </div>
                         </div>
@@ -1536,31 +1514,7 @@
                       >
                       </div>
                       </div>
-                      <div class="outer_q28">
-                      <div
-                      id="q28"
-                      data-name="Zoom Balance"
-                      class="q28"
-                      ><div key="0">Zoom Point Balance</div>
-                      </div>
-                      </div>
-                      <div class="outer_q29">
-                      <img
-                      id="q29"
-                      data-name="Money"
-                      src="images/Money.png"
-                      alt="Money"
-                      class="q29"
-                      >
-                      </div>
-                      <div class="outer_q30">
-                      <div
-                      id="q30"
-                      data-name="100"
-                      class="q30"
-                      ><div key="0">{{ auth()->user()->points }}</div>
-                      </div>
-                      </div>
+                      
                     
                     </div>
                     </div>
@@ -1580,170 +1534,85 @@
                       >
                       </div>
                       </div>
-                      <div class="outer_q33">
-                      <div
-                      id="q33"
-                      data-name="About"
-                      class="q33"
-                      ><div key="0">About</div>
-                      </div>
-                      </div>
-                      <div class="outer_q34">
-                      <img
-                      id="q34"
-                      data-name="About"
-                      src="images/About.png"
-                      alt="About"
-                      class="q34"
-                      >
-                      </div>
-                      <div class="outer_q35">
-                      <div
-                      id="q35"
-                      data-name="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                      class="q35"
-                      ><div key="0">Lorem ipsum dolor sit amet, consectetur </div>
-                <div key="1">adipiscing elit. </div>
-                <div key="2">&nbsp;</div>
-                      </div>
-                      </div>
+                      <a href="{{ route('products.index') }}" class="BUTTON_TRE" style="position: relative;left: 330px;top: 25px;">Shop All</a>
                     </div>
                     </div>
                     </div>
                     </div>
                     
                     <div class="outer_q36">
-                    <div
-                    id="q36"
-                    data-name="Group 8"
-                    class="q36"
-                    >
-                    <div class="outer_q37">
-                      <div class="outer_q37">
-                        <div
-                          id="q25"
-                          data-name="read more"
-                          class="q37"
-                        ><div key="0"><a href="{{ route('about') }}">Read More</a></div>
-                        </div>
-                        </div>
-                    <div
-                      id="q37"
-                      data-name="read more"
-                      class="q37"
-                    ><div key="0"><a href="{{ route('techUpdates.index')}}">Read More</a></div>
-                    </div>
-                    </div>
-                        <div class="outer_q38">
-                        <div
-                          id="q38"
-                          data-name="my account"
-                          class="q38"
-                        ><div key="0"><a href="{{ route('profiles.index') }}" style="white-space: nowrap; color: rgba(92, 90, 90, 1);">My Account</a></div>
-                        </div>
-                        </div>
-                        <div class="outer_q39">
-                        <div
-                          id="q39"
-                          data-name="contact"
-                          class="q39"
-                        ><div key="0">Contact </div>
-                        </div>
-                        </div>
-                        <div class="outer_q40">
-                        <div
-                          id="q40"
-                          data-name="Monday-Friday9-5 EST"
-                          class="q40"
-                        ><div key="0">Monday-Friday 9-5 EST</div>
-                        </div>
-                        </div>
-                        <div class="outer_q41">
-                        <div
-                          id="q41"
-                          data-name="4161234567"
-                          class="q41"
-                        ><div key="0">(416) 123-4567</div>
-                        </div>
-                        </div>
-                      </div>
-                      </div>
-                      <div class="outer_q42">
+                      
                       <div
-                        id="q42"
-                        data-name="Line 18"
-                        alt="Line 18"
-                        class="q42"
-                      >
+                      id="q36"
+                      data-name="Group 8"
+                      class="q36">
+                      <div class="footerRectangle">
+                        <img src="images/footerPic.png" style="width: 990;position: relative;top: 15px;">
+                        <div><a href="{{ route('home') }}" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -15px;left: -154px; text-decoration:none;">Home</a></div>
+                        <div><a href="{{ route('products.index') }}" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -12px;left: -157px; text-decoration:none;">Shop</a></div>
+                        <div><a href="{{ route('about') }}" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -10px;left: -154px; text-decoration:none;">About</a></div>
+                        <div><a href="#" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -5px;left: -158px; text-decoration:none;">Blog</a></div>
+                        <div><a href="#" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -2px;left: -157px; text-decoration:none;">Team</a></div>
+                        <div><a href="{{ route('fccfUpdates.index') }}" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -98px;left: -50px; text-decoration:none;">Careers</a></div>
+                        <div><a href="{{ route('profiles.index') }}" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -96px;left: -32px; text-decoration:none;">My Account</a></div>
+                        <div><a href="{{route('purchaseHistory',auth()->user()->username) }}" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -94px;left: -38px; text-decoration:none;">My Orders</a></div>
+                        <div><a href="#" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -92px;left: -23px; text-decoration:none;">Order Tracking</a></div>
+                        <div><a href="#" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -90px;left: 0px; text-decoration:none;">Returns & Exchanges</a></div>
+                        <div><a href="#" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -180px;left: 157px; text-decoration:none;">Payments & Security</a></div>
+                        <div><a href="#" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -180px;left: 118px; text-decoration:none;">Contact Us</a></div>
+  
                       </div>
-                      </div>
-                      <div class="outer_q43">
-                      <div
-                        id="q43"
-                        data-name="Media"
-                        class="q43"
-                      >
-                        <div class="outer_q44">
-                    <a href="#">
-                        <img
-                          id="q44"
-                          data-name="WordPress"
-                          src="images/WordPress.png"
-                          alt="WordPress"
-                          class="q44"
-                        ></a>
                         </div>
-                        <div class="outer_q45">
-                    <a href="#">
-                        <img
-                          id="q45"
-                          data-name="TikTok"
-                          src="images/TikTok.png"
-                          alt="TikTok"
-                          class="q45"
-                        ></a>
+                        
                         </div>
-                        <div class="outer_q46">
-                    <a href="https://www.facebook.com/firstclassfacilitation/">
-                        <img
-                          id="q46"
-                          data-name="Facebook"
-                          src="images/Facebook.png"
-                          alt="Facebook"
-                          class="q46"
-                        ></a>
+                        
+                        <div class="outer_q43">
+                        <div
+                          id="q43"
+                          data-name="Media"
+                          class="q43"
+                        >
+                          <div class="outer_q46">
+                      <a href="https://www.facebook.com/firstclassfacilitation/">
+                          <img
+                            id="q46"
+                            data-name="Facebook"
+                            src="images/Facebook.png"
+                            alt="Facebook"
+                            class="q46"
+                          ></a>
+                          </div>
+                          <div class="outer_q47">
+                      <a href="https://ca.linkedin.com/company/first-class-facilitation">
+                          <img
+                            id="q47"
+                            data-name="LinkedIn"
+                            src="images/LinkedIn.png"
+                            alt="LinkedIn"
+                            class="q47"></a>
+                          </div>
+                          <div class="outer_q48">
+                      <a href="https://twitter.com/fccfacilitation?lang=en">
+                          <img
+                            id="q48"
+                            data-name="Twitter Squared"
+                            src="images/Twitter_Squared.png"
+                            alt="Twitter Squared"
+                            class="q48"
+                          ></a>
+                          </div>
+                          <div class="outer_q49">
+                      <a href="https://www.instagram.com/firstclassfacilitation/">
+                          <img
+                            id="q49"
+                            data-name="Instagram"
+                            src="images/Instagram.png"
+                            alt="Instagram"
+                            class="q49"
+                          ></a>
+                          </div>
                         </div>
-                        <div class="outer_q47">
-                    <a href="https://ca.linkedin.com/company/first-class-facilitation">
-                        <img
-                          id="q47"
-                          data-name="LinkedIn"
-                          src="images/LinkedIn.png"
-                          alt="LinkedIn"
-                          class="q47"></a>
                         </div>
-                        <div class="outer_q48">
-                    <a href="https://twitter.com/fccfacilitation?lang=en">
-                        <img
-                          id="q48"
-                          data-name="Twitter Squared"
-                          src="images/Twitter_Squared.png"
-                          alt="Twitter Squared"
-                          class="q48"
-                        ></a>
-                        </div>
-                        <div class="outer_q49">
-                    <a href="https://www.instagram.com/firstclassfacilitation/">
-                        <img
-                          id="q49"
-                          data-name="Instagram"
-                          src="images/Instagram.png"
-                          alt="Instagram"
-                          class="q49"
-                        ></a>
-                        </div>
-                      </div>
-                      </div>
                     </div>
                     </div>
                   </div>

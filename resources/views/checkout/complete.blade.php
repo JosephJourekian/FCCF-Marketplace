@@ -1791,19 +1791,45 @@
         height: 200px;
         position: relative;
         bottom: 500px;
-        left: 270px;
+        left: 210px;
     }
     .celebration2{
         width: 170px;
         height: 200px;
         position: relative;
         bottom: 500px;
-        right: 420px;
+        right: 440px;
         transform: scaleX(-1);
     }
 
 }
-
+.BUTTON_TRE {
+   -webkit-border-radius: 1px;
+   -moz-border-radius: 1px;
+   border-radius: 1px;
+   color: rgba(2, 3, 3, 0.65);
+   font-family: sans-serif;
+   font-size: 20px;
+   font-weight: 100;
+   padding: 8px;
+   background-color: #FFFFFF;
+   -webkit-box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.68);
+   -moz-box-shadow: 1px 1px 20px 0 rgba(0, 0, 0, 0.68);
+   text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.13);
+   border: solid rgba(0, 0, 0, 0.76) 1px;
+   text-decoration: none;
+   display: inline-block;
+   cursor: pointer;
+   text-align: center;
+}
+.BUTTON_TRE:hover {
+   background: #6C8499;
+   border: solid #000000 1px;
+   -webkit-border-radius: 2px;
+   -moz-border-radius: 2px;
+   border-radius: 2px;
+   text-decoration: none;
+}
 
     </style>
     
@@ -1971,7 +1997,7 @@
                         <p class="orderMessage">An Email confirmation will be sent once the order has been submitted.</p>
                         <img src="../images/celebration.jpg" class="celebration">
                         <img src="../images/celebration.jpg" class="celebration2">
-                        <a href="{{ route('home') }}" class="myButton" >Back home</a>
+                        <a href="{{ route('home') }}" class="BUTTON_TRE" style="position: relative;top: -400px;left: -365px;">Back home</a>
 
                       </div>
                       </div>

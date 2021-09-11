@@ -2079,9 +2079,9 @@
                         <div class="shippingBox">
                           <div class="shippingText">Name: <?php echo e(auth()->user()->name); ?></div>
                           <div class="shippingText">Email: <?php echo e(auth()->user()->email); ?></div>
-                          <div class="shippingText">Card Number: 1234567890</div>
-                          <div class="shippingText">CVC: 123</div>
-                          <div class="shippingText">EXP Date: MM/YY</div>
+                          <div class="shippingText">Card Number: <?php echo e($card_num); ?></div>
+                          <div class="shippingText">CVC: <?php echo e($cvc); ?></div>
+                          <div class="shippingText">EXP Date: <?php echo e($exp_date); ?></div>
                           <a class="shippingText" style="  color:rgba(92, 90, 90, 1);"href="<?php echo e(route('profiles.editPayment',auth()->user()->username)); ?>">Change Payment Info</a>
                         </div>
                         <div class="shippingMethod">Order Summary:</div>

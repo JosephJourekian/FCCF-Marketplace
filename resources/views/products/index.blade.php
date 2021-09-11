@@ -1287,12 +1287,9 @@
     border: none;
     outline: 0;
     padding: 12px;
-    color: white;
-    background-color: #000;
     text-align: center;
     cursor: pointer;
     width: 100%;
-    font-family: 'Baskervville';
     font-size: 18px;
   }
   
@@ -1521,14 +1518,41 @@
 
   .links {
     text-decoration: none;
-    font-weight: bold;
-    color:white; 
+    color:black; 
     
   }
   p{
     height: 39px;
   }
   
+  .BUTTON_TRE {
+   -webkit-border-radius: 1px;
+   -moz-border-radius: 1px;
+   border-radius: 1px;
+   color: rgba(2, 3, 3, 0.65);
+   font-family: sans-serif;
+   font-size: 17px;
+   font-weight: 100;
+   padding: 8px;
+   background-color: #FFFFFF;
+   -webkit-box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.68);
+   -moz-box-shadow: 1px 1px 20px 0 rgba(0, 0, 0, 0.68);
+   text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.13);
+   border: solid rgba(0, 0, 0, 0.76) 1px;
+   text-decoration: none;
+   display: inline-block;
+   cursor: pointer;
+   text-align: center;
+}
+.BUTTON_TRE:hover {
+   background: #6C8499;
+   border: solid #000000 1px;
+   -webkit-border-radius: 2px;
+   -moz-border-radius: 2px;
+   border-radius: 2px;
+   text-decoration: none;
+}
+
   
 
   </style>
@@ -1696,7 +1720,7 @@
                                   <p style="margin-bottom:-70px;">{{ \Illuminate\Support\Str::limit($product->description, 20) }}</p>
                                   </p>
                                   @if($product->stock == 0)
-                                    <p><button class="myButton2"><a href="#" class="card-link">Out of Stock</a></button></p>
+                                    <p><button class="BUTTON_TRE"><a href="#" class="card-link" style="color: black; text-decoration:none;">Out of Stock</a></button></p>
                                   @else
                                     <?php $cond = true ?>
                                     @foreach ($product->category as $categories)
@@ -1705,18 +1729,18 @@
                                       @endif
                                     @endforeach
                                     @if ($cond == true)
-                                      <p style="height: 39px;"><button class="myButton"><a href="{{ route('carts.add',$product->productname) }}" class="links">Add to Cart</a></button></p>
+                                      <p style="height: 39px;"><button class="BUTTON_TRE"><a href="{{ route('carts.add',$product->productname) }}" class="links">Add to Cart</a></button></p>
                                     @endif
                                   @endif
-                                  <p><button class="myButton"><a href="{{ route('products.show',$product->productname) }}" class="links">View Product</a></button></p>
+                                  <p><button class="BUTTON_TRE"><a href="{{ route('products.show',$product->productname) }}" class="links">View Product</a></button></p>
                                   @if(auth()->user()->isAdmin())
-                                   <p><button class="myButton"><a href="{{ route('products.edit',$product->productname) }}" class="links">Edit Product</a></button></p>
+                                   <p><button class="BUTTON_TRE"><a href="{{ route('products.edit',$product->productname) }}" class="links">Edit Product</a></button></p>
                                   <form method="POST" action="{{ route('products.delete') }}"> 
                                     @csrf
                                     @method('DELETE')
                                     <input type="hidden" name="id" value="{{ $product->id }}"> 
                                     <input type="hidden" name="_method" value="DELETE">
-                                    <button type="submit" class="myButton2" style="">Remove</button>
+                                    <button type="submit" class="BUTTON_TRE" style="color:black;">Remove</button>
                                   </form>
                                   @endif
                                   </div>

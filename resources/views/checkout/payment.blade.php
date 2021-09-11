@@ -2078,9 +2078,9 @@
                         <div class="shippingBox">
                           <div class="shippingText">Name: {{ auth()->user()->name }}</div>
                           <div class="shippingText">Email: {{ auth()->user()->email }}</div>
-                          <div class="shippingText">Card Number: 1234567890</div>
-                          <div class="shippingText">CVC: 123</div>
-                          <div class="shippingText">EXP Date: MM/YY</div>
+                          <div class="shippingText">Card Number: {{ $card_num }}</div>
+                          <div class="shippingText">CVC: {{ $cvc }}</div>
+                          <div class="shippingText">EXP Date: {{ $exp_date }}</div>
                           <a class="shippingText" style="  color:rgba(92, 90, 90, 1);"href="{{ route('profiles.editPayment',auth()->user()->username) }}">Change Payment Info</a>
                         </div>
                         <div class="shippingMethod">Order Summary:</div>

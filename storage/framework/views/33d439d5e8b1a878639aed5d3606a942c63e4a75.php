@@ -1766,7 +1766,6 @@
     .read{
         width: 230px;
         height: 51px;
-        background: #B5EBFF;
         position: relative;
         top: 303px;
         left: 23px;
@@ -1798,7 +1797,35 @@
             position:relative;
             top:1px;
         }
+
     }
+    .BUTTON_TRE {
+   -webkit-border-radius: 1px;
+   -moz-border-radius: 1px;
+   border-radius: 1px;
+   color: rgba(2, 3, 3, 0.65);
+   font-family: sans-serif;
+   font-size: 20px;
+   font-weight: 100;
+   padding: 8px;
+   background-color: #FFFFFF;
+   -webkit-box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.68);
+   -moz-box-shadow: 1px 1px 20px 0 rgba(0, 0, 0, 0.68);
+   text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.13);
+   border: solid rgba(0, 0, 0, 0.76) 1px;
+   text-decoration: none;
+   display: inline-block;
+   cursor: pointer;
+   text-align: center;
+}
+.BUTTON_TRE:hover {
+   background: #6C8499;
+   border: solid #000000 1px;
+   -webkit-border-radius: 2px;
+   -moz-border-radius: 2px;
+   border-radius: 2px;
+   text-decoration: none;
+}
 
     </style>
     
@@ -1964,7 +1991,7 @@
                             <div class="panel3"></div>
                             <div class="panel4"></div>
                             <div class="read">
-                                <div class="myButton"><a style="color:#202020; text-decoration:none;" href="https://support.microsoft.com/en-us/office/what-s-new-in-microsoft-teams-d7092a6d-c896-424c-b362-a472d5f105de">Read More</a></div>
+                                <div class="BUTTON_TRE"><a style="color:#202020; text-decoration:none;" href="https://support.microsoft.com/en-us/office/what-s-new-in-microsoft-teams-d7092a6d-c896-424c-b362-a472d5f105de">Read More</a></div>
                             </div>
                         </div>
 
@@ -1977,7 +2004,7 @@
                             <div class="panel3"></div>
                             <div class="panel4"></div>
                             <div class="read">
-                                <div class="myButton"><a style="color:#202020; text-decoration:none;" href="https://support.zoom.us/hc/en-us/sections/360008531132-Zoom-Releases-By-Date">Read More</a></div>
+                                <div class="BUTTON_TRE"><a style="color:#202020; text-decoration:none;" href="https://support.zoom.us/hc/en-us/sections/360008531132-Zoom-Releases-By-Date">Read More</a></div>
                             </div>
                         </div>
 
@@ -1990,7 +2017,7 @@
                             <div class="panel3"></div>
                             <div class="panel4"></div>
                             <div class="read">
-                                <div class="myButton"><a style="color:#202020; text-decoration:none;" href="https://slack.com/intl/en-ca/release-notes/windows">Read More</a></div>
+                                <div class="BUTTON_TRE"><a style="color:#202020; text-decoration:none;" href="https://slack.com/intl/en-ca/release-notes/windows">Read More</a></div>
                             </div>
                         </div>
                         

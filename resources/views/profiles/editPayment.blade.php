@@ -1805,6 +1805,33 @@
     color: red;
 }
 
+.BUTTON_TRE {
+   -webkit-border-radius: 1px;
+   -moz-border-radius: 1px;
+   border-radius: 1px;
+   color: rgba(2, 3, 3, 0.65);
+   font-family: sans-serif;
+   font-size: 17px;
+   font-weight: 100;
+   padding: 8px;
+   background-color: #FFFFFF;
+   -webkit-box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.68);
+   -moz-box-shadow: 1px 1px 20px 0 rgba(0, 0, 0, 0.68);
+   text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.13);
+   border: solid rgba(0, 0, 0, 0.76) 1px;
+   text-decoration: none;
+   display: inline-block;
+   cursor: pointer;
+   text-align: center;
+}
+.BUTTON_TRE:hover {
+   background: #6C8499;
+   border: solid #000000 1px;
+   -webkit-border-radius: 2px;
+   -moz-border-radius: 2px;
+   border-radius: 2px;
+   text-decoration: none;
+}
 
 
     </style>
@@ -1976,7 +2003,7 @@
                                     type="text"
                                     name="card_number"
                                     id="card_number"
-                                    value="{{ $user->card_number }}"
+                                    value="{{ $card_num }}"
                                     required
                                 >
                         
@@ -1996,7 +2023,7 @@
                                     type="text"
                                     name="cvc"
                                     id="cvc"
-                                    value="{{ $user->cvc }}"
+                                    value="{{ $cvc }}"
                                     required
                                 >
                         
@@ -2017,7 +2044,7 @@
                                     name="exp_date"
                                     id="exp_date"
                                     style="line-height:2;"
-                                    value="{{ $user->exp_date }}"
+                                    value="{{ $exp_date }}"
                                     class="form-control"
                                     required
                                 >
@@ -2029,12 +2056,14 @@
                         
                             <div class="mb-6">
                                 <button type="submit"
-                                        class="myButton"
+                                        class="BUTTON_TRE"
+                                        style="position: relative; left: -490px;"
                                 >
                                     Submit
                                 </button>
                                 <a href="{{ route('home') }}"
-                                            class="myButton2"
+                                            class="BUTTON_TRE"
+                                            style="position: relative;left: -450;"
                                     >
                                         Back To Home
                                 </a>

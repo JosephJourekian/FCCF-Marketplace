@@ -60,7 +60,7 @@ Route::middleware('auth')->group(function (){
     Route::post('/myCart/update/{rowId}/{product:productname}', 'App\Http\Controllers\CartsController@update')->name('carts.update'); 
   
 
-    Route::get('/checkoutComplete', 'App\Http\Controllers\CheckoutsController@checkoutComplete')->name('checkout.complete');
+    Route::get('/checkout/complete', 'App\Http\Controllers\CheckoutsController@checkoutComplete')->name('checkout.complete');
     Route::get('/checkout', 'App\Http\Controllers\CheckoutsController@index')->name('checkout.index'); 
     Route::get('/checkout/payment', 'App\Http\Controllers\CheckoutsController@payment')->name('checkout.payment'); 
     Route::get('/checkout/confirm', 'App\Http\Controllers\CheckoutsController@confirm')->name('checkout.confirm'); 

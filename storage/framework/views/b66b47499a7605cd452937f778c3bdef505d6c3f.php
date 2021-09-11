@@ -1990,6 +1990,33 @@ html, body {
     top: -85px;
   }
 }
+.BUTTON_TRE {
+   -webkit-border-radius: 1px;
+   -moz-border-radius: 1px;
+   border-radius: 1px;
+   color: rgba(2, 3, 3, 0.65);
+   font-family: sans-serif;
+   font-size: 17px;
+   font-weight: 100;
+   padding: 8px;
+   background-color: #FFFFFF;
+   -webkit-box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.68);
+   -moz-box-shadow: 1px 1px 20px 0 rgba(0, 0, 0, 0.68);
+   text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.13);
+   border: solid rgba(0, 0, 0, 0.76) 1px;
+   text-decoration: none;
+   display: inline-block;
+   cursor: pointer;
+   text-align: center;
+}
+.BUTTON_TRE:hover {
+   background: #6C8499;
+   border: solid #000000 1px;
+   -webkit-border-radius: 2px;
+   -moz-border-radius: 2px;
+   border-radius: 2px;
+   text-decoration: none;
+}
 
 
     </style>
@@ -2220,16 +2247,16 @@ html, body {
                                 <span><?php echo e($product->price); ?> Points</span>
                                 <?php if($product->stock == 0): ?>
                                 <a href="#"
-                                    class="cart-btn">
+                                    class="BUTTON_TRE" style="color: rgba(2, 3, 3, 0.65);">
                                     Out of Stock
                                 </a>
-                                <a href="<?php echo e(route('products.index')); ?>" class="cart-btn2">Back To Products</a>
+                                <a href="<?php echo e(route('products.index')); ?>" class="BUTTON_TRE">Back To Products</a>
                                 <?php else: ?>
-                                    <input class="cart-btn" type="submit" value="Add to Cart">
-                                    <a href="<?php echo e(route('products.index')); ?>" class="cart-btn2">Back To Products</a>
+                                    <input class="BUTTON_TRE" type="submit" value="Add to Cart" style="margin-right: 20px;">
+                                    <a href="<?php echo e(route('products.index')); ?>" class="BUTTON_TRE" style="color: rgba(2, 3, 3, 0.65);">Back To Products</a>
                                 <?php endif; ?> 
                                     <?php if(auth()->user()->isAdmin()): ?>
-                                      <a href="<?php echo e(route('products.edit',$product->productname)); ?>" class="cart-btn3">Edit This Product</a>
+                                      <a href="<?php echo e(route('products.edit',$product->productname)); ?>" class="BUTTON_TRE" style="color: rgba(2, 3, 3, 0.65); POSITION: RELATIVE;top: 75px;left: -220px;">Edit This Product</a>
                                     <?php endif; ?>
                                     
                                   </div>

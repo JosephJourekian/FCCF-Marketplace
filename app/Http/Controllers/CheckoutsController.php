@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Contracts\Encryption\DecryptException;
+use Illuminate\Support\Facades\Crypt;
 use App\Models\User;
 use App\Models\Products;
 use App\Models\Orders;
@@ -45,7 +47,17 @@ class CheckoutsController extends Controller
     public function payment(Request $request){
         $method = $request->method;
         session(["shipping"=>$method]);
-        //$this->confirm($method);
+
+        try {
+            $card = Crypt::decrypt(auth()->user()->card_number); 
+            $cvc = Crypt::decrypt(auth()->user()->cvc); 
+            $exp_date = Crypt::decrypt(auth()->user()->exp_date); 
+        } catch (DecryptException $e) {
+            $card = 'N/A';
+            $cvc = 'N/A';
+            $exp_date  = 'N/A';
+        }
+         
         
         if(Cart::count() == 0){
             return redirect('products');
@@ -53,7 +65,10 @@ class CheckoutsController extends Controller
         else{
             return view("checkout.payment", [
                 'cart' => Cart::content(),
-                'shipping' =>$method
+                'shipping' => $method,
+                'card_num' => $card,
+                'cvc' => $cvc,
+                'exp_date' => $exp_date
             ]);
         }
     }

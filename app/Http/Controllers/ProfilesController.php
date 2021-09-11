@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Crypt;
+use Illuminate\Contracts\Encryption\DecryptException;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 
@@ -46,8 +47,18 @@ class ProfilesController extends Controller
 
     public function editPayment(User $user){
 
-        $userA = User::find($user)->first();
-        //$decrypted = Crypt::decrypt($user->card_number); Decrypt card number
+        $userA = User::find($user)->first(); 
+
+        try {
+            $card_num = Crypt::decrypt(auth()->user()->card_number); 
+            $cvc = Crypt::decrypt(auth()->user()->cvc); 
+            $exp_date = Crypt::decrypt(auth()->user()->exp_date); 
+        } catch (DecryptException $e) {
+            $card_num = 'N/A';
+            $cvc = 'N/A';
+            $exp_date  = 'N/A';
+        }
+
         
         if(auth()->user()->username != $userA->username)
         {
@@ -55,7 +66,11 @@ class ProfilesController extends Controller
         }
         
         return view('profiles.editPayment', [
-            'user' => $userA
+            'user' => $userA,
+            'card_num' => $card_num,
+            'cvc' => $cvc,
+            'exp_date' => $exp_date
+
         ]);
 
     }
@@ -103,6 +118,8 @@ class ProfilesController extends Controller
             'exp_date' => ['string','required','min:3','max:255',],
         ]);   
         $attributes['card_number'] = Crypt::encrypt($attributes['card_number']);
+        $attributes['cvc'] = Crypt::encrypt($attributes['cvc']);
+        $attributes['exp_date'] = Crypt::encrypt($attributes['exp_date']);
         $userA->update($attributes);
 
         

@@ -1851,7 +1851,33 @@
         position:relative;
 
     }
-    
+}
+.BUTTON_TRE {
+   -webkit-border-radius: 1px;
+   -moz-border-radius: 1px;
+   border-radius: 1px;
+   color: rgba(2, 3, 3, 0.65);
+   font-family: sans-serif;
+   font-size: 17px;
+   font-weight: 100;
+   padding: 8px;
+   background-color: #FFFFFF;
+   -webkit-box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.68);
+   -moz-box-shadow: 1px 1px 20px 0 rgba(0, 0, 0, 0.68);
+   text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.13);
+   border: solid rgba(0, 0, 0, 0.76) 1px;
+   text-decoration: none;
+   display: inline-block;
+   cursor: pointer;
+   text-align: center;
+}
+.BUTTON_TRE:hover {
+   background: #6C8499;
+   border: solid #000000 1px;
+   -webkit-border-radius: 2px;
+   -moz-border-radius: 2px;
+   border-radius: 2px;
+   text-decoration: none;
 }
 
     </style>
@@ -2035,18 +2061,18 @@
                                             @method('DELETE')
                                             <input type="hidden" name="id" value="{{ $update->id }}"> 
                                             <input type="hidden" name="_method" value="DELETE">
-                                            <button type="submit" class="myButton2" style="color:rgba(92, 90, 90, 1); text-decoration:underline;">
+                                            <button type="submit" class="BUTTON_TRE" style="margin-right:20px; color:rgba(92, 90, 90, 1);">
                                                 Delete
                                             </button>
                                         </form>
-                                        <div class="myButton3">
-                                            <a href="{{ route('fccfUpdates.edit',$update->updatename) }}" style="color:rgba(92, 90, 90, 1);">
+                                        <div class="BUTTON_TRE" style="margin-right:20px;">
+                                            <a href="{{ route('fccfUpdates.edit',$update->updatename) }}" style="color:rgba(92, 90, 90, 1); text-decoration:none;">
                                                 Edit
                                             </a>
                                         </div>
                                     @endif
-                                    <div class="myButton">
-                                        <a href="{{ route('fccfUpdates.show',$update->updatename) }}" style="color:rgba(92, 90, 90, 1);">
+                                    <div class="BUTTON_TRE">
+                                        <a href="{{ route('fccfUpdates.show',$update->updatename) }}" style="color:rgba(92, 90, 90, 1); text-decoration:none;">
                                             Read More
                                         </a>
                                     </div>
