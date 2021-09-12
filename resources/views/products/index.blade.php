@@ -145,24 +145,23 @@
   .outer_q7{
       position:relative;
       display:flex;
-      pointer-events:none;
+      pointer-events:all;
   }
   .q8{
       position:relative;
       pointer-events:auto;
-      transform:rotate(-0.5968094512291771deg);
       margin-left:0px;
       width:815.04px;
       min-width:815.04px;
-      margin-top:-4px;
-      margin-bottom:4px;
-      min-height:undefinedpx;
-      border:1px solid rgba(92, 90, 90, 1);
+      margin-top: -45px;
+      margin-bottom: 4px;
+      margin-left: 115px;
+      
   }
   .outer_q8{
       position:relative;
       display:flex;
-      pointer-events:none;
+      pointer-events:all;
   }
   .q9{
       position:relative;
@@ -764,6 +763,10 @@
       margin-top:-262px;
       margin-bottom:26px;
       min-height:236px;
+      top: 95px;
+      border-top:2px solid black;
+      overflow: hidden;
+
   }
   .outer_q36{
       position:relative;
@@ -1325,22 +1328,9 @@
   }
 
   @media screen and (max-width: 1920px) {
-      .q38{
-        margin-left: -1660px;
-        margin-top: 760px;
-       
-      }
-      .q39{
-        margin-top: 760px;
-      }
-      .q40{
-        margin-top: 800px;
-      }
-      .q41{
-        margin-top: 830px;
-      }
       .q43{
-        top:-20px;
+        top: -165px;
+        left: 316px;
       }
       
       .row{
@@ -1553,7 +1543,27 @@
    text-decoration: none;
 }
 
-  
+.footerRectangle{
+      position: relative;
+      z-index: 11;
+      pointer-events: all;
+      margin-left: 0px;
+      width: auto;
+      height: 296px;
+      margin-top: 15px;
+      margin-bottom: 0px;
+      min-height: 296px;
+      background-color: rgba(36, 36, 36, 1);
+}
+    .titleHead{
+      color: rgba(0, 0, 0, 1);
+      font-style: normal;
+      font-family: Baskervville;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 17px;
+      
+    }
 
   </style>
   
@@ -1579,15 +1589,18 @@
      <body class="websiteBody">
         <input type="checkbox" id="active">
         <label for="active" style="postion:fixed;"class="menu-btn">
-          <img style="margin-top:100px; width:282px; height:232px; margin-left: 180px; position: absolute;" src="images/Ellipse_1.png">
-          <img style="text-align:center; margin-top:170px; margin-left:260px; position: relative;"src="images/menu.png">
-        </label>
+          <!--Menu button pics -->
+          <img style="margin-top: 100px;width: 193px;height: 142px;margin-left: 280px;position: absolute;" src="../../images/Ellipse_1.png">
+          <img style="text-align: center;margin-top: 143px;margin-left: 314px;position: relative;width: 116px;"src="../../images/menu.png">
+          </label>
         <div class="wrapper">
            <ul>
+             <!--Menu links -->
               <li><a href="{{ route('home') }}">Home</a></li>
               <li><a href="{{ route('about') }}">About</a></li>
               <li><a href="{{ route('products.index') }}">Shop</a></li>
               <li><a href="{{ route('carts.index') }}">My Cart ({{ Cart::count() }})</a></li>
+              <li><a href="{{ route('products.index') }}">My Points: {{ auth()->user()->points }}</li>
               <li><a href="{{ route('updates') }}">Updates</a></li>
               <li><a href="#">Team</a></li>   
               <li>
@@ -1629,23 +1642,7 @@
                       data-name="Group 3"
                       class="q3"
                     >
-                      <div class="outer_q4">
-                      <img
-                        id="q4"
-                        data-name="Ellipse 1"
-                        src="images/Ellipse_1.png"
-                        alt="Ellipse 1"
-                        class="q4"
-                      >
-                      </div>
-                      <div class="outer_q5">
-                      <div
-                        id="q5"
-                        data-name="MENU"
-                        class="q5"
-                      ><div key="0">MENU</div>
-                      </div>
-                      </div>
+                    
                     </div>
                     </div>
                     <div class="outer_q6">
@@ -1654,14 +1651,9 @@
                       data-name="Group 10"
                       class="q6"
                     >
+                    <!--My account header link -->
                       <div class="outer_q7">
-                      <img
-                        id="q7"
-                        data-name="First Class Conferencing Facilitation Logo"
-                        src="images/First_Class_Conferencing_Facilitation_Logo.png"
-                        alt="First Class Conferencing Facilitation Logo"
-                        class="q7"
-                        >
+                        <a href="{{ route('profiles.index') }}" style="font-family: 'Baskervville'; font-size:25px;color: rgba(92, 90, 90, 1); text-decoration:none;">My Account</a>
                       </div>
                       <div class="outer_q8">
                       <div
@@ -1670,6 +1662,12 @@
                         alt="Line 6"
                         class="q8"
                       >
+                      <!--Header logo, title and lines -->
+                        <img src="../../images/fccfhead.png" width="254" height="79">
+                        <div class="titleHead" style="margin-left: 305px;margin-top: 15px; width:fit-content;">SHOP PRODUCTS</div>
+                        <img scr='images/line.png' width="400" height="1.8" style="position: relative; left: 555px; top:-14;">
+                        <img scr='images/line.png' width="400" height="1.8" style="position: relative; left: -555px; top:-14;">
+                        
                       </div>
                       </div>
                     </div>
@@ -1677,6 +1675,7 @@
                       
                     </div>
                   </div>
+                  <!--Product categories are displayed when clicked on one, the page will filter to show the products associated with that category-->
                   <h1 class="mainCategory">{{ $title }}</h1>
                   <div style="position: absolute; pointer-events:all;">
                     @foreach($category as $categorie)
@@ -1696,43 +1695,39 @@
                     data-name="Group 1"
                     class="q9"
                     >
-                    
                     <div>
-                      <div class="oneLine">
                       
-                      <!--<div class="oneLine">
-                        <div class="dropdown-content">
-                          @foreach($category as $categorie)
-                          @endforeach 
-                        </div>
-                      </div>-->
-                      </div>
-                      
+                    <!--Each product is displayed -->
                     <div class="row mb-3">
                       <?php $index = 0 ?>
                           @foreach($products as $product) 
                               <div class="col-3">   
                                   <div class="card mb-5">
+                                  <!--Product details such as image, name, price, stock, description, categories -->
                                   <img src="{{ $product->image }}" class="divClass" alt="Test image" style="width: 300px;">
                                   <h1>{{ $product->name }}</h1>
                                   <p class="price">{{ $product->price }} Points</p>
                                   <p style="margin-bottom:-20px;">Stock: {{ $product->stock }}</p>
                                   <p style="margin-bottom:-70px;">{{ \Illuminate\Support\Str::limit($product->description, 20) }}</p>
                                   </p>
+                                  <!--If the product stock is 0 then the add to cart button will be replaced with a out of stock button preventing the user from adding to cart -->
                                   @if($product->stock == 0)
                                     <p><button class="BUTTON_TRE"><a href="#" class="card-link" style="color: black; text-decoration:none;">Out of Stock</a></button></p>
                                   @else
+                                  <!--If the product is an apparel then the add to cart button will be removed so that the user can specify which color or size they want by viewing the item -->
                                     <?php $cond = true ?>
                                     @foreach ($product->category as $categories)
                                       @if ($categories->name == "Apparel")
                                         <?php $cond = false ?>
                                       @endif
                                     @endforeach
+                                    <!-- Buttons to view or add to cart-->
                                     @if ($cond == true)
                                       <p style="height: 39px;"><button class="BUTTON_TRE"><a href="{{ route('carts.add',$product->productname) }}" class="links">Add to Cart</a></button></p>
                                     @endif
                                   @endif
                                   <p><button class="BUTTON_TRE"><a href="{{ route('products.show',$product->productname) }}" class="links">View Product</a></button></p>
+                                  <!--Buttons to edit or delete the item only viewable to admins -->
                                   @if(auth()->user()->isAdmin())
                                    <p><button class="BUTTON_TRE"><a href="{{ route('products.edit',$product->productname) }}" class="links">Edit Product</a></button></p>
                                   <form method="POST" action="{{ route('products.delete') }}"> 
@@ -1750,139 +1745,81 @@
                       </div>
                     </div>
                     </div>
-                    
+                  </div>
+                  <!--Footer with all the  links -->
                   <div class="outer_q36">
-                  <div class="outer_q37">
-                    <div class="outer_q37">
-                      <div
-                        id="q25"
-                        data-name="read more"
-                        class="q37"
-                      >
-                      </div>
-                      </div>
-                  <div
-                    id="q37"
-                    data-name="read more"
-                    class="q37"
-                  >
-                  </div>
-                  </div>
-                      <div class="outer_q38">
-                      <div
-                        id="q38"
-                        data-name="my account"
-                        class="q38"
-                      ><div key="0"><a hidden href="{{ route('profiles.edit',auth()->user()->username) }}" style="color: #000">My Account</a></div>
-                      </div>
-                      </div>
-                      <div class="outer_q39">
-                      <div
-                        id="q39"
-                        data-name="contact"
-                        class="q39"
-                      ><div key="0"></div>
-                      </div>
-                      </div>
-                      <div class="outer_q40">
-                      <div
-                        id="q40"
-                        data-name="Monday-Friday9-5 EST"
-                        class="q40"
-                      ><div key="0"></div>
-                      </div>
-                      </div>
-                      <div class="outer_q41">
-                      <div
-                        id="q41"
-                        data-name="4161234567"
-                        class="q41"
-                      ><div key="0"></div>
-                      </div>
-                      </div>
-                    </div>
-                    </div>
-                    <div class="outer_q42">
+                      
                     <div
-                      id="q42"
-                      data-name="Line 18"
-                      alt="Line 18"
-                      class="q42"
-                    ></div>                      
+                    id="q36"
+                    data-name="Group 8"
+                    class="q36">
+                    <div class="footerRectangle">
+                      <img src="../../images/footerPic.png" style="width: 990;position: relative;top: 15px;">
+                      <div><a href="{{ route('home') }}" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -15px;left: -154px; text-decoration:none;">Home</a></div>
+                      <div><a href="{{ route('products.index') }}" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -12px;left: -157px; text-decoration:none;">Shop</a></div>
+                      <div><a href="{{ route('about') }}" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -10px;left: -154px; text-decoration:none;">About</a></div>
+                      <div><a href="#" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -5px;left: -158px; text-decoration:none;">Blog</a></div>
+                      <div><a href="#" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -2px;left: -157px; text-decoration:none;">Team</a></div>
+                      <div><a href="{{ route('fccfUpdates.index') }}" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -118px;left: -50px; text-decoration:none;">Careers</a></div>
+                      <div><a href="{{ route('profiles.index') }}" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -116px;left: -32px; text-decoration:none;">My Account</a></div>
+                      <div><a href="{{route('purchaseHistory',auth()->user()->username) }}" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -114px;left: -38px; text-decoration:none;">My Orders</a></div>
+                      <div><a href="#" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -112px;left: -23px; text-decoration:none;">Order Tracking</a></div>
+                      <div><a href="#" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -110px;left: 0px; text-decoration:none;">Returns & Exchanges</a></div>
+                      <div><a href="#" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -220px;left: 157px; text-decoration:none;">Payments & Security</a></div>
+                      <div><a href="#" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -218px;left: 118px; text-decoration:none;">Contact Us</a></div>
+                      <!--Social media links -->
+                      <div class="outer_q43">
+                        <div
+                          id="q43"
+                          data-name="Media"
+                          class="q43"
+                        >
+                          <div class="outer_q46">
+                      <a href="https://www.facebook.com/firstclassfacilitation/">
+                          <img
+                            id="q46"
+                            data-name="Facebook"
+                            src="../../images/Facebook.png"
+                            alt="Facebook"
+                            class="q46"
+                          ></a>
+                          </div>
+                          <div class="outer_q47">
+                      <a href="https://ca.linkedin.com/company/first-class-facilitation">
+                          <img
+                            id="q47"
+                            data-name="LinkedIn"
+                            src="../../images/LinkedIn.png"
+                            alt="LinkedIn"
+                            class="q47"></a>
+                          </div>
+                          <div class="outer_q48">
+                      <a href="https://twitter.com/fccfacilitation?lang=en">
+                          <img
+                            id="q48"
+                            data-name="Twitter Squared"
+                            src="../../images/Twitter_Squared.png"
+                            alt="Twitter Squared"
+                            class="q48"
+                          ></a>
+                          </div>
+                          <div class="outer_q49">
+                      <a href="https://www.instagram.com/firstclassfacilitation/">
+                          <img
+                            id="q49"
+                            data-name="Instagram"
+                            src="../../images/Instagram.png"
+                            alt="Instagram"
+                            class="q49"
+                          ></a>
+                          </div>
+                        </div>
+                        </div>
                     </div>
-                    <div class="box">
-                      <a href="{{ route('profiles.index') }}" class="myAccount">My Account</a>
-                      <p class="Contact">Contact</p>
-                      <p class="Dates">Monday-Friday 9-5 EST</p>
-                      <p class="PhoneNum">(416) 123-4567</p>
-                    </div>
-                    <div class="outer_q43">
-                    <div
-                      id="q43"
-                      data-name="Media"
-                      class="q43"
-                    >
-                      <div class="outer_q44">
-                  <a href="#">
-                      <img
-                        id="q44"
-                        data-name="WordPress"
-                        src="images/WordPress.png"
-                        alt="WordPress"
-                        class="q44"
-                      ></a>
                       </div>
-                      <div class="outer_q45">
-                  <a href="#">
-                      <img
-                        id="q45"
-                        data-name="TikTok"
-                        src="images/TikTok.png"
-                        alt="TikTok"
-                        class="q45"
-                      ></a>
+                      
                       </div>
-                      <div class="outer_q46">
-                  <a href="https://www.facebook.com/firstclassfacilitation/">
-                      <img
-                        id="q46"
-                        data-name="Facebook"
-                        src="images/Facebook.png"
-                        alt="Facebook"
-                        class="q46"
-                      ></a>
-                      </div>
-                      <div class="outer_q47">
-                  <a href="https://ca.linkedin.com/company/first-class-facilitation">
-                      <img
-                        id="q47"
-                        data-name="LinkedIn"
-                        src="images/LinkedIn.png"
-                        alt="LinkedIn"
-                        class="q47"></a>
-                      </div>
-                      <div class="outer_q48">
-                  <a href="https://twitter.com/fccfacilitation?lang=en">
-                      <img
-                        id="q48"
-                        data-name="Twitter Squared"
-                        src="images/Twitter_Squared.png"
-                        alt="Twitter Squared"
-                        class="q48"
-                      ></a>
-                      </div>
-                      <div class="outer_q49">
-                  <a href="https://www.instagram.com/firstclassfacilitation/">
-                      <img
-                        id="q49"
-                        data-name="Instagram"
-                        src="images/Instagram.png"
-                        alt="Instagram"
-                        class="q49"
-                      ></a>
-                      </div>
-                    </div>
-                    </div>
+                    
                   </div>
                   </div>
                 </div>

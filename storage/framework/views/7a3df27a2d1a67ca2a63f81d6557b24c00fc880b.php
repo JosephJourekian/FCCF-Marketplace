@@ -154,26 +154,25 @@
     .outer_q7{
         position:relative;
         display:flex;
-        pointer-events:none;
+        pointer-events:all;
         z-index:14;
     }
     .q8{
         position:relative;
         z-index:13;
         pointer-events:auto;
-        transform:rotate(-0.5968094512291771deg);
         margin-left:0px;
         width:815.04px;
         min-width:815.04px;
-        margin-top:-4px;
-        margin-bottom:4px;
-        min-height:undefinedpx;
-        border:1px solid rgba(92, 90, 90, 1);
+        margin-top: -25px;
+        margin-bottom: 4px;
+        margin-left: 115px;
+       
     }
     .outer_q8{
         position:relative;
         display:flex;
-        pointer-events:none;
+        pointer-events:all;
         z-index:13;
     }
     .q9{
@@ -781,6 +780,8 @@
         margin-top:-262px;
         margin-bottom:26px;
         min-height:236px;
+        border-top:2px solid black;
+        top:95px;
     }
     .outer_q36{
         position:relative;
@@ -1319,7 +1320,7 @@
         position:relative;
         z-index:4;
         pointer-events:none;
-        margin-left:-300px;
+        margin-left:-70px;
         width:194px;
         min-width:194px;
         height:62px;
@@ -1713,11 +1714,12 @@
 
 @media  screen and (max-width: 1920px) {
 	.q43{
-  		top:-20px;
+  		top:0px;
+      left: 385px;
 	}
   .date{
     position: relative;
-    top: 30;
+    top: 20;
     left: -410;
     font-size: 25;
     margin-bottom: -25;
@@ -1731,22 +1733,31 @@
     font-size: 22;
     right: 400;
   }
-  .q38{
-    top:56px;
-  }
-  .q39{
-    top:56px;
-
-  }.q40{
-    top:56px;
-
-  }.q41{
-    top:56px;
-
-  }
   
-
 }
+
+.footerRectangle{
+      position: relative;
+      z-index: 11;
+      pointer-events: all;
+      margin-left: 0px;
+      width: auto;
+      height: 296px;
+      margin-top: 15px;
+      margin-bottom: 0px;
+      min-height: 296px;
+      background-color: rgba(36, 36, 36, 1);
+}
+    .title{
+      color: rgba(0, 0, 0, 1);
+      font-style: normal;
+      font-family: Baskervville;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 17px;
+      
+    }
+
 
     </style>
     
@@ -1773,8 +1784,8 @@
        <body class="websiteBody">
           <input type="checkbox" id="active">
           <label for="active" style="postion:fixed;"class="menu-btn">
-            <img style="margin-top:100px; width:282px; height:232px; margin-left: 180px; position: absolute;" src="../images/Ellipse_1.png">
-            <img style="text-align:center; margin-top:170px; margin-left:260px; position: relative;"src="../images/menu.png">
+            <img style="margin-top: 100px;width: 193px;height: 142px;margin-left: 280px;position: absolute;" src="../../images/Ellipse_1.png">
+            <img style="text-align: center;margin-top: 143px;margin-left: 314px;position: relative;width: 116px;"src="../../images/menu.png">
           </label>
           <div class="wrapper">
              <ul>
@@ -1821,15 +1832,6 @@
                         data-name="Group 3"
                         class="q3"
                       >
-                        <div class="outer_q4">
-                        <img
-                          id="q4"
-                          data-name="Ellipse 1"
-                          src="../images/Ellipse_1.png"
-                          alt="Ellipse 1"
-                          class="q4"
-                        >
-                        </div>
                         <div class="outer_q5">
                         <div
                           id="q5"
@@ -1848,13 +1850,7 @@
                         class="q6"
                       >
                         <div class="outer_q7">
-                        <img
-                          id="q7"
-                          data-name="First Class Conferencing Facilitation Logo"
-                          src="../images/First_Class_Conferencing_Facilitation_Logo.png"
-                          alt="First Class Conferencing Facilitation Logo"
-                          class="q7"
-                        >
+                          <a href="<?php echo e(route('profiles.index')); ?>"style="color: rgba(92, 90, 90, 1); text-decoration:none;">My Account</a>
                         </div>
                         <div class="outer_q8">
                         <div
@@ -1863,6 +1859,11 @@
                           alt="Line 6"
                           class="q8"
                         >
+                        <img src="../../images/fccfhead.png" width="254" height="79">
+                        <div class="title" style="margin-left: 275px;margin-top: 15px; width:fit-content;">PURCHASE HISTORY</div>
+                        <img scr='images/line.png' width="400" height="1.8" style="position: relative; left: 555px; top:-14;">
+                        <img scr='images/line.png' width="400" height="1.8" style="position: relative; left: -555px; top:-14;">
+                        
                         </div>
                         </div>
                       </div>
@@ -1874,14 +1875,6 @@
                         class="q9"
                       >
                         <div class="outer_q10">
-                        <div class="MY-CART-outer">
-                            <div
-                              id="MY-CART"
-                              data-name="MY CART"
-                              class="MY-CART"
-                            ><div key="0"><h1>Purchase History</h1></div>
-                            </div>
-                        </div>
                         <div class="Group-16-outer">
                             <div
                               id="Group-16"
@@ -1982,139 +1975,79 @@
                       </div>
                       </div>
                         
-                    <div class="outer_q36">
+                      <div class="outer_q36">
                       
-                    <div
-                    id="q36"
-                    data-name="Group 8"
-                    class="q36"
-                    >
-                    <div class="outer_q37">
-                      <div class="outer_q37">
                         <div
-                          id="q25"
-                          data-name="read more"
-                          class="q37"
-                        ><div key="0"></div>
+                        id="q36"
+                        data-name="Group 8"
+                        class="q36">
+                        <div class="footerRectangle">
+                          <img src="../../images/footerPic.png" style="width: 990;position: relative;top: 15px;">
+                          <div><a href="<?php echo e(route('home')); ?>" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -15px;left: -154px; text-decoration:none;">Home</a></div>
+                          <div><a href="<?php echo e(route('products.index')); ?>" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -12px;left: -157px; text-decoration:none;">Shop</a></div>
+                          <div><a href="<?php echo e(route('about')); ?>" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -10px;left: -154px; text-decoration:none;">About</a></div>
+                          <div><a href="#" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -5px;left: -158px; text-decoration:none;">Blog</a></div>
+                          <div><a href="#" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -2px;left: -157px; text-decoration:none;">Team</a></div>
+                          <div><a href="<?php echo e(route('fccfUpdates.index')); ?>" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -98px;left: -50px; text-decoration:none;">Careers</a></div>
+                          <div><a href="<?php echo e(route('profiles.index')); ?>" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -96px;left: -32px; text-decoration:none;">My Account</a></div>
+                          <div><a href="<?php echo e(route('purchaseHistory',auth()->user()->username)); ?>" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -94px;left: -38px; text-decoration:none;">My Orders</a></div>
+                          <div><a href="#" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -92px;left: -23px; text-decoration:none;">Order Tracking</a></div>
+                          <div><a href="#" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -90px;left: 0px; text-decoration:none;">Returns & Exchanges</a></div>
+                          <div><a href="#" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -180px;left: 157px; text-decoration:none;">Payments & Security</a></div>
+                          <div><a href="#" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -180px;left: 118px; text-decoration:none;">Contact Us</a></div>
+    
                         </div>
-                        </div>
-                    <div
-                      id="q37"
-                      data-name="read more"
-                      class="q37"
-                    ><div key="0"></div>
-                    </div>
-                    </div>
-                        <div class="outer_q38">
-                        <div
-                          id="q38"
-                          data-name="my account"
-                          class="q38"
-                        ><div key="0"><a href="<?php echo e(route('profiles.index')); ?>" style="white-space: nowrap; color: rgba(92, 90, 90, 1);">My Account</a></div>
-                        </div>
-                        </div>
-                        <div class="outer_q39">
-                        <div
-                          id="q39"
-                          data-name="contact"
-                          class="q39"
-                        ><div key="0">Contact </div>
-                        </div>
-                        </div>
-                        <div class="outer_q40">
-                        <div
-                          id="q40"
-                          data-name="Monday-Friday9-5 EST"
-                          class="q40"
-                        ><div key="0">Monday-Friday 9-5 EST</div>
-                        </div>
-                        </div>
-                        <div class="outer_q41">
-                        <div
-                          id="q41"
-                          data-name="4161234567"
-                          class="q41"
-                        ><div key="0">(416) 123-4567</div>
-                        </div>
-                        </div>
-                      </div>
-                      </div>
-                      <div class="outer_q42">
-                      <div
-                        id="q42"
-                        data-name="Line 18"
-                        alt="Line 18"
-                        class="q42"
-                      >
-                      </div>
-                      </div>
-                      <div class="outer_q43">
-                      <div
-                        id="q43"
-                        data-name="Media"
-                        class="q43"
-                      >
-                        <div class="outer_q44">
-                    <a href="#">
-                        <img
-                          id="q44"
-                          data-name="WordPress"
-                          src="../images/WordPress.png"
-                          alt="WordPress"
-                          class="q44"
-                        ></a>
-                        </div>
-                        <div class="outer_q45">
-                    <a href="#">
-                        <img
-                          id="q45"
-                          data-name="TikTok"
-                          src="../images/TikTok.png"
-                          alt="TikTok"
-                          class="q45"
-                        ></a>
-                        </div>
-                        <div class="outer_q46">
-                    <a href="https://www.facebook.com/firstclassfacilitation/">
-                        <img
-                          id="q46"
-                          data-name="Facebook"
-                          src="../images/Facebook.png"
-                          alt="Facebook"
-                          class="q46"
-                        ></a>
-                        </div>
-                        <div class="outer_q47">
-                    <a href="https://ca.linkedin.com/company/first-class-facilitation">
-                        <img
-                          id="q47"
-                          data-name="LinkedIn"
-                          src="../images/LinkedIn.png"
-                          alt="LinkedIn"
-                          class="q47"></a>
-                        </div>
-                        <div class="outer_q48">
-                    <a href="https://twitter.com/fccfacilitation?lang=en">
-                        <img
-                          id="q48"
-                          data-name="Twitter Squared"
-                          src="../images/Twitter_Squared.png"
-                          alt="Twitter Squared"
-                          class="q48"
-                        ></a>
-                        </div>
-                        <div class="outer_q49">
-                    <a href="https://www.instagram.com/firstclassfacilitation/">
-                        <img
-                          id="q49"
-                          data-name="Instagram"
-                          src="../images/Instagram.png"
-                          alt="Instagram"
-                          class="q49"
-                        ></a>
-                        </div>
-                      </div>
-                      </div>
+                          </div>
+                          
+                          </div>
+                          
+                          <div class="outer_q43">
+                          <div
+                            id="q43"
+                            data-name="Media"
+                            class="q43"
+                          >
+                            <div class="outer_q46">
+                        <a href="https://www.facebook.com/firstclassfacilitation/">
+                            <img
+                              id="q46"
+                              data-name="Facebook"
+                              src="../../images/Facebook.png"
+                              alt="Facebook"
+                              class="q46"
+                            ></a>
+                            </div>
+                            <div class="outer_q47">
+                        <a href="https://ca.linkedin.com/company/first-class-facilitation">
+                            <img
+                              id="q47"
+                              data-name="LinkedIn"
+                              src="../../images/LinkedIn.png"
+                              alt="LinkedIn"
+                              class="q47"></a>
+                            </div>
+                            <div class="outer_q48">
+                        <a href="https://twitter.com/fccfacilitation?lang=en">
+                            <img
+                              id="q48"
+                              data-name="Twitter Squared"
+                              src="../../images/Twitter_Squared.png"
+                              alt="Twitter Squared"
+                              class="q48"
+                            ></a>
+                            </div>
+                            <div class="outer_q49">
+                        <a href="https://www.instagram.com/firstclassfacilitation/">
+                            <img
+                              id="q49"
+                              data-name="Instagram"
+                              src="../../images/Instagram.png"
+                              alt="Instagram"
+                              class="q49"
+                            ></a>
+                            </div>
+                          </div>
+                          </div>
                     </div>
                     </div>
                   </div>

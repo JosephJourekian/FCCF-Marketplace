@@ -154,26 +154,25 @@
     .outer_q7{
         position:relative;
         display:flex;
-        pointer-events:none;
+        pointer-events:all;
         z-index:14;
     }
     .q8{
         position:relative;
         z-index:13;
         pointer-events:auto;
-        transform:rotate(-0.5968094512291771deg);
         margin-left:0px;
         width:815.04px;
         min-width:815.04px;
-        margin-top:-4px;
-        margin-bottom:4px;
-        min-height:undefinedpx;
-        border:1px solid rgba(92, 90, 90, 1);
+        margin-top: -25px;
+        margin-bottom: 4px;
+        margin-left: 115px
+       
     }
     .outer_q8{
         position:relative;
         display:flex;
-        pointer-events:none;
+        pointer-events:all;
         z-index:13;
     }
     .q9{
@@ -778,9 +777,11 @@
         width:994px;
         min-width:994px;
         height:236px;
-        margin-top:-262px;
+        margin-top:-280px;
         margin-bottom:26px;
         min-height:236px;
+        top:95px;
+        border-top:2px solid black;
     }
     .outer_q36{
         position:relative;
@@ -1319,7 +1320,7 @@
         position:relative;
         z-index:4;
         pointer-events:none;
-        margin-left:-300px;
+        margin-left:-120px;
         width:194px;
         min-width:194px;
         height:62px;
@@ -1546,19 +1547,18 @@
         top:1px;
     }
     .total-and-link{
-  position:relative;
-  z-index:7;
-  pointer-events:none;
-  margin-left:450px;
-  width:505px;
-  min-width:505px;
-  height:45px;
-  margin-top:0px;
-  top:auto;
-  bottom:-112px;
-  margin-bottom:12px;
-  min-height:45px;
-}
+      position: relative;
+        z-index: 7;
+        pointer-events: none;
+        margin-left: 505px;
+        width: 505px;
+        min-width: 505px;
+        height: -3px;
+        margin-top: -48px;
+        top: auto;
+        bottom: 144px;
+        min-height: 45px;
+    }
 .total-and-link-outer{
   position:relative;
   display:flex;
@@ -1712,7 +1712,8 @@
   z-index:13;
 }@media screen and (max-width: 1920px) {
 	.q43{
-  		top:-20px;
+  		top:0px;
+      left: 385px;
 	}
   .shippingInfo{
     font-family: Baskervville;
@@ -1814,6 +1815,27 @@
     top: 25;
   }
 }
+.footerRectangle{
+      position: relative;
+      z-index: 11;
+      pointer-events: all;
+      margin-left: 0px;
+      width: auto;
+      height: 296px;
+      margin-top: 15px;
+      margin-bottom: 0px;
+      min-height: 296px;
+      background-color: rgba(36, 36, 36, 1);
+}
+    .titleHead{
+      color: rgba(0, 0, 0, 1);
+      font-style: normal;
+      font-family: Baskervville;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 17px;
+      
+    }
 
 
 
@@ -1842,15 +1864,18 @@
        <body class="websiteBody">
           <input type="checkbox" id="active">
           <label for="active" style="position:fixed;"class="menu-btn">
-            <img style="margin-top:100px; width:282px; height:232px; margin-left: 180px; position: absolute;" src="images/Ellipse_1.png">
-            <img style="text-align:center; margin-top:170px; margin-left:260px; position: relative;"src="images/menu.png">
+            <!--Menu button pics -->
+            <img style="margin-top: 100px;width: 193px;height: 142px;margin-left: 280px;position: absolute;" src="../../images/Ellipse_1.png">
+            <img style="text-align: center;margin-top: 143px;margin-left: 314px;position: relative;width: 116px;"src="../../images/menu.png">
           </label>
           <div class="wrapper">
              <ul>
+               <!--Menu Links -->
                 <li><a href="{{ route('home') }}">Home</a></li>
                 <li><a href="{{ route('about') }}">About</a></li>
                 <li><a href="{{ route('products.index') }}">Shop</a></li>
                 <li><a href="{{ route('carts.index') }}">My Cart ({{ Cart::count() }})</a></li>
+                <li><a href="{{ route('products.index') }}">My Points: {{ auth()->user()->points }}</li>
                 <li><a href="{{ route('updates') }}">Updates</a></li>
                 <li><a href="#">Team</a></li>   
                 <li>
@@ -1893,23 +1918,6 @@
                         data-name="Group 3"
                         class="q3"
                       >
-                        <div class="outer_q4">
-                        <img
-                          id="q4"
-                          data-name="Ellipse 1"
-                          src="images/Ellipse_1.png"
-                          alt="Ellipse 1"
-                          class="q4"
-                        >
-                        </div>
-                        <div class="outer_q5">
-                        <div
-                          id="q5"
-                          data-name="MENU"
-                          class="q5"
-                        ><div key="0">MENU</div>
-                        </div>
-                        </div>
                       </div>
                       </div>
                       
@@ -1918,15 +1926,9 @@
                         id="q6"
                         data-name="Group 10"
                         class="q6"
-                      >
+                      ><!--My account link in the header -->
                         <div class="outer_q7">
-                        <img
-                          id="q7"
-                          data-name="First Class Conferencing Facilitation Logo"
-                          src="images/First_Class_Conferencing_Facilitation_Logo.png"
-                          alt="First Class Conferencing Facilitation Logo"
-                          class="q7"
-                        >
+                          <a href="{{ route('profiles.index') }}" style="font-family: 'Baskervville'; font-size:25px;color: rgba(92, 90, 90, 1); text-decoration:none;">My Account</a>
                         </div>
                         <div class="outer_q8">
                         <div
@@ -1934,7 +1936,12 @@
                           data-name="Line 6"
                           alt="Line 6"
                           class="q8"
-                        >
+                        ><!-- Header logo, links and lines-->
+                        <img src="../../images/fccfhead.png" width="254" height="79">
+                        <div class="titleHead" style="margin-left: 340px;margin-top: 15px; width:fit-content;">CHECKOUT</div>
+                        <img scr='images/line.png' width="500" height="1.8" style="position: relative; left: 327px; top:-4;">
+                        <img scr='images/line.png' width="500" height="1.8" style="position: relative; left: -327px; top:-5;">
+                        
                         </div>
                         </div>
                       </div>
@@ -1946,15 +1953,8 @@
                         class="q9"
                       >
                         <div class="outer_q10">
-                        <div class="MY-CART-outer">
-                            <div
-                              id="MY-CART"
-                              data-name="MY CART"
-                              class="MY-CART"
-                            ><div key="0"><h1>Checkout</h1></div>
-                            </div>
-                        </div>
                         
+                        <!--Cart icon and items text-->
                         <div class="Group-16-outer">
                             <div
                               id="Group-16"
@@ -1980,7 +1980,7 @@
                             </div>
                             </div>
                         </div>
-                    
+                        <!--the first box containing all the items in the cart-->
                       <div style="display: -webkit-box;">
                         <div style="width: 269; height: 100%; margin-bottom:10px;background-color:rgba(196, 196, 196, 0.5299999713897705);">
                         @if(Cart::count() == 0)
@@ -2010,7 +2010,6 @@
                                 alt="Rectangle"
                                 class=""
                               >
-                              <!--<img src="{{ $product->options->img }}" style="width:151px;height:125px; margin-left:-1;">-->
                               </div>
                               </div>
                               <div class="Lorem-ipsum-dolor-si-3-outer">
@@ -2018,7 +2017,9 @@
                                 id="Lorem-ipsum-dolor-si-3"
                                 data-name="Lorem ipsum dolor sit amet"
                                 class="Lorem-ipsum-dolor-si-3"
-                              ><a style="color:rgba(92, 90, 90, 1);" href="{{ route('products.show',$product->options->productname) }}">{{ $product->name }}</a>
+                              >
+                              <!--Item title with a link and other item infos -->
+                              <a style="color:rgba(92, 90, 90, 1);" href="{{ route('products.show',$product->options->productname) }}">{{ $product->name }}</a>
                               <p style="margin-top:2px;">Quantity: {{ $product->qty }}</p>
                               @if($product->options->attributename == 'N/A')
                                 <p style="margin-top:-16px;">Attributes: None</p>
@@ -2028,37 +2029,6 @@
                                 </p>
                               @endif
                               <p style="margin-top: -20">Price: {{ $product->price }}</p>
-                              <form method="POST" action='{{ route('carts.update',[$product->rowId,$product->options->productname]) }}' enctype="multipart/form-data" >
-                                @csrf
-                                   <!--<p style="margin-top:-20px;">Update Quantity: <input type="number" id="num" name="num" value="1">
-                                       <input class="myButton" type="submit" value="Update" name="update" id="update">
-                                   </p>-->
-                               </form>
-                              </div>
-                              </div>
-                              <div class="Price-3-outer">
-                              <!--<img
-                                id="Price-3"
-                                data-name="Price"
-                                alt="Price"
-                                class="Price-3"
-                              >
-                              </div>
-                              <div class="delete-3-outer">
-                              <a href="{{ route('carts.remove',$product->rowId) }}">
-                              <img
-                                id="delete-3"
-                                data-name="delete"
-                                alt="delete"
-                                class="delete-3"
-                              ></a>-->
-                              </div>
-                              <div class="q-20-3-outer">
-                              <div
-                                id="q-20-3"
-                                data-name="$20"
-                                class="q-20-3"
-                              ><div key="0"></div>
                               </div>
                               </div>
                             </div>
@@ -2066,6 +2036,7 @@
                             @endforeach
                             @endif
                         </div>
+                        <!--Second box containing all the users shipping info -->
                         <div class="shippingInfo">Shipping Information:</div>
                         <div class="shippingBox">
                           <div class="shippingText">Name: {{ auth()->user()->name }}</div>
@@ -2077,6 +2048,7 @@
                           <a class="shippingText" style="  color:rgba(92, 90, 90, 1);"href="{{ route('profiles.editAddress',auth()->user()->username) }}">Change Shipping Info</a>
                         </div>
                         <div class="shippingMethod">Shipping Method:</div>
+                        <!--Third box containing the methods of shipping the user must pick one -->
                         <div class="shippingMethodBox">
                             <input type="radio" required id="standard" name="method" value="standard" style="position: relative;left: -130px;bottom: -20px;">
                             <label for="standard">
@@ -2098,205 +2070,144 @@
                             </label>
                         </div>
                         
-                        <!--<button type="submit" style="position: absolute">Submit</button>-->
                       </div>
 
                       </div>
                       </div>
-                        
-                    <div class="outer_q36">
-                      
-                      <div
-                      id="q36"
-                      data-name="Group 8"
-                      class="q36"
-                      >
-                    <div class="total-and-link-outer">
-                      <div
-                        id="total-and-link"
-                        data-name="total and link"
-                        class="total-and-link"
-                      >
-                        
-                        <div class="Shopping-outer">
-                        <img
-                          id="Shopping"
-                          data-name="Shopping"
-                          alt="Shopping"
-                          class="Shopping"
+                      <!--Checkout link -->
+                      <div class="total-and-link-outer">
+                        <div
+                          id="total-and-link"
+                          data-name="total and link"
+                          class="total-and-link"
                         >
-                        </div>
-                        <div class="checkout-outer">
-                        <div
-                          id="checkout"
-                          data-name="checkout"
-                          class="checkout"
-                        ><div key="0">
-                          @if(Cart::count() == 0)
-                            <a href="#" style="font-size: 18px; color:rgba(92, 90, 90, 1);">Need more points!</a>
-                          @else
-                            @if(((float)auth()->user()->points) >= ((float)Cart::subtotal('0','','')))
-                            <button type="submit" class="submitButton">Complete Order</button>
+                          
+                          <div class="Shopping-outer">
+                          <img
+                            id="Shopping"
+                            data-name="Shopping"
+                            alt="Shopping"
+                            class="Shopping"
+                          >
+                          </div>
+                          <div class="checkout-outer">
+                          <div
+                            id="checkout"
+                            data-name="checkout"
+                            class="checkout"
+                          ><div key="0">
+                            @if(Cart::count() == 0)
+                              <a href="#" style="font-size: 18px; color:rgba(92, 90, 90, 1);">Need more points!</a>
                             @else
-                            <a href="#" style="font-size: 18px; color:rgba(92, 90, 90, 1);">Need more points!</a>
+                              @if(((float)auth()->user()->points) >= ((float)Cart::subtotal('0','','')))
+                              <button type="submit" class="submitButton">Complete Order</button>
+                              @else
+                              <a href="#" style="font-size: 18px; color:rgba(92, 90, 90, 1);">Need more points!</a>
+                              @endif
                             @endif
-                          @endif
-                        </div>
-                        </div>
-                        </div>
-                        
-                        <div class="Arrow-1-outer">
-                          @if(Cart::count() == 0)
-                            <a href="#" style="font-size: 18px; color:rgba(92, 90, 90, 1);">
-                              <img
-                              id="Arrow-1"
-                              data-name="Arrow 1"
-                              alt="Arrow 1"
-                              class="Arrow-1"
-                              ></a>
-                          @else
-                            @if(((float)auth()->user()->points) >= ((float)Cart::subtotal('0','','')))
-                            <!--<a href="{{ route('checkout.payment') }}" style="color:rgba(92, 90, 90, 1);">-->
-                            <input type="image" src="../images/Arrow_1.png" class="Arrow-1" id="Arrow-1" data-name="Arrow-1" alt="submit">
+                          </div>
+                          </div>
+                          </div>
+                          <!--Checkout arrow -->
+                          <div class="Arrow-1-outer">
+                            @if(Cart::count() == 0)
+                              <a href="#" style="font-size: 18px; color:rgba(92, 90, 90, 1);">
+                                <img
+                                id="Arrow-1"
+                                data-name="Arrow 1"
+                                alt="Arrow 1"
+                                class="Arrow-1"
+                                ></a>
                             @else
-                            <a href="#" style="font-size: 18px; color:rgba(92, 90, 90, 1);"><img
-                              id="Arrow-1"
-                              data-name="Arrow 1"
-                              alt="Arrow 1"
-                              class="Arrow-1"
-                              ></a>
+                              @if(((float)auth()->user()->points) >= ((float)Cart::subtotal('0','','')))
+                              <!--<a href="{{ route('checkout.payment') }}" style="color:rgba(92, 90, 90, 1);">-->
+                              <input type="image" src="../images/Arrow_1.png" class="Arrow-1" id="Arrow-1" data-name="Arrow-1" alt="submit">
+                              @else
+                              <a href="#" style="font-size: 18px; color:rgba(92, 90, 90, 1);"><img
+                                id="Arrow-1"
+                                data-name="Arrow 1"
+                                alt="Arrow 1"
+                                class="Arrow-1"
+                                ></a>
+                              @endif
                             @endif
-                          @endif
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    
-                    <div class="outer_q37">
-                      <div class="outer_q37">
+                      <!--Footer with all the links -->
+                      <div class="outer_q36">
+                      
                         <div
-                          id="q25"
-                          data-name="read more"
-                          class="q37"
-                        ><div key="0"></div>
+                        id="q36"
+                        data-name="Group 8"
+                        class="q36">
+                        <div class="footerRectangle">
+                          <img src="../../images/footerPic.png" style="width: 990;position: relative;top: 15px;">
+                          <div><a href="{{ route('home') }}" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -15px;left: -154px; text-decoration:none;">Home</a></div>
+                          <div><a href="{{ route('products.index') }}" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -12px;left: -157px; text-decoration:none;">Shop</a></div>
+                          <div><a href="{{ route('about') }}" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -10px;left: -154px; text-decoration:none;">About</a></div>
+                          <div><a href="#" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -5px;left: -158px; text-decoration:none;">Blog</a></div>
+                          <div><a href="#" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -2px;left: -157px; text-decoration:none;">Team</a></div>
+                          <div><a href="{{ route('fccfUpdates.index') }}" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -118px;left: -50px; text-decoration:none;">Careers</a></div>
+                          <div><a href="{{ route('profiles.index') }}" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -116px;left: -32px; text-decoration:none;">My Account</a></div>
+                          <div><a href="{{route('purchaseHistory',auth()->user()->username) }}" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -114px;left: -38px; text-decoration:none;">My Orders</a></div>
+                          <div><a href="#" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -112px;left: -23px; text-decoration:none;">Order Tracking</a></div>
+                          <div><a href="#" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -110px;left: 0px; text-decoration:none;">Returns & Exchanges</a></div>
+                          <div><a href="#" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -220px;left: 157px; text-decoration:none;">Payments & Security</a></div>
+                          <div><a href="#" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -218px;left: 118px; text-decoration:none;">Contact Us</a></div>
+    
                         </div>
-                        </div>
-                    <div
-                      id="q37"
-                      data-name="read more"
-                      class="q37"
-                    ><div key="0"></div>
-                    </div>
-                    </div>
-                        <div class="outer_q38">
-                        <div
-                          id="q38"
-                          data-name="my account"
-                          class="q38"
-                        ><div key="0"><a href="{{ route('profiles.index') }}" style="white-space: nowrap; color: rgba(92, 90, 90, 1);">My Account</a></div>
-                        </div>
-                        </div>
-                        <div class="outer_q39">
-                        <div
-                          id="q39"
-                          data-name="contact"
-                          class="q39"
-                        ><div key="0">Contact </div>
-                        </div>
-                        </div>
-                        <div class="outer_q40">
-                        <div
-                          id="q40"
-                          data-name="Monday-Friday9-5 EST"
-                          class="q40"
-                        ><div key="0">Monday-Friday 9-5 EST</div>
-                        </div>
-                        </div>
-                        <div class="outer_q41">
-                        <div
-                          id="q41"
-                          data-name="4161234567"
-                          class="q41"
-                        ><div key="0">(416) 123-4567</div>
-                        </div>
-                        </div>
-                      </div>
-                      </div>
-                      <div class="outer_q42">
-                      <div
-                        id="q42"
-                        data-name="Line 18"
-                        alt="Line 18"
-                        class="q42"
-                      >
-                      </div>
-                      </div>
-                      <div class="outer_q43">
-                      <div
-                        id="q43"
-                        data-name="Media"
-                        class="q43"
-                      >
-                        <div class="outer_q44">
-                    <a href="#">
-                        <img
-                          id="q44"
-                          data-name="WordPress"
-                          src="images/WordPress.png"
-                          alt="WordPress"
-                          class="q44"
-                        ></a>
-                        </div>
-                        <div class="outer_q45">
-                    <a href="#">
-                        <img
-                          id="q45"
-                          data-name="TikTok"
-                          src="images/TikTok.png"
-                          alt="TikTok"
-                          class="q45"
-                        ></a>
-                        </div>
-                        <div class="outer_q46">
-                    <a href="https://www.facebook.com/firstclassfacilitation/">
-                        <img
-                          id="q46"
-                          data-name="Facebook"
-                          src="images/Facebook.png"
-                          alt="Facebook"
-                          class="q46"
-                        ></a>
-                        </div>
-                        <div class="outer_q47">
-                    <a href="https://ca.linkedin.com/company/first-class-facilitation">
-                        <img
-                          id="q47"
-                          data-name="LinkedIn"
-                          src="images/LinkedIn.png"
-                          alt="LinkedIn"
-                          class="q47"></a>
-                        </div>
-                        <div class="outer_q48">
-                    <a href="https://twitter.com/fccfacilitation?lang=en">
-                        <img
-                          id="q48"
-                          data-name="Twitter Squared"
-                          src="images/Twitter_Squared.png"
-                          alt="Twitter Squared"
-                          class="q48"
-                        ></a>
-                        </div>
-                        <div class="outer_q49">
-                    <a href="https://www.instagram.com/firstclassfacilitation/">
-                        <img
-                          id="q49"
-                          data-name="Instagram"
-                          src="images/Instagram.png"
-                          alt="Instagram"
-                          class="q49"
-                        ></a>
-                        </div>
-                      </div>
-                      </div>
+                          </div>
+                          
+                          </div>
+                          <!--Social media links -->
+                          <div class="outer_q43">
+                          <div
+                            id="q43"
+                            data-name="Media"
+                            class="q43"
+                          >
+                            <div class="outer_q46">
+                        <a href="https://www.facebook.com/firstclassfacilitation/">
+                            <img
+                              id="q46"
+                              data-name="Facebook"
+                              src="../../images/Facebook.png"
+                              alt="Facebook"
+                              class="q46"
+                            ></a>
+                            </div>
+                            <div class="outer_q47">
+                        <a href="https://ca.linkedin.com/company/first-class-facilitation">
+                            <img
+                              id="q47"
+                              data-name="LinkedIn"
+                              src="../../images/LinkedIn.png"
+                              alt="LinkedIn"
+                              class="q47"></a>
+                            </div>
+                            <div class="outer_q48">
+                        <a href="https://twitter.com/fccfacilitation?lang=en">
+                            <img
+                              id="q48"
+                              data-name="Twitter Squared"
+                              src="../../images/Twitter_Squared.png"
+                              alt="Twitter Squared"
+                              class="q48"
+                            ></a>
+                            </div>
+                            <div class="outer_q49">
+                        <a href="https://www.instagram.com/firstclassfacilitation/">
+                            <img
+                              id="q49"
+                              data-name="Instagram"
+                              src="../../images/Instagram.png"
+                              alt="Instagram"
+                              class="q49"
+                            ></a>
+                            </div>
+                          </div>
+                          </div>
                     </div>
                     </div>
                   </div>

@@ -152,28 +152,27 @@
       min-height:27.46px;
   }
   .outer_q7{
-      position:relative;
-      display:flex;
-      pointer-events:none;
-      z-index:14;
+        position:relative;
+        font-family: 'Baskervville';
+        font-size:25px;
+        display:flex;
+        pointer-events:all;
+        z-index:14;
   }
   .q8{
-      position:relative;
-      z-index:13;
-      pointer-events:auto;
-      transform:rotate(-0.5968094512291771deg);
-      margin-left:0px;
-      width:815.04px;
-      min-width:815.04px;
-      margin-top:-4px;
-      margin-bottom:4px;
-      min-height:undefinedpx;
-      border:1px solid rgba(92, 90, 90, 1);
+    position:relative;
+        z-index:13;
+        pointer-events:auto;
+        margin-left:120px;
+        width:815.04px;
+        min-width:815.04px;
+        margin-top:-25px;
+        margin-bottom:4px;
   }
   .outer_q8{
       position:relative;
       display:flex;
-      pointer-events:none;
+      pointer-events:all;
       z-index:13;
   }
   .q9{
@@ -187,10 +186,9 @@
       margin-top:-996px;
       margin-bottom:310px;
       min-height:307px;
-      
-  width: 100%;
-  height: 100%;
-  white-space: nowrap;
+      width: 100%;
+      height: 100%;
+      white-space: nowrap;
   }
   .outer_q9{
       position: relative;
@@ -772,20 +770,22 @@
       z-index:23;
   }
   .q36{
-      position:relative;
-      pointer-events:auto;
-      margin-left:83px;
-      width:994px;
-      min-width:994px;
-      height:236px;
-      margin-top:-262px;
-      margin-bottom:26px;
-      min-height:236px;
+        position:relative;
+        pointer-events:auto;
+        margin-left:83px;
+        width:994px;
+        min-width:994px;
+        height:270px;
+        margin-top:-313px;
+        margin-bottom:26px;
+        min-height:236px;
+        top: 130px;
+        border-top: 2px solid #42494e;
   }
   .outer_q36{
       position:relative;
       display:flex;
-      pointer-events:none;
+      pointer-events:all;
       
   }
   .q37{
@@ -955,7 +955,7 @@
       position:relative;
       z-index:37;
       pointer-events:auto;
-      margin-left:430px;
+      margin-left:705px;
       width:234px;
       min-width:234px;
       height:38px;
@@ -966,7 +966,7 @@
   .outer_q43{
       position:relative;
       display:flex;
-      pointer-events:none;
+      pointer-events:all;
       z-index:37;
   }
   .q44{
@@ -1248,8 +1248,6 @@
     width: 100%;
     color: #202020;
   }
-  .content .title{
-  }
   .content p{
   }
   .dropbtn {
@@ -1368,7 +1366,7 @@
       font-weight:400;
       font-size:20px;
       line-height:31.200000762939453px;
-      left:83px;
+      left:530px;
       top:-25px;
   }
   .items--outer{
@@ -1712,7 +1710,8 @@ z-index:13;
 
 @media screen and (max-width: 1920px) {
 .q43{
-    top:-20px;
+    top:0px;
+    left:100px;
   }
   .q38{
     top: 55;
@@ -1739,6 +1738,7 @@ z-index:13;
   filter:drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border-radius:1px;
   overflow:hidden;
+  left:295px;
 }
 .Picture-outer{
   position:relative;
@@ -2268,6 +2268,27 @@ z-index:13;
   pointer-events:all;
   z-index:13;
 }
+.footerRectangle{
+      position: relative;
+      z-index: 11;
+      pointer-events: all;
+      margin-left: 0px;
+      width: auto;
+      height: 296px;
+      margin-top: 15px;
+      margin-bottom: 0px;
+      min-height: 296px;
+      background-color: rgba(36, 36, 36, 1);
+}
+    .title{
+      color: rgba(0, 0, 0, 1);
+      font-style: normal;
+      font-family: Baskervville;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 17px;
+      
+    }
   </style>
   
   <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -2293,15 +2314,18 @@ z-index:13;
      <body class="websiteBody">
         <input type="checkbox" id="active">
         <label for="active" style="postion:fixed;"class="menu-btn">
-          <img style="margin-top:100px; width:282px; height:232px; margin-left: 180px; position: absolute;" src="images/Ellipse_1.png">
-          <img style="text-align:center; margin-top:170px; margin-left:260px; position: relative;"src="images/menu.png">
-        </label>
+          <!--Menu button pics -->
+          <img style="margin-top: 100px;width: 193px;height: 142px;margin-left: 280px;position: absolute;" src="images/Ellipse_1.png">
+          <img style="text-align: center;margin-top: 143px;margin-left: 314px;position: relative;width: 116px;"src="images/menu.png">
+          </label>
         <div class="wrapper">
            <ul>
+             <!--Menu links -->
               <li><a href="{{ route('home') }}">Home</a></li>
               <li><a href="{{ route('about') }}">About</a></li>
               <li><a href="{{ route('products.index') }}">Shop</a></li>
               <li><a href="{{ route('carts.index') }}">My Cart ({{ Cart::count() }})</a></li>
+              <li><a href="{{ route('products.index') }}">My Points: {{ auth()->user()->points }}</li>
               <li><a href="{{ route('updates') }}">Updates</a></li>
               <li><a href="#">Team</a></li>   
               <li>
@@ -2341,23 +2365,7 @@ z-index:13;
                       data-name="Group 3"
                       class="q3"
                     >
-                      <div class="outer_q4">
-                      <img
-                        id="q4"
-                        data-name="Ellipse 1"
-                        src="images/Ellipse_1.png"
-                        alt="Ellipse 1"
-                        class="q4"
-                      >
-                      </div>
-                      <div class="outer_q5">
-                      <div
-                        id="q5"
-                        data-name="MENU"
-                        class="q5"
-                      ><div key="0">MENU</div>
-                      </div>
-                      </div>
+                    
                     </div>
                     </div>
                     
@@ -2368,13 +2376,8 @@ z-index:13;
                       class="q6"
                     >
                       <div class="outer_q7">
-                      <img
-                        id="q7"
-                        data-name="First Class Conferencing Facilitation Logo"
-                        src="images/First_Class_Conferencing_Facilitation_Logo.png"
-                        alt="First Class Conferencing Facilitation Logo"
-                        class="q7"
-                      >
+                        <!--My account header link -->
+                        <a href="{{ route('profiles.index') }}"style="color: rgba(92, 90, 90, 1); text-decoration:none;">My Account</a>
                       </div>
                       <div class="outer_q8">
                       <div
@@ -2383,6 +2386,12 @@ z-index:13;
                         alt="Line 6"
                         class="q8"
                       >
+                      <!--Header logo, title and lines -->
+                        <img src="images/fccfhead.png" width="254" height="79">
+                        <div class="title" style="margin-left: 320px;margin-top: 15px; width:fit-content;">MY ACCOUNT</div>
+                        <img scr='images/line.png' width="400" height="1.8" style="position: relative; left: 555px; top:-14;">
+                        <img scr='images/line.png' width="400" height="1.8" style="position: relative; left: -555px; top:-14;">
+                        
                       </div>
                       </div>
                     </div>
@@ -2394,14 +2403,7 @@ z-index:13;
                       class="q9"
                     >
                       <div class="outer_q10">
-                      <div class="MY-CART-outer">
-                          <div
-                            id="MY-CART"
-                            data-name="MY CART"
-                            class="MY-CART"
-                          ><div key="0"><h1>MY ACCOUNT</h1></div>
-                          </div>
-                      </div>
+                        <!--Profiles text and the sunset picture -->
                       <div class="Group-16-outer">
                           <div
                             id="Group-16"
@@ -2445,6 +2447,7 @@ z-index:13;
                           data-name="Wish List"
                           class="Wish-List"
                         >
+                          <!--My wish list text and link -->
                           <div class="MY-WISH-LIST-outer">
                           <div
                             id="MY-WISH-LIST"
@@ -2472,7 +2475,7 @@ z-index:13;
                           </div>
                         </div>
                         </div>
-
+                        <!--Order history text and links -->
                         <div class="OrderHistoryOuter">
                           <div
                             id="OrderHistory"
@@ -2506,7 +2509,7 @@ z-index:13;
                             </div>
                           </div>
                           </div>
-
+                          <!--Payment info text and links -->
                           <div class="PaymentOuter">
                             <div
                               id="OrderHistory"
@@ -2540,7 +2543,7 @@ z-index:13;
                               </div>
                             </div>
                             </div>
-                            
+                            <!--Address text and links -->
                             <div class="AddressOuter">
                               <div
                                 id="OrderHistory"
@@ -2574,7 +2577,7 @@ z-index:13;
                                 </div>
                               </div>
                               </div>
-                          
+                              <!--Account text and links -->
                               <div class="AccountOuter">
                                 <div
                                   id="OrderHistory"
@@ -2610,140 +2613,81 @@ z-index:13;
                                 </div>
                     </div>
                     </div>
-                      
-                  <div class="outer_q36">
                     
-                  <div
-                  id="q36"
-                  data-name="Group 8"
-                  class="q36"
-                  >
-                  <div class="outer_q37">
-                    <div class="outer_q37">
+                    <!--Footers with all the links -->
+                    <div class="outer_q36">
+                      
                       <div
-                        id="q25"
-                        data-name="read more"
-                        class="q37"
-                      ><div key="0"></div>
+                      id="q36"
+                      data-name="Group 8"
+                      class="q36">
+                      <div class="footerRectangle">
+                        <img src="images/footerPic.png" style="width: 990;position: relative;top: 15px;">
+                        <div><a href="{{ route('home') }}" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -15px;left: -154px; text-decoration:none;">Home</a></div>
+                        <div><a href="{{ route('products.index') }}" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -12px;left: -157px; text-decoration:none;">Shop</a></div>
+                        <div><a href="{{ route('about') }}" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -10px;left: -154px; text-decoration:none;">About</a></div>
+                        <div><a href="#" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -5px;left: -158px; text-decoration:none;">Blog</a></div>
+                        <div><a href="#" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -2px;left: -157px; text-decoration:none;">Team</a></div>
+                        <div><a href="{{ route('fccfUpdates.index') }}" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -98px;left: -50px; text-decoration:none;">Careers</a></div>
+                        <div><a href="{{ route('profiles.index') }}" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -96px;left: -32px; text-decoration:none;">My Account</a></div>
+                        <div><a href="{{route('purchaseHistory',auth()->user()->username) }}" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -94px;left: -38px; text-decoration:none;">My Orders</a></div>
+                        <div><a href="#" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -92px;left: -23px; text-decoration:none;">Order Tracking</a></div>
+                        <div><a href="#" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -90px;left: 0px; text-decoration:none;">Returns & Exchanges</a></div>
+                        <div><a href="#" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -180px;left: 157px; text-decoration:none;">Payments & Security</a></div>
+                        <div><a href="#" style="color: white;font-family: Roboto;font-size: 18;position: relative;top: -180px;left: 118px; text-decoration:none;">Contact Us</a></div>
+
                       </div>
-                      </div>
-                  <div
-                    id="q37"
-                    data-name="read more"
-                    class="q37"
-                  ><div key="0"></div>
-                  </div>
-                  </div>
-                      <div class="outer_q38">
-                      <div
-                        id="q38"
-                        data-name="my account"
-                        class="q38"
-                      ><div key="0"><a href="{{ route('profiles.index') }}" style="white-space: nowrap; color: rgba(92, 90, 90, 1);">My Account</a></div>
-                      </div>
-                      </div>
-                      <div class="outer_q39">
-                      <div
-                        id="q39"
-                        data-name="contact"
-                        class="q39"
-                      ><div key="0">Contact </div>
-                      </div>
-                      </div>
-                      <div class="outer_q40">
-                      <div
-                        id="q40"
-                        data-name="Monday-Friday9-5 EST"
-                        class="q40"
-                      ><div key="0">Monday-Friday 9-5 EST</div>
-                      </div>
-                      </div>
-                      <div class="outer_q41">
-                      <div
-                        id="q41"
-                        data-name="4161234567"
-                        class="q41"
-                      ><div key="0">(416) 123-4567</div>
-                      </div>
-                      </div>
-                    </div>
-                    </div>
-                    <div class="outer_q42">
-                    <div
-                      id="q42"
-                      data-name="Line 18"
-                      alt="Line 18"
-                      class="q42"
-                    >
-                    </div>
-                    </div>
-                    <div class="outer_q43">
-                    <div
-                      id="q43"
-                      data-name="Media"
-                      class="q43"
-                    >
-                      <div class="outer_q44">
-                  <a href="#">
-                      <img
-                        id="q44"
-                        data-name="WordPress"
-                        src="images/WordPress.png"
-                        alt="WordPress"
-                        class="q44"
-                      ></a>
-                      </div>
-                      <div class="outer_q45">
-                  <a href="#">
-                      <img
-                        id="q45"
-                        data-name="TikTok"
-                        src="images/TikTok.png"
-                        alt="TikTok"
-                        class="q45"
-                      ></a>
-                      </div>
-                      <div class="outer_q46">
-                  <a href="https://www.facebook.com/firstclassfacilitation/">
-                      <img
-                        id="q46"
-                        data-name="Facebook"
-                        src="images/Facebook.png"
-                        alt="Facebook"
-                        class="q46"
-                      ></a>
-                      </div>
-                      <div class="outer_q47">
-                  <a href="https://ca.linkedin.com/company/first-class-facilitation">
-                      <img
-                        id="q47"
-                        data-name="LinkedIn"
-                        src="images/LinkedIn.png"
-                        alt="LinkedIn"
-                        class="q47"></a>
-                      </div>
-                      <div class="outer_q48">
-                  <a href="https://twitter.com/fccfacilitation?lang=en">
-                      <img
-                        id="q48"
-                        data-name="Twitter Squared"
-                        src="images/Twitter_Squared.png"
-                        alt="Twitter Squared"
-                        class="q48"
-                      ></a>
-                      </div>
-                      <div class="outer_q49">
-                  <a href="https://www.instagram.com/firstclassfacilitation/">
-                      <img
-                        id="q49"
-                        data-name="Instagram"
-                        src="images/Instagram.png"
-                        alt="Instagram"
-                        class="q49"
-                      ></a>
-                      </div>
-                    </div>
-                    </div>
+                        </div>
+                        
+                        </div>
+                        <!--Social media links -->
+                        <div class="outer_q43">
+                        <div
+                          id="q43"
+                          data-name="Media"
+                          class="q43"
+                        >
+                          <div class="outer_q46">
+                      <a href="https://www.facebook.com/firstclassfacilitation/">
+                          <img
+                            id="q46"
+                            data-name="Facebook"
+                            src="images/Facebook.png"
+                            alt="Facebook"
+                            class="q46"
+                          ></a>
+                          </div>
+                          <div class="outer_q47">
+                      <a href="https://ca.linkedin.com/company/first-class-facilitation">
+                          <img
+                            id="q47"
+                            data-name="LinkedIn"
+                            src="images/LinkedIn.png"
+                            alt="LinkedIn"
+                            class="q47"></a>
+                          </div>
+                          <div class="outer_q48">
+                      <a href="https://twitter.com/fccfacilitation?lang=en">
+                          <img
+                            id="q48"
+                            data-name="Twitter Squared"
+                            src="images/Twitter_Squared.png"
+                            alt="Twitter Squared"
+                            class="q48"
+                          ></a>
+                          </div>
+                          <div class="outer_q49">
+                      <a href="https://www.instagram.com/firstclassfacilitation/">
+                          <img
+                            id="q49"
+                            data-name="Instagram"
+                            src="images/Instagram.png"
+                            alt="Instagram"
+                            class="q49"
+                          ></a>
+                          </div>
+                        </div>
+                        </div>
                   </div>
                   </div>
                 </div>

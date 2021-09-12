@@ -167,6 +167,7 @@
         min-width:815.04px;
         margin-top:-25px;
         margin-bottom:4px;
+        
     }
     .outer_q8{
         position:relative;
@@ -1795,15 +1796,18 @@
        <body class="websiteBody">
           <input type="checkbox" id="active">
           <label for="active" style="postion:fixed;"class="menu-btn">
+            <!--Menu button pics -->
             <img style="margin-top: 100px;width: 193px;height: 142px;margin-left: 280px;position: absolute;" src="images/Ellipse_1.png">
             <img style="text-align: center;margin-top: 143px;margin-left: 314px;position: relative;width: 116px;"src="images/menu.png">
           </label>
           <div class="wrapper">
              <ul>
+               <!--Menu links -->
                 <li><a href="{{ route('home') }}">Home</a></li>
                 <li><a href="{{ route('about') }}">About</a></li>
                 <li><a href="{{ route('products.index') }}">Shop</a></li>
                 <li><a href="{{ route('carts.index') }}">My Cart ({{ Cart::count() }})</a></li>
+                <li><a href="{{ route('products.index') }}">My Points: {{ auth()->user()->points }}</li>
                 <li><a href="{{ route('updates') }}">Updates</a></li>
                 <li><a href="#">Team</a></li>   
                 <li>
@@ -1843,23 +1847,7 @@
                         data-name="Group 3"
                         class="q3"
                       >
-                        <div class="outer_q4">
-                        <img
-                          id="q4"
-                          data-name="Ellipse 1"
-                          src="images/Ellipse_1.png"
-                          alt="Ellipse 1"
-                          class="q4"
-                        >
-                        </div>
-                        <div class="outer_q5">
-                        <div
-                          id="q5"
-                          data-name="MENU"
-                          class="q5"
-                        ><div key="0">MENU</div>
-                        </div>
-                        </div>
+                        
                       </div>
                       </div>
                       
@@ -1870,6 +1858,7 @@
                         class="q6"
                       >
                         <div class="outer_q7">
+                          <!--My account header links -->
                         <a href="{{ route('profiles.index') }}"style="color: rgba(92, 90, 90, 1); text-decoration:none;">My Account</a>
                         </div>
                         <div class="outer_q8">
@@ -1879,6 +1868,7 @@
                           alt="Line 6"
                           class="q8"
                         >
+                        <!--Header logo, title and lines -->
                         <img src="images/fccfhead.png" width="254" height="79">
                         <div class="title" style="margin-left: 287px;margin-top: 15px; width:fit-content;">BEHIND THE BRAND</div>
                         <img scr='images/line.png' width="400" height="1.8" style="position: relative; left: 555px; top:-14;">
@@ -1893,6 +1883,7 @@
                         data-name="Group 1"
                         class="q9"
                       >
+                      <!--about sloagan -->
                         <div class="outer_q10">
                         <div class="MY-CART-outer">
                             <div
@@ -1922,14 +1913,16 @@
                             </div>
                             </div>
                             
-                            
+                            <!--About text -->
                             <div class="textbox1">Here at First Class we've created a lifestyle brand that is both comfortable and stylish. Being a remote-work, technology-based company means that comfort is a must. Sweatpants and a good sweater are always the go-to. We've found that comfort and productivity go hand-in-hand so when it came time to curating our company’s merchandise it was no question it would be structured around comfort. Style is also very important to us and we want to bridge the gap between something our staff will love, but also something our clients will enjoy relaxing in.</div>
                             <div class="textbox2">The results?  Sleek, comfortable, simplistic wear and products that both rep the brand, but are also convenient for any lifestyle - busy or relaxing. We want to share our line of First Class products with you.</div>
+                            <!--About picture -->
                             <img class="aboutPic" src="images/squad.png">
                         </div>
                       </div>
                       </div>
                         
+                      <!--Footer with all the links -->
                     <div class="outer_q36">
                       
                     <div
@@ -1955,7 +1948,7 @@
                       </div>
                       
                       </div>
-                      
+                      <!--Social media links -->
                       <div class="outer_q43">
                       <div
                         id="q43"

@@ -167,6 +167,7 @@
         min-width:815.04px;
         margin-top:-25px;
         margin-bottom:4px;
+        
     }
     .outer_q8{
         position:relative;
@@ -1795,15 +1796,18 @@
        <body class="websiteBody">
           <input type="checkbox" id="active">
           <label for="active" style="postion:fixed;"class="menu-btn">
+            <!--Menu button pics -->
             <img style="margin-top: 100px;width: 193px;height: 142px;margin-left: 280px;position: absolute;" src="images/Ellipse_1.png">
             <img style="text-align: center;margin-top: 143px;margin-left: 314px;position: relative;width: 116px;"src="images/menu.png">
           </label>
           <div class="wrapper">
              <ul>
+               <!--Menu links -->
                 <li><a href="<?php echo e(route('home')); ?>">Home</a></li>
                 <li><a href="<?php echo e(route('about')); ?>">About</a></li>
                 <li><a href="<?php echo e(route('products.index')); ?>">Shop</a></li>
                 <li><a href="<?php echo e(route('carts.index')); ?>">My Cart (<?php echo e(Cart::count()); ?>)</a></li>
+                <li><a href="<?php echo e(route('products.index')); ?>">My Points: <?php echo e(auth()->user()->points); ?></li>
                 <li><a href="<?php echo e(route('updates')); ?>">Updates</a></li>
                 <li><a href="#">Team</a></li>   
                 <li>
@@ -1843,23 +1847,8 @@
                         data-name="Group 3"
                         class="q3"
                       >
-                        <div class="outer_q4">
-                        <img
-                          id="q4"
-                          data-name="Ellipse 1"
-                          src="images/Ellipse_1.png"
-                          alt="Ellipse 1"
-                          class="q4"
-                        >
-                        </div>
-                        <div class="outer_q5">
-                        <div
-                          id="q5"
-                          data-name="MENU"
-                          class="q5"
-                        ><div key="0">MENU</div>
-                        </div>
-                        </div>
+                        
+                        
                       </div>
                       </div>
                       
