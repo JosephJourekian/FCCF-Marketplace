@@ -26,4 +26,5 @@ class PurchaseHistoryController extends Controller
             ]);
         }
     }
+    
 }

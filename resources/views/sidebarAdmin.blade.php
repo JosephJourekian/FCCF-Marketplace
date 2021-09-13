@@ -17,16 +17,6 @@
         </a>
     </li>
     <li>
-        <a href="{{ route('menuTest') }}" class="font-bold text-lg mb-4 block">
-            Menu Test
-        </a>
-    </li>
-    <li>
-        <a href="{{ route('test') }}" class="font-bold text-lg mb-4 block">
-            Figma Test
-        </a>
-    </li>
-    <li>
         <div class="dropdown">
             <button class="dropbtn">FCCF Updates</button>
             <div class="dropdown-content">
@@ -64,6 +54,7 @@
                 <a href="{{route('purchaseHistory',auth()->user()->username) }}">Purchase History</a>
                 <a href="{{ route('viewUsers') }}">View Users</a>            
             </div>
+        </div>
     </li>
     <li>
         <form method="POST" action="/logout">

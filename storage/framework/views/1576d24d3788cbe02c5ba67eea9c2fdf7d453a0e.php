@@ -99,7 +99,7 @@ unset($__errorArgs, $__bag); ?>
             Body
         </label>
 
-        <textarea class="textarea border border-gray-400 p-2 w-full"
+        <textarea class="border border-gray-400 p-2 w-full"
             type="body"
             name="body"
             id="body"

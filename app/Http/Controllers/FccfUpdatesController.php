@@ -26,6 +26,7 @@ class FccfUpdatesController extends Controller
         ]);
 
     }
+
     public function edit(FccfUpdates $updatename){
 
         return view('fccfUpdates.edit', [
