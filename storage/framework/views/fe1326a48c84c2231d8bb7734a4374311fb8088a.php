@@ -1763,6 +1763,7 @@
        <body class="websiteBody">
           <input type="checkbox" id="active">
           <label for="active" style="postion:fixed;"class="menu-btn">
+            <!--Menu button pics -->
             <img style="margin-top: 100px;width: 193px;height: 142px;margin-left: 280px;position: absolute;" src="../../images/Ellipse_1.png">
             <img style="text-align: center;margin-top: 143px;margin-left: 314px;position: relative;width: 116px;"src="../../images/menu.png">
           </label>
@@ -1772,6 +1773,7 @@
                 <li><a href="<?php echo e(route('about')); ?>">About</a></li>
                 <li><a href="<?php echo e(route('products.index')); ?>">Shop</a></li>
                 <li><a href="<?php echo e(route('carts.index')); ?>">My Cart (<?php echo e(Cart::count()); ?>)</a></li>
+                <li><a href="<?php echo e(route('products.index')); ?>">My Points: <?php echo e(auth()->user()->points); ?></li>
                 <li><a href="<?php echo e(route('updates')); ?>">Updates</a></li>
                 <li><a href="#">Team</a></li>   
                 <li>
@@ -1811,14 +1813,7 @@
                         data-name="Group 3"
                         class="q3"
                       >
-                        <div class="outer_q5">
-                        <div
-                          id="q5"
-                          data-name="MENU"
-                          class="q5"
-                        ><div key="0">MENU</div>
-                        </div>
-                        </div>
+                        
                       </div>
                       </div>
                       
@@ -1829,6 +1824,7 @@
                         class="q6"
                       >
                         <div class="outer_q7">
+                          <!--My account header link -->
                           <a href="<?php echo e(route('profiles.index')); ?>"style="color: rgba(92, 90, 90, 1); text-decoration:none;">My Account</a>
                         </div>
                         <div class="outer_q8">
@@ -1838,6 +1834,7 @@
                           alt="Line 6"
                           class="q8"
                         >
+                        <!--Header logo, title and lines -->
                         <img src="../../images/fccfhead.png" width="254" height="79">
                         <div class="title" style="margin-left: 350px;margin-top: 15px; width:fit-content;">UPDATES</div>
                         <img scr='images/line.png' width="500" height="1.8" style="position: relative; left: 326px; top:-5;">
@@ -1863,6 +1860,7 @@
                               <div class="Cart-outer">
                               
                               </div>
+                              <!--update text -->
                               <div class="items--outer">
                               <div
                                 id="items-"
@@ -1873,6 +1871,7 @@
                               </div>
                             </div>
                             </div>
+                            <!--Update links -->
                             <a href="<?php echo e(route('fccfUpdates.index')); ?>" 
                             style="POSITION: RELATIVE;
                                     top: 304px;
@@ -1899,6 +1898,7 @@
                             >FCCF BLOG</a>
                         </div>
                         
+                        <!--Update pictures -->
                         <div style="display: inline-flex;">
                             <div id="q21" data-name="Rectangle 33" alt="Rectangle 33" 
                             style="height: 311px;
@@ -1947,6 +1947,7 @@
                       </div>
                       </div>
                         
+                      <!--Footer with all the links -->
                       <div class="outer_q36">
                       
                         <div
@@ -1972,7 +1973,7 @@
                           </div>
                           
                           </div>
-                          
+                          <!--Social media links -->
                           <div class="outer_q43">
                           <div
                             id="q43"

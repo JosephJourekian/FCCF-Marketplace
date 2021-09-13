@@ -2447,6 +2447,7 @@ z-index:13;
                           data-name="Wish List"
                           class="Wish-List"
                         >
+                          <!--My wish list text and link -->
                           <div class="MY-WISH-LIST-outer">
                           <div
                             id="MY-WISH-LIST"
@@ -2474,7 +2475,7 @@ z-index:13;
                           </div>
                         </div>
                         </div>
-
+                        <!--Order history text and links -->
                         <div class="OrderHistoryOuter">
                           <div
                             id="OrderHistory"
@@ -2508,7 +2509,7 @@ z-index:13;
                             </div>
                           </div>
                           </div>
-
+                          <!--Payment info text and links -->
                           <div class="PaymentOuter">
                             <div
                               id="OrderHistory"
@@ -2542,7 +2543,7 @@ z-index:13;
                               </div>
                             </div>
                             </div>
-                            
+                            <!--Address text and links -->
                             <div class="AddressOuter">
                               <div
                                 id="OrderHistory"
@@ -2576,7 +2577,7 @@ z-index:13;
                                 </div>
                               </div>
                               </div>
-                          
+                              <!--Account text and links -->
                               <div class="AccountOuter">
                                 <div
                                   id="OrderHistory"
@@ -2612,7 +2613,8 @@ z-index:13;
                                 </div>
                     </div>
                     </div>
-                      
+                    
+                    <!--Footers with all the links -->
                     <div class="outer_q36">
                       
                       <div
@@ -2638,7 +2640,7 @@ z-index:13;
                         </div>
                         
                         </div>
-                        
+                        <!--Social media links -->
                         <div class="outer_q43">
                         <div
                           id="q43"
